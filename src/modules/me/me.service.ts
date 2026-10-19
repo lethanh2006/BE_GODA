@@ -56,7 +56,12 @@ export class MeService {
       this.history(userId, { page: 1, pageSize: 5, status: AttemptStatus.SUBMITTED }),
       this.prisma.attempt.findMany({
         where: { userId, status: AttemptStatus.SUBMITTED, submittedAt: { gte: since } },
-        select: { submittedAt: true, totalCount: true, correctCount: true, timeSpentSeconds: true },
+        select: {
+          submittedAt: true,
+          correctCount: true,
+          timeSpentSeconds: true,
+          _count: { select: { answers: { where: { selectedIndex: { not: null } } } } },
+        },
       }),
       this.prisma.attempt.findMany({
         where: { userId, status: AttemptStatus.IN_PROGRESS },
@@ -79,7 +84,8 @@ export class MeService {
     for (const attempt of activity) {
       const key = dayKey(attempt.submittedAt!);
       const entry = days.get(key) ?? { date: key, questions: 0, correct: 0, seconds: 0 };
-      entry.questions += attempt.totalCount;
+      // Chỉ đếm câu đã trả lời (bỏ qua câu để trống).
+      entry.questions += attempt._count.answers;
       entry.correct += attempt.correctCount ?? 0;
       entry.seconds += attempt.timeSpentSeconds ?? 0;
       days.set(key, entry);

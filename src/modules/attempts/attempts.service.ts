@@ -480,6 +480,10 @@ export class AttemptsService {
         create: { attemptId: id, questionId: dto.questionId, selectedIndex, isCorrect, revealed: true },
         update: { selectedIndex, isCorrect, revealed: true },
       });
+      // Ghi thống kê ngay để câu sai được ôn lại kể cả khi người học thoát mà không nộp bài.
+      if (attempt.userId) {
+        await this.recordStats(attempt.userId, [{ questionId: dto.questionId, selectedIndex, isCorrect }], new Date());
+      }
     }
 
     return {
@@ -512,6 +516,7 @@ export class AttemptsService {
     const graded = answers.map((answer) => ({
       questionId: answer.questionId,
       selectedIndex: answer.selectedIndex,
+      revealed: answer.revealed,
       isCorrect: answer.selectedIndex !== null && answer.selectedIndex === key.get(answer.questionId),
     }));
     const correctCount = graded.filter((g) => g.isCorrect).length;
@@ -549,7 +554,8 @@ export class AttemptsService {
     });
 
     if (claimed && attempt.userId) {
-      await this.recordStats(attempt.userId, graded, now);
+      // Câu đã xem đáp án được ghi thống kê lúc xem rồi.
+      await this.recordStats(attempt.userId, graded.filter((g) => !g.revealed), now);
     }
     return { id, status: AttemptStatus.SUBMITTED };
   }
@@ -558,7 +564,9 @@ export class AttemptsService {
   async claim(user: AuthUser, attemptIds: string[]) {
     const guestAttempts = await this.prisma.attempt.findMany({
       where: { id: { in: attemptIds }, userId: null },
-      include: { answers: { select: { questionId: true, selectedIndex: true, isCorrect: true } } },
+      include: {
+        answers: { select: { questionId: true, selectedIndex: true, isCorrect: true, revealed: true } },
+      },
     });
     if (guestAttempts.length === 0) {
       return { claimed: 0 };
@@ -569,8 +577,10 @@ export class AttemptsService {
       data: { userId: user.id },
     });
     for (const attempt of guestAttempts) {
-      if (attempt.status !== AttemptStatus.SUBMITTED) continue;
-      const graded = attempt.answers.map((a) => ({
+      // Bài đã nộp: tính mọi câu. Bài đang làm: chỉ tính câu đã xem đáp án (lúc nộp sẽ bỏ qua các câu này).
+      const answers =
+        attempt.status === AttemptStatus.SUBMITTED ? attempt.answers : attempt.answers.filter((a) => a.revealed);
+      const graded = answers.map((a) => ({
         questionId: a.questionId,
         selectedIndex: a.selectedIndex,
         isCorrect: a.isCorrect === true,
