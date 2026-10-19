@@ -1,11 +1,13 @@
-import { plainToInstance } from 'class-transformer';
+import { plainToInstance, Transform } from 'class-transformer';
 import {
+  IsBoolean,
   IsEnum,
   IsInt,
   IsNotEmpty,
   IsString,
   Max,
   Min,
+  MinLength,
   validateSync,
 } from 'class-validator';
 
@@ -32,6 +34,19 @@ export class EnvironmentVariables {
   @IsString()
   @IsNotEmpty()
   CORS_ORIGIN: string = 'http://localhost:3000';
+
+  @IsString()
+  @MinLength(32)
+  JWT_SECRET: string;
+
+  @IsInt()
+  @Min(1)
+  JWT_EXPIRES_DAYS: number = 30;
+
+  /** Bật khi chạy HTTPS (production). */
+  @Transform(({ value }) => value === true || value === 'true')
+  @IsBoolean()
+  COOKIE_SECURE: boolean = false;
 }
 
 export function validateEnv(
