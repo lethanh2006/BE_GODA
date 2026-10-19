@@ -57,6 +57,11 @@ export class AuthService {
     return toPublicUser(user);
   }
 
+  async findPublicUser(userId: string) {
+    const user = await this.prisma.user.findUnique({ where: { id: userId } });
+    return user ? toPublicUser(user) : null;
+  }
+
   private async issue(user: User) {
     const payload: JwtPayload = { sub: user.id, role: user.role };
     const token = await this.jwt.signAsync(payload);

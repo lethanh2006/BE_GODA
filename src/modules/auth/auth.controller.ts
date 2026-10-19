@@ -48,6 +48,14 @@ export class AuthController {
     return this.auth.me(user.id);
   }
 
+  /** Phiên hiện tại: { user } hoặc { user: null } với khách (không trả 401). */
+  @Get('session')
+  async session(@CurrentUser() user?: AuthUser) {
+    if (!user) return { user: null };
+    const found = await this.auth.findPublicUser(user.id);
+    return { user: found };
+  }
+
   private setCookie(res: Response, token: string) {
     res.cookie(AUTH_COOKIE, token, {
       httpOnly: true,
