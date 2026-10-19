@@ -1,0 +1,603 @@
+{
+ "source": "goda",
+ "level": "N5",
+ "answerFirst": true,
+ "exam": {
+  "number": 1,
+  "title": "JLPT N5 — Đề thi thử số 1",
+  "description": "Đề GODA biên soạn theo cấu trúc N5 hiện hành: 言語知識（文字・語彙）20 phút và 言語知識（文法）・読解 40 phút, có giải thích tiếng Việt từng câu."
+ },
+ "passages": [
+  {
+   "id": "goda-n5-01-p1",
+   "content": "わたしは　毎週　土よう日に　プールへ　行きます。プールは　うちから　あるいて　十分（　1　）です。\nわたしは　およぐのが　あまり　じょうずでは　ありません（　2　）、とても　すきです。\nきのうも　友だちと　いっしょに　プールへ　行きました。たくさん　およいで、おなかが　すきました。（　3　）、かえりに　ふたりで　アイスクリームを　食べました。\n来週は　妹も　いっしょに（　4　）。"
+  },
+  {
+   "id": "goda-n5-01-p2",
+   "content": "（会社で）\n山田さんの　つくえの　上に、この　メモが　あります。\n\n山田さん\nあしたの　会議は　十時からでは　なくて、十一時からに　なりました。\n会議の　まえに、この　しりょうを　十まい　コピーして　ください。\n　　　　　　　　　　　　　　　　　　　　中村"
+  },
+  {
+   "id": "goda-n5-01-p3",
+   "content": "わたしは　毎朝　七時に　おきます。朝ごはんは　いつも　パンと　たまごですが、きょうは　ごはんと　みそしるを　食べました。それから　八時に　うちを　出て、バスで　学校へ　行きました。"
+  },
+  {
+   "id": "goda-n5-01-p4",
+   "content": "わたしは　去年の　四月に　日本へ　来ました。はじめは　日本語が　ぜんぜん　わかりませんでしたから、買い物が　大変でした。スーパーで　さとうと　しおの　ちがいが　わからなくて、しおを　買った　ことも　あります。\nでも、今は　日本語学校で　毎日　四時間　勉強して　いますから、少し　話す　ことが　できます。先週は　はじめて　ひとりで　びょういんへ　行きました。おいしゃさんの　話は　むずかしかったですが、だいたい　わかりました。とても　うれしかったです。\n来年は　日本の　大学で　けいざいを　勉強したいです。"
+  },
+  {
+   "id": "goda-n5-01-p5",
+   "title": "さくら市　としょかんの　おしらせ",
+   "content": "■ あいて　いる　時間\n　月よう日〜金よう日　　午前9時〜午後7時\n　土よう日・日よう日　　午前10時〜午後5時\n　※毎月　はじめの　水よう日は　休みです。\n\n■ 本\n　・ひとり　5さつまで　かりる　ことが　できます。\n　・2週間　かりる　ことが　できます。\n\n■ CD・DVD\n　・ひとり　2まいまで　かりる　ことが　できます。\n　・1週間　かりる　ことが　できます。"
+  }
+ ],
+ "questions": [
+  {
+   "id": "goda-n5-01-q01",
+   "type": "KANJI_READING",
+   "prompt": "《新しい》かばんを　買いました。",
+   "options": [
+    "あたらしい",
+    "あだらしい",
+    "あらたしい",
+    "あたらし"
+   ],
+   "answer": 0,
+   "explanation": "「新しい」đọc là「あたらしい」(mới). Chú ý không có âm đục và kết thúc bằng 「い」."
+  },
+  {
+   "id": "goda-n5-01-q02",
+   "type": "KANJI_READING",
+   "prompt": "毎朝　《牛乳》を　飲みます。",
+   "options": [
+    "ぎゅうにゅう",
+    "ぎゅにゅう",
+    "ぎゅうにゅ",
+    "きゅうにゅう"
+   ],
+   "answer": 0,
+   "explanation": "「牛乳」đọc là「ぎゅうにゅう」(sữa bò) — cả hai âm đều là trường âm 「ぎゅう」「にゅう」."
+  },
+  {
+   "id": "goda-n5-01-q03",
+   "type": "KANJI_READING",
+   "prompt": "駅の　《北》口で　待って　います。",
+   "options": [
+    "きた",
+    "みなみ",
+    "にし",
+    "ひがし"
+   ],
+   "answer": 0,
+   "explanation": "「北」là「きた」(phía bắc). 南＝みなみ (nam), 西＝にし (tây), 東＝ひがし (đông). 北口: cửa bắc."
+  },
+  {
+   "id": "goda-n5-01-q04",
+   "type": "KANJI_READING",
+   "prompt": "《午後》三時に　会いましょう。",
+   "options": [
+    "ごご",
+    "ごうご",
+    "ごごう",
+    "こご"
+   ],
+   "answer": 0,
+   "explanation": "「午後」đọc là「ごご」(buổi chiều). Không có trường âm."
+  },
+  {
+   "id": "goda-n5-01-q05",
+   "type": "KANJI_READING",
+   "prompt": "この　《川》は　とても　長いです。",
+   "options": [
+    "かわ",
+    "やま",
+    "いけ",
+    "うみ"
+   ],
+   "answer": 0,
+   "explanation": "「川」là「かわ」(sông). 山＝やま (núi), 池＝いけ (ao), 海＝うみ (biển)."
+  },
+  {
+   "id": "goda-n5-01-q06",
+   "type": "KANJI_READING",
+   "prompt": "先週、友だちに　《手紙》を　書きました。",
+   "options": [
+    "てがみ",
+    "てかみ",
+    "でがみ",
+    "しゅがみ"
+   ],
+   "answer": 0,
+   "explanation": "「手紙」đọc là「てがみ」(thư) — 紙「かみ」biến âm thành「がみ」khi ghép từ."
+  },
+  {
+   "id": "goda-n5-01-q07",
+   "type": "KANJI_READING",
+   "prompt": "《外国》へ　行った　ことが　ありますか。",
+   "options": [
+    "がいこく",
+    "かいこく",
+    "がいごく",
+    "そとくに"
+   ],
+   "answer": 0,
+   "explanation": "「外国」đọc là「がいこく」(nước ngoài). 外 đọc âm On là「がい」, 国 là「こく」."
+  },
+  {
+   "id": "goda-n5-01-q08",
+   "type": "ORTHOGRAPHY",
+   "prompt": "つぎの　かどを　《みぎ》に　まがって　ください。",
+   "options": [
+    "右",
+    "左",
+    "石",
+    "古"
+   ],
+   "answer": 0,
+   "explanation": "「みぎ」(bên phải) viết là「右」. 左＝ひだり (trái). 石 (đá) và 古 (cũ) là chữ có hình dạng gần giống."
+  },
+  {
+   "id": "goda-n5-01-q09",
+   "type": "ORTHOGRAPHY",
+   "prompt": "《でんしゃ》で　学校へ　行きます。",
+   "options": [
+    "電車",
+    "雷車",
+    "電東",
+    "雪車"
+   ],
+   "answer": 0,
+   "explanation": "「でんしゃ」(tàu điện) viết là「電車」. 雷 (sấm), 雪 (tuyết), 東 (đông) là chữ dễ nhầm hình dạng."
+  },
+  {
+   "id": "goda-n5-01-q10",
+   "type": "ORTHOGRAPHY",
+   "prompt": "あの　《みせ》で　パンを　買いました。",
+   "options": [
+    "店",
+    "占",
+    "底",
+    "広"
+   ],
+   "answer": 0,
+   "explanation": "「みせ」(cửa hàng) viết là「店」. 広＝ひろい (rộng), 底 (đáy), 占 (bói) có bộ gần giống."
+  },
+  {
+   "id": "goda-n5-01-q11",
+   "type": "ORTHOGRAPHY",
+   "prompt": "《やすみ》の　日は　何を　しますか。",
+   "options": [
+    "休み",
+    "体み",
+    "林み",
+    "作み"
+   ],
+   "answer": 0,
+   "explanation": "「やすみ」(nghỉ) viết là「休み」— bộ nhân đứng 亻 + 木 (người tựa cây nghỉ ngơi). 体＝からだ (cơ thể)."
+  },
+  {
+   "id": "goda-n5-01-q12",
+   "type": "ORTHOGRAPHY",
+   "prompt": "にわに　《おおきい》　木が　あります。",
+   "options": [
+    "大きい",
+    "犬きい",
+    "太きい",
+    "天きい"
+   ],
+   "answer": 0,
+   "explanation": "「おおきい」(to) viết là「大きい」. 犬 (chó), 太 (béo), 天 (trời) chỉ khác một nét."
+  },
+  {
+   "id": "goda-n5-01-q13",
+   "type": "CONTEXT",
+   "prompt": "あついですから、まどを　（　　）　ください。",
+   "options": [
+    "あけて",
+    "しめて",
+    "つけて",
+    "けして"
+   ],
+   "answer": 0,
+   "explanation": "Trời nóng nên「まどを あけて ください」(hãy mở cửa sổ). しめる: đóng; つける/けす: bật/tắt (đèn, điện)."
+  },
+  {
+   "id": "goda-n5-01-q14",
+   "type": "CONTEXT",
+   "prompt": "きのうは　あたまが　（　　）、学校を　休みました。",
+   "options": [
+    "いたくて",
+    "たかくて",
+    "ひくくて",
+    "ながくて"
+   ],
+   "answer": 0,
+   "explanation": "「あたまが いたい」= đau đầu → vì đau đầu nên nghỉ học. Dạng nối câu: いたい → いたくて."
+  },
+  {
+   "id": "goda-n5-01-q15",
+   "type": "CONTEXT",
+   "prompt": "わたしは　毎晩　十時に　（　　）。",
+   "options": [
+    "ねます",
+    "おきます",
+    "たべます",
+    "あらいます"
+   ],
+   "answer": 0,
+   "explanation": "「毎晩」(mỗi tối) 10 giờ → hợp nghĩa nhất là「ねます」(đi ngủ). おきます: thức dậy."
+  },
+  {
+   "id": "goda-n5-01-q16",
+   "type": "CONTEXT",
+   "prompt": "雨が　（　　）　いますから、かさを　持って　行きましょう。",
+   "options": [
+    "ふって",
+    "ふいて",
+    "さいて",
+    "ないて"
+   ],
+   "answer": 0,
+   "explanation": "Mưa dùng động từ「ふる」→「雨が ふって います」(đang mưa). ふく: (gió) thổi; さく: (hoa) nở; なく: khóc/kêu."
+  },
+  {
+   "id": "goda-n5-01-q17",
+   "type": "CONTEXT",
+   "prompt": "すみません、ここで　しゃしんを　（　　）も　いいですか。",
+   "options": [
+    "とって",
+    "かいて",
+    "みて",
+    "つくって"
+   ],
+   "answer": 0,
+   "explanation": "Chụp ảnh là「しゃしんを とる」. 〜ても いいですか: xin phép làm gì."
+  },
+  {
+   "id": "goda-n5-01-q18",
+   "type": "CONTEXT",
+   "prompt": "（　　）は　休みですから、会社へ　行きません。",
+   "options": [
+    "日よう日",
+    "火よう日",
+    "水よう日",
+    "木よう日"
+   ],
+   "answer": 0,
+   "explanation": "Ngày nghỉ thông thường là Chủ nhật「日よう日」. Các ngày còn lại là ngày làm việc."
+  },
+  {
+   "id": "goda-n5-01-q19",
+   "type": "PARAPHRASE",
+   "prompt": "《この　へやは　くらいです》。",
+   "options": [
+    "この　へやは　あかるくないです。",
+    "この　へやは　ひろくないです。",
+    "この　へやは　あかるいです。",
+    "この　へやは　しずかです。"
+   ],
+   "answer": 0,
+   "explanation": "「くらい」(tối) = 「あかるくない」(không sáng). ひろくない: không rộng; しずか: yên tĩnh."
+  },
+  {
+   "id": "goda-n5-01-q20",
+   "type": "PARAPHRASE",
+   "prompt": "わたしは　《りょうしん》と　すんで　います。",
+   "options": [
+    "ちちと　はは",
+    "あにと　あね",
+    "そふと　そぼ",
+    "おじと　おば"
+   ],
+   "answer": 0,
+   "explanation": "「りょうしん」(両親) là bố mẹ = 「ちちと はは」. あに/あね: anh/chị; そふ/そぼ: ông/bà; おじ/おば: chú/cô."
+  },
+  {
+   "id": "goda-n5-01-q21",
+   "type": "PARAPHRASE",
+   "prompt": "《おととい》　としょかんへ　行きました。",
+   "options": [
+    "ふつか　まえに",
+    "きのう",
+    "みっか　まえに",
+    "あした"
+   ],
+   "answer": 0,
+   "explanation": "「おととい」là hôm kia = 2 ngày trước「ふつか まえ」. きのう: hôm qua; みっか まえ: 3 ngày trước."
+  },
+  {
+   "id": "goda-n5-01-q22",
+   "type": "GRAMMAR_FORM",
+   "prompt": "わたしは　毎朝　パン（　　）食べます。",
+   "options": [
+    "を",
+    "が",
+    "に",
+    "で"
+   ],
+   "answer": 0,
+   "explanation": "Trợ từ「を」đánh dấu tân ngữ của động từ 食べる (ăn bánh mì)."
+  },
+  {
+   "id": "goda-n5-01-q23",
+   "type": "GRAMMAR_FORM",
+   "prompt": "この　店は　朝　九時から　夜　八時（　　）です。",
+   "options": [
+    "まで",
+    "より",
+    "に",
+    "で"
+   ],
+   "answer": 0,
+   "explanation": "「〜から 〜まで」: từ … đến …. Cửa hàng mở từ 9 giờ sáng đến 8 giờ tối."
+  },
+  {
+   "id": "goda-n5-01-q24",
+   "type": "GRAMMAR_FORM",
+   "prompt": "A「あした、いっしょに　えいがを　見（　　）。」\nB「いいですね。見ましょう。」",
+   "options": [
+    "ませんか",
+    "ましたか",
+    "ません",
+    "ました"
+   ],
+   "answer": 0,
+   "explanation": "「V-ませんか」dùng để rủ rê, mời (… cùng đi xem phim không?). B đồng ý「いいですね」."
+  },
+  {
+   "id": "goda-n5-01-q25",
+   "type": "GRAMMAR_FORM",
+   "prompt": "へやに　だれ（　　）いません。",
+   "options": [
+    "も",
+    "が",
+    "を",
+    "で"
+   ],
+   "answer": 0,
+   "explanation": "「だれも + phủ định」= không có ai. Tương tự: なにも〜ない, どこも〜ない."
+  },
+  {
+   "id": "goda-n5-01-q26",
+   "type": "GRAMMAR_FORM",
+   "prompt": "きのうは　さむかったです（　　）、きょうは　あたたかいです。",
+   "options": [
+    "が",
+    "から",
+    "か",
+    "ね"
+   ],
+   "answer": 0,
+   "explanation": "「が」nối hai vế trái ngược: hôm qua lạnh nhưng hôm nay ấm. から (vì) không hợp nghĩa."
+  },
+  {
+   "id": "goda-n5-01-q27",
+   "type": "GRAMMAR_FORM",
+   "prompt": "わたしの　へやは　あまり（　　）。",
+   "options": [
+    "ひろくないです",
+    "ひろいです",
+    "ひろかったです",
+    "ひろくです"
+   ],
+   "answer": 0,
+   "explanation": "「あまり」luôn đi với thể phủ định: あまり ひろくないです (không rộng lắm)."
+  },
+  {
+   "id": "goda-n5-01-q28",
+   "type": "GRAMMAR_FORM",
+   "prompt": "母は　今　台所で　りょうりを（　　）。",
+   "options": [
+    "して　います",
+    "しました",
+    "しましょう",
+    "して　ください"
+   ],
+   "answer": 0,
+   "explanation": "「今」(bây giờ) + hành động đang diễn ra → thể「V-て います」: mẹ đang nấu ăn."
+  },
+  {
+   "id": "goda-n5-01-q29",
+   "type": "GRAMMAR_FORM",
+   "prompt": "田中さんは　せが　高くて、（　　）人です。",
+   "options": [
+    "きれいな",
+    "きれい",
+    "きれいの",
+    "きれいだ"
+   ],
+   "answer": 0,
+   "explanation": "「きれい」là tính từ đuôi な, khi bổ nghĩa cho danh từ phải thêm「な」: きれいな 人."
+  },
+  {
+   "id": "goda-n5-01-q30",
+   "type": "GRAMMAR_FORM",
+   "prompt": "（　　）かばんは　あなたのですか。",
+   "options": [
+    "この",
+    "これ",
+    "ここ",
+    "こちら"
+   ],
+   "answer": 0,
+   "explanation": "Đứng trước danh từ phải dùng「この」(cái … này). これ/ここ/こちら không đứng trực tiếp trước danh từ."
+  },
+  {
+   "id": "goda-n5-01-q31",
+   "type": "SENTENCE_ORDER",
+   "prompt": "あそこで ＿＿ ＿＿ ★ ＿＿ 田中さんです。",
+   "options": [
+    "いる",
+    "本を",
+    "読んで",
+    "人が"
+   ],
+   "answer": 0,
+   "explanation": "Câu đúng: あそこで 本を 読んで いる 人が 田中さんです。(Người đang đọc sách ở đằng kia là anh Tanaka.)\nThứ tự: 本を → 読んで → いる(★) → 人が."
+  },
+  {
+   "id": "goda-n5-01-q32",
+   "type": "SENTENCE_ORDER",
+   "prompt": "これは ＿＿ ＿＿ ★ ＿＿ です。",
+   "options": [
+    "もらった",
+    "きのう",
+    "父に",
+    "とけい"
+   ],
+   "answer": 0,
+   "explanation": "Câu đúng: これは きのう 父に もらった とけい です。(Đây là chiếc đồng hồ hôm qua tôi nhận từ bố.)\nCụm「もらった」bổ nghĩa cho「とけい」nên luôn đứng ngay trước nó, tức vị trí ★."
+  },
+  {
+   "id": "goda-n5-01-q33",
+   "type": "SENTENCE_ORDER",
+   "prompt": "テーブルの ＿＿ ＿＿ ★ ＿＿ ください。",
+   "options": [
+    "ひとつ",
+    "上の",
+    "りんごを",
+    "とって"
+   ],
+   "answer": 0,
+   "explanation": "Câu đúng: テーブルの 上の りんごを ひとつ とって ください。(Hãy lấy giúp tôi một quả táo trên bàn.)\nThứ tự: 上の → りんごを → ひとつ(★) → とって."
+  },
+  {
+   "id": "goda-n5-01-q34",
+   "type": "SENTENCE_ORDER",
+   "prompt": "駅の ＿＿ ＿＿ ★ ＿＿ ありますか。",
+   "options": [
+    "おいしい",
+    "近くに",
+    "安くて",
+    "レストランは"
+   ],
+   "answer": 0,
+   "explanation": "Câu đúng: 駅の 近くに 安くて おいしい レストランは ありますか。(Gần ga có nhà hàng rẻ mà ngon không?)\nThứ tự: 近くに → 安くて → おいしい(★) → レストランは."
+  },
+  {
+   "id": "goda-n5-01-q35",
+   "type": "TEXT_GRAMMAR",
+   "prompt": "（　1　）",
+   "options": [
+    "ぐらい",
+    "ごろ",
+    "など",
+    "ずつ"
+   ],
+   "answer": 0,
+   "explanation": "「十分ぐらい」= khoảng 10 phút (chỉ lượng thời gian). 「ごろ」chỉ dùng cho mốc thời gian (三時ごろ).",
+   "passageId": "goda-n5-01-p1"
+  },
+  {
+   "id": "goda-n5-01-q36",
+   "type": "TEXT_GRAMMAR",
+   "prompt": "（　2　）",
+   "options": [
+    "が",
+    "から",
+    "ので",
+    "と"
+   ],
+   "answer": 0,
+   "explanation": "Không giỏi bơi「が」(nhưng) rất thích → quan hệ tương phản, dùng「が」.",
+   "passageId": "goda-n5-01-p1"
+  },
+  {
+   "id": "goda-n5-01-q37",
+   "type": "TEXT_GRAMMAR",
+   "prompt": "（　3　）",
+   "options": [
+    "それで",
+    "でも",
+    "それに",
+    "では"
+   ],
+   "answer": 0,
+   "explanation": "Bơi nhiều nên đói bụng →「それで」(vì thế) trên đường về đã ăn kem.",
+   "passageId": "goda-n5-01-p1"
+  },
+  {
+   "id": "goda-n5-01-q38",
+   "type": "TEXT_GRAMMAR",
+   "prompt": "（　4　）",
+   "options": [
+    "行きます",
+    "行きました",
+    "行って　いました",
+    "行きませんでした"
+   ],
+   "answer": 0,
+   "explanation": "「来週」(tuần sau) là tương lai nên dùng thể「行きます」.",
+   "passageId": "goda-n5-01-p1"
+  },
+  {
+   "id": "goda-n5-01-q39",
+   "type": "READING_SHORT",
+   "prompt": "山田さんは　あした　会議の　まえに　何を　しますか。",
+   "options": [
+    "しりょうを　十まい　コピーします。",
+    "十時に　会議の　へやへ　行きます。",
+    "中村さんに　しりょうを　十まい　あげます。",
+    "しりょうを　十一まい　コピーします。"
+   ],
+   "answer": 0,
+   "explanation": "Memo viết「会議の まえに、この しりょうを 十まい コピーして ください」→ photo 10 bản tài liệu. Cuộc họp đổi sang 11 giờ, không phải 10 giờ.",
+   "passageId": "goda-n5-01-p2"
+  },
+  {
+   "id": "goda-n5-01-q40",
+   "type": "READING_SHORT",
+   "prompt": "「わたし」は　きょう　朝ごはんに　何を　食べましたか。",
+   "options": [
+    "ごはんと　みそしる",
+    "パンと　たまご",
+    "パンと　みそしる",
+    "ごはんと　たまご"
+   ],
+   "answer": 0,
+   "explanation": "Bình thường ăn bánh mì và trứng「が」(nhưng) hôm nay ăn「ごはんと みそしる」(cơm và súp miso).",
+   "passageId": "goda-n5-01-p3"
+  },
+  {
+   "id": "goda-n5-01-q41",
+   "type": "READING_MEDIUM",
+   "prompt": "どうして　はじめは　買い物が　大変でしたか。",
+   "options": [
+    "日本語が　わからなかったから",
+    "スーパーが　遠かったから",
+    "しおが　高かったから",
+    "お金が　なかったから"
+   ],
+   "answer": 0,
+   "explanation": "「はじめは 日本語が ぜんぜん わかりませんでしたから、買い物が 大変でした」— vì không hiểu tiếng Nhật.",
+   "passageId": "goda-n5-01-p4"
+  },
+  {
+   "id": "goda-n5-01-q42",
+   "type": "READING_MEDIUM",
+   "prompt": "「わたし」は　先週　何を　しましたか。",
+   "options": [
+    "ひとりで　びょういんへ　行きました。",
+    "友だちと　びょういんへ　行きました。",
+    "はじめて　日本語学校へ　行きました。",
+    "大学で　けいざいを　勉強しました。"
+   ],
+   "answer": 0,
+   "explanation": "「先週は はじめて ひとりで びょういんへ 行きました」. Học kinh tế ở đại học là dự định năm sau.",
+   "passageId": "goda-n5-01-p4"
+  },
+  {
+   "id": "goda-n5-01-q43",
+   "type": "INFO_RETRIEVAL",
+   "prompt": "リンさんは　土よう日の　午後に　としょかんへ　行って、本と　DVDを　かりたいです。正しい　ものは　どれですか。",
+   "options": [
+    "本は　5さつ、DVDは　2まいまで　かりる　ことが　できる。",
+    "本も　DVDも　2週間　かりる　ことが　できる。",
+    "土よう日は　午後7時まで　あいて　いる。",
+    "本は　2さつ、DVDは　5まいまで　かりる　ことが　できる。"
+   ],
+   "answer": 0,
+   "explanation": "Sách: tối đa 5 cuốn trong 2 tuần; CD/DVD: tối đa 2 đĩa trong 1 tuần. Thứ bảy chỉ mở đến 5 giờ chiều.",
+   "passageId": "goda-n5-01-p5"
+  }
+ ]
+}
