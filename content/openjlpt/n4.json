@@ -1,0 +1,5624 @@
+{
+ "source": "openjlpt",
+ "level": "N4",
+ "answerFirst": false,
+ "passages": [],
+ "questions": [
+  {
+   "id": "oj-n4-vocab_reading-001",
+   "type": "KANJI_READING",
+   "prompt": "あそこに《警察》がいます。",
+   "options": [
+    "けいっさつ",
+    "けいさつ",
+    "けいさづ",
+    "けいさち"
+   ],
+   "answer": 1,
+   "explanation": "「警察」đọc là「けいさつ」."
+  },
+  {
+   "id": "oj-n4-vocab_reading-002-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "《さいきん》、とても忙しいです。",
+   "options": [
+    "済筋",
+    "最近",
+    "際近",
+    "歳近"
+   ],
+   "answer": 1,
+   "explanation": "「さいきん」viết là「最近」."
+  },
+  {
+   "id": "oj-n4-vocab_reading-003",
+   "type": "KANJI_READING",
+   "prompt": "あした《出発》します。",
+   "options": [
+    "しゅっぱつ",
+    "しゅぱつ",
+    "しゅっぱづ",
+    "しゅつぱつ"
+   ],
+   "answer": 0,
+   "explanation": "「出発」đọc là「しゅっぱつ」."
+  },
+  {
+   "id": "oj-n4-vocab_reading-004",
+   "type": "KANJI_READING",
+   "prompt": "この《景色》はとてもきれいです。",
+   "options": [
+    "けしき",
+    "げしき",
+    "けしっき",
+    "けいろ"
+   ],
+   "answer": 0,
+   "explanation": "「景色」đọc là「けしき」."
+  },
+  {
+   "id": "oj-n4-vocab_reading-005",
+   "type": "KANJI_READING",
+   "prompt": "《案内》をお願いします。",
+   "options": [
+    "あんなんい",
+    "あんない",
+    "あない",
+    "あんうち"
+   ],
+   "answer": 1,
+   "explanation": "「案内」đọc là「あんない」."
+  },
+  {
+   "id": "oj-n4-vocab_reading-006-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "《げんいん》が分かりません。",
+   "options": [
+    "原飲",
+    "元引",
+    "験員",
+    "原因"
+   ],
+   "answer": 3,
+   "explanation": "「げんいん」viết là「原因」."
+  },
+  {
+   "id": "oj-n4-vocab_reading-007",
+   "type": "KANJI_READING",
+   "prompt": "《準備》ができました。",
+   "options": [
+    "じゅうんび",
+    "じゅんび",
+    "じょんび",
+    "じゅんぴ"
+   ],
+   "answer": 1,
+   "explanation": "「準備」đọc là「じゅんび」."
+  },
+  {
+   "id": "oj-n4-vocab_reading-008-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "この機械を《しゅうり》してください。",
+   "options": [
+    "終離",
+    "修理",
+    "週利",
+    "修履"
+   ],
+   "answer": 1,
+   "explanation": "「しゅうり」viết là「修理」."
+  },
+  {
+   "id": "oj-n4-vocab_reading-009",
+   "type": "KANJI_READING",
+   "prompt": "《相談》したいことがあります。",
+   "options": [
+    "そうだん",
+    "ぞうだん",
+    "そだん",
+    "そうたん"
+   ],
+   "answer": 0,
+   "explanation": "「相談」đọc là「そうだん」."
+  },
+  {
+   "id": "oj-n4-vocab_reading-010-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "《むり》をしないでください。",
+   "options": [
+    "霧理",
+    "無理",
+    "務離",
+    "務裏"
+   ],
+   "answer": 1,
+   "explanation": "「むり」viết là「無理」."
+  },
+  {
+   "id": "oj-n4-vocab_reading-011",
+   "type": "KANJI_READING",
+   "prompt": "日曜日に友達と《神社》に行きました。",
+   "options": [
+    "じんじんゃ",
+    "じんじや",
+    "しんじゃ",
+    "じんじゃ"
+   ],
+   "answer": 3,
+   "explanation": "「神社」đọc là「じんじゃ」. Nghĩa: Shinto shrine."
+  },
+  {
+   "id": "oj-n4-vocab_reading-012",
+   "type": "KANJI_READING",
+   "prompt": "図書館で本を《探す》ときは、コンピューターを使います。",
+   "options": [
+    "さがんす",
+    "さがす",
+    "さかす",
+    "さがず"
+   ],
+   "answer": 1,
+   "explanation": "「探す」đọc là「さがす」. Nghĩa: to look for."
+  },
+  {
+   "id": "oj-n4-vocab_reading-013",
+   "type": "KANJI_READING",
+   "prompt": "この《放送》は毎朝六時に始まります。",
+   "options": [
+    "ぽうそう",
+    "ほそう",
+    "ほうぞう",
+    "ほうそう"
+   ],
+   "answer": 3,
+   "explanation": "「放送」đọc là「ほうそう」. Nghĩa: to broadcast."
+  },
+  {
+   "id": "oj-n4-vocab_reading-015",
+   "type": "KANJI_READING",
+   "prompt": "これは《然る》べき場所で話しましょう。",
+   "options": [
+    "しっかる",
+    "しかる",
+    "しがる",
+    "しかんる"
+   ],
+   "answer": 1,
+   "explanation": "「然る」đọc là「しかる」. Nghĩa: a particular."
+  },
+  {
+   "id": "oj-n4-vocab_reading-016-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "私の父は《こうじょう》で働いています。",
+   "options": [
+    "工場",
+    "交場",
+    "後常",
+    "公場"
+   ],
+   "answer": 0,
+   "explanation": "「こうじょう」viết là「工場」. Nghĩa: factory."
+  },
+  {
+   "id": "oj-n4-vocab_reading-017",
+   "type": "KANJI_READING",
+   "prompt": "プレゼントをもらって、いい《気持ち》になりました。",
+   "options": [
+    "ぎもち",
+    "きもぢ",
+    "きもうち",
+    "きもち"
+   ],
+   "answer": 3,
+   "explanation": "「気持ち」đọc là「きもち」. Nghĩa: feeling,mood."
+  },
+  {
+   "id": "oj-n4-vocab_reading-018",
+   "type": "KANJI_READING",
+   "prompt": "この町では観光が《盛ん》に行われています。",
+   "options": [
+    "さがん",
+    "さかん",
+    "ざかん",
+    "さか"
+   ],
+   "answer": 1,
+   "explanation": "「盛ん」đọc là「さかん」. Nghĩa: popularity,prosperous."
+  },
+  {
+   "id": "oj-n4-vocab_reading-019",
+   "type": "KANJI_READING",
+   "prompt": "私は日本の歴史に《興味》があります。",
+   "options": [
+    "きようみ",
+    "きょみ",
+    "きょううみ",
+    "きょうみ"
+   ],
+   "answer": 3,
+   "explanation": "「興味」đọc là「きょうみ」. Nghĩa: an interest."
+  },
+  {
+   "id": "oj-n4-vocab_reading-021",
+   "type": "KANJI_READING",
+   "prompt": "庭の《草》がたくさん生えています。",
+   "options": [
+    "くさ",
+    "ぐさ",
+    "くうさ",
+    "くっさ"
+   ],
+   "answer": 0,
+   "explanation": "「草」đọc là「くさ」. Nghĩa: grass."
+  },
+  {
+   "id": "oj-n4-vocab_reading-023",
+   "type": "KANJI_READING",
+   "prompt": "私は《郊外》に住んでいて、空気がきれいです。",
+   "options": [
+    "こうんがい",
+    "こがい",
+    "ごうがい",
+    "こうがい"
+   ],
+   "answer": 3,
+   "explanation": "「郊外」đọc là「こうがい」. Nghĩa: outskirts."
+  },
+  {
+   "id": "oj-n4-vocab_reading-026-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "この《じだい》の映画はとても面白いです。",
+   "options": [
+    "地第",
+    "時代",
+    "二内",
+    "事台"
+   ],
+   "answer": 1,
+   "explanation": "「じだい」viết là「時代」. Nghĩa: era."
+  },
+  {
+   "id": "oj-n4-vocab_reading-027",
+   "type": "KANJI_READING",
+   "prompt": "朝、《小鳥》の声で目が覚めました。",
+   "options": [
+    "こどり",
+    "ことうり",
+    "ことり",
+    "ごとり"
+   ],
+   "answer": 2,
+   "explanation": "「小鳥」đọc là「ことり」. Nghĩa: small bird."
+  },
+  {
+   "id": "oj-n4-vocab_reading-028-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "この大学は《こくさい》交流に力を入れている。",
+   "options": [
+    "黒裁",
+    "克際",
+    "可際",
+    "国際"
+   ],
+   "answer": 3,
+   "explanation": "「こくさい」viết là「国際」. Nghĩa: international."
+  },
+  {
+   "id": "oj-n4-vocab_reading-029",
+   "type": "KANJI_READING",
+   "prompt": "明日、先生の家に《伺う》予定です。",
+   "options": [
+    "うかがう",
+    "うかがんう",
+    "ううかがう",
+    "うががう"
+   ],
+   "answer": 0,
+   "explanation": "「伺う」đọc là「うかがう」. Nghĩa: to visit."
+  },
+  {
+   "id": "oj-n4-vocab_reading-030-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "エアコンが《こしょう》して、とても暑いです。",
+   "options": [
+    "故障",
+    "古相",
+    "去障",
+    "故政"
+   ],
+   "answer": 0,
+   "explanation": "「こしょう」viết là「故障」. Nghĩa: to break-down."
+  },
+  {
+   "id": "oj-n4-vocab_reading-032-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "昨日の野球の《しあい》はとても面白かった。",
+   "options": [
+    "四合",
+    "試合",
+    "市合",
+    "思合"
+   ],
+   "answer": 1,
+   "explanation": "「しあい」viết là「試合」. Nghĩa: match,game."
+  },
+  {
+   "id": "oj-n4-vocab_reading-034-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "日本の《けいざい》について勉強しています。",
+   "options": [
+    "京最",
+    "経西",
+    "経済",
+    "形最"
+   ],
+   "answer": 2,
+   "explanation": "「けいざい」viết là「経済」. Nghĩa: finance,economy."
+  },
+  {
+   "id": "oj-n4-vocab_reading-035",
+   "type": "KANJI_READING",
+   "prompt": "父はすぐ《怒る》けど、本当は優しいです。",
+   "options": [
+    "おうこる",
+    "おこうる",
+    "おこる",
+    "おごる"
+   ],
+   "answer": 2,
+   "explanation": "「怒る」đọc là「おこる」. Nghĩa: to get angry,to be angry."
+  },
+  {
+   "id": "oj-n4-vocab_reading-036-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "私の妹は《こうこうせい》です。",
+   "options": [
+    "高行性",
+    "高公政",
+    "公校生",
+    "高校生"
+   ],
+   "answer": 3,
+   "explanation": "「こうこうせい」viết là「高校生」. Nghĩa: high school student."
+  },
+  {
+   "id": "oj-n4-vocab_reading-037",
+   "type": "KANJI_READING",
+   "prompt": "《近所》に大きい公園があります。",
+   "options": [
+    "きんじゅ",
+    "きんじょう",
+    "きんじょ",
+    "きんしょ"
+   ],
+   "answer": 2,
+   "explanation": "「近所」đọc là「きんじょ」. Nghĩa: neighbourhood."
+  },
+  {
+   "id": "oj-n4-vocab_reading-040",
+   "type": "KANJI_READING",
+   "prompt": "この花は本当に《美しい》です。",
+   "options": [
+    "うつぐしい",
+    "うつくしい",
+    "うつくうしい",
+    "うつくっしい"
+   ],
+   "answer": 1,
+   "explanation": "「美しい」đọc là「うつくしい」. Nghĩa: beautiful."
+  },
+  {
+   "id": "oj-n4-vocab_reading-041-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "私の《しゅみ》は写真を撮ることです。",
+   "options": [
+    "手味",
+    "輸味",
+    "輸未",
+    "趣味"
+   ],
+   "answer": 3,
+   "explanation": "「しゅみ」viết là「趣味」. Nghĩa: hobby."
+  },
+  {
+   "id": "oj-n4-vocab_reading-042",
+   "type": "KANJI_READING",
+   "prompt": "毎朝《運動》をするようにしています。",
+   "options": [
+    "うんど",
+    "ううんどう",
+    "うんとう",
+    "うんどう"
+   ],
+   "answer": 3,
+   "explanation": "「運動」đọc là「うんどう」. Nghĩa: to exercise."
+  },
+  {
+   "id": "oj-n4-vocab_reading-043",
+   "type": "KANJI_READING",
+   "prompt": "毎朝六時に子供を《起す》のは大変です。",
+   "options": [
+    "おこず",
+    "おこうす",
+    "おこす",
+    "おごす"
+   ],
+   "answer": 2,
+   "explanation": "「起す」đọc là「おこす」. Nghĩa: to wake."
+  },
+  {
+   "id": "oj-n4-vocab_reading-044",
+   "type": "KANJI_READING",
+   "prompt": "この《機会》を大切にしたいです。",
+   "options": [
+    "きっかい",
+    "きがい",
+    "ぎかい",
+    "きかい"
+   ],
+   "answer": 3,
+   "explanation": "「機会」đọc là「きかい」. Nghĩa: opportunity."
+  },
+  {
+   "id": "oj-n4-vocab_reading-045-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "彼は大学で《いがく》を勉強しています。",
+   "options": [
+    "医学",
+    "医岳",
+    "移楽",
+    "違楽"
+   ],
+   "answer": 0,
+   "explanation": "「いがく」viết là「医学」. Nghĩa: medical science."
+  },
+  {
+   "id": "oj-n4-vocab_reading-048",
+   "type": "KANJI_READING",
+   "prompt": "弟は物をよく《壊す》ので、困っています。",
+   "options": [
+    "こわんす",
+    "こうわす",
+    "こわす",
+    "こわず"
+   ],
+   "answer": 2,
+   "explanation": "「壊す」đọc là「こわす」. Nghĩa: to break."
+  },
+  {
+   "id": "oj-n4-vocab_reading-049",
+   "type": "KANJI_READING",
+   "prompt": "わからない言葉は辞書で《調べる》といいです。",
+   "options": [
+    "しらべんる",
+    "じらべる",
+    "しらへる",
+    "しらべる"
+   ],
+   "answer": 3,
+   "explanation": "「調べる」đọc là「しらべる」. Nghĩa: to investigate."
+  },
+  {
+   "id": "oj-n4-vocab_reading-050",
+   "type": "KANJI_READING",
+   "prompt": "この机は《形》が珍しいです。",
+   "options": [
+    "がたち",
+    "かたぢ",
+    "かたち",
+    "かだち"
+   ],
+   "answer": 2,
+   "explanation": "「形」đọc là「かたち」. Nghĩa: shape."
+  },
+  {
+   "id": "oj-n4-vocab_reading-051-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "《しゃちょう》は今日、会議に出席します。",
+   "options": [
+    "社重",
+    "社町",
+    "射長",
+    "社長"
+   ],
+   "answer": 3,
+   "explanation": "「しゃちょう」viết là「社長」. Nghĩa: company president."
+  },
+  {
+   "id": "oj-n4-vocab_reading-052",
+   "type": "KANJI_READING",
+   "prompt": "山の《空気》はとてもおいしいです。",
+   "options": [
+    "くうぎ",
+    "くき",
+    "ぐうき",
+    "くうき"
+   ],
+   "answer": 3,
+   "explanation": "「空気」đọc là「くうき」. Nghĩa: air,atmosphere."
+  },
+  {
+   "id": "oj-n4-vocab_reading-053",
+   "type": "KANJI_READING",
+   "prompt": "あの人は《金持ち》だが、性格はよくない。",
+   "options": [
+    "かねもち",
+    "かねもうち",
+    "かねもぢ",
+    "がねもち"
+   ],
+   "answer": 0,
+   "explanation": "「金持ち」đọc là「かねもち」. Nghĩa: rich man."
+  },
+  {
+   "id": "oj-n4-vocab_reading-054",
+   "type": "KANJI_READING",
+   "prompt": "兄は子供の頃から《柔道》を習っています。",
+   "options": [
+    "じゅどう",
+    "じょうどう",
+    "じゅうど",
+    "じゅうどう"
+   ],
+   "answer": 3,
+   "explanation": "「柔道」đọc là「じゅうどう」. Nghĩa: judo."
+  },
+  {
+   "id": "oj-n4-vocab_reading-055",
+   "type": "KANJI_READING",
+   "prompt": "友達が入院したので、《お見舞い》に行きます。",
+   "options": [
+    "おうみまい",
+    "おみまい",
+    "おみんまい",
+    "おみまんい"
+   ],
+   "answer": 1,
+   "explanation": "「お見舞い」đọc là「おみまい」. Nghĩa: calling on someone who is ill,enquiry."
+  },
+  {
+   "id": "oj-n4-vocab_reading-056",
+   "type": "KANJI_READING",
+   "prompt": "この道は夜は《危険》なので、気をつけてください。",
+   "options": [
+    "きっけん",
+    "きげん",
+    "きけん",
+    "ぎけん"
+   ],
+   "answer": 2,
+   "explanation": "「危険」đọc là「きけん」. Nghĩa: danger."
+  },
+  {
+   "id": "oj-n4-vocab_reading-057",
+   "type": "KANJI_READING",
+   "prompt": "祭りでみんなが《踊る》のが楽しみです。",
+   "options": [
+    "おどうる",
+    "おどる",
+    "おうどる",
+    "おとる"
+   ],
+   "answer": 1,
+   "explanation": "「踊る」đọc là「おどる」. Nghĩa: to dance."
+  },
+  {
+   "id": "oj-n4-vocab_reading-058",
+   "type": "KANJI_READING",
+   "prompt": "彼の話は《確か》に正しいと思います。",
+   "options": [
+    "たしが",
+    "たしか",
+    "たじか",
+    "たしっか"
+   ],
+   "answer": 1,
+   "explanation": "「確か」đọc là「たしか」. Nghĩa: definite."
+  },
+  {
+   "id": "oj-n4-vocab_reading-059",
+   "type": "KANJI_READING",
+   "prompt": "日本語は《中々》難しいです。",
+   "options": [
+    "なかんなか",
+    "なかなか",
+    "ながなか",
+    "なかなが"
+   ],
+   "answer": 1,
+   "explanation": "「中々」đọc là「なかなか」. Nghĩa: considerably."
+  },
+  {
+   "id": "oj-n4-vocab_reading-061",
+   "type": "KANJI_READING",
+   "prompt": "明日、先生を《訪ねる》つもりです。",
+   "options": [
+    "たずうねる",
+    "たすねる",
+    "たずねんる",
+    "たずねる"
+   ],
+   "answer": 3,
+   "explanation": "「訪ねる」đọc là「たずねる」. Nghĩa: to visit."
+  },
+  {
+   "id": "oj-n4-vocab_reading-062",
+   "type": "KANJI_READING",
+   "prompt": "日本語の勉強を《続ける》ことが大事です。",
+   "options": [
+    "つづける",
+    "つうづける",
+    "づづける",
+    "つづっける"
+   ],
+   "answer": 0,
+   "explanation": "「続ける」đọc là「つづける」. Nghĩa: to continue."
+  },
+  {
+   "id": "oj-n4-vocab_reading-063-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "来年、大学を《そつぎょう》する予定です。",
+   "options": [
+    "率凝",
+    "卒業",
+    "卒形",
+    "率業"
+   ],
+   "answer": 1,
+   "explanation": "「そつぎょう」viết là「卒業」. Nghĩa: graduation."
+  },
+  {
+   "id": "oj-n4-vocab_reading-064",
+   "type": "KANJI_READING",
+   "prompt": "その《格好》はとても似合っていますよ。",
+   "options": [
+    "かっこ",
+    "がっこう",
+    "かっこう",
+    "かこう"
+   ],
+   "answer": 2,
+   "explanation": "「格好」đọc là「かっこう」. Nghĩa: appearance."
+  },
+  {
+   "id": "oj-n4-vocab_reading-065",
+   "type": "KANJI_READING",
+   "prompt": "毎日の生活を《楽む》ことが大事です。",
+   "options": [
+    "だのしむ",
+    "たのしんむ",
+    "たのうしむ",
+    "たのしむ"
+   ],
+   "answer": 3,
+   "explanation": "「楽む」đọc là「たのしむ」. Nghĩa: to enjoy oneself."
+  },
+  {
+   "id": "oj-n4-vocab_reading-066",
+   "type": "KANJI_READING",
+   "prompt": "私の兄は《大学生》です。",
+   "options": [
+    "だいがくせ",
+    "だいがぐせい",
+    "だいがくせい",
+    "だいがくっせい"
+   ],
+   "answer": 2,
+   "explanation": "「大学生」đọc là「だいがくせい」. Nghĩa: university student."
+  },
+  {
+   "id": "oj-n4-vocab_reading-067",
+   "type": "KANJI_READING",
+   "prompt": "知らない道を《尋ねる》ときは、丁寧に話します。",
+   "options": [
+    "たすねる",
+    "たずうねる",
+    "だずねる",
+    "たずねる"
+   ],
+   "answer": 3,
+   "explanation": "「尋ねる」đọc là「たずねる」. Nghĩa: to ask."
+  },
+  {
+   "id": "oj-n4-vocab_reading-069-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "父は毎日車を《うんてん》して会社に行きます。",
+   "options": [
+    "運転",
+    "運天",
+    "芸点",
+    "運展"
+   ],
+   "answer": 0,
+   "explanation": "「うんてん」viết là「運転」. Nghĩa: to drive."
+  },
+  {
+   "id": "oj-n4-vocab_reading-070",
+   "type": "KANJI_READING",
+   "prompt": "《空港》まで友達を迎えに行きました。",
+   "options": [
+    "くうこ",
+    "くうごう",
+    "くうこう",
+    "くこう"
+   ],
+   "answer": 2,
+   "explanation": "「空港」đọc là「くうこう」. Nghĩa: airport."
+  },
+  {
+   "id": "oj-n4-vocab_reading-071",
+   "type": "KANJI_READING",
+   "prompt": "その知らせを彼に《伝える》つもりです。",
+   "options": [
+    "つったえる",
+    "づたえる",
+    "つたえる",
+    "つうたえる"
+   ],
+   "answer": 2,
+   "explanation": "「伝える」đọc là「つたえる」. Nghĩa: to report."
+  },
+  {
+   "id": "oj-n4-vocab_reading-072",
+   "type": "KANJI_READING",
+   "prompt": "《さ来月》から新しい仕事を始めます。",
+   "options": [
+    "さらいげつ",
+    "さらいげづ",
+    "さらいんげつ",
+    "ざらいげつ"
+   ],
+   "answer": 0,
+   "explanation": "「さ来月」đọc là「さらいげつ」. Nghĩa: the month after next."
+  },
+  {
+   "id": "oj-n4-vocab_reading-073-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "私の《ちゅうがっこう》は駅の近くにあります。",
+   "options": [
+    "中額校",
+    "忠学公",
+    "中学校",
+    "中学向"
+   ],
+   "answer": 2,
+   "explanation": "「ちゅうがっこう」viết là「中学校」. Nghĩa: junior high school,middle school."
+  },
+  {
+   "id": "oj-n4-vocab_reading-074",
+   "type": "KANJI_READING",
+   "prompt": "来週のキャンプが《楽しみ》です。",
+   "options": [
+    "たのじみ",
+    "たのしんみ",
+    "たのしみ",
+    "たのうしみ"
+   ],
+   "answer": 2,
+   "explanation": "「楽しみ」đọc là「たのしみ」. Nghĩa: joy."
+  },
+  {
+   "id": "oj-n4-vocab_reading-076",
+   "type": "KANJI_READING",
+   "prompt": "《注射》は少し痛かったです。",
+   "options": [
+    "ちゅうしゃ",
+    "ちゅうしや",
+    "ちゅしゃ",
+    "ぢゅうしゃ"
+   ],
+   "answer": 0,
+   "explanation": "「注射」đọc là「ちゅうしゃ」. Nghĩa: injection."
+  },
+  {
+   "id": "oj-n4-vocab_reading-078",
+   "type": "KANJI_READING",
+   "prompt": "今日の《講義》はとても難しかったです。",
+   "options": [
+    "こうき",
+    "こううぎ",
+    "こうぎ",
+    "こぎ"
+   ],
+   "answer": 2,
+   "explanation": "「講義」đọc là「こうぎ」. Nghĩa: lecture."
+  },
+  {
+   "id": "oj-n4-vocab_reading-080",
+   "type": "KANJI_READING",
+   "prompt": "《祖母》は毎朝公園を散歩します。",
+   "options": [
+    "そぼ",
+    "そほ",
+    "そぼう",
+    "ぞぼ"
+   ],
+   "answer": 0,
+   "explanation": "「祖母」đọc là「そぼ」. Nghĩa: grandmother."
+  },
+  {
+   "id": "oj-n4-vocab_reading-082",
+   "type": "KANJI_READING",
+   "prompt": "古い電球を新しいものに《取り替える》つもりです。",
+   "options": [
+    "とりかえる",
+    "とうりかえる",
+    "どりかえる",
+    "とりっかえる"
+   ],
+   "answer": 0,
+   "explanation": "「取り替える」đọc là「とりかえる」. Nghĩa: to exchange."
+  },
+  {
+   "id": "oj-n4-vocab_reading-087-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "明日、《はいしゃ》に行かなければなりません。",
+   "options": [
+    "歯医予",
+    "歯医左",
+    "歯委予",
+    "歯医者"
+   ],
+   "answer": 3,
+   "explanation": "「はいしゃ」viết là「歯医者」. Nghĩa: dentist."
+  },
+  {
+   "id": "oj-n4-vocab_reading-088",
+   "type": "KANJI_READING",
+   "prompt": "プレゼントをきれいに《包む》のが上手です。",
+   "options": [
+    "つづむ",
+    "つつむ",
+    "つつうむ",
+    "つっつむ"
+   ],
+   "answer": 1,
+   "explanation": "「包む」đọc là「つつむ」. Nghĩa: to wrap."
+  },
+  {
+   "id": "oj-n4-vocab_reading-089-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "明日は《つごう》が悪いので、別の日にしましょう。",
+   "options": [
+    "都豪",
+    "通剛",
+    "通合",
+    "都合"
+   ],
+   "answer": 3,
+   "explanation": "「つごう」viết là「都合」. Nghĩa: circumstances,convenience."
+  },
+  {
+   "id": "oj-n4-vocab_reading-090",
+   "type": "KANJI_READING",
+   "prompt": "これは《最も》大切な問題です。",
+   "options": [
+    "もとも",
+    "もっども",
+    "もっともう",
+    "もっとも"
+   ],
+   "answer": 3,
+   "explanation": "「最も」đọc là「もっとも」. Nghĩa: extremely."
+  },
+  {
+   "id": "oj-n4-vocab_reading-091-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "この会社では《きょうそう》が激しいです。",
+   "options": [
+    "共送",
+    "競争",
+    "経総",
+    "協相"
+   ],
+   "answer": 1,
+   "explanation": "「きょうそう」viết là「競争」. Nghĩa: competition."
+  },
+  {
+   "id": "oj-n4-vocab_reading-092",
+   "type": "KANJI_READING",
+   "prompt": "日本は多くの国と《貿易》をしています。",
+   "options": [
+    "ぼうえぎ",
+    "ほうえき",
+    "ぼえき",
+    "ぼうえき"
+   ],
+   "answer": 3,
+   "explanation": "「貿易」đọc là「ぼうえき」. Nghĩa: trade."
+  },
+  {
+   "id": "oj-n4-vocab_reading-094",
+   "type": "KANJI_READING",
+   "prompt": "今夜の《月》はとてもきれいです。",
+   "options": [
+    "つうき",
+    "つき",
+    "つぎ",
+    "つっき"
+   ],
+   "answer": 1,
+   "explanation": "「月」đọc là「つき」. Nghĩa: moon."
+  },
+  {
+   "id": "oj-n4-vocab_reading-095-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "《こんど》の日曜日に映画を見に行きませんか。",
+   "options": [
+    "近奴",
+    "金度",
+    "近度",
+    "今度"
+   ],
+   "answer": 3,
+   "explanation": "「こんど」viết là「今度」. Nghĩa: now,next time."
+  },
+  {
+   "id": "oj-n4-vocab_reading-096",
+   "type": "KANJI_READING",
+   "prompt": "日本の《文化》についてもっと知りたいです。",
+   "options": [
+    "ぶうんか",
+    "ふんか",
+    "ぶんか",
+    "ぶんが"
+   ],
+   "answer": 2,
+   "explanation": "「文化」đọc là「ぶんか」. Nghĩa: culture."
+  },
+  {
+   "id": "oj-n4-vocab_reading-097-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "私《いがい》に誰もそのことを知らない。",
+   "options": [
+    "位外",
+    "意害",
+    "以外",
+    "移外"
+   ],
+   "answer": 2,
+   "explanation": "「いがい」viết là「以外」. Nghĩa: with the exception of."
+  },
+  {
+   "id": "oj-n4-vocab_reading-098",
+   "type": "KANJI_READING",
+   "prompt": "日が《暮れる》前に家に帰りたいです。",
+   "options": [
+    "くうれる",
+    "くれんる",
+    "くれる",
+    "ぐれる"
+   ],
+   "answer": 2,
+   "explanation": "「暮れる」đọc là「くれる」. Nghĩa: to get dark,to come to an end."
+  },
+  {
+   "id": "oj-n4-vocab_reading-100",
+   "type": "KANJI_READING",
+   "prompt": "旅行の《支度》はもう済みました。",
+   "options": [
+    "しだく",
+    "したく",
+    "しったく",
+    "じたく"
+   ],
+   "answer": 1,
+   "explanation": "「支度」đọc là「したく」. Nghĩa: to prepare."
+  },
+  {
+   "id": "oj-n4-vocab_reading-101-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "テストで《しっぱい》してしまって悲しいです。",
+   "options": [
+    "実配",
+    "質廃",
+    "失敗",
+    "失配"
+   ],
+   "answer": 2,
+   "explanation": "「しっぱい」viết là「失敗」. Nghĩa: failure,mistake."
+  },
+  {
+   "id": "oj-n4-vocab_reading-102",
+   "type": "KANJI_READING",
+   "prompt": "《校長》先生の話は長くて眠くなります。",
+   "options": [
+    "こううちょう",
+    "こうちよう",
+    "こちょう",
+    "こうちょう"
+   ],
+   "answer": 3,
+   "explanation": "「校長」đọc là「こうちょう」. Nghĩa: headmaster."
+  },
+  {
+   "id": "oj-n4-vocab_reading-103",
+   "type": "KANJI_READING",
+   "prompt": "時間が《過ぎる》のは早いですね。",
+   "options": [
+    "すぎる",
+    "ずぎる",
+    "すうぎる",
+    "すきる"
+   ],
+   "answer": 0,
+   "explanation": "「過ぎる」đọc là「すぎる」. Nghĩa: to exceed."
+  },
+  {
+   "id": "oj-n4-vocab_reading-104",
+   "type": "KANJI_READING",
+   "prompt": "駅でタクシーを《捕まえる》ことができた。",
+   "options": [
+    "つうかまえる",
+    "づかまえる",
+    "つっかまえる",
+    "つかまえる"
+   ],
+   "answer": 3,
+   "explanation": "「捕まえる」đọc là「つかまえる」. Nghĩa: to seize."
+  },
+  {
+   "id": "oj-n4-vocab_reading-105-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "三日《いない》にレポートを出してください。",
+   "options": [
+    "以奈",
+    "以内",
+    "以泥",
+    "委奈"
+   ],
+   "answer": 1,
+   "explanation": "「いない」viết là「以内」. Nghĩa: within."
+  },
+  {
+   "id": "oj-n4-vocab_reading-107-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "昨夜、《じしん》があってびっくりしました。",
+   "options": [
+    "地震",
+    "自心",
+    "持信",
+    "時真"
+   ],
+   "answer": 0,
+   "explanation": "「じしん」viết là「地震」. Nghĩa: earthquake."
+  },
+  {
+   "id": "oj-n4-vocab_reading-108",
+   "type": "KANJI_READING",
+   "prompt": "《今夜》は早く寝ようと思います。",
+   "options": [
+    "ごんや",
+    "こうんや",
+    "こや",
+    "こんや"
+   ],
+   "answer": 3,
+   "explanation": "「今夜」đọc là「こんや」. Nghĩa: tonight."
+  },
+  {
+   "id": "oj-n4-vocab_reading-109",
+   "type": "KANJI_READING",
+   "prompt": "田舎で《星》がとてもきれいに見えました。",
+   "options": [
+    "ぼし",
+    "ほうし",
+    "ほし",
+    "ほじ"
+   ],
+   "answer": 2,
+   "explanation": "「星」đọc là「ほし」. Nghĩa: star."
+  },
+  {
+   "id": "oj-n4-vocab_reading-110",
+   "type": "KANJI_READING",
+   "prompt": "四月に娘が小学校に《入学》しました。",
+   "options": [
+    "にゆうがく",
+    "にゅうがく",
+    "にゅうがぐ",
+    "にゅがく"
+   ],
+   "answer": 1,
+   "explanation": "「入学」đọc là「にゅうがく」. Nghĩa: to enter school or university."
+  },
+  {
+   "id": "oj-n4-vocab_reading-111-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "駅の周りを《けんぶつ》した。",
+   "options": [
+    "県仏",
+    "見物",
+    "権仏",
+    "建物"
+   ],
+   "answer": 1,
+   "explanation": "「けんぶつ」viết là「見物」. Nghĩa: sightseeing."
+  },
+  {
+   "id": "oj-n4-vocab_reading-112",
+   "type": "KANJI_READING",
+   "prompt": "あの《男性》は先生です。",
+   "options": [
+    "だんせ",
+    "だんせい",
+    "たんせい",
+    "だんぜい"
+   ],
+   "answer": 1,
+   "explanation": "「男性」đọc là「だんせい」. Nghĩa: male."
+  },
+  {
+   "id": "oj-n4-vocab_reading-113",
+   "type": "KANJI_READING",
+   "prompt": "《急》に雨が降ってきた。",
+   "options": [
+    "きゅう",
+    "きゅ",
+    "きゆう",
+    "ぎゅう"
+   ],
+   "answer": 0,
+   "explanation": "「急」đọc là「きゅう」. Nghĩa: urgent, steep."
+  },
+  {
+   "id": "oj-n4-vocab_reading-114",
+   "type": "KANJI_READING",
+   "prompt": "友達と《踊り》を練習した。",
+   "options": [
+    "おうどり",
+    "おどり",
+    "おどんり",
+    "おとり"
+   ],
+   "answer": 1,
+   "explanation": "「踊り」đọc là「おどり」. Nghĩa: a dance."
+  },
+  {
+   "id": "oj-n4-vocab_reading-115-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "子供に《じゆう》な時間が大事だ。",
+   "options": [
+    "自優",
+    "自由",
+    "二由",
+    "地由"
+   ],
+   "answer": 1,
+   "explanation": "「じゆう」viết là「自由」. Nghĩa: freedom."
+  },
+  {
+   "id": "oj-n4-vocab_reading-116",
+   "type": "KANJI_READING",
+   "prompt": "テストの結果が《心配》だ。",
+   "options": [
+    "しんぱんい",
+    "じんぱい",
+    "しんぱい",
+    "しんはい"
+   ],
+   "answer": 2,
+   "explanation": "「心配」đọc là「しんぱい」. Nghĩa: to worry."
+  },
+  {
+   "id": "oj-n4-vocab_reading-117-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "《きゅうこう》に乗れば早く着く。",
+   "options": [
+    "急行",
+    "球交",
+    "求高",
+    "求行"
+   ],
+   "answer": 0,
+   "explanation": "「きゅうこう」viết là「急行」. Nghĩa: speedy, express."
+  },
+  {
+   "id": "oj-n4-vocab_reading-118",
+   "type": "KANJI_READING",
+   "prompt": "冷蔵庫に《葡萄》がある。",
+   "options": [
+    "ぶどんう",
+    "ふどう",
+    "ぶうどう",
+    "ぶどう"
+   ],
+   "answer": 3,
+   "explanation": "「葡萄」đọc là「ぶどう」. Nghĩa: grapes."
+  },
+  {
+   "id": "oj-n4-vocab_reading-119",
+   "type": "KANJI_READING",
+   "prompt": "《僕》が作った料理を食べてください。",
+   "options": [
+    "ぼうく",
+    "ぼく",
+    "ぼぐ",
+    "ほく"
+   ],
+   "answer": 1,
+   "explanation": "「僕」đọc là「ぼく」. Nghĩa: I."
+  },
+  {
+   "id": "oj-n4-vocab_reading-120",
+   "type": "KANJI_READING",
+   "prompt": "彼は新しい《技術》を勉強している。",
+   "options": [
+    "ぎじゅつ",
+    "ぎじゅうつ",
+    "ぎしゅつ",
+    "ぎじゅっつ"
+   ],
+   "answer": 0,
+   "explanation": "「技術」đọc là「ぎじゅつ」. Nghĩa: art,technology,skill."
+  },
+  {
+   "id": "oj-n4-vocab_reading-121-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "《たいふう》が来るから、早く帰ろう。",
+   "options": [
+    "態風",
+    "台封",
+    "台風",
+    "体夫"
+   ],
+   "answer": 2,
+   "explanation": "「たいふう」viết là「台風」. Nghĩa: typhoon."
+  },
+  {
+   "id": "oj-n4-vocab_reading-122",
+   "type": "KANJI_READING",
+   "prompt": "毎朝、《鏡》を見て髪を整える。",
+   "options": [
+    "かがみ",
+    "かがんみ",
+    "ががみ",
+    "かかみ"
+   ],
+   "answer": 0,
+   "explanation": "「鏡」đọc là「かがみ」. Nghĩa: mirror."
+  },
+  {
+   "id": "oj-n4-vocab_reading-124",
+   "type": "KANJI_READING",
+   "prompt": "妹は来年《高校》に入る。",
+   "options": [
+    "こうこんう",
+    "ここう",
+    "ごうこう",
+    "こうこう"
+   ],
+   "answer": 3,
+   "explanation": "「高校」đọc là「こうこう」. Nghĩa: high school."
+  },
+  {
+   "id": "oj-n4-vocab_reading-125-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "この町の《じんこう》は増えている。",
+   "options": [
+    "人口",
+    "臣口",
+    "尽後",
+    "仁公"
+   ],
+   "answer": 0,
+   "explanation": "「じんこう」viết là「人口」. Nghĩa: population."
+  },
+  {
+   "id": "oj-n4-vocab_reading-126",
+   "type": "KANJI_READING",
+   "prompt": "祖母が《着物》を貸してくれた。",
+   "options": [
+    "きもんの",
+    "ぎもの",
+    "きもの",
+    "きものう"
+   ],
+   "answer": 2,
+   "explanation": "「着物」đọc là「きもの」. Nghĩa: kimono."
+  },
+  {
+   "id": "oj-n4-vocab_reading-127-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "《いちど》でいいから海外に行きたい。",
+   "options": [
+    "一努",
+    "壱土",
+    "壱度",
+    "一度"
+   ],
+   "answer": 3,
+   "explanation": "「いちど」viết là「一度」. Nghĩa: once."
+  },
+  {
+   "id": "oj-n4-vocab_reading-128",
+   "type": "KANJI_READING",
+   "prompt": "新しい《法律》が四月から始まる。",
+   "options": [
+    "ほりつ",
+    "ほううりつ",
+    "ほうりっつ",
+    "ほうりつ"
+   ],
+   "answer": 3,
+   "explanation": "「法律」đọc là「ほうりつ」. Nghĩa: law."
+  },
+  {
+   "id": "oj-n4-vocab_reading-129-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "祖父は《でんぽう》で知らせた。",
+   "options": [
+    "田方",
+    "電報",
+    "典訪",
+    "典方"
+   ],
+   "answer": 1,
+   "explanation": "「でんぽう」viết là「電報」. Nghĩa: telegram."
+  },
+  {
+   "id": "oj-n4-vocab_reading-131-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "この《しょうせつ》はとても面白い。",
+   "options": [
+    "小説",
+    "小設",
+    "小切",
+    "政説"
+   ],
+   "answer": 0,
+   "explanation": "「しょうせつ」viết là「小説」. Nghĩa: novel."
+  },
+  {
+   "id": "oj-n4-vocab_reading-132",
+   "type": "KANJI_READING",
+   "prompt": "《教育》は子供の未来のために大切だ。",
+   "options": [
+    "きよういく",
+    "きょういっく",
+    "きょいく",
+    "きょういく"
+   ],
+   "answer": 3,
+   "explanation": "「教育」đọc là「きょういく」. Nghĩa: education."
+  },
+  {
+   "id": "oj-n4-vocab_reading-133",
+   "type": "KANJI_READING",
+   "prompt": "《力》を入れて箱を開けた。",
+   "options": [
+    "ちがら",
+    "ちっから",
+    "ぢから",
+    "ちから"
+   ],
+   "answer": 3,
+   "explanation": "「力」đọc là「ちから」. Nghĩa: strength,power."
+  },
+  {
+   "id": "oj-n4-vocab_reading-135",
+   "type": "KANJI_READING",
+   "prompt": "《昼間》は暑いけど、夜は涼しい。",
+   "options": [
+    "ひるうま",
+    "ひるま",
+    "びるま",
+    "ひるんま"
+   ],
+   "answer": 1,
+   "explanation": "「昼間」đọc là「ひるま」. Nghĩa: daytime,during the day."
+  },
+  {
+   "id": "oj-n4-vocab_reading-136",
+   "type": "KANJI_READING",
+   "prompt": "《適当》な服を選んで着て行こう。",
+   "options": [
+    "てきとう",
+    "できとう",
+    "てきっとう",
+    "てきと"
+   ],
+   "answer": 0,
+   "explanation": "「適当」đọc là「てきとう」. Nghĩa: suitability."
+  },
+  {
+   "id": "oj-n4-vocab_reading-137-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "新しい《じゅうしょ》を友達に教えた。",
+   "options": [
+    "住書",
+    "住所",
+    "住初",
+    "重野"
+   ],
+   "answer": 1,
+   "explanation": "「じゅうしょ」viết là「住所」. Nghĩa: an address,a residence."
+  },
+  {
+   "id": "oj-n4-vocab_reading-138",
+   "type": "KANJI_READING",
+   "prompt": "時間は《十分》あるから、急がなくていい。",
+   "options": [
+    "じゅぶん",
+    "じょうぶん",
+    "じゅうぶうん",
+    "じゅうぶん"
+   ],
+   "answer": 3,
+   "explanation": "「十分」đọc là「じゅうぶん」. Nghĩa: enough."
+  },
+  {
+   "id": "oj-n4-vocab_reading-139",
+   "type": "KANJI_READING",
+   "prompt": "太陽の《光》がまぶしい。",
+   "options": [
+    "ぴかり",
+    "ひっかり",
+    "ひかり",
+    "ひかんり"
+   ],
+   "answer": 2,
+   "explanation": "「光」đọc là「ひかり」. Nghĩa: light."
+  },
+  {
+   "id": "oj-n4-vocab_reading-140",
+   "type": "KANJI_READING",
+   "prompt": "人前で歌うのは《恥ずかしい》。",
+   "options": [
+    "はずうかしい",
+    "はずがしい",
+    "はずかしい",
+    "はずっかしい"
+   ],
+   "answer": 2,
+   "explanation": "「恥ずかしい」đọc là「はずかしい」. Nghĩa: embarrassed."
+  },
+  {
+   "id": "oj-n4-vocab_reading-141",
+   "type": "KANJI_READING",
+   "prompt": "答えを《間違える》ことがある。",
+   "options": [
+    "まちがんえる",
+    "まちんがえる",
+    "まちがえる",
+    "まちかえる"
+   ],
+   "answer": 2,
+   "explanation": "「間違える」đọc là「まちがえる」. Nghĩa: to make a mistake."
+  },
+  {
+   "id": "oj-n4-vocab_reading-142",
+   "type": "KANJI_READING",
+   "prompt": "友達に《贈り物》をもらった。",
+   "options": [
+    "おくりものう",
+    "おくりもの",
+    "おくりんもの",
+    "おぐりもの"
+   ],
+   "answer": 1,
+   "explanation": "「贈り物」đọc là「おくりもの」. Nghĩa: gift."
+  },
+  {
+   "id": "oj-n4-vocab_reading-143-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "《しょうらい》は医者になりたい。",
+   "options": [
+    "政塁",
+    "将塁",
+    "将来",
+    "小雷"
+   ],
+   "answer": 2,
+   "explanation": "「しょうらい」viết là「将来」. Nghĩa: future,prospects."
+  },
+  {
+   "id": "oj-n4-vocab_reading-144",
+   "type": "KANJI_READING",
+   "prompt": "先生に本を《差し上げる》。",
+   "options": [
+    "さしあげる",
+    "ざしあげる",
+    "さしんあげる",
+    "さしあんげる"
+   ],
+   "answer": 0,
+   "explanation": "「差し上げる」đọc là「さしあげる」."
+  },
+  {
+   "id": "oj-n4-vocab_reading-146",
+   "type": "KANJI_READING",
+   "prompt": "来週、町の《お祭り》がある。",
+   "options": [
+    "おまんつり",
+    "おうまつり",
+    "おまづり",
+    "おまつり"
+   ],
+   "answer": 3,
+   "explanation": "「お祭り」đọc là「おまつり」. Nghĩa: festival."
+  },
+  {
+   "id": "oj-n4-vocab_reading-147-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "辞書が《ひつよう》なら、貸してあげる。",
+   "options": [
+    "必容",
+    "払用",
+    "筆応",
+    "必要"
+   ],
+   "answer": 3,
+   "explanation": "「ひつよう」viết là「必要」. Nghĩa: necessary."
+  },
+  {
+   "id": "oj-n4-vocab_reading-148",
+   "type": "KANJI_READING",
+   "prompt": "《首》が痛いので、病院へ行った。",
+   "options": [
+    "くひ",
+    "くび",
+    "くうび",
+    "ぐび"
+   ],
+   "answer": 1,
+   "explanation": "「首」đọc là「くび」. Nghĩa: neck."
+  },
+  {
+   "id": "oj-n4-vocab_reading-150",
+   "type": "KANJI_READING",
+   "prompt": "冬は《暖房》をつけないと寒い。",
+   "options": [
+    "だんほう",
+    "だんぼ",
+    "たんぼう",
+    "だんぼう"
+   ],
+   "answer": 3,
+   "explanation": "「暖房」đọc là「だんぼう」. Nghĩa: heating."
+  },
+  {
+   "id": "oj-n4-vocab_reading-152",
+   "type": "KANJI_READING",
+   "prompt": "父は私の意見に《反対》した。",
+   "options": [
+    "はんたい",
+    "ぱんたい",
+    "はんたんい",
+    "ばんたい"
+   ],
+   "answer": 0,
+   "explanation": "「反対」đọc là「はんたい」. Nghĩa: opposition."
+  },
+  {
+   "id": "oj-n4-vocab_reading-153",
+   "type": "KANJI_READING",
+   "prompt": "夜空に星が《光る》。",
+   "options": [
+    "ひがる",
+    "ぴかる",
+    "ひかる",
+    "ひっかる"
+   ],
+   "answer": 2,
+   "explanation": "「光る」đọc là「ひかる」. Nghĩa: to shine,to glitter."
+  },
+  {
+   "id": "oj-n4-vocab_reading-154",
+   "type": "KANJI_READING",
+   "prompt": "運動会に家族が《集る》。",
+   "options": [
+    "あつんまる",
+    "あづまる",
+    "あつうまる",
+    "あつまる"
+   ],
+   "answer": 3,
+   "explanation": "「集る」đọc là「あつまる」. Nghĩa: to gather."
+  },
+  {
+   "id": "oj-n4-vocab_reading-155",
+   "type": "KANJI_READING",
+   "prompt": "友達が引っ越して《悲しい》。",
+   "options": [
+    "かなんしい",
+    "かなじい",
+    "がなしい",
+    "かなしい"
+   ],
+   "answer": 3,
+   "explanation": "「悲しい」đọc là「かなしい」. Nghĩa: sad."
+  },
+  {
+   "id": "oj-n4-vocab_reading-156",
+   "type": "KANJI_READING",
+   "prompt": "試合に負けて《残念》だった。",
+   "options": [
+    "ざねん",
+    "ざんね",
+    "さんねん",
+    "ざんねん"
+   ],
+   "answer": 3,
+   "explanation": "「残念」đọc là「ざんねん」. Nghĩa: disappointment."
+  },
+  {
+   "id": "oj-n4-vocab_reading-157",
+   "type": "KANJI_READING",
+   "prompt": "忘れ物が《見つかる》といいな。",
+   "options": [
+    "みつうかる",
+    "みつかる",
+    "みつっかる",
+    "みづかる"
+   ],
+   "answer": 1,
+   "explanation": "「見つかる」đọc là「みつかる」. Nghĩa: to be discovered."
+  },
+  {
+   "id": "oj-n4-vocab_reading-158",
+   "type": "KANJI_READING",
+   "prompt": "《天気予報》では明日は雨だ。",
+   "options": [
+    "てんきようほう",
+    "てんきよぽう",
+    "てんきよほう",
+    "でんきよほう"
+   ],
+   "answer": 2,
+   "explanation": "「天気予報」đọc là「てんきよほう」. Nghĩa: weather forecast."
+  },
+  {
+   "id": "oj-n4-vocab_reading-159",
+   "type": "KANJI_READING",
+   "prompt": "結果をメールで《知らせる》。",
+   "options": [
+    "しらぜる",
+    "しらせる",
+    "じらせる",
+    "しらせんる"
+   ],
+   "answer": 1,
+   "explanation": "「知らせる」đọc là「しらせる」. Nghĩa: to notify."
+  },
+  {
+   "id": "oj-n4-vocab_reading-163-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "《かない》は料理が上手だ。",
+   "options": [
+    "家内",
+    "過内",
+    "過泥",
+    "下内"
+   ],
+   "answer": 0,
+   "explanation": "「かない」viết là「家内」. Nghĩa: housewife."
+  },
+  {
+   "id": "oj-n4-vocab_reading-164",
+   "type": "KANJI_READING",
+   "prompt": "《昼休み》に友達と話した。",
+   "options": [
+    "ひるやすみ",
+    "ぴるやすみ",
+    "びるやすみ",
+    "ひるうやすみ"
+   ],
+   "answer": 0,
+   "explanation": "「昼休み」đọc là「ひるやすみ」. Nghĩa: noon break."
+  },
+  {
+   "id": "oj-n4-vocab_reading-165",
+   "type": "KANJI_READING",
+   "prompt": "仕事が順調に《進む》。",
+   "options": [
+    "すすうむ",
+    "ずすむ",
+    "すすむ",
+    "すっすむ"
+   ],
+   "answer": 2,
+   "explanation": "「進む」đọc là「すすむ」. Nghĩa: to make progress."
+  },
+  {
+   "id": "oj-n4-vocab_reading-166",
+   "type": "KANJI_READING",
+   "prompt": "子供たちは《科学》の実験が好きだ。",
+   "options": [
+    "ががく",
+    "かかく",
+    "かがく",
+    "かがんく"
+   ],
+   "answer": 2,
+   "explanation": "「科学」đọc là「かがく」. Nghĩa: science."
+  },
+  {
+   "id": "oj-n4-vocab_reading-167-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "《ひこうじょう》までタクシーで行った。",
+   "options": [
+    "飛行場",
+    "被行場",
+    "飛行常",
+    "飛後場"
+   ],
+   "answer": 0,
+   "explanation": "「ひこうじょう」viết là「飛行場」. Nghĩa: airport."
+  },
+  {
+   "id": "oj-n4-vocab_reading-168",
+   "type": "KANJI_READING",
+   "prompt": "犬を《連れる》て散歩に行く。",
+   "options": [
+    "つれる",
+    "つうれる",
+    "つれんる",
+    "づれる"
+   ],
+   "answer": 0,
+   "explanation": "「連れる」đọc là「つれる」. Nghĩa: to lead."
+  },
+  {
+   "id": "oj-n4-vocab_reading-169-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "彼は《しんぶんしゃ》で働いている。",
+   "options": [
+    "新聞射",
+    "進聞写",
+    "新蚊社",
+    "新聞社"
+   ],
+   "answer": 3,
+   "explanation": "「しんぶんしゃ」viết là「新聞社」. Nghĩa: newspaper company."
+  },
+  {
+   "id": "oj-n4-vocab_reading-170",
+   "type": "KANJI_READING",
+   "prompt": "店にはいろいろな《品物》がある。",
+   "options": [
+    "しなもうの",
+    "じなもの",
+    "しなもの",
+    "しなものう"
+   ],
+   "answer": 2,
+   "explanation": "「品物」đọc là「しなもの」. Nghĩa: goods."
+  },
+  {
+   "id": "oj-n4-vocab_reading-172",
+   "type": "KANJI_READING",
+   "prompt": "《食事》の前に手を洗おう。",
+   "options": [
+    "しょうくじ",
+    "しょくし",
+    "しょっくじ",
+    "しょくじ"
+   ],
+   "answer": 3,
+   "explanation": "「食事」đọc là「しょくじ」. Nghĩa: to have a meal."
+  },
+  {
+   "id": "oj-n4-vocab_reading-174",
+   "type": "KANJI_READING",
+   "prompt": "一人でいると《寂しい》。",
+   "options": [
+    "さびんしい",
+    "さびしい",
+    "さひしい",
+    "さびっしい"
+   ],
+   "answer": 1,
+   "explanation": "「寂しい」đọc là「さびしい」. Nghĩa: lonely."
+  },
+  {
+   "id": "oj-n4-vocab_reading-175-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "社長は《じむしょ》にいらっしゃる。",
+   "options": [
+    "二無所",
+    "事務所",
+    "治務所",
+    "事務処"
+   ],
+   "answer": 1,
+   "explanation": "「じむしょ」viết là「事務所」. Nghĩa: office."
+  },
+  {
+   "id": "oj-n4-vocab_reading-177-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "今日は体の《ぐあい》が悪い。",
+   "options": [
+    "惧合",
+    "求合",
+    "臼合",
+    "具合"
+   ],
+   "answer": 3,
+   "explanation": "「ぐあい」viết là「具合」. Nghĩa: condition,health."
+  },
+  {
+   "id": "oj-n4-vocab_reading-178",
+   "type": "KANJI_READING",
+   "prompt": "電車に遅れそうなので《急ぐ》。",
+   "options": [
+    "いそぐ",
+    "いそうぐ",
+    "いっそぐ",
+    "いぞぐ"
+   ],
+   "answer": 0,
+   "explanation": "「急ぐ」đọc là「いそぐ」. Nghĩa: to hurry."
+  },
+  {
+   "id": "oj-n4-vocab_reading-179",
+   "type": "KANJI_READING",
+   "prompt": "コップを《落す》て割ってしまった。",
+   "options": [
+    "おとうす",
+    "おとす",
+    "おとんす",
+    "おとず"
+   ],
+   "answer": 1,
+   "explanation": "「落す」đọc là「おとす」. Nghĩa: to drop."
+  },
+  {
+   "id": "oj-n4-vocab_reading-180",
+   "type": "KANJI_READING",
+   "prompt": "夜の暗い道は《怖い》。",
+   "options": [
+    "こわい",
+    "こうわい",
+    "こわんい",
+    "ごわい"
+   ],
+   "answer": 0,
+   "explanation": "「怖い」đọc là「こわい」. Nghĩa: frightening."
+  },
+  {
+   "id": "oj-n4-vocab_reading-181-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "日本には四つの《きせつ》がある。",
+   "options": [
+    "基設",
+    "気雪",
+    "季節",
+    "記説"
+   ],
+   "answer": 2,
+   "explanation": "「きせつ」viết là「季節」. Nghĩa: season."
+  },
+  {
+   "id": "oj-n4-vocab_reading-182",
+   "type": "KANJI_READING",
+   "prompt": "この《糸》は細くて切れやすい。",
+   "options": [
+    "いど",
+    "いとう",
+    "いっと",
+    "いと"
+   ],
+   "answer": 3,
+   "explanation": "「糸」đọc là「いと」. Nghĩa: thread."
+  },
+  {
+   "id": "oj-n4-vocab_reading-183-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "あの二人は良い《かんけい》だ。",
+   "options": [
+    "関係",
+    "感係",
+    "関京",
+    "関経"
+   ],
+   "answer": 0,
+   "explanation": "「かんけい」viết là「関係」. Nghĩa: relationship."
+  },
+  {
+   "id": "oj-n4-vocab_reading-186",
+   "type": "KANJI_READING",
+   "prompt": "犬は十五年《生きる》。",
+   "options": [
+    "いきる",
+    "いっきる",
+    "いぎる",
+    "いきんる"
+   ],
+   "answer": 0,
+   "explanation": "「生きる」đọc là「いきる」. Nghĩa: to live."
+  },
+  {
+   "id": "oj-n4-vocab_reading-187-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "日本語の《ぶんぽう》は難しい。",
+   "options": [
+    "蚊並",
+    "文法",
+    "蚊方",
+    "文報"
+   ],
+   "answer": 1,
+   "explanation": "「ぶんぽう」viết là「文法」. Nghĩa: grammar."
+  },
+  {
+   "id": "oj-n4-vocab_reading-188",
+   "type": "KANJI_READING",
+   "prompt": "部屋の《真ん中》に机を置いた。",
+   "options": [
+    "まんなが",
+    "まんなんか",
+    "まなか",
+    "まんなか"
+   ],
+   "answer": 3,
+   "explanation": "「真ん中」đọc là「まんなか」. Nghĩa: middle."
+  },
+  {
+   "id": "oj-n4-vocab_reading-189",
+   "type": "KANJI_READING",
+   "prompt": "机の《引き出し》に手紙がある。",
+   "options": [
+    "ひきだし",
+    "ひっきだし",
+    "びきだし",
+    "ひぎだし"
+   ],
+   "answer": 0,
+   "explanation": "「引き出し」đọc là「ひきだし」. Nghĩa: drawer,drawing out."
+  },
+  {
+   "id": "oj-n4-vocab_reading-190",
+   "type": "KANJI_READING",
+   "prompt": "ホテルに《泊まる》予定だ。",
+   "options": [
+    "とまる",
+    "とうまる",
+    "とまんる",
+    "どまる"
+   ],
+   "answer": 0,
+   "explanation": "「泊まる」đọc là「とまる」. Nghĩa: to lodge at."
+  },
+  {
+   "id": "oj-n4-vocab_reading-193",
+   "type": "KANJI_READING",
+   "prompt": "あの先生は《厳しい》ことで有名だ。",
+   "options": [
+    "きびしい",
+    "きびしんい",
+    "ぎびしい",
+    "きびっしい"
+   ],
+   "answer": 0,
+   "explanation": "「厳しい」đọc là「きびしい」. Nghĩa: strict."
+  },
+  {
+   "id": "oj-n4-vocab_reading-195-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "これは私にとって《だいじ》な本だ。",
+   "options": [
+    "大地",
+    "大時",
+    "大事",
+    "題事"
+   ],
+   "answer": 2,
+   "explanation": "「だいじ」viết là「大事」. Nghĩa: important,valuable,serious matter."
+  },
+  {
+   "id": "oj-n4-vocab_reading-196",
+   "type": "KANJI_READING",
+   "prompt": "《課長》は会議に出ている。",
+   "options": [
+    "かちょ",
+    "かちよう",
+    "かぢょう",
+    "かちょう"
+   ],
+   "answer": 3,
+   "explanation": "「課長」đọc là「かちょう」. Nghĩa: section manager."
+  },
+  {
+   "id": "oj-n4-vocab_reading-197-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "この料理は《かんたん》に作れる。",
+   "options": [
+    "間担",
+    "官担",
+    "簡単",
+    "官単"
+   ],
+   "answer": 2,
+   "explanation": "「かんたん」viết là「簡単」. Nghĩa: simple."
+  },
+  {
+   "id": "oj-n4-vocab_reading-198",
+   "type": "KANJI_READING",
+   "prompt": "教授はいつも《研究室》にいる。",
+   "options": [
+    "けんきゅしつ",
+    "けんきゅうしつ",
+    "けんきょうしつ",
+    "けんきゅうじつ"
+   ],
+   "answer": 1,
+   "explanation": "「研究室」đọc là「けんきゅうしつ」. Nghĩa: study room,laboratory."
+  },
+  {
+   "id": "oj-n4-vocab_reading-199-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "友達にすぐ《へんじ》を書いた。",
+   "options": [
+    "返事",
+    "編自",
+    "変治",
+    "変持"
+   ],
+   "answer": 0,
+   "explanation": "「へんじ」viết là「返事」. Nghĩa: reply."
+  },
+  {
+   "id": "oj-n4-vocab_reading-200",
+   "type": "KANJI_READING",
+   "prompt": "新しい企画書を《拝見》しました。",
+   "options": [
+    "ばいけん",
+    "はいげん",
+    "はいけん",
+    "はいっけん"
+   ],
+   "answer": 2,
+   "explanation": "「拝見」đọc là「はいけん」."
+  },
+  {
+   "id": "oj-n4-vocab_reading-201-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "この言葉の《はつおん》は難しい。",
+   "options": [
+    "髪恩",
+    "抜音",
+    "発音",
+    "髪音"
+   ],
+   "answer": 2,
+   "explanation": "「はつおん」viết là「発音」. Nghĩa: pronunciation."
+  },
+  {
+   "id": "oj-n4-vocab_reading-202",
+   "type": "KANJI_READING",
+   "prompt": "私が《申す》ことをよく聞いてください。",
+   "options": [
+    "もす",
+    "もうす",
+    "もうんす",
+    "もうず"
+   ],
+   "answer": 1,
+   "explanation": "「申す」đọc là「もうす」."
+  },
+  {
+   "id": "oj-n4-vocab_reading-203-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "彼は《けんきゅう》に熱心だ。",
+   "options": [
+    "研求",
+    "権球",
+    "権究",
+    "研究"
+   ],
+   "answer": 3,
+   "explanation": "「けんきゅう」viết là「研究」. Nghĩa: research."
+  },
+  {
+   "id": "oj-n4-vocab_reading-204",
+   "type": "KANJI_READING",
+   "prompt": "すぐに家に《戻る》。",
+   "options": [
+    "もうどる",
+    "もどる",
+    "もとる",
+    "もどうる"
+   ],
+   "answer": 1,
+   "explanation": "「戻る」đọc là「もどる」. Nghĩa: to turn back."
+  },
+  {
+   "id": "oj-n4-vocab_reading-205-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "あなたの《いけん》を聞かせてください。",
+   "options": [
+    "委県",
+    "医検",
+    "意見",
+    "意県"
+   ],
+   "answer": 2,
+   "explanation": "「いけん」viết là「意見」. Nghĩa: opinion."
+  },
+  {
+   "id": "oj-n4-vocab_reading-207-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "この《どうぐ》の使い方を教えてください。",
+   "options": [
+    "道求",
+    "道具",
+    "道惧",
+    "導臼"
+   ],
+   "answer": 1,
+   "explanation": "「どうぐ」viết là「道具」. Nghĩa: tool,means."
+  },
+  {
+   "id": "oj-n4-vocab_reading-208",
+   "type": "KANJI_READING",
+   "prompt": "兄は《公務員》として働いている。",
+   "options": [
+    "こうむういん",
+    "ごうむいん",
+    "こむいん",
+    "こうむいん"
+   ],
+   "answer": 3,
+   "explanation": "「公務員」đọc là「こうむいん」. Nghĩa: government worker."
+  },
+  {
+   "id": "oj-n4-vocab_reading-209",
+   "type": "KANJI_READING",
+   "prompt": "兄弟で《喧嘩》をしてはいけない。",
+   "options": [
+    "げんか",
+    "けんが",
+    "けんか",
+    "けか"
+   ],
+   "answer": 2,
+   "explanation": "「喧嘩」đọc là「けんか」. Nghĩa: to quarrel."
+  },
+  {
+   "id": "oj-n4-vocab_reading-210",
+   "type": "KANJI_READING",
+   "prompt": "この地域では《工業》が盛んだ。",
+   "options": [
+    "こうぎょう",
+    "こぎょう",
+    "こうぎゅう",
+    "ごうぎょう"
+   ],
+   "answer": 0,
+   "explanation": "「工業」đọc là「こうぎょう」. Nghĩa: the manufacturing industry."
+  },
+  {
+   "id": "oj-n4-vocab_reading-214-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "この問題の解き《しかた》を教えてください。",
+   "options": [
+    "自方",
+    "仕方",
+    "市方",
+    "氏方"
+   ],
+   "answer": 1,
+   "explanation": "「しかた」viết là「仕方」. Nghĩa: method."
+  },
+  {
+   "id": "oj-n4-vocab_reading-215",
+   "type": "KANJI_READING",
+   "prompt": "母の《背中》を見ると、安心する。",
+   "options": [
+    "せなんか",
+    "ぜなか",
+    "せなが",
+    "せなか"
+   ],
+   "answer": 3,
+   "explanation": "「背中」đọc là「せなか」. Nghĩa: back of the body."
+  },
+  {
+   "id": "oj-n4-vocab_reading-217",
+   "type": "KANJI_READING",
+   "prompt": "この《番組》は毎週土曜日に放送している。",
+   "options": [
+    "はんぐみ",
+    "ばんぐみ",
+    "ばぐみ",
+    "ばんぐうみ"
+   ],
+   "answer": 1,
+   "explanation": "「番組」đọc là「ばんぐみ」. Nghĩa: television or radio program."
+  },
+  {
+   "id": "oj-n4-vocab_reading-218",
+   "type": "KANJI_READING",
+   "prompt": "大きな船が《港》に着いた。",
+   "options": [
+    "みなんと",
+    "みなとう",
+    "みなど",
+    "みなと"
+   ],
+   "answer": 3,
+   "explanation": "「港」đọc là「みなと」. Nghĩa: harbour."
+  },
+  {
+   "id": "oj-n4-vocab_reading-220",
+   "type": "KANJI_READING",
+   "prompt": "子供が廊下で《騒ぐ》ので、先生に怒られた。",
+   "options": [
+    "ざわぐ",
+    "さわぐ",
+    "さわく",
+    "さわんぐ"
+   ],
+   "answer": 1,
+   "explanation": "「騒ぐ」đọc là「さわぐ」. Nghĩa: to make noise,to be excited."
+  },
+  {
+   "id": "oj-n4-vocab_reading-221",
+   "type": "KANJI_READING",
+   "prompt": "田中さんは今日来る《筈》だ。",
+   "options": [
+    "はす",
+    "ばず",
+    "ぱず",
+    "はず"
+   ],
+   "answer": 3,
+   "explanation": "「筈」đọc là「はず」. Nghĩa: it should be so."
+  },
+  {
+   "id": "oj-n4-vocab_reading-223",
+   "type": "KANJI_READING",
+   "prompt": "来週、友達と《美術館》に行く。",
+   "options": [
+    "びじゆつかん",
+    "びじゅっつかん",
+    "びじゅつかん",
+    "びしゅつかん"
+   ],
+   "answer": 2,
+   "explanation": "「美術館」đọc là「びじゅつかん」. Nghĩa: art gallery."
+  },
+  {
+   "id": "oj-n4-vocab_reading-224",
+   "type": "KANJI_READING",
+   "prompt": "甘いものを食べすぎると《太る》。",
+   "options": [
+    "ふとうる",
+    "ぷとる",
+    "ふとる",
+    "ふっとる"
+   ],
+   "answer": 2,
+   "explanation": "「太る」đọc là「ふとる」. Nghĩa: to become fat."
+  },
+  {
+   "id": "oj-n4-vocab_reading-225",
+   "type": "KANJI_READING",
+   "prompt": "彼の話は全部《嘘》だった。",
+   "options": [
+    "うそ",
+    "うそう",
+    "ううそ",
+    "うぞ"
+   ],
+   "answer": 0,
+   "explanation": "「嘘」đọc là「うそ」. Nghĩa: a lie."
+  },
+  {
+   "id": "oj-n4-vocab_reading-227",
+   "type": "KANJI_READING",
+   "prompt": "この町の人口が《増える》一方だ。",
+   "options": [
+    "ふえんる",
+    "ふえる",
+    "ふうえる",
+    "ぶえる"
+   ],
+   "answer": 1,
+   "explanation": "「増える」đọc là「ふえる」. Nghĩa: to increase."
+  },
+  {
+   "id": "oj-n4-vocab_reading-228",
+   "type": "KANJI_READING",
+   "prompt": "これは《珍しい》花で、この山にしかない。",
+   "options": [
+    "めずらんしい",
+    "めずうらしい",
+    "めずらしい",
+    "めずらじい"
+   ],
+   "answer": 2,
+   "explanation": "「珍しい」đọc là「めずらしい」. Nghĩa: rare."
+  },
+  {
+   "id": "oj-n4-vocab_reading-229",
+   "type": "KANJI_READING",
+   "prompt": "《会議室》を予約したい。",
+   "options": [
+    "かいぎじつ",
+    "かいぎしつ",
+    "がいぎしつ",
+    "かいぎっしつ"
+   ],
+   "answer": 1,
+   "explanation": "「会議室」đọc là「かいぎしつ」. Nghĩa: meeting room."
+  },
+  {
+   "id": "oj-n4-vocab_reading-230",
+   "type": "KANJI_READING",
+   "prompt": "駅に《向かう》途中で友達に会った。",
+   "options": [
+    "むうかう",
+    "むかう",
+    "むっかう",
+    "むがう"
+   ],
+   "answer": 1,
+   "explanation": "「向かう」đọc là「むかう」. Nghĩa: to face."
+  },
+  {
+   "id": "oj-n4-vocab_reading-233",
+   "type": "KANJI_READING",
+   "prompt": "日本の部屋には《畳》が敷いてある。",
+   "options": [
+    "たたんみ",
+    "たたみ",
+    "だたみ",
+    "ただみ"
+   ],
+   "answer": 1,
+   "explanation": "「畳」đọc là「たたみ」. Nghĩa: Japanese straw mat."
+  },
+  {
+   "id": "oj-n4-vocab_reading-235",
+   "type": "KANJI_READING",
+   "prompt": "ご注文の内容を《承知》しました。",
+   "options": [
+    "しゅうち",
+    "しょうち",
+    "しょち",
+    "しょうぢ"
+   ],
+   "answer": 1,
+   "explanation": "「承知」đọc là「しょうち」. Nghĩa: to consent."
+  },
+  {
+   "id": "oj-n4-vocab_reading-238-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "《てんいん》に値段を聞いた。",
+   "options": [
+    "転員",
+    "点員",
+    "店員",
+    "店音"
+   ],
+   "answer": 2,
+   "explanation": "「てんいん」viết là「店員」. Nghĩa: shop assistant."
+  },
+  {
+   "id": "oj-n4-vocab_reading-239",
+   "type": "KANJI_READING",
+   "prompt": "あの白い《二階建て》の家が山田さんの家だ。",
+   "options": [
+    "にっかいだて",
+    "にかいだで",
+    "にかいたて",
+    "にかいだて"
+   ],
+   "answer": 3,
+   "explanation": "「二階建て」đọc là「にかいだて」. Nghĩa: two storied."
+  },
+  {
+   "id": "oj-n4-vocab_reading-241",
+   "type": "KANJI_READING",
+   "prompt": "このロボットは自分で《動く》ことができる。",
+   "options": [
+    "うごぐ",
+    "うごく",
+    "ううごく",
+    "うごうく"
+   ],
+   "answer": 1,
+   "explanation": "「動く」đọc là「うごく」. Nghĩa: to move."
+  },
+  {
+   "id": "oj-n4-vocab_reading-242",
+   "type": "KANJI_READING",
+   "prompt": "もう一度よく《考える》ことにした。",
+   "options": [
+    "かんがんえる",
+    "かんかえる",
+    "かがえる",
+    "かんがえる"
+   ],
+   "answer": 3,
+   "explanation": "「考える」đọc là「かんがえる」. Nghĩa: to consider."
+  },
+  {
+   "id": "oj-n4-vocab_reading-243",
+   "type": "KANJI_READING",
+   "prompt": "《試験》に合格できるように勉強している。",
+   "options": [
+    "しげん",
+    "しけ",
+    "しけん",
+    "しっけん"
+   ],
+   "answer": 2,
+   "explanation": "「試験」đọc là「しけん」. Nghĩa: examination."
+  },
+  {
+   "id": "oj-n4-vocab_reading-244",
+   "type": "KANJI_READING",
+   "prompt": "祖母は野菜を《育てる》のが上手だ。",
+   "options": [
+    "そたてる",
+    "ぞだてる",
+    "そうだてる",
+    "そだてる"
+   ],
+   "answer": 3,
+   "explanation": "「育てる」đọc là「そだてる」. Nghĩa: to rear,to bring up."
+  },
+  {
+   "id": "oj-n4-vocab_reading-245",
+   "type": "KANJI_READING",
+   "prompt": "旅行の計画を《立てる》のが好きだ。",
+   "options": [
+    "たてんる",
+    "たてる",
+    "だてる",
+    "たでる"
+   ],
+   "answer": 1,
+   "explanation": "「立てる」đọc là「たてる」. Nghĩa: to stand something up."
+  },
+  {
+   "id": "oj-n4-vocab_reading-246-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "この映画は《ぜんぜん》面白くなかった。",
+   "options": [
+    "禅全",
+    "全然",
+    "然然",
+    "全全"
+   ],
+   "answer": 1,
+   "explanation": "「ぜんぜん」viết là「全然」. Nghĩa: not entirely."
+  },
+  {
+   "id": "oj-n4-vocab_reading-247",
+   "type": "KANJI_READING",
+   "prompt": "来月、美術館で《展覧会》が開かれる。",
+   "options": [
+    "てんらかい",
+    "てらんかい",
+    "てんらんかい",
+    "てんらんがい"
+   ],
+   "answer": 2,
+   "explanation": "「展覧会」đọc là「てんらんかい」. Nghĩa: exhibition."
+  },
+  {
+   "id": "oj-n4-vocab_reading-248",
+   "type": "KANJI_READING",
+   "prompt": "段ボールを《踏む》とつぶれる。",
+   "options": [
+    "ふむ",
+    "ぷむ",
+    "ふうむ",
+    "ぶむ"
+   ],
+   "answer": 0,
+   "explanation": "「踏む」đọc là「ふむ」. Nghĩa: to step on."
+  },
+  {
+   "id": "oj-n4-vocab_reading-250",
+   "type": "KANJI_READING",
+   "prompt": "雨が《続く》と洗濯物が乾かない。",
+   "options": [
+    "つづぐ",
+    "つづうく",
+    "つづく",
+    "つづっく"
+   ],
+   "answer": 2,
+   "explanation": "「続く」đọc là「つづく」. Nghĩa: to be continued."
+  },
+  {
+   "id": "oj-n4-vocab_reading-252",
+   "type": "KANJI_READING",
+   "prompt": "《息子》は来年高校に入学する。",
+   "options": [
+    "むすこ",
+    "むすうこ",
+    "むすっこ",
+    "むずこ"
+   ],
+   "answer": 0,
+   "explanation": "「息子」đọc là「むすこ」."
+  },
+  {
+   "id": "oj-n4-vocab_reading-254-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "友達からパーティーに《しょうたい》された。",
+   "options": [
+    "性待",
+    "招台",
+    "招待",
+    "相代"
+   ],
+   "answer": 2,
+   "explanation": "「しょうたい」viết là「招待」. Nghĩa: to invite."
+  },
+  {
+   "id": "oj-n4-vocab_reading-255",
+   "type": "KANJI_READING",
+   "prompt": "カーテンを《下げる》と部屋が明るくなる。",
+   "options": [
+    "さげる",
+    "さける",
+    "ざげる",
+    "さげんる"
+   ],
+   "answer": 0,
+   "explanation": "「下げる」đọc là「さげる」. Nghĩa: to hang,to lower,to move back."
+  },
+  {
+   "id": "oj-n4-vocab_reading-256",
+   "type": "KANJI_READING",
+   "prompt": "このレストランは《客》が多い。",
+   "options": [
+    "ぎゃく",
+    "きゃぐ",
+    "きやく",
+    "きゃく"
+   ],
+   "answer": 3,
+   "explanation": "「客」đọc là「きゃく」. Nghĩa: guest,customer."
+  },
+  {
+   "id": "oj-n4-vocab_reading-257",
+   "type": "KANJI_READING",
+   "prompt": "《講堂》でコンサートがある。",
+   "options": [
+    "こどう",
+    "こうとう",
+    "こうどう",
+    "ごうどう"
+   ],
+   "answer": 2,
+   "explanation": "「講堂」đọc là「こうどう」. Nghĩa: auditorium."
+  },
+  {
+   "id": "oj-n4-vocab_reading-258-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "この文章を日本語に《ほんやく》してください。",
+   "options": [
+    "反訳",
+    "品益",
+    "奔訳",
+    "翻訳"
+   ],
+   "answer": 3,
+   "explanation": "「ほんやく」viết là「翻訳」. Nghĩa: translation."
+  },
+  {
+   "id": "oj-n4-vocab_reading-261",
+   "type": "KANJI_READING",
+   "prompt": "今日は《気分》がいいので散歩に行く。",
+   "options": [
+    "きぶうん",
+    "きぶ",
+    "ぎぶん",
+    "きぶん"
+   ],
+   "answer": 3,
+   "explanation": "「気分」đọc là「きぶん」. Nghĩa: mood."
+  },
+  {
+   "id": "oj-n4-vocab_reading-262",
+   "type": "KANJI_READING",
+   "prompt": "この時計は《細かい》ところまでよくできている。",
+   "options": [
+    "こうまかい",
+    "こまんかい",
+    "こまかい",
+    "こまがい"
+   ],
+   "answer": 2,
+   "explanation": "「細かい」đọc là「こまかい」. Nghĩa: small, fine."
+  },
+  {
+   "id": "oj-n4-vocab_reading-263",
+   "type": "KANJI_READING",
+   "prompt": "今日は《特別》な日なのでケーキを買った。",
+   "options": [
+    "とうくべつ",
+    "とくべつ",
+    "とくうべつ",
+    "どくべつ"
+   ],
+   "answer": 1,
+   "explanation": "「特別」đọc là「とくべつ」. Nghĩa: special."
+  },
+  {
+   "id": "oj-n4-vocab_reading-266-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "《かのじょ》は毎日ジョギングをしている。",
+   "options": [
+    "彼女",
+    "彼徐",
+    "彼如",
+    "彼叙"
+   ],
+   "answer": 0,
+   "explanation": "「かのじょ」viết là「彼女」. Nghĩa: she,girlfriend."
+  },
+  {
+   "id": "oj-n4-vocab_reading-267",
+   "type": "KANJI_READING",
+   "prompt": "《最初》に名前を書いてください。",
+   "options": [
+    "さいっしょ",
+    "さいしょう",
+    "さいしょ",
+    "ざいしょ"
+   ],
+   "answer": 2,
+   "explanation": "「最初」đọc là「さいしょ」. Nghĩa: beginning,first."
+  },
+  {
+   "id": "oj-n4-vocab_reading-268",
+   "type": "KANJI_READING",
+   "prompt": "《昔》、この町には大きな森があった。",
+   "options": [
+    "むっかし",
+    "むうかし",
+    "むかじ",
+    "むかし"
+   ],
+   "answer": 3,
+   "explanation": "「昔」đọc là「むかし」. Nghĩa: olden days, former."
+  },
+  {
+   "id": "oj-n4-vocab_reading-269",
+   "type": "KANJI_READING",
+   "prompt": "週末に映画を見に行く《積もり》だ。",
+   "options": [
+    "つもり",
+    "つうもり",
+    "づもり",
+    "つもんり"
+   ],
+   "answer": 0,
+   "explanation": "「積もり」đọc là「つもり」. Nghĩa: intention."
+  },
+  {
+   "id": "oj-n4-vocab_reading-270-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "ホテルの《おくじょう》から町が見える。",
+   "options": [
+    "屋上",
+    "億情",
+    "億常",
+    "屋常"
+   ],
+   "answer": 0,
+   "explanation": "「おくじょう」viết là「屋上」. Nghĩa: rooftop."
+  },
+  {
+   "id": "oj-n4-vocab_reading-272-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "日本の《せいかつ》にだんだん慣れてきた。",
+   "options": [
+    "制轄",
+    "正活",
+    "政活",
+    "生活"
+   ],
+   "answer": 3,
+   "explanation": "「せいかつ」viết là「生活」. Nghĩa: to live."
+  },
+  {
+   "id": "oj-n4-vocab_reading-273",
+   "type": "KANJI_READING",
+   "prompt": "この問題は《非常に》難しい。",
+   "options": [
+    "ひしょうに",
+    "ひじように",
+    "ひじょううに",
+    "ひじょうに"
+   ],
+   "answer": 3,
+   "explanation": "「非常に」đọc là「ひじょうに」. Nghĩa: extremely."
+  },
+  {
+   "id": "oj-n4-vocab_reading-275",
+   "type": "KANJI_READING",
+   "prompt": "日本は多くのものを外国から《輸入》している。",
+   "options": [
+    "ゆにゅう",
+    "ゆうにゅう",
+    "ゆにゆう",
+    "ゆにんゅう"
+   ],
+   "answer": 0,
+   "explanation": "「輸入」đọc là「ゆにゅう」. Nghĩa: to import."
+  },
+  {
+   "id": "oj-n4-vocab_reading-276",
+   "type": "KANJI_READING",
+   "prompt": "道が凍っていると《滑る》。",
+   "options": [
+    "ずべる",
+    "すうべる",
+    "すべる",
+    "すへる"
+   ],
+   "answer": 2,
+   "explanation": "「滑る」đọc là「すべる」. Nghĩa: to slide,to slip."
+  },
+  {
+   "id": "oj-n4-vocab_reading-277",
+   "type": "KANJI_READING",
+   "prompt": "これは《最後》の問題だ。",
+   "options": [
+    "さいごう",
+    "さいご",
+    "さいこ",
+    "ざいご"
+   ],
+   "answer": 1,
+   "explanation": "「最後」đọc là「さいご」. Nghĩa: last,end."
+  },
+  {
+   "id": "oj-n4-vocab_reading-278",
+   "type": "KANJI_READING",
+   "prompt": "大学の試験を《受ける》つもりだ。",
+   "options": [
+    "うげる",
+    "うける",
+    "ううける",
+    "うけんる"
+   ],
+   "answer": 1,
+   "explanation": "「受ける」đọc là「うける」. Nghĩa: to take a lesson or test."
+  },
+  {
+   "id": "oj-n4-vocab_reading-280-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "隣の町で《かじ》があった。",
+   "options": [
+    "下事",
+    "火事",
+    "価事",
+    "家自"
+   ],
+   "answer": 1,
+   "explanation": "「かじ」viết là「火事」. Nghĩa: fire."
+  },
+  {
+   "id": "oj-n4-vocab_reading-281",
+   "type": "KANJI_READING",
+   "prompt": "その知らせを聞いて《驚く》だろう。",
+   "options": [
+    "おどろぐ",
+    "おどろうく",
+    "おどうろく",
+    "おどろく"
+   ],
+   "answer": 3,
+   "explanation": "「驚く」đọc là「おどろく」. Nghĩa: to be surprised."
+  },
+  {
+   "id": "oj-n4-vocab_reading-282",
+   "type": "KANJI_READING",
+   "prompt": "《娘》はピアノを習っている。",
+   "options": [
+    "むうすめ",
+    "むっすめ",
+    "むすめ",
+    "むずめ"
+   ],
+   "answer": 2,
+   "explanation": "「娘」đọc là「むすめ」."
+  },
+  {
+   "id": "oj-n4-vocab_reading-283",
+   "type": "KANJI_READING",
+   "prompt": "落ちているものを《拾う》のはいいことだ。",
+   "options": [
+    "ひろんう",
+    "びろう",
+    "ひろ",
+    "ひろう"
+   ],
+   "answer": 3,
+   "explanation": "「拾う」đọc là「ひろう」. Nghĩa: to pick up,to gather."
+  },
+  {
+   "id": "oj-n4-vocab_reading-284",
+   "type": "KANJI_READING",
+   "prompt": "この答えは《正しい》ですか。",
+   "options": [
+    "だだしい",
+    "ただしい",
+    "ただんしい",
+    "たたしい"
+   ],
+   "answer": 1,
+   "explanation": "「正しい」đọc là「ただしい」. Nghĩa: correct."
+  },
+  {
+   "id": "oj-n4-vocab_reading-285",
+   "type": "KANJI_READING",
+   "prompt": "結婚式の《会場》は駅の近くだ。",
+   "options": [
+    "かいじゅう",
+    "かいじょう",
+    "かいしょう",
+    "かいじょ"
+   ],
+   "answer": 1,
+   "explanation": "「会場」đọc là「かいじょう」. Nghĩa: assembly hall or meeting place."
+  },
+  {
+   "id": "oj-n4-vocab_reading-286-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "大学生のとき駅の近くで《げしゅく》していた。",
+   "options": [
+    "下宿",
+    "下叔",
+    "外淑",
+    "牙叔"
+   ],
+   "answer": 0,
+   "explanation": "「げしゅく」viết là「下宿」. Nghĩa: lodging."
+  },
+  {
+   "id": "oj-n4-vocab_reading-287",
+   "type": "KANJI_READING",
+   "prompt": "車に《注意》して道を渡ってください。",
+   "options": [
+    "ちゅうい",
+    "ちゆうい",
+    "ぢゅうい",
+    "ちゅい"
+   ],
+   "answer": 0,
+   "explanation": "「注意」đọc là「ちゅうい」. Nghĩa: caution."
+  },
+  {
+   "id": "oj-n4-vocab_reading-288-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "部屋の《でんとう》が暗くなってきた。",
+   "options": [
+    "伝灯",
+    "典東",
+    "電灯",
+    "典党"
+   ],
+   "answer": 2,
+   "explanation": "「でんとう」viết là「電灯」. Nghĩa: electric light."
+  },
+  {
+   "id": "oj-n4-vocab_reading-289",
+   "type": "KANJI_READING",
+   "prompt": "あなたのことを《決して》忘れません。",
+   "options": [
+    "けっして",
+    "げっして",
+    "けして",
+    "けっしんて"
+   ],
+   "answer": 0,
+   "explanation": "「決して」đọc là「けっして」. Nghĩa: never."
+  },
+  {
+   "id": "oj-n4-vocab_reading-290-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "コーヒーを《いっぱい》飲みませんか。",
+   "options": [
+    "壱背",
+    "一配",
+    "一杯",
+    "一排"
+   ],
+   "answer": 2,
+   "explanation": "「いっぱい」viết là「一杯」. Nghĩa: full."
+  },
+  {
+   "id": "oj-n4-vocab_reading-291",
+   "type": "KANJI_READING",
+   "prompt": "朝寝坊をすると学校に《遅れる》。",
+   "options": [
+    "おくれんる",
+    "おくれる",
+    "おうくれる",
+    "おぐれる"
+   ],
+   "answer": 1,
+   "explanation": "「遅れる」đọc là「おくれる」. Nghĩa: to be late."
+  },
+  {
+   "id": "oj-n4-vocab_reading-292",
+   "type": "KANJI_READING",
+   "prompt": "このパンは《硬い》ので食べにくい。",
+   "options": [
+    "かたい",
+    "かだい",
+    "がたい",
+    "かたんい"
+   ],
+   "answer": 0,
+   "explanation": "「硬い」đọc là「かたい」. Nghĩa: hard."
+  },
+  {
+   "id": "oj-n4-vocab_reading-294-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "《さらいしゅう》はテストがある。",
+   "options": [
+    "さ来週",
+    "さ雷週",
+    "さ礼週",
+    "さ塁週"
+   ],
+   "answer": 0,
+   "explanation": "「さらいしゅう」viết là「さ来週」. Nghĩa: the week after next."
+  },
+  {
+   "id": "oj-n4-vocab_reading-295",
+   "type": "KANJI_READING",
+   "prompt": "彼は《一生懸命》勉強している。",
+   "options": [
+    "いっしょうけんめい",
+    "いしょうけんめい",
+    "いっしゅうけんめい",
+    "いっしょけんめい"
+   ],
+   "answer": 0,
+   "explanation": "「一生懸命」đọc là「いっしょうけんめい」. Nghĩa: with utmost effort."
+  },
+  {
+   "id": "oj-n4-vocab_reading-296-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "日本は車を多くの国に《ゆしゅつ》している。",
+   "options": [
+    "由出",
+    "諭出",
+    "輸出",
+    "癒出"
+   ],
+   "answer": 2,
+   "explanation": "「ゆしゅつ」viết là「輸出」. Nghĩa: to export."
+  },
+  {
+   "id": "oj-n4-vocab_reading-297",
+   "type": "KANJI_READING",
+   "prompt": "この問題の《答》は分からない。",
+   "options": [
+    "こたんえ",
+    "こたえ",
+    "こうたえ",
+    "こだえ"
+   ],
+   "answer": 1,
+   "explanation": "「答」đọc là「こたえ」. Nghĩa: response."
+  },
+  {
+   "id": "oj-n4-vocab_reading-298",
+   "type": "KANJI_READING",
+   "prompt": "病院の《受付》で名前を書いた。",
+   "options": [
+    "うけつけ",
+    "ううけつけ",
+    "うげつけ",
+    "うけつっけ"
+   ],
+   "answer": 0,
+   "explanation": "「受付」đọc là「うけつけ」. Nghĩa: receipt."
+  },
+  {
+   "id": "oj-n4-vocab_reading-299",
+   "type": "KANJI_READING",
+   "prompt": "すみません、今田中は《留守》です。",
+   "options": [
+    "るうす",
+    "るっす",
+    "るす",
+    "るず"
+   ],
+   "answer": 2,
+   "explanation": "「留守」đọc là「るす」. Nghĩa: absence."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0301",
+   "type": "KANJI_READING",
+   "prompt": "隣の家に《赤ん坊》が生まれた。",
+   "options": [
+    "あかんぼ",
+    "あかんぼう",
+    "あがんぼう",
+    "あかんぼんう"
+   ],
+   "answer": 1,
+   "explanation": "「赤ん坊」đọc là「あかんぼう」. Nghĩa: baby."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0302",
+   "type": "KANJI_READING",
+   "prompt": "子供たちは公園で《遊び》をしている。",
+   "options": [
+    "あそび",
+    "あそうび",
+    "あぞび",
+    "あそひ"
+   ],
+   "answer": 0,
+   "explanation": "「遊び」đọc là「あそび」. Nghĩa: play."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0303",
+   "type": "KANJI_READING",
+   "prompt": "切手を《集める》のが趣味だ。",
+   "options": [
+    "あづめる",
+    "あつうめる",
+    "あつめる",
+    "あつめんる"
+   ],
+   "answer": 2,
+   "explanation": "「集める」đọc là「あつめる」. Nghĩa: to collect something."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0305",
+   "type": "KANJI_READING",
+   "prompt": "無事だと聞いて《安心》した。",
+   "options": [
+    "あしん",
+    "あんしん",
+    "あんじん",
+    "あんし"
+   ],
+   "answer": 1,
+   "explanation": "「安心」đọc là「あんしん」. Nghĩa: relief."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0306-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "この車は《あんぜん》だ。",
+   "options": [
+    "安禅",
+    "闇前",
+    "案前",
+    "安全"
+   ],
+   "answer": 3,
+   "explanation": "「あんぜん」viết là「安全」. Nghĩa: safety."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0307",
+   "type": "KANJI_READING",
+   "prompt": "100円《以上》買うと、税金がかかる。",
+   "options": [
+    "いしょう",
+    "いじゅう",
+    "いじょう",
+    "いじょ"
+   ],
+   "answer": 2,
+   "explanation": "「以上」đọc là「いじょう」. Nghĩa: more than,this is all."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0308",
+   "type": "KANJI_READING",
+   "prompt": "私が案内《致す》。",
+   "options": [
+    "いたす",
+    "いたず",
+    "いったす",
+    "いたんす"
+   ],
+   "answer": 0,
+   "explanation": "「致す」đọc là「いたす」."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0314",
+   "type": "KANJI_READING",
+   "prompt": "靴の《売り場》は二階です。",
+   "options": [
+    "うりんば",
+    "ううりば",
+    "うりば",
+    "うりは"
+   ],
+   "answer": 2,
+   "explanation": "「売り場」đọc là「うりば」. Nghĩa: place where things are sold."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0315",
+   "type": "KANJI_READING",
+   "prompt": "バスの《運転手》は親切な人だった。",
+   "options": [
+    "うんでんしゅ",
+    "うんてんしゆ",
+    "うんてんしゅ",
+    "うんてんしゅう"
+   ],
+   "answer": 2,
+   "explanation": "「運転手」đọc là「うんてんしゅ」. Nghĩa: driver."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0316-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "どうぞお《えんりょ》なく召し上がってください。",
+   "options": [
+    "延呂",
+    "延旅",
+    "演呂",
+    "遠慮"
+   ],
+   "answer": 3,
+   "explanation": "「えんりょ」viết là「遠慮」. Nghĩa: to be reserved, to be restrained."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0317",
+   "type": "KANJI_READING",
+   "prompt": "友達の結婚《お祝い》に花をあげた。",
+   "options": [
+    "おいんわい",
+    "おういわい",
+    "おいわい",
+    "おいわんい"
+   ],
+   "answer": 2,
+   "explanation": "「お祝い」đọc là「おいわい」. Nghĩa: congratulation."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0321",
+   "type": "KANJI_READING",
+   "prompt": "布団は《押し入れ》の中にしまう。",
+   "options": [
+    "おじいれ",
+    "おしいんれ",
+    "おうしいれ",
+    "おしいれ"
+   ],
+   "answer": 3,
+   "explanation": "「押し入れ」đọc là「おしいれ」. Nghĩa: closet."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0322",
+   "type": "KANJI_READING",
+   "prompt": "先生の《お嬢さん》は大学生です。",
+   "options": [
+    "おしょうさん",
+    "おじょうさん",
+    "おじょううさん",
+    "おじゅうさん"
+   ],
+   "answer": 1,
+   "explanation": "「お嬢さん」đọc là「おじょうさん」. Nghĩa: young lady."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0323",
+   "type": "KANJI_READING",
+   "prompt": "明日、山田さんの《お宅》に伺います。",
+   "options": [
+    "おたぐ",
+    "おうたく",
+    "おたんく",
+    "おたく"
+   ],
+   "answer": 3,
+   "explanation": "「お宅」đọc là「おたく」."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0324",
+   "type": "KANJI_READING",
+   "prompt": "私の《夫》は銀行に勤めている。",
+   "options": [
+    "おうっと",
+    "おっど",
+    "おと",
+    "おっと"
+   ],
+   "answer": 3,
+   "explanation": "「夫」đọc là「おっと」. Nghĩa: husband."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0325",
+   "type": "KANJI_READING",
+   "prompt": "窓の外から変な《音》がする。",
+   "options": [
+    "おうと",
+    "おとう",
+    "おと",
+    "おど"
+   ],
+   "answer": 2,
+   "explanation": "「音」đọc là「おと」. Nghĩa: sound,note."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0326",
+   "type": "KANJI_READING",
+   "prompt": "旅行に行ったら《お土産》を買うつもりだ。",
+   "options": [
+    "おうみやげ",
+    "おみやげ",
+    "おみやんげ",
+    "おみやけ"
+   ],
+   "answer": 1,
+   "explanation": "「お土産」đọc là「おみやげ」. Nghĩa: souvenir."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0329",
+   "type": "KANJI_READING",
+   "prompt": "ドアの《表》に名前が書いてある。",
+   "options": [
+    "おもて",
+    "おうもて",
+    "おもうて",
+    "おもで"
+   ],
+   "answer": 0,
+   "explanation": "「表」đọc là「おもて」. Nghĩa: the front."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0331",
+   "type": "KANJI_READING",
+   "prompt": "手伝ってくれたので《お礼》を言った。",
+   "options": [
+    "おれい",
+    "おうれい",
+    "おれんい",
+    "おれ"
+   ],
+   "answer": 0,
+   "explanation": "「お礼」đọc là「おれい」. Nghĩa: expression of gratitude."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0333-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "夏休みに《かいがん》へ泳ぎに行った。",
+   "options": [
+    "会含",
+    "海岸",
+    "会岸",
+    "解岸"
+   ],
+   "answer": 1,
+   "explanation": "「かいがん」viết là「海岸」. Nghĩa: coast."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0334",
+   "type": "KANJI_READING",
+   "prompt": "今日の午後、大事な《会議》がある。",
+   "options": [
+    "かいき",
+    "がいぎ",
+    "かいんぎ",
+    "かいぎ"
+   ],
+   "answer": 3,
+   "explanation": "「会議」đọc là「かいぎ」. Nghĩa: meeting."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0337",
+   "type": "KANJI_READING",
+   "prompt": "このパンは《堅い》。",
+   "options": [
+    "がたい",
+    "かたんい",
+    "かたい",
+    "かだい"
+   ],
+   "answer": 2,
+   "explanation": "「堅い」đọc là「かたい」. Nghĩa: hard."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0338",
+   "type": "KANJI_READING",
+   "prompt": "この机は木でできていて《固い》。",
+   "options": [
+    "かたんい",
+    "かたい",
+    "がたい",
+    "かだい"
+   ],
+   "answer": 1,
+   "explanation": "「固い」đọc là「かたい」. Nghĩa: hard."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0340",
+   "type": "KANJI_READING",
+   "prompt": "宿題は《必ず》今日中に出してください。",
+   "options": [
+    "かなんらず",
+    "かならんず",
+    "かならず",
+    "かならす"
+   ],
+   "answer": 2,
+   "explanation": "「必ず」đọc là「かならず」. Nghĩa: certainly,necessarily."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0341",
+   "type": "KANJI_READING",
+   "prompt": "彼女は《お金持ち》で、大きい家に住んでいる。",
+   "options": [
+    "おかねもんち",
+    "おうかねもち",
+    "おかねもぢ",
+    "おかねもち"
+   ],
+   "answer": 3,
+   "explanation": "「お金持ち」đọc là「おかねもち」. Nghĩa: rich man."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0349-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "《かんごふ》さんが熱を測ってくれた。",
+   "options": [
+    "看護負",
+    "看護婦",
+    "感午婦",
+    "看護風"
+   ],
+   "answer": 1,
+   "explanation": "「かんごふ」viết là「看護婦」. Nghĩa: female nurse."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0352-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "昔はよく《きしゃ》で旅行した。",
+   "options": [
+    "汽車",
+    "汽左",
+    "期左",
+    "気車"
+   ],
+   "answer": 0,
+   "explanation": "「きしゃ」viết là「汽車」. Nghĩa: steam train."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0353",
+   "type": "KANJI_READING",
+   "prompt": "学校の《規則》を守らなければならない。",
+   "options": [
+    "きそく",
+    "きぞく",
+    "きそうく",
+    "きっそく"
+   ],
+   "answer": 0,
+   "explanation": "「規則」đọc là「きそく」. Nghĩa: regulations."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0355",
+   "type": "KANJI_READING",
+   "prompt": "日曜日に《教会》へ行く。",
+   "options": [
+    "きょうかい",
+    "きょううかい",
+    "きょかい",
+    "ぎょうかい"
+   ],
+   "answer": 0,
+   "explanation": "「教会」đọc là「きょうかい」. Nghĩa: church."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0356",
+   "type": "KANJI_READING",
+   "prompt": "空に白い《雲》が浮かんでいる。",
+   "options": [
+    "くもう",
+    "くうも",
+    "くも",
+    "ぐも"
+   ],
+   "answer": 2,
+   "explanation": "「雲」đọc là「くも」. Nghĩa: cloud."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0359",
+   "type": "KANJI_READING",
+   "prompt": "夏休みの《計画》を立てた。",
+   "options": [
+    "げいかく",
+    "けかく",
+    "けいかく",
+    "けいっかく"
+   ],
+   "answer": 2,
+   "explanation": "「計画」đọc là「けいかく」. Nghĩa: to plan."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0360-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "日本で働いた《けいけん》が役に立つ。",
+   "options": [
+    "計験",
+    "境見",
+    "京験",
+    "経験"
+   ],
+   "answer": 3,
+   "explanation": "「けいけん」viết là「経験」. Nghĩa: to experience."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0361",
+   "type": "KANJI_READING",
+   "prompt": "朝の《交通》が混んでいて困った。",
+   "options": [
+    "こうつ",
+    "こつう",
+    "こうづう",
+    "こうつう"
+   ],
+   "answer": 3,
+   "explanation": "「交通」đọc là「こうつう」. Nghĩa: traffic,transportation."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0362-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "弟は今年《こうとうがっこう》に入った。",
+   "options": [
+    "高当学後",
+    "高東学校",
+    "公等学校",
+    "高等学校"
+   ],
+   "answer": 3,
+   "explanation": "「こうとうがっこう」viết là「高等学校」. Nghĩa: high school."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0363",
+   "type": "KANJI_READING",
+   "prompt": "友達の《心》を傷つけてしまった。",
+   "options": [
+    "こころ",
+    "こうころ",
+    "ここんろ",
+    "ごころ"
+   ],
+   "answer": 0,
+   "explanation": "「心」đọc là「こころ」. Nghĩa: core,heart."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0364-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "山田さんの《ごしゅじん》は医者です。",
+   "options": [
+    "語取人",
+    "御主陣",
+    "五株人",
+    "御主人"
+   ],
+   "answer": 3,
+   "explanation": "「ごしゅじん」viết là「御主人」."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0365",
+   "type": "KANJI_READING",
+   "prompt": "あの映画を《ご存じ》ですか。",
+   "options": [
+    "ごぞうんじ",
+    "ごぞんし",
+    "こぞんじ",
+    "ごぞんじ"
+   ],
+   "answer": 3,
+   "explanation": "「ご存じ」đọc là「ごぞんじ」. Nghĩa: knowing,acquaintance."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0370",
+   "type": "KANJI_READING",
+   "prompt": "《先》言ったことを覚えていますか。",
+   "options": [
+    "さき",
+    "さっんき",
+    "ざっき",
+    "さっき"
+   ],
+   "answer": 3,
+   "explanation": "「先」đọc là「さっき」. Nghĩa: some time ago."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0371-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "この地域の《さんぎょう》は農業です。",
+   "options": [
+    "算業",
+    "産暁",
+    "産業",
+    "残凝"
+   ],
+   "answer": 2,
+   "explanation": "「さんぎょう」viết là「産業」. Nghĩa: industry."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0372",
+   "type": "KANJI_READING",
+   "prompt": "昨日、駅で《事故》があった。",
+   "options": [
+    "しこ",
+    "じこう",
+    "じこ",
+    "じっこ"
+   ],
+   "answer": 2,
+   "explanation": "「事故」đọc là「じこ」. Nghĩa: accident."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0373",
+   "type": "KANJI_READING",
+   "prompt": "新しい《下着》を買った。",
+   "options": [
+    "したき",
+    "したんぎ",
+    "したぎ",
+    "しったぎ"
+   ],
+   "answer": 2,
+   "explanation": "「下着」đọc là「したぎ」. Nghĩa: underwear."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0374",
+   "type": "KANJI_READING",
+   "prompt": "わからない言葉は《辞典》で調べる。",
+   "options": [
+    "じってん",
+    "じでん",
+    "じて",
+    "じてん"
+   ],
+   "answer": 3,
+   "explanation": "「辞典」đọc là「じてん」. Nghĩa: dictionary."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0375-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "大学を卒業したら《しゃかい》に出る。",
+   "options": [
+    "予会",
+    "社改",
+    "社会",
+    "写界"
+   ],
+   "answer": 2,
+   "explanation": "「しゃかい」viết là「社会」. Nghĩa: society,public."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0376",
+   "type": "KANJI_READING",
+   "prompt": "日本には面白い《習慣》がたくさんある。",
+   "options": [
+    "しゅうがん",
+    "しょうかん",
+    "しゅうかん",
+    "しゅかん"
+   ],
+   "answer": 2,
+   "explanation": "「習慣」đọc là「しゅうかん」. Nghĩa: custom,manners."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0377-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "今日の授業に《しゅっせき》した。",
+   "options": [
+    "出積",
+    "卒席",
+    "出席",
+    "卒赤"
+   ],
+   "answer": 2,
+   "explanation": "「しゅっせき」viết là「出席」. Nghĩa: to attend."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0378",
+   "type": "KANJI_READING",
+   "prompt": "友達に彼女を《紹介》した。",
+   "options": [
+    "しようかい",
+    "しょかい",
+    "しょうかい",
+    "じょうかい"
+   ],
+   "answer": 2,
+   "explanation": "「紹介」đọc là「しょうかい」. Nghĩa: introduction."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0379-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "私はこの《しょうがっこう》に通っていた。",
+   "options": [
+    "上岳校",
+    "小額校",
+    "小楽行",
+    "小学校"
+   ],
+   "answer": 3,
+   "explanation": "「しょうがっこう」viết là「小学校」. Nghĩa: elementary school."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0380",
+   "type": "KANJI_READING",
+   "prompt": "《食料品》を買いにスーパーへ行く。",
+   "options": [
+    "しよくりょうひん",
+    "しょくりょひん",
+    "しょくりょうひん",
+    "しょくうりょうひん"
+   ],
+   "answer": 2,
+   "explanation": "「食料品」đọc là「しょくりょうひん」. Nghĩa: groceries."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0381-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "あの《じょせい》は私の先生です。",
+   "options": [
+    "序性",
+    "女性",
+    "助性",
+    "叙性"
+   ],
+   "answer": 1,
+   "explanation": "「じょせい」viết là「女性」. Nghĩa: woman."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0382",
+   "type": "KANJI_READING",
+   "prompt": "あの店員さんはとても《親切》だ。",
+   "options": [
+    "しんせつ",
+    "しんせづ",
+    "しんぜつ",
+    "じんせつ"
+   ],
+   "answer": 0,
+   "explanation": "「親切」đọc là「しんせつ」. Nghĩa: kindness."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0383-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "夏は《すいえい》の授業がある。",
+   "options": [
+    "剤泳",
+    "水泳",
+    "推営",
+    "吹衛"
+   ],
+   "answer": 1,
+   "explanation": "「すいえい」viết là「水泳」. Nghĩa: swimming."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0384",
+   "type": "KANJI_READING",
+   "prompt": "この《水道》の水は飲める。",
+   "options": [
+    "すいどう",
+    "すいど",
+    "すういどう",
+    "ずいどう"
+   ],
+   "answer": 0,
+   "explanation": "「水道」đọc là「すいどう」. Nghĩa: water supply."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0385-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "《すうがく》のテストは難しかった。",
+   "options": [
+    "枢学",
+    "数楽",
+    "崇学",
+    "数学"
+   ],
+   "answer": 3,
+   "explanation": "「すうがく」viết là「数学」. Nghĩa: mathematics,arithmetic."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0386",
+   "type": "KANJI_READING",
+   "prompt": "富士山は本当に《凄い》。",
+   "options": [
+    "すごうい",
+    "ずごい",
+    "すこい",
+    "すごい"
+   ],
+   "answer": 3,
+   "explanation": "「凄い」đọc là「すごい」. Nghĩa: terrific."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0391-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "この工場では車を《せいさん》している。",
+   "options": [
+    "性産",
+    "正算",
+    "成算",
+    "生産"
+   ],
+   "answer": 3,
+   "explanation": "「せいさん」viết là「生産」. Nghĩa: to produce."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0392",
+   "type": "KANJI_READING",
+   "prompt": "《政治》の話はあまり好きじゃない。",
+   "options": [
+    "せじ",
+    "せいし",
+    "せいじ",
+    "ぜいじ"
+   ],
+   "answer": 2,
+   "explanation": "「政治」đọc là「せいじ」. Nghĩa: politics,government."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0393-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "《せいよう》の音楽が好きだ。",
+   "options": [
+    "西様",
+    "西洋",
+    "政洋",
+    "世洋"
+   ],
+   "answer": 1,
+   "explanation": "「せいよう」viết là「西洋」. Nghĩa: western countries."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0394",
+   "type": "KANJI_READING",
+   "prompt": "私は《世界》のいろいろな国に行きたい。",
+   "options": [
+    "せかんい",
+    "ぜかい",
+    "せがい",
+    "せかい"
+   ],
+   "answer": 3,
+   "explanation": "「世界」đọc là「せかい」. Nghĩa: the world."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0396",
+   "type": "KANJI_READING",
+   "prompt": "先生が《説明》してくれた。",
+   "options": [
+    "せつめい",
+    "ぜつめい",
+    "せつんめい",
+    "せつめ"
+   ],
+   "answer": 0,
+   "explanation": "「説明」đọc là「せつめい」. Nghĩa: explanation."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0397-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "母がいつも《せわ》をしてくれる。",
+   "options": [
+    "世話",
+    "施和",
+    "施把",
+    "施話"
+   ],
+   "answer": 0,
+   "explanation": "「せわ」viết là「世話」. Nghĩa: to look after."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0398",
+   "type": "KANJI_READING",
+   "prompt": "《戦争》はしてはいけない。",
+   "options": [
+    "せんぞう",
+    "せんそう",
+    "せんそんう",
+    "せんそ"
+   ],
+   "answer": 1,
+   "explanation": "「戦争」đọc là「せんそう」. Nghĩa: war."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0399-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "《せんぱい》はとても優しい。",
+   "options": [
+    "山敗",
+    "先輩",
+    "川背",
+    "鮮配"
+   ],
+   "answer": 1,
+   "explanation": "「せんぱい」viết là「先輩」. Nghĩa: senior."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0400",
+   "type": "KANJI_READING",
+   "prompt": "私の《祖父》は元気です。",
+   "options": [
+    "そふ",
+    "そぷ",
+    "そうふ",
+    "ぞふ"
+   ],
+   "answer": 0,
+   "explanation": "「祖父」đọc là「そふ」. Nghĩa: grandfather."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0401-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "父が来週《たいいん》する。",
+   "options": [
+    "退院",
+    "退印",
+    "大院",
+    "退引"
+   ],
+   "answer": 0,
+   "explanation": "「たいいん」viết là「退院」. Nghĩa: to leave hospital."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0402",
+   "type": "KANJI_READING",
+   "prompt": "もう《大体》できました。",
+   "options": [
+    "だいだい",
+    "だいったい",
+    "だいんたい",
+    "だいたい"
+   ],
+   "answer": 3,
+   "explanation": "「大体」đọc là「だいたい」. Nghĩa: generally."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0403-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "日曜日は《たいてい》家にいる。",
+   "options": [
+    "体抵",
+    "体第",
+    "代低",
+    "大抵"
+   ],
+   "answer": 3,
+   "explanation": "「たいてい」viết là「大抵」. Nghĩa: usually."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0404",
+   "type": "KANJI_READING",
+   "prompt": "病気は《大分》よくなった。",
+   "options": [
+    "だいんぶ",
+    "だいふ",
+    "たいぶ",
+    "だいぶ"
+   ],
+   "answer": 3,
+   "explanation": "「大分」đọc là「だいぶ」. Nghĩa: greatly."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0407",
+   "type": "KANJI_READING",
+   "prompt": "《例えば》どんなスポーツが好きですか。",
+   "options": [
+    "だとえば",
+    "たとうえば",
+    "たとえは",
+    "たとえば"
+   ],
+   "answer": 3,
+   "explanation": "「例えば」đọc là「たとえば」. Nghĩa: for example."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0411-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "車を《ちゅうしゃじょう》に止めて、買い物をしました。",
+   "options": [
+    "駐予場",
+    "宙車上",
+    "駐車場",
+    "駐車上"
+   ],
+   "answer": 2,
+   "explanation": "「ちゅうしゃじょう」viết là「駐車場」. Nghĩa: parking lot."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0413",
+   "type": "KANJI_READING",
+   "prompt": "テーブルにほこりが《付く》ので、毎日拭いてください。",
+   "options": [
+    "つうく",
+    "づく",
+    "つく",
+    "つっく"
+   ],
+   "answer": 2,
+   "explanation": "「付く」đọc là「つく」. Nghĩa: to be attached."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0414",
+   "type": "KANJI_READING",
+   "prompt": "きゅうりを塩に《漬ける》と、おいしい漬物ができます。",
+   "options": [
+    "つげる",
+    "つっける",
+    "つうける",
+    "つける"
+   ],
+   "answer": 3,
+   "explanation": "「漬ける」đọc là「つける」. Nghĩa: to soak,to pickle."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0416",
+   "type": "KANJI_READING",
+   "prompt": "先生に《丁寧》にお礼を言いました。",
+   "options": [
+    "でいねい",
+    "ていねい",
+    "ていね",
+    "てねい"
+   ],
+   "answer": 1,
+   "explanation": "「丁寧」đọc là「ていねい」. Nghĩa: polite."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0417",
+   "type": "KANJI_READING",
+   "prompt": "母が忙しいので、料理を《手伝う》ことにしました。",
+   "options": [
+    "てつだう",
+    "でつだう",
+    "てつたう",
+    "てつうだう"
+   ],
+   "answer": 0,
+   "explanation": "「手伝う」đọc là「てつだう」. Nghĩa: to assist."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0418",
+   "type": "KANJI_READING",
+   "prompt": "冬になると、《手袋》をしないと手が冷たいです。",
+   "options": [
+    "てぶくうろ",
+    "てぶっくろ",
+    "てぶくろ",
+    "でぶくろ"
+   ],
+   "answer": 2,
+   "explanation": "「手袋」đọc là「てぶくろ」. Nghĩa: glove."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0420",
+   "type": "KANJI_READING",
+   "prompt": "三時間も歩いて、《到頭》山の頂上に着きました。",
+   "options": [
+    "ととう",
+    "とうとう",
+    "どうとう",
+    "とうと"
+   ],
+   "answer": 1,
+   "explanation": "「到頭」đọc là「とうとう」. Nghĩa: finally, after all."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0421-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "子供の頃、よく《どうぶつえん》に連れて行ってもらいました。",
+   "options": [
+    "導物園",
+    "同物園",
+    "動物園",
+    "動仏援"
+   ],
+   "answer": 2,
+   "explanation": "「どうぶつえん」viết là「動物園」. Nghĩa: zoo."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0422",
+   "type": "KANJI_READING",
+   "prompt": "駅はここから《遠く》ないので、歩いて行けます。",
+   "options": [
+    "とうおく",
+    "とおく",
+    "とおうく",
+    "とおぐ"
+   ],
+   "answer": 1,
+   "explanation": "「遠く」đọc là「とおく」. Nghĩa: distant."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0423",
+   "type": "KANJI_READING",
+   "prompt": "この道をまっすぐ行くと、駅の前を《通る》よ。",
+   "options": [
+    "とうおる",
+    "とおんる",
+    "どおる",
+    "とおる"
+   ],
+   "answer": 3,
+   "explanation": "「通る」đọc là「とおる」. Nghĩa: to go through."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0424",
+   "type": "KANJI_READING",
+   "prompt": "《特に》これといって好きな食べ物はありません。",
+   "options": [
+    "とぐに",
+    "とくうに",
+    "どくに",
+    "とくに"
+   ],
+   "answer": 3,
+   "explanation": "「特に」đọc là「とくに」. Nghĩa: particularly,especially."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0425-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "学校への《とちゅう》で、友達に会いました。",
+   "options": [
+    "度宙",
+    "都中",
+    "途沖",
+    "途中"
+   ],
+   "answer": 3,
+   "explanation": "「とちゅう」viết là「途中」. Nghĩa: on the way."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0426",
+   "type": "KANJI_READING",
+   "prompt": "《特急》に乗れば、大阪まで一時間で着きます。",
+   "options": [
+    "ときゅう",
+    "とっきゅう",
+    "とっぎゅう",
+    "とっきゅ"
+   ],
+   "answer": 1,
+   "explanation": "「特急」đọc là「とっきゅう」. Nghĩa: limited express train."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0427",
+   "type": "KANJI_READING",
+   "prompt": "荷物を明日までに《届ける》必要があります。",
+   "options": [
+    "どどける",
+    "とどける",
+    "とうどける",
+    "とどんける"
+   ],
+   "answer": 1,
+   "explanation": "「届ける」đọc là「とどける」. Nghĩa: to reach."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0428",
+   "type": "KANJI_READING",
+   "prompt": "昨日、家の近くで《泥棒》を見かけたそうです。",
+   "options": [
+    "どろぼ",
+    "とろぼう",
+    "どうろぼう",
+    "どろぼう"
+   ],
+   "answer": 3,
+   "explanation": "「泥棒」đọc là「どろぼう」. Nghĩa: thief."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0429",
+   "type": "KANJI_READING",
+   "prompt": "壊れた時計を自分で《直す》ことができました。",
+   "options": [
+    "なおうす",
+    "なおんす",
+    "なおず",
+    "なおす"
+   ],
+   "answer": 3,
+   "explanation": "「直す」đọc là「なおす」. Nghĩa: to fix,to repair."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0436",
+   "type": "KANJI_READING",
+   "prompt": "毎晩寝る前に、《日記》を書いています。",
+   "options": [
+    "にっき",
+    "にき",
+    "にっんき",
+    "にっぎ"
+   ],
+   "answer": 0,
+   "explanation": "「日記」đọc là「にっき」. Nghĩa: journal."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0437-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "お腹が痛くて、昨日から《にゅういん》しています。",
+   "options": [
+    "入員",
+    "入院",
+    "乳院",
+    "入因"
+   ],
+   "answer": 1,
+   "explanation": "「にゅういん」viết là「入院」. Nghĩa: to hospitalise."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0439",
+   "type": "KANJI_READING",
+   "prompt": "誕生日に祖母が《人形》をくれました。",
+   "options": [
+    "にんぎょう",
+    "にんきょう",
+    "にんぎよう",
+    "にんぎょ"
+   ],
+   "answer": 0,
+   "explanation": "「人形」đọc là「にんぎょう」. Nghĩa: doll, figure."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0442",
+   "type": "KANJI_READING",
+   "prompt": "朝早く起きられなくて、《寝坊》してしまいました。",
+   "options": [
+    "ねぼんう",
+    "ねほう",
+    "ねぼう",
+    "ねぼ"
+   ],
+   "answer": 2,
+   "explanation": "「寝坊」đọc là「ねぼう」. Nghĩa: sleeping in late."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0446",
+   "type": "KANJI_READING",
+   "prompt": "風邪をひいたら、《喉》が痛くなりました。",
+   "options": [
+    "のどう",
+    "のうど",
+    "のと",
+    "のど"
+   ],
+   "answer": 3,
+   "explanation": "「喉」đọc là「のど」. Nghĩa: throat."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0447",
+   "type": "KANJI_READING",
+   "prompt": "新宿で電車を《乗り換える》必要があります。",
+   "options": [
+    "のりっかえる",
+    "のりかえる",
+    "のりがえる",
+    "のうりかえる"
+   ],
+   "answer": 1,
+   "explanation": "「乗り換える」đọc là「のりかえる」. Nghĩa: to change between buses or trains."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0448",
+   "type": "KANJI_READING",
+   "prompt": "日本では自転車も《乗り物》の一つです。",
+   "options": [
+    "のうりもの",
+    "のりものう",
+    "のりんもの",
+    "のりもの"
+   ],
+   "answer": 3,
+   "explanation": "「乗り物」đọc là「のりもの」. Nghĩa: vehicle."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0451",
+   "type": "KANJI_READING",
+   "prompt": "重い荷物を部屋まで《運ぶ》のを手伝ってください。",
+   "options": [
+    "はこぶ",
+    "ぱこぶ",
+    "はごぶ",
+    "はこうぶ"
+   ],
+   "answer": 0,
+   "explanation": "「運ぶ」đọc là「はこぶ」. Nghĩa: to transport."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0452",
+   "type": "KANJI_READING",
+   "prompt": "新しい仕事を来週から《始める》予定です。",
+   "options": [
+    "はじめる",
+    "ばじめる",
+    "はしめる",
+    "ぱじめる"
+   ],
+   "answer": 0,
+   "explanation": "「始める」đọc là「はじめる」. Nghĩa: to begin."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0453-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "静かな《ばしょ》で本を読みたいです。",
+   "options": [
+    "場所",
+    "場諸",
+    "場初",
+    "場野"
+   ],
+   "answer": 0,
+   "explanation": "「ばしょ」viết là「場所」. Nghĩa: location."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0454",
+   "type": "KANJI_READING",
+   "prompt": "四月に友達と公園で《花見》をしました。",
+   "options": [
+    "はなんみ",
+    "ぱなみ",
+    "ばなみ",
+    "はなみ"
+   ],
+   "answer": 3,
+   "explanation": "「花見」đọc là「はなみ」. Nghĩa: cherry-blossom viewing."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0455",
+   "type": "KANJI_READING",
+   "prompt": "山の《林》の中を散歩するのが好きです。",
+   "options": [
+    "はやじ",
+    "はやんし",
+    "ぱやし",
+    "はやし"
+   ],
+   "answer": 3,
+   "explanation": "「林」đọc là「はやし」. Nghĩa: woods,forester."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0459",
+   "type": "KANJI_READING",
+   "prompt": "冬になると、部屋がすぐに《冷える》よ。",
+   "options": [
+    "ひえんる",
+    "ひえる",
+    "びえる",
+    "ぴえる"
+   ],
+   "answer": 1,
+   "explanation": "「冷える」đọc là「ひえる」. Nghĩa: to grow cold."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0460",
+   "type": "KANJI_READING",
+   "prompt": "銀行でお金を《引き出す》のを忘れました。",
+   "options": [
+    "ひきだんす",
+    "ひきだす",
+    "ひきだず",
+    "ひっきだす"
+   ],
+   "answer": 1,
+   "explanation": "「引き出す」đọc là「ひきだす」. Nghĩa: to withdraw."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0461",
+   "type": "KANJI_READING",
+   "prompt": "父は毎朝《髭》をそってから会社に行きます。",
+   "options": [
+    "ぴげ",
+    "ひけ",
+    "びげ",
+    "ひげ"
+   ],
+   "answer": 3,
+   "explanation": "「髭」đọc là「ひげ」. Nghĩa: beard."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0462",
+   "type": "KANJI_READING",
+   "prompt": "《久しぶり》に高校の友達に会いました。",
+   "options": [
+    "びさしぶり",
+    "ひさしぶうり",
+    "ひっさしぶり",
+    "ひさしぶり"
+   ],
+   "answer": 3,
+   "explanation": "「久しぶり」đọc là「ひさしぶり」. Nghĩa: after a long time."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0463",
+   "type": "KANJI_READING",
+   "prompt": "来月、大阪から東京へ《引っ越す》ことにしました。",
+   "options": [
+    "ひっこす",
+    "びっこす",
+    "ひこす",
+    "ひっこうす"
+   ],
+   "answer": 0,
+   "explanation": "「引っ越す」đọc là「ひっこす」. Nghĩa: to move house."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0464",
+   "type": "KANJI_READING",
+   "prompt": "本を《開く》と、古い写真が出てきました。",
+   "options": [
+    "ひらく",
+    "ひらぐ",
+    "びらく",
+    "ぴらく"
+   ],
+   "answer": 0,
+   "explanation": "「開く」đọc là「ひらく」. Nghĩa: to open an event."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0465",
+   "type": "KANJI_READING",
+   "prompt": "この川は《深い》ので、泳がないほうがいいです。",
+   "options": [
+    "ふっかい",
+    "ふかい",
+    "ふうかい",
+    "ぷかい"
+   ],
+   "answer": 1,
+   "explanation": "「深い」đọc là「ふかい」. Nghĩa: deep."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0466-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "この問題はとても《ふくざつ》で、すぐには解けません。",
+   "options": [
+    "復雑",
+    "腹雑",
+    "複雑",
+    "副雑"
+   ],
+   "answer": 2,
+   "explanation": "「ふくざつ」viết là「複雑」. Nghĩa: complexity,complication."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0467",
+   "type": "KANJI_READING",
+   "prompt": "試験の前にちゃんと《復習》をしました。",
+   "options": [
+    "ふぐしゅう",
+    "ふくっしゅう",
+    "ふくしょう",
+    "ふくしゅう"
+   ],
+   "answer": 3,
+   "explanation": "「復習」đọc là「ふくしゅう」. Nghĩa: revision."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0468-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "《ぶちょう》に明日の会議のことを聞いてください。",
+   "options": [
+    "武長",
+    "不重",
+    "部重",
+    "部長"
+   ],
+   "answer": 3,
+   "explanation": "「ぶちょう」viết là「部長」. Nghĩa: head of a section."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0469",
+   "type": "KANJI_READING",
+   "prompt": "《普通》は八時に起きますが、今日は休みです。",
+   "options": [
+    "ふつう",
+    "ふうつう",
+    "ぷつう",
+    "ふっつう"
+   ],
+   "answer": 0,
+   "explanation": "「普通」đọc là「ふつう」. Nghĩa: usually, or a train that stops at every station."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0470-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "夜《ふとん》に入っても、なかなか眠れません。",
+   "options": [
+    "布丼",
+    "布団",
+    "夫豚",
+    "布豚"
+   ],
+   "answer": 1,
+   "explanation": "「ふとん」viết là「布団」. Nghĩa: Japanese bedding, futon."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0471",
+   "type": "KANJI_READING",
+   "prompt": "《舟》に乗って、湖で魚を釣りました。",
+   "options": [
+    "ふうね",
+    "ふね",
+    "ぷね",
+    "ぶね"
+   ],
+   "answer": 1,
+   "explanation": "「舟」đọc là「ふね」. Nghĩa: ship."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0472-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "駅から家が遠いので、とても《ふべん》です。",
+   "options": [
+    "付弁",
+    "不便",
+    "付面",
+    "府弁"
+   ],
+   "answer": 1,
+   "explanation": "「ふべん」viết là「不便」. Nghĩa: inconvenience."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0474",
+   "type": "KANJI_READING",
+   "prompt": "大学で日本《文学》を勉強しています。",
+   "options": [
+    "ぶんがぐ",
+    "ぶんがく",
+    "ぶうんがく",
+    "ぶんかく"
+   ],
+   "answer": 1,
+   "explanation": "「文学」đọc là「ぶんがく」. Nghĩa: literature."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0475",
+   "type": "KANJI_READING",
+   "prompt": "隣の部屋から《変》な音が聞こえてきました。",
+   "options": [
+    "へ",
+    "ぺん",
+    "べん",
+    "へん"
+   ],
+   "answer": 3,
+   "explanation": "「変」đọc là「へん」. Nghĩa: strange."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0476",
+   "type": "KANJI_READING",
+   "prompt": "この仕事は思った《程》難しくなかったです。",
+   "options": [
+    "ほうど",
+    "ぼど",
+    "ほどう",
+    "ほど"
+   ],
+   "answer": 3,
+   "explanation": "「程」đọc là「ほど」. Nghĩa: extent."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0479-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "子供の頃はよく《まんが》を読んでいました。",
+   "options": [
+    "漫雅",
+    "漫画",
+    "万賀",
+    "慢画"
+   ],
+   "answer": 1,
+   "explanation": "「まんが」viết là「漫画」. Nghĩa: comic."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0480",
+   "type": "KANJI_READING",
+   "prompt": "《湖》の水がとてもきれいでした。",
+   "options": [
+    "みすうみ",
+    "みずみ",
+    "みずうみ",
+    "みずううみ"
+   ],
+   "answer": 2,
+   "explanation": "「湖」đọc là「みずうみ」. Nghĩa: lake."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0481",
+   "type": "KANJI_READING",
+   "prompt": "朝は《味噌》の入ったおみそ汁を飲みます。",
+   "options": [
+    "みそう",
+    "みそ",
+    "みっそ",
+    "みぞ"
+   ],
+   "answer": 1,
+   "explanation": "「味噌」đọc là「みそ」. Nghĩa: bean paste."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0484",
+   "type": "KANJI_READING",
+   "prompt": "庭の花に《虫》がたくさん集まっています。",
+   "options": [
+    "むっし",
+    "むうし",
+    "むし",
+    "むじ"
+   ],
+   "answer": 2,
+   "explanation": "「虫」đọc là「むし」. Nghĩa: insect."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0489-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "友達との《やくそく》を忘れてしまいました。",
+   "options": [
+    "薬束",
+    "約束",
+    "薬則",
+    "益束"
+   ],
+   "answer": 1,
+   "explanation": "「やくそく」viết là「約束」. Nghĩa: promise."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0490",
+   "type": "KANJI_READING",
+   "prompt": "この本は勉強に《役に立つ》と思います。",
+   "options": [
+    "やくにったつ",
+    "やぐにたつ",
+    "やくにたつ",
+    "やくうにたつ"
+   ],
+   "answer": 2,
+   "explanation": "「役に立つ」đọc là「やくにたつ」. Nghĩa: to be helpful."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0492",
+   "type": "KANJI_READING",
+   "prompt": "あの先生はとても《優しい》ので、人気があります。",
+   "options": [
+    "やさんしい",
+    "やざしい",
+    "やさしい",
+    "やさしんい"
+   ],
+   "answer": 2,
+   "explanation": "「優しい」đọc là「やさしい」. Nghĩa: kind."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0495",
+   "type": "KANJI_READING",
+   "prompt": "彼女に《指輪》をプレゼントしました。",
+   "options": [
+    "ゆうびわ",
+    "ゆびんわ",
+    "ゆびわ",
+    "ゆひわ"
+   ],
+   "answer": 2,
+   "explanation": "「指輪」đọc là「ゆびわ」. Nghĩa: finger ring."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0497",
+   "type": "KANJI_READING",
+   "prompt": "旅行の《用意》はもうできましたか。",
+   "options": [
+    "よい",
+    "よううい",
+    "ようい",
+    "ようんい"
+   ],
+   "answer": 2,
+   "explanation": "「用意」đọc là「ようい」. Nghĩa: preparation."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0498-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "今日は銀行に行く《ようじ》があります。",
+   "options": [
+    "容地",
+    "用持",
+    "用事",
+    "様治"
+   ],
+   "answer": 2,
+   "explanation": "「ようじ」viết là「用事」. Nghĩa: things to do."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0499",
+   "type": "KANJI_READING",
+   "prompt": "白い服がすぐに《汚れる》ので、気をつけています。",
+   "options": [
+    "よこれる",
+    "よごれる",
+    "よごうれる",
+    "よごんれる"
+   ],
+   "answer": 1,
+   "explanation": "「汚れる」đọc là「よごれる」. Nghĩa: to get dirty."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0500-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "授業の前に《よしゅう》をしておくと、よくわかります。",
+   "options": [
+    "与終",
+    "誉習",
+    "予習",
+    "与衆"
+   ],
+   "answer": 2,
+   "explanation": "「よしゅう」viết là「予習」. Nghĩa: preparation for a lesson."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0501",
+   "type": "KANJI_READING",
+   "prompt": "週末の《予定》を教えてください。",
+   "options": [
+    "よてんい",
+    "よてい",
+    "ようてい",
+    "よでい"
+   ],
+   "answer": 1,
+   "explanation": "「予定」đọc là「よてい」. Nghĩa: arrangement."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0502-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "人気のレストランなので、前に《よやく》しました。",
+   "options": [
+    "預役",
+    "予役",
+    "予約",
+    "預約"
+   ],
+   "answer": 2,
+   "explanation": "「よやく」viết là「予約」. Nghĩa: reservation."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0506-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "図書館を《りよう》するときは、静かにしてください。",
+   "options": [
+    "利用",
+    "裏様",
+    "利葉",
+    "履様"
+   ],
+   "answer": 0,
+   "explanation": "「りよう」viết là「利用」. Nghĩa: utilization."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0507",
+   "type": "KANJI_READING",
+   "prompt": "日本語は漢字とひらがなの《両方》を勉強します。",
+   "options": [
+    "りょうほう",
+    "りようほう",
+    "りょほう",
+    "りょうぼう"
+   ],
+   "answer": 0,
+   "explanation": "「両方」đọc là「りょうほう」. Nghĩa: both sides."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0508-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "旅行のときは《りょかん》に泊まるのが楽しみです。",
+   "options": [
+    "慮館",
+    "慮監",
+    "旅館",
+    "旅幹"
+   ],
+   "answer": 2,
+   "explanation": "「りょかん」viết là「旅館」. Nghĩa: Japanese hotel."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0509",
+   "type": "KANJI_READING",
+   "prompt": "夏は《冷房》がないと、とても寝られません。",
+   "options": [
+    "れぼう",
+    "れいぼ",
+    "れいぼう",
+    "れいほう"
+   ],
+   "answer": 2,
+   "explanation": "「冷房」đọc là「れいぼう」. Nghĩa: air conditioning."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0510-hyouki",
+   "type": "ORTHOGRAPHY",
+   "prompt": "日本の《れきし》について、もっと知りたいです。",
+   "options": [
+    "暦子",
+    "暦思",
+    "暦史",
+    "歴史"
+   ],
+   "answer": 3,
+   "explanation": "「れきし」viết là「歴史」. Nghĩa: history."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0511",
+   "type": "KANJI_READING",
+   "prompt": "昨日、友達に《連絡》して、明日の予定を決めた。",
+   "options": [
+    "れらく",
+    "れんらんく",
+    "れんらぐ",
+    "れんらく"
+   ],
+   "answer": 3,
+   "explanation": "「連絡」đọc là「れんらく」. Nghĩa: contact."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0516",
+   "type": "KANJI_READING",
+   "prompt": "電車の中に《忘れ物》をしてしまった。",
+   "options": [
+    "わずれもの",
+    "わすれもうの",
+    "わすれんもの",
+    "わすれもの"
+   ],
+   "answer": 3,
+   "explanation": "「忘れ物」đọc là「わすれもの」. Nghĩa: lost article."
+  },
+  {
+   "id": "oj-n4-vocab_reading-0520",
+   "type": "KANJI_READING",
+   "prompt": "父に《泳ぎ方》を教えてもらった。",
+   "options": [
+    "おようぎかた",
+    "およぎっかた",
+    "およきかた",
+    "およぎかた"
+   ],
+   "answer": 3,
+   "explanation": "「泳ぎ方」đọc là「およぎかた」. Nghĩa: way of swimming."
+  },
+  {
+   "id": "oj-n4-vocab_context-001",
+   "type": "CONTEXT",
+   "prompt": "道が分からないときは、交番で（　　）ください。",
+   "options": [
+    "聞いて",
+    "書いて",
+    "話して",
+    "読んで"
+   ],
+   "answer": 0,
+   "explanation": "「道を聞く」というフレーズが一般的です。交番は道を尋ねる場所なので「聞いて」が最適です。"
+  },
+  {
+   "id": "oj-n4-vocab_context-002",
+   "type": "CONTEXT",
+   "prompt": "昨日から熱があって、今日は（　　）が悪いです。",
+   "options": [
+    "気分",
+    "気持ち",
+    "様子",
+    "体調"
+   ],
+   "answer": 3,
+   "explanation": "体の調子を表すときは「体調（たいちょう）」を使います。「気分」は吐き気がある時などに使いますが、全体的な体の具合は「体調」が最も適切です。"
+  },
+  {
+   "id": "oj-n4-vocab_context-003",
+   "type": "CONTEXT",
+   "prompt": "このナイフはよく（　　）ので、気をつけてください。",
+   "options": [
+    "折れる",
+    "割れる",
+    "破れる",
+    "切れる"
+   ],
+   "answer": 3,
+   "explanation": "刃物がよく機能することを「切れる」と言います。「破れる」は紙や布、「割れる」はガラスなど、「折れる」は棒状の物に使います。"
+  },
+  {
+   "id": "oj-n4-vocab_context-004",
+   "type": "CONTEXT",
+   "prompt": "先生、今日の試験の（　　）を教えてください。",
+   "options": [
+    "結果",
+    "場所",
+    "理由",
+    "機会"
+   ],
+   "answer": 0,
+   "explanation": "試験の後に尋ねるものとして最も自然なのは「結果（けっか）」です。"
+  },
+  {
+   "id": "oj-n4-vocab_context-005",
+   "type": "CONTEXT",
+   "prompt": "スーパーで買ったリンゴが、一つ（　　）いました。",
+   "options": [
+    "壊れて",
+    "腐って",
+    "濡れて",
+    "汚れて"
+   ],
+   "answer": 1,
+   "explanation": "食べ物が悪くなることは「腐る（くさる）」と言います。「壊れる」は機械などに使います。"
+  },
+  {
+   "id": "oj-n4-vocab_context-006",
+   "type": "CONTEXT",
+   "prompt": "（　　）ですから、大きな声を出さないでください。",
+   "options": [
+    "迷惑",
+    "残念",
+    "遠慮",
+    "心配"
+   ],
+   "answer": 0,
+   "explanation": "他人の邪魔になること、不快にさせることを「迷惑（めいわく）」と言います。"
+  },
+  {
+   "id": "oj-n4-vocab_context-007",
+   "type": "CONTEXT",
+   "prompt": "会議の時間は（　　）通りに始まりました。",
+   "options": [
+    "希望",
+    "相談",
+    "約束",
+    "予定"
+   ],
+   "answer": 3,
+   "explanation": "あらかじめ決まっていたスケジュールは「予定（よてい）」と言います。「予定通り」で一つの決まった表現です。"
+  },
+  {
+   "id": "oj-n4-vocab_context-008",
+   "type": "CONTEXT",
+   "prompt": "冬休みが（　　）のが楽しみです。",
+   "options": [
+    "始まる",
+    "現れる",
+    "開く",
+    "起こる"
+   ],
+   "answer": 0,
+   "explanation": "休みやイベントが開始することは「始まる（はじまる）」を使います。"
+  },
+  {
+   "id": "oj-n4-vocab_context-009",
+   "type": "CONTEXT",
+   "prompt": "（　　）日本へ行きたいと思っています。",
+   "options": [
+    "いつも",
+    "いつまでも",
+    "いつか",
+    "いつでも"
+   ],
+   "answer": 2,
+   "explanation": "将来の不確定な時期を表すときは「いつか」を使います。「いつか～したい」は定番の表現です。"
+  },
+  {
+   "id": "oj-n4-vocab_context-010",
+   "type": "CONTEXT",
+   "prompt": "この仕事を一人でやるのは（　　）です。",
+   "options": [
+    "苦手",
+    "不便",
+    "無理",
+    "下手"
+   ],
+   "answer": 2,
+   "explanation": "能力を超えている、できないことを「無理（むり）」と言います。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-001",
+   "type": "GRAMMAR_FORM",
+   "prompt": "私は明日、友達に（　　）つもりです。",
+   "options": [
+    "会って",
+    "会う",
+    "会った",
+    "会わない"
+   ],
+   "answer": 1,
+   "explanation": "「（動詞辞書形）＋つもりだ」は、これからの予定や意図を表します。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-002",
+   "type": "GRAMMAR_FORM",
+   "prompt": "昨日、お酒を飲み（　　）ました。",
+   "options": [
+    "すぎた",
+    "すぎる",
+    "すぎて",
+    "すぎ"
+   ],
+   "answer": 3,
+   "explanation": "「（動詞ます形）＋すぎる」は、度が過ぎることを表します。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-003",
+   "type": "GRAMMAR_FORM",
+   "prompt": "この漢字の読み方を（　　）ください。",
+   "options": [
+    "教える",
+    "教え",
+    "教えた",
+    "教えて"
+   ],
+   "answer": 3,
+   "explanation": "「～てください」は、依頼や指示を表します。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-004",
+   "type": "GRAMMAR_FORM",
+   "prompt": "彼は今、本を（　　）います。",
+   "options": [
+    "読む",
+    "読み",
+    "読んだ",
+    "読んで"
+   ],
+   "answer": 3,
+   "explanation": "「～ています」は、現在進行中の動作を表します。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-005",
+   "type": "GRAMMAR_FORM",
+   "prompt": "雨が降って（　　）、ピクニックに行きます。",
+   "options": [
+    "も",
+    "なら",
+    "ば",
+    "たら"
+   ],
+   "answer": 0,
+   "explanation": "「～ても」は、逆接の条件を表します。「雨が降っても」で「たとえ雨が降っても」という意味になります。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-006",
+   "type": "GRAMMAR_FORM",
+   "prompt": "日本語を勉強（　　）ために、日本へ来ました。",
+   "options": [
+    "する",
+    "して",
+    "した",
+    "しない"
+   ],
+   "answer": 0,
+   "explanation": "「（動詞辞書形）＋ために」は、目的を表します。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-007",
+   "type": "GRAMMAR_FORM",
+   "prompt": "窓が（　　）います。",
+   "options": [
+    "開けた",
+    "開いて",
+    "開く",
+    "開けて"
+   ],
+   "answer": 1,
+   "explanation": "「（自動詞）＋ています」は、状態が続いていることを表します。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-008",
+   "type": "GRAMMAR_FORM",
+   "prompt": "もう宿題を（　　）しまいました。",
+   "options": [
+    "やり",
+    "やった",
+    "やる",
+    "やって"
+   ],
+   "answer": 3,
+   "explanation": "「～てしまう」は、完了や、残念な気持ちを表します。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-009",
+   "type": "GRAMMAR_FORM",
+   "prompt": "彼は歌を（　　）ながら、料理を作っている。",
+   "options": [
+    "歌って",
+    "歌い",
+    "歌った",
+    "歌う"
+   ],
+   "answer": 1,
+   "explanation": "「（動詞ます形）＋ながら」は、二つの動作を同時に行うことを表します。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-010",
+   "type": "GRAMMAR_FORM",
+   "prompt": "テレビを（　　）まま、寝てしまった。",
+   "options": [
+    "つけた",
+    "つける",
+    "つけ",
+    "つけて"
+   ],
+   "answer": 0,
+   "explanation": "「（動詞た形）＋まま」は、ある状態のままで何かをすることを表します。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-011",
+   "type": "GRAMMAR_FORM",
+   "prompt": "ご飯を食べ（　　）後で、散歩します。",
+   "options": [
+    "ばかりに",
+    "た",
+    "ものの",
+    "どころか"
+   ],
+   "answer": 1,
+   "explanation": "ご飯を食べた後で、散歩します。\n文法点：V-た form / noun + の + 後で。after doing X / after X。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-012",
+   "type": "GRAMMAR_FORM",
+   "prompt": "彼は今日来る（　　）です。",
+   "options": [
+    "ばかりに",
+    "どころか",
+    "ものの",
+    "はず"
+   ],
+   "answer": 3,
+   "explanation": "彼は今日来るはずです。\n文法点：Plain form + はず。should be / ought to be / is expected to。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-013",
+   "type": "GRAMMAR_FORM",
+   "prompt": "この本は難しいです（　　）、面白いです。",
+   "options": [
+    "ばかりに",
+    "が",
+    "どころか",
+    "ものの"
+   ],
+   "answer": 1,
+   "explanation": "この本は難しいですが、面白いです。\n文法点：Clause + が / けど / けれども。but / although / however。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-014",
+   "type": "GRAMMAR_FORM",
+   "prompt": "ここでタバコを吸っ（　　）はいけません。",
+   "options": [
+    "ものの",
+    "どころか",
+    "ばかりに",
+    "て"
+   ],
+   "answer": 3,
+   "explanation": "ここでタバコを吸ってはいけません。\n文法点：Verb-て + はいけない / はいけません。must not ___ (prohibition)。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-015",
+   "type": "GRAMMAR_FORM",
+   "prompt": "明日は学校に来（　　）てもいいです。",
+   "options": [
+    "ものの",
+    "なく",
+    "ばかりに",
+    "どころか"
+   ],
+   "answer": 1,
+   "explanation": "明日は学校に来なくてもいいです。\n文法点：Verb-なく + てもいい。don't have to / it's okay not to。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-016",
+   "type": "GRAMMAR_FORM",
+   "prompt": "この字は読み（　　）です。",
+   "options": [
+    "にくい",
+    "どころか",
+    "ものの",
+    "ばかりに"
+   ],
+   "answer": 0,
+   "explanation": "この字は読みにくいです。\n文法点：Verb stem + にくい。hard to ___ / difficult to ___。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-017",
+   "type": "GRAMMAR_FORM",
+   "prompt": "このペンは書き（　　）です。",
+   "options": [
+    "ものの",
+    "やすい",
+    "どころか",
+    "ばかりに"
+   ],
+   "answer": 1,
+   "explanation": "このペンは書きやすいです。\n文法点：Verb stem + やすい。easy to ___。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-018",
+   "type": "GRAMMAR_FORM",
+   "prompt": "友達（　　）本をくれた。",
+   "options": [
+    "が",
+    "ばかりに",
+    "ものの",
+    "どころか"
+   ],
+   "answer": 0,
+   "explanation": "友達が本をくれた。\n文法点：Giver が (Receiver に) Object を くれる。to give (toward speaker / in-group)。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-019",
+   "type": "GRAMMAR_FORM",
+   "prompt": "電車が遅れました。（　　）、会議に遅刻しました。",
+   "options": [
+    "ばかりに",
+    "それで",
+    "ものの",
+    "どころか"
+   ],
+   "answer": 1,
+   "explanation": "電車が遅れました。それで、会議に遅刻しました。\n文法点：それで (sentence-initial)。and then / so / as a result。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-020",
+   "type": "GRAMMAR_FORM",
+   "prompt": "時間があっ（　　）ら、映画を見ます。",
+   "options": [
+    "どころか",
+    "た",
+    "ばかりに",
+    "ものの"
+   ],
+   "answer": 1,
+   "explanation": "時間があったら、映画を見ます。\n文法点：Verb-た + ら。if / when ___ (general conditional)。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-022",
+   "type": "GRAMMAR_FORM",
+   "prompt": "頭が痛い（　　）。",
+   "options": [
+    "ものの",
+    "んです",
+    "どころか",
+    "ばかりに"
+   ],
+   "answer": 1,
+   "explanation": "頭が痛いんです。\n文法点：Plain form + んです / のです。explains, gives reason, or softly asserts: 'it's that ___'。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-023",
+   "type": "GRAMMAR_FORM",
+   "prompt": "雨が降っている（　　）、中止します。",
+   "options": [
+    "ばかりに",
+    "ものの",
+    "ので",
+    "どころか"
+   ],
+   "answer": 2,
+   "explanation": "雨が降っているので、中止します。\n文法点：Plain form + ので。because / since ___ (softer, more objective than から)。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-024",
+   "type": "GRAMMAR_FORM",
+   "prompt": "この部屋は広い（　　）、静かだ。",
+   "options": [
+    "どころか",
+    "ものの",
+    "ばかりに",
+    "し"
+   ],
+   "answer": 3,
+   "explanation": "この部屋は広いし、静かだ。\n文法点：Plain form + し (+ plain form + し + ...)。and / besides (non-exhaustive listing of reasons or facts)。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-025",
+   "type": "GRAMMAR_FORM",
+   "prompt": "先生に説明し（　　）いただきました。",
+   "options": [
+    "て",
+    "どころか",
+    "ものの",
+    "ばかりに"
+   ],
+   "answer": 0,
+   "explanation": "先生に説明していただきました。\n文法点：V-て form + いただく。I humbly receive the favor of X doing Y (humble)。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-026",
+   "type": "GRAMMAR_FORM",
+   "prompt": "雨が降っていた（　　）、試合は行われた。",
+   "options": [
+    "ものの",
+    "けれども",
+    "ばかりに",
+    "どころか"
+   ],
+   "answer": 1,
+   "explanation": "雨が降っていたけれども、試合は行われた。\n文法点：けれども (mid-sentence or sentence-initial)。but / however (formal-neutral)。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-027",
+   "type": "GRAMMAR_FORM",
+   "prompt": "私の話を聞い（　　）ほしい。",
+   "options": [
+    "て",
+    "どころか",
+    "ものの",
+    "ばかりに"
+   ],
+   "answer": 0,
+   "explanation": "私の話を聞いてほしい。\n文法点：V-て form + ほしい。want someone (else) to do X。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-028",
+   "type": "GRAMMAR_FORM",
+   "prompt": "日本語（　　）わかります。",
+   "options": [
+    "ものの",
+    "どころか",
+    "が",
+    "ばかりに"
+   ],
+   "answer": 2,
+   "explanation": "日本語がわかります。\n文法点：Noun + が + わかる。understand (object takes が, not を)。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-029",
+   "type": "GRAMMAR_FORM",
+   "prompt": "先生に本を（　　）貸しします。",
+   "options": [
+    "お",
+    "ものの",
+    "ばかりに",
+    "どころか"
+   ],
+   "answer": 0,
+   "explanation": "先生に本をお貸しします。\n文法点：お + V ます-stem + する (or ご + Sino-Japanese noun + する)。humble form: I will do X (for a superior)。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-030",
+   "type": "GRAMMAR_FORM",
+   "prompt": "友達に本を貸し（　　）あげました。",
+   "options": [
+    "ものの",
+    "どころか",
+    "て",
+    "ばかりに"
+   ],
+   "answer": 2,
+   "explanation": "友達に本を貸してあげました。\n文法点：V-て form + あげる。I do a favor for (someone outside my in-group)。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-031",
+   "type": "GRAMMAR_FORM",
+   "prompt": "日本に行っ（　　）ことがあります。",
+   "options": [
+    "どころか",
+    "た",
+    "ものの",
+    "ばかりに"
+   ],
+   "answer": 1,
+   "explanation": "日本に行ったことがあります。\n文法点：Verb-た + ことがある。have done ___ (experience)。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-032",
+   "type": "GRAMMAR_FORM",
+   "prompt": "日本語（　　）できますか。",
+   "options": [
+    "ものの",
+    "が",
+    "ばかりに",
+    "どころか"
+   ],
+   "answer": 1,
+   "explanation": "日本語ができますか。\n文法点：Noun + が + できる。can do / is possible (object takes が, not を)。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-033",
+   "type": "GRAMMAR_FORM",
+   "prompt": "日本に行く（　　）、京都がおすすめです。",
+   "options": [
+    "ばかりに",
+    "なら",
+    "ものの",
+    "どころか"
+   ],
+   "answer": 1,
+   "explanation": "日本に行くなら、京都がおすすめです。\n文法点：X + なら。if (it is the case that) ___; as for ___。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-034",
+   "type": "GRAMMAR_FORM",
+   "prompt": "私は猫（　　）好きです。",
+   "options": [
+    "どころか",
+    "ものの",
+    "が",
+    "ばかりに"
+   ],
+   "answer": 2,
+   "explanation": "私は猫が好きです。\n文法点：Noun + が + 好き / 嫌い。like / dislike (object takes が, not を)。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-035",
+   "type": "GRAMMAR_FORM",
+   "prompt": "友達に日本語を教え（　　）もらった。",
+   "options": [
+    "ばかりに",
+    "ものの",
+    "て",
+    "どころか"
+   ],
+   "answer": 2,
+   "explanation": "友達に日本語を教えてもらった。\n文法点：V-て form + もらう。I receive the favor of X doing Y / I have X do Y。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-036",
+   "type": "GRAMMAR_FORM",
+   "prompt": "遠くから音楽（　　）聞こえる。",
+   "options": [
+    "ばかりに",
+    "ものの",
+    "が",
+    "どころか"
+   ],
+   "answer": 2,
+   "explanation": "遠くから音楽が聞こえる。\n文法点：Noun + が + 聞こえる / 見える。is audible / is visible (spontaneous perception; object takes が)。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-037",
+   "type": "GRAMMAR_FORM",
+   "prompt": "毎日勉強すれ（　　）、上手になります。",
+   "options": [
+    "ものの",
+    "ば",
+    "どころか",
+    "ばかりに"
+   ],
+   "answer": 1,
+   "explanation": "毎日勉強すれば、上手になります。\n文法点：Verb → ば form。if ___ (general/hypothetical conditional)。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-038",
+   "type": "GRAMMAR_FORM",
+   "prompt": "友達がお金を貸し（　　）くれた。",
+   "options": [
+    "どころか",
+    "ものの",
+    "て",
+    "ばかりに"
+   ],
+   "answer": 2,
+   "explanation": "友達がお金を貸してくれた。\n文法点：V-て form + くれる。(someone) does a favor for me / us。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-039",
+   "type": "GRAMMAR_FORM",
+   "prompt": "来年、日本に行く（　　）です。",
+   "options": [
+    "どころか",
+    "ものの",
+    "ばかりに",
+    "つもり"
+   ],
+   "answer": 3,
+   "explanation": "来年、日本に行くつもりです。\n文法点：Verb (dictionary form) + つもり。intend to / plan to ___。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-040",
+   "type": "GRAMMAR_FORM",
+   "prompt": "ここに座っ（　　）もいいですか。",
+   "options": [
+    "どころか",
+    "ものの",
+    "ばかりに",
+    "て"
+   ],
+   "answer": 3,
+   "explanation": "ここに座ってもいいですか。\n文法点：Verb-て + もいい / もいいです。may / it's okay to ___ (permission)。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-041",
+   "type": "GRAMMAR_FORM",
+   "prompt": "子供（　　）わかる。",
+   "options": [
+    "ものの",
+    "ばかりに",
+    "どころか",
+    "でも"
+   ],
+   "answer": 3,
+   "explanation": "子供でもわかる。\n文法点：Noun + でも。even (a) / or something (casual suggestion)。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-043",
+   "type": "GRAMMAR_FORM",
+   "prompt": "このボタンを押す（　　）ドアが開きます。",
+   "options": [
+    "と",
+    "ものの",
+    "どころか",
+    "ばかりに"
+   ],
+   "answer": 0,
+   "explanation": "このボタンを押すとドアが開きます。\n文法点：Verb (dictionary form) + と。whenever / when (natural consequence)。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-044",
+   "type": "GRAMMAR_FORM",
+   "prompt": "雨が降っ（　　）も、行きます。",
+   "options": [
+    "ばかりに",
+    "ものの",
+    "どころか",
+    "て"
+   ],
+   "answer": 3,
+   "explanation": "雨が降っても、行きます。\n文法点：V-て form + も。even if / even though (hypothetical or counterfactual contrast)。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-045",
+   "type": "GRAMMAR_FORM",
+   "prompt": "（　　）本が好きです。",
+   "options": [
+    "こういう",
+    "どころか",
+    "ものの",
+    "ばかりに"
+   ],
+   "answer": 0,
+   "explanation": "こういう本が好きです。\n文法点：こういう / そういう / ああいう / どういう + noun。this kind of / that kind of / that kind of (over there) / what kind of。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-046",
+   "type": "GRAMMAR_FORM",
+   "prompt": "ご飯を食べ（　　）から、出かけます。",
+   "options": [
+    "ばかりに",
+    "ものの",
+    "て",
+    "どころか"
+   ],
+   "answer": 2,
+   "explanation": "ご飯を食べてから、出かけます。\n文法点：Verb-て form + から。after doing X (then Y)。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-047",
+   "type": "GRAMMAR_FORM",
+   "prompt": "疲れている。（　　）、続けなければならない。",
+   "options": [
+    "どころか",
+    "それでも",
+    "ものの",
+    "ばかりに"
+   ],
+   "answer": 1,
+   "explanation": "疲れている。それでも、続けなければならない。\n文法点：それでも (sentence-initial)。even so / nonetheless / still。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-048",
+   "type": "GRAMMAR_FORM",
+   "prompt": "（　　）待ちください。",
+   "options": [
+    "ものの",
+    "ばかりに",
+    "どころか",
+    "お"
+   ],
+   "answer": 3,
+   "explanation": "お待ちください。\n文法点：お + V ます-stem + ください (or ご + Sino-Japanese noun + ください)。please do (very polite honorific request)。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-049",
+   "type": "GRAMMAR_FORM",
+   "prompt": "一つ（　　）取ってください。",
+   "options": [
+    "どころか",
+    "ばかりに",
+    "ずつ",
+    "ものの"
+   ],
+   "answer": 2,
+   "explanation": "一つずつ取ってください。\n文法点：Number + counter + ずつ。each / per / at a rate of。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-050",
+   "type": "GRAMMAR_FORM",
+   "prompt": "お金が100円（　　）ない。",
+   "options": [
+    "ばかりに",
+    "ものの",
+    "しか",
+    "どころか"
+   ],
+   "answer": 2,
+   "explanation": "お金が100円しかない。\n文法点：Noun (or V plain) + しか + negative predicate。only / nothing but (negative-polarity 'only')。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-052",
+   "type": "GRAMMAR_FORM",
+   "prompt": "朝ごはんを食べました。（　　）、学校へ行きました。",
+   "options": [
+    "ものの",
+    "どころか",
+    "ばかりに",
+    "それから"
+   ],
+   "answer": 3,
+   "explanation": "朝ごはんを食べました。それから、学校へ行きました。\n文法点：それから (sentence-initial)。and then / after that / in addition。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-053",
+   "type": "GRAMMAR_FORM",
+   "prompt": "雨が降っています。（　　）、傘を持っていきます。",
+   "options": [
+    "ばかりに",
+    "ものの",
+    "だから",
+    "どころか"
+   ],
+   "answer": 2,
+   "explanation": "雨が降っています。だから、傘を持っていきます。\n文法点：だから (sentence-initial)。so / therefore / that's why。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-054",
+   "type": "GRAMMAR_FORM",
+   "prompt": "雨が降っていた。（　　）、試合は行われた。",
+   "options": [
+    "ばかりに",
+    "しかし",
+    "どころか",
+    "ものの"
+   ],
+   "answer": 1,
+   "explanation": "雨が降っていた。しかし、試合は行われた。\n文法点：しかし (sentence-initial)。but / however (formal)。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-055",
+   "type": "GRAMMAR_FORM",
+   "prompt": "天気予報によると、明日は雨だ（　　）です。",
+   "options": [
+    "そう",
+    "ものの",
+    "どころか",
+    "ばかりに"
+   ],
+   "answer": 0,
+   "explanation": "天気予報によると、明日は雨だそうです。\n文法点：Plain form + そう(だ/です)。I heard that / apparently (reported speech)。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-056",
+   "type": "GRAMMAR_FORM",
+   "prompt": "昨日、勉強する（　　）けど、疲れて寝てしまった。",
+   "options": [
+    "つもりだった",
+    "ものの",
+    "ばかりに",
+    "どころか"
+   ],
+   "answer": 0,
+   "explanation": "昨日、勉強するつもりだったけど、疲れて寝てしまった。\n文法点：V plain non-past + つもりだった。had intended to / was going to。"
+  },
+  {
+   "id": "oj-n4-grammar_fill-057",
+   "type": "GRAMMAR_FORM",
+   "prompt": "分からなかったら、聞け（　　）いいです。",
+   "options": [
+    "ば",
+    "どころか",
+    "ものの",
+    "ばかりに"
+   ],
+   "answer": 0,
+   "explanation": "分からなかったら、聞けばいいです。\n文法点：Verb ば-form + いい。should / just need to / it'd be good if。"
+  }
+ ]
+}
