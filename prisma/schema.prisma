@@ -1,0 +1,15 @@
+// Prisma schema — https://pris.ly/d/prisma-schema
+// Connection URL được cấu hình trong prisma.config.ts (Prisma 7).
+
+generator client {
+  provider            = "prisma-client"
+  output              = "../src/generated/prisma"
+  moduleFormat        = "esm"
+  importFileExtension = "js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// Các model (User, Exam, Question, Attempt, ...) sẽ được thêm khi mô tả chức năng.
