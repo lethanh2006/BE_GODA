@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { APP_GUARD } from '@nestjs/core';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 import { validateEnv } from './config/env.validation.js';
+import { AttemptsModule } from './modules/attempts/attempts.module.js';
 import { AuthModule } from './modules/auth/auth.module.js';
 import { CatalogModule } from './modules/catalog/catalog.module.js';
 import { ExamsModule } from './modules/exams/exams.module.js';
@@ -23,6 +24,7 @@ import { PrismaModule } from './prisma/prisma.module.js';
     UsersModule,
     CatalogModule,
     ExamsModule,
+    AttemptsModule,
     HealthModule,
   ],
   providers: [{ provide: APP_GUARD, useClass: ThrottlerGuard }],
