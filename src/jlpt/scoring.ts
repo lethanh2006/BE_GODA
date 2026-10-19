@@ -15,48 +15,55 @@ interface ScoreCategory {
 
 interface LevelScoring {
   categories: ScoreCategory[];
-  /** Điểm đỗ tổng (合格点) trên thang 180 — tính cả phần nghe. */
+  /** Điểm đỗ tổng (合格点) trên thang 180. */
   passTotal: number;
-  listening: { maxScore: number; minScore: number };
 }
 
-const languageAndReading = (max: number, min: number): ScoreCategory[] => [
-  {
-    key: 'language_reading',
-    nameJa: '言語知識（文字・語彙・文法）・読解',
-    nameVi: 'Kiến thức ngôn ngữ – Đọc hiểu',
-    groups: ['vocabulary', 'grammar', 'reading'],
-    maxScore: max,
-    minScore: min,
-  },
-];
+const languageAndReading: ScoreCategory = {
+  key: 'language_reading',
+  nameJa: '言語知識（文字・語彙・文法）・読解',
+  nameVi: 'Kiến thức ngôn ngữ – Đọc hiểu',
+  groups: ['vocabulary', 'grammar', 'reading'],
+  maxScore: 120,
+  minScore: 38,
+};
 
-const languageThenReading: ScoreCategory[] = [
-  {
-    key: 'language',
-    nameJa: '言語知識（文字・語彙・文法）',
-    nameVi: 'Kiến thức ngôn ngữ',
-    groups: ['vocabulary', 'grammar'],
-    maxScore: 60,
-    minScore: 19,
-  },
-  {
-    key: 'reading',
-    nameJa: '読解',
-    nameVi: 'Đọc hiểu',
-    groups: ['reading'],
-    maxScore: 60,
-    minScore: 19,
-  },
-];
+const language: ScoreCategory = {
+  key: 'language',
+  nameJa: '言語知識（文字・語彙・文法）',
+  nameVi: 'Kiến thức ngôn ngữ',
+  groups: ['vocabulary', 'grammar'],
+  maxScore: 60,
+  minScore: 19,
+};
+
+const reading: ScoreCategory = {
+  key: 'reading',
+  nameJa: '読解',
+  nameVi: 'Đọc hiểu',
+  groups: ['reading'],
+  maxScore: 60,
+  minScore: 19,
+};
+
+const listening: ScoreCategory = {
+  key: 'listening',
+  nameJa: '聴解',
+  nameVi: 'Nghe hiểu',
+  groups: ['listening'],
+  maxScore: 60,
+  minScore: 19,
+};
 
 const SCORING: Record<JlptLevel, LevelScoring> = {
-  N1: { categories: languageThenReading, passTotal: 100, listening: { maxScore: 60, minScore: 19 } },
-  N2: { categories: languageThenReading, passTotal: 90, listening: { maxScore: 60, minScore: 19 } },
-  N3: { categories: languageThenReading, passTotal: 95, listening: { maxScore: 60, minScore: 19 } },
-  N4: { categories: languageAndReading(120, 38), passTotal: 90, listening: { maxScore: 60, minScore: 19 } },
-  N5: { categories: languageAndReading(120, 38), passTotal: 80, listening: { maxScore: 60, minScore: 19 } },
+  N1: { categories: [language, reading, listening], passTotal: 100 },
+  N2: { categories: [language, reading, listening], passTotal: 90 },
+  N3: { categories: [language, reading, listening], passTotal: 95 },
+  N4: { categories: [languageAndReading, listening], passTotal: 90 },
+  N5: { categories: [languageAndReading, listening], passTotal: 80 },
 };
+
+const FULL_SCALE = 180;
 
 export interface GradedItem {
   type: QuestionType;
@@ -86,8 +93,8 @@ export interface JlptEstimate {
 }
 
 /**
- * Ước tính điểm JLPT từ tỷ lệ đúng. Điểm thật là điểm quy đổi (尺度得点) nên đây chỉ là ước lượng,
- * và vì chưa có phần nghe, ngưỡng đỗ được quy đổi theo tỷ lệ trên tổng điểm các phần đã làm.
+ * Ước tính điểm JLPT từ tỷ lệ đúng. Điểm thật là điểm quy đổi (尺度得点) nên đây chỉ là ước lượng.
+ * Khi lượt làm thiếu một số phần (vd chỉ làm phần nghe), ngưỡng đỗ được quy đổi theo tỷ lệ trên các phần đã làm.
  */
 export function estimateJlptScore(level: JlptLevel, items: GradedItem[]): JlptEstimate {
   const scoring = SCORING[level];
@@ -115,8 +122,8 @@ export function estimateJlptScore(level: JlptLevel, items: GradedItem[]): JlptEs
 
   const score = categories.reduce((sum, c) => sum + c.score, 0);
   const maxScore = categories.reduce((sum, c) => sum + c.maxScore, 0);
-  const fullMax = maxScore + scoring.listening.maxScore;
-  const passScore = Math.ceil((scoring.passTotal / fullMax) * maxScore);
+  const passScore = Math.ceil((scoring.passTotal / FULL_SCALE) * maxScore);
+  const missing = scoring.categories.filter((c) => !categories.some((done) => done.key === c.key));
 
   return {
     categories,
@@ -124,6 +131,8 @@ export function estimateJlptScore(level: JlptLevel, items: GradedItem[]): JlptEs
     maxScore,
     passScore,
     passed: categories.length > 0 && score >= passScore && categories.every((c) => c.passedMin),
-    note: `Điểm ước tính, chưa gồm phần Nghe hiểu (聴解). Điểm đỗ chính thức ${level}: ${scoring.passTotal}/180.`,
+    note: missing.length
+      ? `Điểm ước tính, chưa gồm phần ${missing.map((c) => c.nameVi).join(', ')} — ngưỡng đỗ được quy đổi theo tỷ lệ. Điểm đỗ chính thức ${level}: ${scoring.passTotal}/${FULL_SCALE}.`
+      : `Điểm ước tính theo tỷ lệ câu đúng (điểm JLPT thật là điểm quy đổi). Điểm đỗ chính thức ${level}: ${scoring.passTotal}/${FULL_SCALE}.`,
   };
 }

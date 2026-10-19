@@ -1,6 +1,6 @@
 import { QuestionType } from '../generated/prisma/enums.js';
 
-export type SkillGroup = 'vocabulary' | 'grammar' | 'reading';
+export type SkillGroup = 'vocabulary' | 'grammar' | 'reading' | 'listening';
 
 export interface QuestionTypeMeta {
   type: QuestionType;
@@ -10,12 +10,17 @@ export interface QuestionTypeMeta {
   /** Lời dẫn đề bài theo phong cách JLPT. */
   instruction: string;
   instructionVi: string;
-  /** Dạng bài có bài đọc đi kèm. */
+  /** Dạng bài có bài đọc (hoặc script nghe) đi kèm. */
   hasPassage: boolean;
+  /** Dạng nghe mà các lựa chọn được đọc to, không in sẵn (như đề thật). */
+  spokenOptions: boolean;
 }
 
-const meta = (m: Omit<QuestionTypeMeta, 'hasPassage'> & { hasPassage?: boolean }) =>
-  ({ hasPassage: false, ...m }) satisfies QuestionTypeMeta;
+const meta = (
+  m: Omit<QuestionTypeMeta, 'hasPassage' | 'spokenOptions'> & { hasPassage?: boolean; spokenOptions?: boolean },
+) => ({ hasPassage: false, spokenOptions: false, ...m }) satisfies QuestionTypeMeta;
+
+const LISTEN_FIRST = 'まず質問を聞いてください。それから話を聞いて、1から4の中から、最もよいものを一つえらんでください。';
 
 export const QUESTION_TYPES: Record<QuestionType, QuestionTypeMeta> = {
   KANJI_READING: meta({
@@ -145,12 +150,70 @@ export const QUESTION_TYPES: Record<QuestionType, QuestionTypeMeta> = {
     instructionVi: 'Đọc thông báo/tờ rơi và tìm thông tin cần thiết.',
     hasPassage: true,
   }),
+  LISTEN_TASK: meta({
+    type: QuestionType.LISTEN_TASK,
+    group: 'listening',
+    nameJa: '課題理解',
+    nameVi: 'Hiểu nhiệm vụ',
+    instruction: LISTEN_FIRST,
+    instructionVi: 'Nghe câu hỏi, rồi nghe hội thoại và chọn việc nhân vật sẽ làm (tiếp theo).',
+    hasPassage: true,
+  }),
+  LISTEN_POINT: meta({
+    type: QuestionType.LISTEN_POINT,
+    group: 'listening',
+    nameJa: 'ポイント理解',
+    nameVi: 'Hiểu điểm chính',
+    instruction: LISTEN_FIRST,
+    instructionVi: 'Nghe câu hỏi, rồi nghe hội thoại và nắm bắt chi tiết quan trọng (lý do, cảm xúc…).',
+    hasPassage: true,
+  }),
+  LISTEN_SUMMARY: meta({
+    type: QuestionType.LISTEN_SUMMARY,
+    group: 'listening',
+    nameJa: '概要理解',
+    nameVi: 'Hiểu khái quát',
+    instruction: 'まず話を聞いてください。それから、質問と選択肢を聞いて、1から4の中から、最もよいものを一つえらんでください。',
+    instructionVi: 'Nghe đoạn nói và nắm ý chính. Câu hỏi và các lựa chọn được đọc sau đoạn nói.',
+    hasPassage: true,
+    spokenOptions: true,
+  }),
+  LISTEN_UTTERANCE: meta({
+    type: QuestionType.LISTEN_UTTERANCE,
+    group: 'listening',
+    nameJa: '発話表現',
+    nameVi: 'Diễn đạt bằng lời',
+    instruction: 'つぎの場面で、何と言いますか。1から3の中から、最もよいものを一つえらんでください。',
+    instructionVi: 'Nghe tình huống và chọn câu nói phù hợp. Các lựa chọn được đọc to.',
+    hasPassage: true,
+    spokenOptions: true,
+  }),
+  LISTEN_RESPONSE: meta({
+    type: QuestionType.LISTEN_RESPONSE,
+    group: 'listening',
+    nameJa: '即時応答',
+    nameVi: 'Phản xạ nhanh',
+    instruction: 'まず文を聞いてください。それから、その返事を聞いて、1から3の中から、最もよいものを一つえらんでください。',
+    instructionVi: 'Nghe một câu nói ngắn và chọn câu đáp lại phù hợp nhất.',
+    hasPassage: true,
+    spokenOptions: true,
+  }),
+  LISTEN_INTEGRATED: meta({
+    type: QuestionType.LISTEN_INTEGRATED,
+    group: 'listening',
+    nameJa: '統合理解',
+    nameVi: 'Nghe hiểu tổng hợp',
+    instruction: '長めの話を聞きます。まず話を聞いてください。それから、質問を聞いて、1から4の中から、最もよいものを一つえらんでください。',
+    instructionVi: 'Nghe đoạn hội thoại dài, tổng hợp nhiều thông tin để trả lời.',
+    hasPassage: true,
+  }),
 };
 
 export const SKILL_GROUPS: Record<SkillGroup, { nameJa: string; nameVi: string }> = {
   vocabulary: { nameJa: '文字・語彙', nameVi: 'Chữ – Từ vựng' },
   grammar: { nameJa: '文法', nameVi: 'Ngữ pháp' },
   reading: { nameJa: '読解', nameVi: 'Đọc hiểu' },
+  listening: { nameJa: '聴解', nameVi: 'Nghe hiểu' },
 };
 
 export const QUESTION_TYPE_ORDER = Object.keys(QUESTION_TYPES) as QuestionType[];

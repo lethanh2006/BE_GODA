@@ -42,7 +42,6 @@ export class CatalogService {
           (sum, s) => sum + s.mondai.reduce((n, m) => n + m.count, 0),
           0,
         ),
-        listeningMinutes: blueprint.listeningMinutes,
       };
     });
 

@@ -37,6 +37,12 @@ enum QuestionType {
   READING_INTEGRATED // 統合理解
   READING_THEMATIC // 主張理解（長文）
   INFO_RETRIEVAL // 情報検索
+  LISTEN_TASK // 課題理解
+  LISTEN_POINT // ポイント理解
+  LISTEN_SUMMARY // 概要理解
+  LISTEN_UTTERANCE // 発話表現
+  LISTEN_RESPONSE // 即時応答
+  LISTEN_INTEGRATED // 統合理解
 }
 
 enum UserRole {

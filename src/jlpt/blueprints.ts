@@ -18,21 +18,25 @@ export interface SectionBlueprint {
 export interface LevelBlueprint {
   level: JlptLevel;
   sections: SectionBlueprint[];
-  /** Thời gian phần nghe (chưa hỗ trợ) — chỉ để hiển thị. */
-  listeningMinutes: number;
 }
+
+const listening = (durationMinutes: number, mondai: MondaiBlueprint[]): SectionBlueprint => ({
+  title: '聴解',
+  titleVi: 'Nghe hiểu',
+  durationMinutes,
+  mondai,
+});
 
 const { N1, N2, N3, N4, N5 } = JlptLevel;
 const T = QuestionType;
 
 /**
- * Cấu trúc đề theo format JLPT hiện hành (từ kỳ 12/2020), không gồm phần 聴解.
+ * Cấu trúc đề theo format JLPT hiện hành (từ kỳ 12/2020).
  * Số câu mỗi 問題 là con số tiêu biểu; đề thật có thể chênh lệch 1–2 câu.
  */
 export const BLUEPRINTS: Record<JlptLevel, LevelBlueprint> = {
   N5: {
     level: N5,
-    listeningMinutes: 30,
     sections: [
       {
         title: '言語知識（文字・語彙）',
@@ -58,11 +62,16 @@ export const BLUEPRINTS: Record<JlptLevel, LevelBlueprint> = {
           { type: T.INFO_RETRIEVAL, count: 1 },
         ],
       },
+      listening(30, [
+        { type: T.LISTEN_TASK, count: 7 },
+        { type: T.LISTEN_POINT, count: 6 },
+        { type: T.LISTEN_UTTERANCE, count: 5 },
+        { type: T.LISTEN_RESPONSE, count: 6 },
+      ]),
     ],
   },
   N4: {
     level: N4,
-    listeningMinutes: 35,
     sections: [
       {
         title: '言語知識（文字・語彙）',
@@ -89,11 +98,16 @@ export const BLUEPRINTS: Record<JlptLevel, LevelBlueprint> = {
           { type: T.INFO_RETRIEVAL, count: 2 },
         ],
       },
+      listening(35, [
+        { type: T.LISTEN_TASK, count: 8 },
+        { type: T.LISTEN_POINT, count: 7 },
+        { type: T.LISTEN_UTTERANCE, count: 5 },
+        { type: T.LISTEN_RESPONSE, count: 8 },
+      ]),
     ],
   },
   N3: {
     level: N3,
-    listeningMinutes: 40,
     sections: [
       {
         title: '言語知識（文字・語彙）',
@@ -121,11 +135,17 @@ export const BLUEPRINTS: Record<JlptLevel, LevelBlueprint> = {
           { type: T.INFO_RETRIEVAL, count: 2 },
         ],
       },
+      listening(40, [
+        { type: T.LISTEN_TASK, count: 6 },
+        { type: T.LISTEN_POINT, count: 6 },
+        { type: T.LISTEN_SUMMARY, count: 3 },
+        { type: T.LISTEN_UTTERANCE, count: 4 },
+        { type: T.LISTEN_RESPONSE, count: 9 },
+      ]),
     ],
   },
   N2: {
     level: N2,
-    listeningMinutes: 50,
     sections: [
       {
         title: '言語知識（文字・語彙・文法）・読解',
@@ -148,11 +168,17 @@ export const BLUEPRINTS: Record<JlptLevel, LevelBlueprint> = {
           { type: T.INFO_RETRIEVAL, count: 2 },
         ],
       },
+      listening(50, [
+        { type: T.LISTEN_TASK, count: 5 },
+        { type: T.LISTEN_POINT, count: 6 },
+        { type: T.LISTEN_SUMMARY, count: 5 },
+        { type: T.LISTEN_RESPONSE, count: 12 },
+        { type: T.LISTEN_INTEGRATED, count: 4 },
+      ]),
     ],
   },
   N1: {
     level: N1,
-    listeningMinutes: 55,
     sections: [
       {
         title: '言語知識（文字・語彙・文法）・読解',
@@ -174,6 +200,13 @@ export const BLUEPRINTS: Record<JlptLevel, LevelBlueprint> = {
           { type: T.INFO_RETRIEVAL, count: 2 },
         ],
       },
+      listening(55, [
+        { type: T.LISTEN_TASK, count: 6 },
+        { type: T.LISTEN_POINT, count: 7 },
+        { type: T.LISTEN_SUMMARY, count: 6 },
+        { type: T.LISTEN_RESPONSE, count: 14 },
+        { type: T.LISTEN_INTEGRATED, count: 4 },
+      ]),
     ],
   },
 };

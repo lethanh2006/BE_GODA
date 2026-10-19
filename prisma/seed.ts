@@ -35,9 +35,10 @@ async function loadContent(): Promise<ContentFile[]> {
 /** Kiểm tra dữ liệu trước khi nạp — lỗi ở đây là lỗi soạn đề, phải sửa trong content/. */
 function validate(file: ContentFile, question: ContentQuestion, passageIds: Set<string>) {
   const where = `${file.source}/${file.level} ${question.id}`;
-  if (question.options.length !== 4) throw new Error(`${where}: cần đúng 4 đáp án`);
-  if (new Set(question.options).size !== 4) throw new Error(`${where}: đáp án bị trùng`);
-  if (question.answer < 0 || question.answer > 3) throw new Error(`${where}: answer ngoài khoảng 0–3`);
+  const count = question.options.length;
+  if (count < 3 || count > 4) throw new Error(`${where}: cần 3 hoặc 4 đáp án`);
+  if (new Set(question.options).size !== count) throw new Error(`${where}: đáp án bị trùng`);
+  if (question.answer < 0 || question.answer >= count) throw new Error(`${where}: answer ngoài khoảng`);
   if (question.passageId && !passageIds.has(question.passageId)) {
     throw new Error(`${where}: không tìm thấy bài đọc ${question.passageId}`);
   }
@@ -45,7 +46,10 @@ function validate(file: ContentFile, question: ContentQuestion, passageIds: Set<
 
 function finalOptions(file: ContentFile, question: ContentQuestion) {
   if (!file.answerFirst) return { options: question.options, answerIndex: question.answer };
-  const order = shuffle([0, 1, 2, 3], seededRandom(hashString(question.id)));
+  const order = shuffle(
+    question.options.map((_, i) => i),
+    seededRandom(hashString(question.id)),
+  );
   return { options: order.map((i) => question.options[i]), answerIndex: order.indexOf(question.answer) };
 }
 
@@ -143,52 +147,64 @@ async function seedQuestions(files: ContentFile[]) {
 }
 
 async function seedExams(files: ContentFile[]) {
+  // Gom các file cùng (cấp độ, số đề): vd n5-01.json + n5-01-listening.json.
+  const groups = new Map<string, ContentFile[]>();
   for (const file of files.filter((f) => f.exam)) {
-    const exam = file.exam!;
-    const blueprint = BLUEPRINTS[file.level];
-    const slug = `${file.level.toLowerCase()}-de-${String(exam.number).padStart(2, '0')}`;
+    const key = `${file.level}-${file.exam!.number}`;
+    groups.set(key, [...(groups.get(key) ?? []), file]);
+  }
+
+  for (const group of groups.values()) {
+    const { level } = group[0];
+    const number = group[0].exam!.number;
+    const head = group.find((f) => f.exam!.title);
+    if (!head) throw new Error(`Đề ${level} số ${number}: chưa có file nào khai báo exam.title`);
+    const blueprint = BLUEPRINTS[level];
+    const slug = `${level.toLowerCase()}-de-${String(number).padStart(2, '0')}`;
+    const questions = group.flatMap((f) => f.questions);
     const byType = new Map<string, ContentQuestion[]>();
-    for (const question of file.questions) {
+    for (const question of questions) {
       byType.set(question.type, [...(byType.get(question.type) ?? []), question]);
     }
 
     const used = new Set<string>();
-    const sections = blueprint.sections.map((section) => {
-      let mondaiNumber = 0;
-      const items: { questionId: string; mondai: number }[] = [];
-      for (const mondai of section.mondai) {
-        const questions = byType.get(mondai.type) ?? [];
-        if (questions.length === 0) {
-          console.warn(`  ⚠ ${slug}: thiếu dạng ${mondai.type}`);
-          continue;
+    const sections = blueprint.sections
+      .map((section) => {
+        if (!section.mondai.some((m) => byType.has(m.type))) {
+          console.warn(`  ⚠ ${slug}: chưa có phần ${section.title}`);
+          return null;
         }
-        if (questions.length !== mondai.count) {
-          console.warn(`  ⚠ ${slug}: ${mondai.type} có ${questions.length} câu (chuẩn ${mondai.count})`);
+        let mondaiNumber = 0;
+        const items: { questionId: string; mondai: number }[] = [];
+        for (const mondai of section.mondai) {
+          const list = byType.get(mondai.type) ?? [];
+          if (list.length === 0) {
+            console.warn(`  ⚠ ${slug}: thiếu dạng ${mondai.type}`);
+            continue;
+          }
+          if (list.length !== mondai.count) {
+            console.warn(`  ⚠ ${slug}: ${mondai.type} có ${list.length} câu (chuẩn ${mondai.count})`);
+          }
+          mondaiNumber++;
+          for (const question of list) {
+            used.add(question.id);
+            items.push({ questionId: question.id, mondai: mondaiNumber });
+          }
         }
-        mondaiNumber++;
-        for (const question of questions) {
-          used.add(question.id);
-          items.push({ questionId: question.id, mondai: mondaiNumber });
-        }
-      }
-      return { section, items };
-    });
-    const unused = file.questions.filter((q) => !used.has(q.id));
+        return { section, items };
+      })
+      .filter((s) => s !== null);
+
+    const unused = questions.filter((q) => !used.has(q.id));
     if (unused.length) {
-      throw new Error(`${slug}: ${unused.length} câu có dạng không thuộc cấu trúc đề ${file.level} (${unused[0].type})`);
+      throw new Error(`${slug}: ${unused.length} câu có dạng không thuộc cấu trúc đề ${level} (${unused[0].type})`);
     }
 
+    const { title, description } = head.exam!;
     const record = await prisma.exam.upsert({
       where: { slug },
-      create: {
-        slug,
-        level: file.level,
-        number: exam.number,
-        title: exam.title,
-        description: exam.description,
-        source: file.source,
-      },
-      update: { title: exam.title, description: exam.description, number: exam.number, published: true },
+      create: { slug, level, number, title: title!, description, source: head.source },
+      update: { title: title!, description, number, published: true },
     });
 
     for (const [order, { section, items }] of sections.entries()) {
@@ -212,7 +228,7 @@ async function seedExams(files: ContentFile[]) {
       ]);
     }
     await prisma.examSection.deleteMany({ where: { examId: record.id, order: { gte: sections.length } } });
-    console.log(`  Đề ${slug}: ${used.size} câu`);
+    console.log(`  Đề ${slug}: ${used.size} câu, ${sections.length} phần thi`);
   }
 }
 
