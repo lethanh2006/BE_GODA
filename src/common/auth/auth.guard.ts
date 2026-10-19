@@ -9,18 +9,21 @@ import { Reflector } from '@nestjs/core';
 import { JwtService } from '@nestjs/jwt';
 import type { Request } from 'express';
 import type { UserRole } from '../../generated/prisma/enums.js';
+import { PrismaService } from '../../prisma/prisma.service.js';
 import { AUTH_COOKIE, type JwtPayload } from './auth-user.js';
 import { AUTH_REQUIRED_KEY, ROLES_KEY } from './decorators.js';
 
 /**
  * Guard toàn cục: đọc JWT từ cookie hoặc header Authorization (nếu có) và gắn vào request.user.
  * Chỉ chặn request khi route có @Authenticated() hoặc @Roles().
+ * Với @Roles(), quyền được đọc lại từ database để thay đổi quyền có hiệu lực ngay, không phụ thuộc token cũ.
  */
 @Injectable()
 export class AuthGuard implements CanActivate {
   constructor(
     private readonly jwt: JwtService,
     private readonly reflector: Reflector,
+    private readonly prisma: PrismaService,
   ) {}
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
@@ -45,8 +48,15 @@ export class AuthGuard implements CanActivate {
     if (required && !request.user) {
       throw new UnauthorizedException('Vui lòng đăng nhập');
     }
-    if (roles?.length && !roles.includes(request.user!.role)) {
-      throw new ForbiddenException('Không có quyền truy cập');
+    if (roles?.length) {
+      const current = await this.prisma.user.findUnique({
+        where: { id: request.user!.id },
+        select: { role: true },
+      });
+      if (!current || !roles.includes(current.role)) {
+        throw new ForbiddenException('Không có quyền truy cập');
+      }
+      request.user!.role = current.role;
     }
     return true;
   }
