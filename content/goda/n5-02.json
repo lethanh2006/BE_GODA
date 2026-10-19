@@ -1,0 +1,603 @@
+{
+ "source": "goda",
+ "level": "N5",
+ "answerFirst": true,
+ "exam": {
+  "number": 2,
+  "title": "JLPT N5 — Đề thi thử số 2",
+  "description": "Đề GODA biên soạn theo cấu trúc N5 hiện hành: 文字・語彙 20 phút, 文法・読解 40 phút, 聴解 30 phút, có giải thích tiếng Việt từng câu."
+ },
+ "passages": [
+  {
+   "id": "goda-n5-02-tg",
+   "content": "わたしは　こうえんが　すきです。うちの　ちかくに　大きい　こうえんが　あります。こうえんには　木が　たくさん（　1　）。\nわたしは　日よう日の　あさ、いつも　こうえんを　さんぽします。こうえんの　中に　ちいさい　きっさてんが　あります。わたしは　そこで　コーヒーを　のみ（　2　）、本を　よみます。\nきのうは　あめでした（　3　）、こうえんへ　いきませんでした。うちで　えいがを　みました。らいしゅうは　ともだちと　いっしょに　こうえんへ（　4　）。"
+  },
+  {
+   "id": "goda-n5-02-s1",
+   "content": "リンさん\n\nきょうは　ごご　三時に　かえります。れいぞうこに　ケーキが　ありますから、たべて　ください。\nそれから、六時に　にもつが　きます。うけとって　ください。\n\nやまだ"
+  },
+  {
+   "id": "goda-n5-02-s2",
+   "content": "わたしの　いえは　えきから　あるいて　十五分です。でも、えきから　いえまで　バスも　あります。バスは　五分です。あさは　いそがしいですから、バスに　のります。かえりは　あるいて　かえります。"
+  },
+  {
+   "id": "goda-n5-02-m1",
+   "content": "わたしの　しゅみは　りょうりです。くにでは　あまり　りょうりを　しませんでしたが、日本に　来てから、まいにち　じぶんで　ばんごはんを　つくって　います。\nさいしょは　カレーや　やさいいためなど、かんたんな　りょうりしか　つくれませんでした。いまは　インターネットで　日本の　りょうりの　つくりかたを　しらべて、いろいろな　りょうりを　つくります。\nせんしゅうの　どようびは、ともだちを　うちに　よんで、てんぷらを　つくりました。てんぷらは　むずかしかったですが、ともだちは「おいしい」と　いって、たくさん　たべて　くれました。とても　うれしかったです。こんどは　すしを　つくりたいです。"
+  },
+  {
+   "id": "goda-n5-02-i1",
+   "title": "みどり市　プールの　ごあんない",
+   "content": "■ あいて　いる　じかん\n　火よう日〜日よう日　　ごぜん9じ〜ごご8じ\n　月よう日は　やすみです。\n\n■ おかね（1かい）\n　おとな（16さい〜）　　　　400えん\n　こども（6さい〜15さい）　200えん\n　5さいまでの　こどもは　おかねが　いりません。\n\n■ ちゅうい\n　ぼうしを　かぶって　ください。ぼうしは　うけつけで　かう　ことが　できます（300えん）。"
+  }
+ ],
+ "questions": [
+  {
+   "id": "goda-n5-02-q01",
+   "type": "KANJI_READING",
+   "prompt": "《毎日》　にほんごを　べんきょうします。",
+   "options": [
+    "まいにち",
+    "まいび",
+    "まいにっち",
+    "めいにち"
+   ],
+   "answer": 0,
+   "explanation": "「毎日」đọc là「まいにち」(mỗi ngày)."
+  },
+  {
+   "id": "goda-n5-02-q02",
+   "type": "KANJI_READING",
+   "prompt": "この　《車》は　あたらしいです。",
+   "options": [
+    "くるま",
+    "でんしゃ",
+    "じてんしゃ",
+    "くろま"
+   ],
+   "answer": 0,
+   "explanation": "「車」đọc là「くるま」(xe ô tô). 電車＝でんしゃ, 自転車＝じてんしゃ."
+  },
+  {
+   "id": "goda-n5-02-q03",
+   "type": "KANJI_READING",
+   "prompt": "《先生》に　しつもんしました。",
+   "options": [
+    "せんせい",
+    "せんせ",
+    "せいせい",
+    "ぜんせい"
+   ],
+   "answer": 0,
+   "explanation": "「先生」đọc là「せんせい」(giáo viên) — kết thúc bằng trường âm「せい」."
+  },
+  {
+   "id": "goda-n5-02-q04",
+   "type": "KANJI_READING",
+   "prompt": "《東》の　そらが　あかるく　なりました。",
+   "options": [
+    "ひがし",
+    "にし",
+    "きた",
+    "みなみ"
+   ],
+   "answer": 0,
+   "explanation": "「東」là「ひがし」(phía đông). 西＝にし, 北＝きた, 南＝みなみ."
+  },
+  {
+   "id": "goda-n5-02-q05",
+   "type": "KANJI_READING",
+   "prompt": "つくえの　《下》に　ねこが　います。",
+   "options": [
+    "した",
+    "うえ",
+    "なか",
+    "そと"
+   ],
+   "answer": 0,
+   "explanation": "「下」là「した」(bên dưới). 上＝うえ, 中＝なか, 外＝そと."
+  },
+  {
+   "id": "goda-n5-02-q06",
+   "type": "KANJI_READING",
+   "prompt": "《来年》　日本へ　行きます。",
+   "options": [
+    "らいねん",
+    "らいとし",
+    "くるねん",
+    "らいねい"
+   ],
+   "answer": 0,
+   "explanation": "「来年」đọc là「らいねん」(năm sau)."
+  },
+  {
+   "id": "goda-n5-02-q07",
+   "type": "KANJI_READING",
+   "prompt": "《白い》　シャツを　かいました。",
+   "options": [
+    "しろい",
+    "くろい",
+    "あおい",
+    "しらい"
+   ],
+   "answer": 0,
+   "explanation": "「白い」đọc là「しろい」(màu trắng). 黒い＝くろい, 青い＝あおい."
+  },
+  {
+   "id": "goda-n5-02-q08",
+   "type": "ORTHOGRAPHY",
+   "prompt": "やすみの　日に　《やま》に　のぼりました。",
+   "options": [
+    "山",
+    "川",
+    "出",
+    "止"
+   ],
+   "answer": 0,
+   "explanation": "「やま」(núi) viết là「山」. 川＝かわ (sông); 出, 止 có hình gần giống."
+  },
+  {
+   "id": "goda-n5-02-q09",
+   "type": "ORTHOGRAPHY",
+   "prompt": "つめたい　《みず》を　のみます。",
+   "options": [
+    "水",
+    "氷",
+    "木",
+    "永"
+   ],
+   "answer": 0,
+   "explanation": "「みず」(nước) viết là「水」. 氷 (băng) chỉ khác một chấm."
+  },
+  {
+   "id": "goda-n5-02-q10",
+   "type": "ORTHOGRAPHY",
+   "prompt": "せんせいの　《はなし》を　ききます。",
+   "options": [
+    "話",
+    "語",
+    "読",
+    "計"
+   ],
+   "answer": 0,
+   "explanation": "「はなし」(câu chuyện) viết là「話」. 語・読・計 cùng bộ ngôn 言."
+  },
+  {
+   "id": "goda-n5-02-q11",
+   "type": "ORTHOGRAPHY",
+   "prompt": "《がっこう》は　えきの　ちかくです。",
+   "options": [
+    "学校",
+    "学効",
+    "字校",
+    "学交"
+   ],
+   "answer": 0,
+   "explanation": "「がっこう」(trường học) viết là「学校」. 字 (chữ) giống 学; 効・交 cũng đọc「こう」."
+  },
+  {
+   "id": "goda-n5-02-q12",
+   "type": "ORTHOGRAPHY",
+   "prompt": "《まいあさ》　しんぶんを　よみます。",
+   "options": [
+    "毎朝",
+    "母朝",
+    "毎期",
+    "海朝"
+   ],
+   "answer": 0,
+   "explanation": "「まいあさ」(mỗi sáng) viết là「毎朝」. 母 và 海 có phần giống 毎."
+  },
+  {
+   "id": "goda-n5-02-q13",
+   "type": "CONTEXT",
+   "prompt": "おなかが　（　　）、なにか　たべたいです。",
+   "options": [
+    "すいて",
+    "いっぱいで",
+    "いたくて",
+    "あいて"
+   ],
+   "answer": 0,
+   "explanation": "「おなかが すく」= đói bụng → muốn ăn gì đó."
+  },
+  {
+   "id": "goda-n5-02-q14",
+   "type": "CONTEXT",
+   "prompt": "この　へやは　（　　）ですから、まどを　あけましょう。",
+   "options": [
+    "あつい",
+    "さむい",
+    "しずか",
+    "ひろい"
+   ],
+   "answer": 0,
+   "explanation": "Phòng nóng nên mở cửa sổ."
+  },
+  {
+   "id": "goda-n5-02-q15",
+   "type": "CONTEXT",
+   "prompt": "きのう　ともだちに　てがみを　（　　）。",
+   "options": [
+    "かきました",
+    "よみました",
+    "ききました",
+    "みました"
+   ],
+   "answer": 0,
+   "explanation": "「ともだちに てがみを かく」= viết thư cho bạn."
+  },
+  {
+   "id": "goda-n5-02-q16",
+   "type": "CONTEXT",
+   "prompt": "わたしは　まいあさ　はを　（　　）。",
+   "options": [
+    "みがきます",
+    "きります",
+    "ぬぎます",
+    "はきます"
+   ],
+   "answer": 0,
+   "explanation": "Đánh răng là「はを みがく」."
+  },
+  {
+   "id": "goda-n5-02-q17",
+   "type": "CONTEXT",
+   "prompt": "この　えいがは　とても　（　　）です。",
+   "options": [
+    "おもしろい",
+    "おいしい",
+    "あつい",
+    "さむい"
+   ],
+   "answer": 0,
+   "explanation": "Phim thì「おもしろい」(hay, thú vị). おいしい dùng cho đồ ăn."
+  },
+  {
+   "id": "goda-n5-02-q18",
+   "type": "CONTEXT",
+   "prompt": "（　　）を　かけて、本を　よみます。",
+   "options": [
+    "めがね",
+    "ぼうし",
+    "くつ",
+    "ふく"
+   ],
+   "answer": 0,
+   "explanation": "Đeo kính là「めがねを かける」. Mũ thì「かぶる」, giày「はく」, quần áo「きる」."
+  },
+  {
+   "id": "goda-n5-02-q19",
+   "type": "PARAPHRASE",
+   "prompt": "《この　みせは　やすいです》。",
+   "options": [
+    "この　みせの　ものは　たかくないです。",
+    "この　みせの　ものは　たかいです。",
+    "この　みせの　ものは　おいしいです。",
+    "この　みせは　ちいさいです。"
+   ],
+   "answer": 0,
+   "explanation": "「やすい」(rẻ) = 「たかくない」(không đắt)."
+  },
+  {
+   "id": "goda-n5-02-q20",
+   "type": "PARAPHRASE",
+   "prompt": "《あさって》　えいがを　みに　いきます。",
+   "options": [
+    "ふつか　あとに",
+    "あした",
+    "みっか　あとに",
+    "きのう"
+   ],
+   "answer": 0,
+   "explanation": "「あさって」là ngày kia = 2 ngày sau「ふつか あと」."
+  },
+  {
+   "id": "goda-n5-02-q21",
+   "type": "PARAPHRASE",
+   "prompt": "《あには　だいがくせいです》。",
+   "options": [
+    "あには　だいがくで　べんきょうして　います。",
+    "あには　かいしゃで　はたらいて　います。",
+    "あには　だいがくで　おしえて　います。",
+    "あには　びょういんに　います。"
+   ],
+   "answer": 0,
+   "explanation": "「だいがくせい」(sinh viên đại học) = người đang học ở đại học. Dạy ở đại học là giảng viên."
+  },
+  {
+   "id": "goda-n5-02-q22",
+   "type": "GRAMMAR_FORM",
+   "prompt": "わたしは　えき（　　）　ともだちを　まちます。",
+   "options": [
+    "で",
+    "を",
+    "へ",
+    "が"
+   ],
+   "answer": 0,
+   "explanation": "「で」chỉ nơi diễn ra hành động: đợi bạn ở ga."
+  },
+  {
+   "id": "goda-n5-02-q23",
+   "type": "GRAMMAR_FORM",
+   "prompt": "この　ケーキは　あまり　あまく（　　）。",
+   "options": [
+    "ありません",
+    "あります",
+    "です",
+    "でした"
+   ],
+   "answer": 0,
+   "explanation": "「あまり + phủ định」: あまく ありません (không ngọt lắm)."
+  },
+  {
+   "id": "goda-n5-02-q24",
+   "type": "GRAMMAR_FORM",
+   "prompt": "きのうは　どこへも　いき（　　）。",
+   "options": [
+    "ませんでした",
+    "ました",
+    "ます",
+    "ましょう"
+   ],
+   "answer": 0,
+   "explanation": "「どこへも + phủ định」và「きのう」(quá khứ) → いきませんでした."
+  },
+  {
+   "id": "goda-n5-02-q25",
+   "type": "GRAMMAR_FORM",
+   "prompt": "ここで　しゃしんを　とって（　　）　いけません。",
+   "options": [
+    "は",
+    "が",
+    "も",
+    "を"
+   ],
+   "answer": 0,
+   "explanation": "「V-ては いけません」= không được làm gì."
+  },
+  {
+   "id": "goda-n5-02-q26",
+   "type": "GRAMMAR_FORM",
+   "prompt": "わたしは　テニス（　　）　すきです。",
+   "options": [
+    "が",
+    "を",
+    "に",
+    "で"
+   ],
+   "answer": 0,
+   "explanation": "「〜が すきです」: đối tượng của すき dùng trợ từ「が」."
+  },
+  {
+   "id": "goda-n5-02-q27",
+   "type": "GRAMMAR_FORM",
+   "prompt": "にほんごの　べんきょうは　たのしい（　　）、むずかしいです。",
+   "options": [
+    "ですが",
+    "ですから",
+    "ですか",
+    "ですね"
+   ],
+   "answer": 0,
+   "explanation": "Vui「ですが」(nhưng) khó → quan hệ tương phản."
+  },
+  {
+   "id": "goda-n5-02-q28",
+   "type": "GRAMMAR_FORM",
+   "prompt": "すみません、ちょっと　まって（　　）。",
+   "options": [
+    "ください",
+    "ます",
+    "ません",
+    "でした"
+   ],
+   "answer": 0,
+   "explanation": "「V-て ください」= hãy (làm gì): xin đợi một chút."
+  },
+  {
+   "id": "goda-n5-02-q29",
+   "type": "GRAMMAR_FORM",
+   "prompt": "この　ペンは　だれ（　　）ですか。",
+   "options": [
+    "の",
+    "が",
+    "を",
+    "に"
+   ],
+   "answer": 0,
+   "explanation": "「だれの」= của ai: cây bút này là của ai?"
+  },
+  {
+   "id": "goda-n5-02-q30",
+   "type": "GRAMMAR_FORM",
+   "prompt": "さとうさんは　うたが　（　　）です。",
+   "options": [
+    "じょうず",
+    "じょうずな",
+    "じょうずに",
+    "じょうずの"
+   ],
+   "answer": 0,
+   "explanation": "Tính từ đuôi な làm vị ngữ trước「です」không thêm「な」: じょうずです."
+  },
+  {
+   "id": "goda-n5-02-q31",
+   "type": "SENTENCE_ORDER",
+   "prompt": "わたしの ＿＿ ＿＿ ★ ＿＿ 小さいです。",
+   "options": [
+    "せまくて",
+    "へや",
+    "は",
+    "まども"
+   ],
+   "answer": 0,
+   "explanation": "Câu đúng: わたしの へや は せまくて まども 小さいです。(Phòng tôi chật, cửa sổ cũng nhỏ.)"
+  },
+  {
+   "id": "goda-n5-02-q32",
+   "type": "SENTENCE_ORDER",
+   "prompt": "きのう ＿＿ ＿＿ ★ ＿＿ かいました。",
+   "options": [
+    "あかい",
+    "ははと",
+    "デパートで",
+    "かばんを"
+   ],
+   "answer": 0,
+   "explanation": "Câu đúng: きのう ははと デパートで あかい かばんを かいました。(Hôm qua mua cái túi đỏ ở trung tâm thương mại cùng mẹ.)"
+  },
+  {
+   "id": "goda-n5-02-q33",
+   "type": "SENTENCE_ORDER",
+   "prompt": "うちへ　かえって、＿＿ ＿＿ ★ ＿＿ たべます。",
+   "options": [
+    "から",
+    "シャワーを",
+    "あびて",
+    "ごはんを"
+   ],
+   "answer": 0,
+   "explanation": "Câu đúng: シャワーを あびて から ごはんを たべます。(Tắm xong rồi mới ăn cơm.)\n「V-て から」= sau khi."
+  },
+  {
+   "id": "goda-n5-02-q34",
+   "type": "SENTENCE_ORDER",
+   "prompt": "この ＿＿ ＿＿ ★ ＿＿ いません。",
+   "options": [
+    "あまり",
+    "こうえんには",
+    "あさ",
+    "人が"
+   ],
+   "answer": 0,
+   "explanation": "Câu đúng: この こうえんには あさ あまり 人が いません。(Buổi sáng công viên này không có mấy người.)"
+  },
+  {
+   "id": "goda-n5-02-q35",
+   "type": "TEXT_GRAMMAR",
+   "prompt": "（　1　）",
+   "options": [
+    "あります",
+    "います",
+    "です",
+    "しました"
+   ],
+   "answer": 0,
+   "explanation": "Cây cối (vật vô tri) dùng「あります」.",
+   "passageId": "goda-n5-02-tg"
+  },
+  {
+   "id": "goda-n5-02-q36",
+   "type": "TEXT_GRAMMAR",
+   "prompt": "（　2　）",
+   "options": [
+    "ながら",
+    "たり",
+    "ので",
+    "と"
+   ],
+   "answer": 0,
+   "explanation": "「V-ます + ながら」= vừa … vừa: vừa uống cà phê vừa đọc sách.",
+   "passageId": "goda-n5-02-tg"
+  },
+  {
+   "id": "goda-n5-02-q37",
+   "type": "TEXT_GRAMMAR",
+   "prompt": "（　3　）",
+   "options": [
+    "から",
+    "が",
+    "と",
+    "も"
+   ],
+   "answer": 0,
+   "explanation": "Trời mưa「から」(nên) không đi công viên.",
+   "passageId": "goda-n5-02-tg"
+  },
+  {
+   "id": "goda-n5-02-q38",
+   "type": "TEXT_GRAMMAR",
+   "prompt": "（　4　）",
+   "options": [
+    "いきたいです",
+    "いきました",
+    "いって　いました",
+    "いきませんでした"
+   ],
+   "answer": 0,
+   "explanation": "「らいしゅう」(tuần sau) → mong muốn ở tương lai「いきたいです」.",
+   "passageId": "goda-n5-02-tg"
+  },
+  {
+   "id": "goda-n5-02-q39",
+   "type": "READING_SHORT",
+   "prompt": "リンさんは　なにを　しなければ　なりませんか。",
+   "options": [
+    "六時に　にもつを　うけとる。",
+    "三時に　うちへ　かえる。",
+    "ケーキを　かいに　いく。",
+    "やまださんに　でんわする。"
+   ],
+   "answer": 0,
+   "explanation": "「六時に にもつが きます。うけとって ください」. Người về lúc 3 giờ là chị Yamada; bánh đã có sẵn trong tủ lạnh.",
+   "passageId": "goda-n5-02-s1"
+  },
+  {
+   "id": "goda-n5-02-q40",
+   "type": "READING_SHORT",
+   "prompt": "「わたし」は　あさ、どうやって　えきへ　いきますか。",
+   "options": [
+    "バスで　いきます。",
+    "あるいて　いきます。",
+    "じてんしゃで　いきます。",
+    "タクシーで　いきます。"
+   ],
+   "answer": 0,
+   "explanation": "Buổi sáng bận nên đi xe buýt; lúc về mới đi bộ.",
+   "passageId": "goda-n5-02-s2"
+  },
+  {
+   "id": "goda-n5-02-q41",
+   "type": "READING_MEDIUM",
+   "prompt": "「わたし」は　日本に　来てから、どう　なりましたか。",
+   "options": [
+    "まいにち　ばんごはんを　つくって　います。",
+    "あまり　りょうりを　しません。",
+    "まいにち　レストランで　たべます。",
+    "ともだちに　りょうりを　ならって　います。"
+   ],
+   "answer": 0,
+   "explanation": "「日本に 来てから、まいにち じぶんで ばんごはんを つくって います」. Ít nấu ăn là hồi ở nước mình.",
+   "passageId": "goda-n5-02-m1"
+  },
+  {
+   "id": "goda-n5-02-q42",
+   "type": "READING_MEDIUM",
+   "prompt": "せんしゅうの　どようびに　なにを　しましたか。",
+   "options": [
+    "ともだちと　てんぷらを　たべました。",
+    "ともだちと　すしを　つくりました。",
+    "レストランで　てんぷらを　たべました。",
+    "インターネットで　カレーの　つくりかたを　しらべました。"
+   ],
+   "answer": 0,
+   "explanation": "Mời bạn đến nhà và làm tempura, bạn ăn rất nhiều. Sushi là dự định lần sau.",
+   "passageId": "goda-n5-02-m1"
+  },
+  {
+   "id": "goda-n5-02-q43",
+   "type": "INFO_RETRIEVAL",
+   "prompt": "ジョンさん（30さい）は、むすこ（8さい）と　むすめ（4さい）と　いっしょに　日よう日に　プールへ　いきます。ぼうしは　みんな　もって　います。ぜんぶで　いくら　はらいますか。",
+   "options": [
+    "600えん",
+    "800えん",
+    "1,000えん",
+    "400えん"
+   ],
+   "answer": 0,
+   "explanation": "Người lớn 400 yên + con trai 8 tuổi 200 yên + con gái 4 tuổi miễn phí = 600 yên. Đã có mũ nên không mua thêm.",
+   "passageId": "goda-n5-02-i1"
+  }
+ ]
+}
