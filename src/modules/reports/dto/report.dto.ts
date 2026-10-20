@@ -1,6 +1,6 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { IsEnum, IsIn, IsOptional, IsString, MaxLength } from 'class-validator';
-import { ReportStatus } from '../../../generated/prisma/enums.js';
+import { ReportStatus } from '../../../database/enums.js';
 
 export const REPORT_REASONS = ['wrong_answer', 'typo', 'unclear', 'multiple_answers', 'other'] as const;
 

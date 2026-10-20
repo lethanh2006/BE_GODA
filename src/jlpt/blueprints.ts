@@ -1,4 +1,4 @@
-import { JlptLevel, QuestionType } from '../generated/prisma/enums.js';
+import { JlptLevel, QuestionType } from '../database/enums.js';
 
 export interface MondaiBlueprint {
   type: QuestionType;

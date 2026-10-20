@@ -1,5 +1,9 @@
-import { ForbiddenException, NotFoundException } from '@nestjs/common';
+import { ForbiddenException, NotFoundException, ParseUUIDPipe } from '@nestjs/common';
 import type { AuthUser } from '../auth/auth-user.js';
+
+/** Id dạng UUID trên URL. Id sai định dạng coi như không tồn tại (thay vì để PostgreSQL báo lỗi 500). */
+export const parseId = (name = 'Dữ liệu') =>
+  new ParseUUIDPipe({ exceptionFactory: () => new NotFoundException(`${name} không tồn tại`) });
 
 /** Lượt làm của khách (userId null) ai có id đều xem được; lượt làm của user chỉ chủ sở hữu xem. */
 export function assertOwner(

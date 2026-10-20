@@ -4,7 +4,7 @@ import {
   SetMetadata,
 } from '@nestjs/common';
 import type { Request } from 'express';
-import type { UserRole } from '../../generated/prisma/enums.js';
+import type { UserRole } from '../../database/enums.js';
 import type { AuthUser } from './auth-user.js';
 
 export const AUTH_REQUIRED_KEY = 'auth:required';

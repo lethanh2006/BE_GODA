@@ -8,11 +8,12 @@ import {
   IsInt,
   IsOptional,
   IsString,
+  IsUUID,
   Max,
   Min,
   ValidateIf,
 } from 'class-validator';
-import { JlptLevel, QuestionType } from '../../../generated/prisma/enums.js';
+import { JlptLevel, QuestionType } from '../../../database/enums.js';
 
 export enum AttemptKind {
   /** Làm một đề thi thử có sẵn. */
@@ -46,7 +47,7 @@ export class CreateAttemptDto {
 
   @ApiPropertyOptional({ description: 'kind=exam: chỉ làm một phần thi' })
   @IsOptional()
-  @IsString()
+  @IsUUID()
   sectionId?: string;
 
   @ApiPropertyOptional({ enum: JlptLevel, description: 'kind=random_exam | practice' })
@@ -95,7 +96,7 @@ export class CreateAttemptDto {
 
   @ApiPropertyOptional({ description: 'kind=retry' })
   @ValidateIf((o: CreateAttemptDto) => o.kind === AttemptKind.RETRY)
-  @IsString()
+  @IsUUID()
   fromAttemptId?: string;
 
   @ApiPropertyOptional({ enum: ['wrong', 'all'], default: 'wrong' })

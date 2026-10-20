@@ -1,4 +1,4 @@
-import type { QuestionType } from '../generated/prisma/enums.js';
+import type { QuestionType } from '../database/enums.js';
 import { shuffle } from '../common/utils/random.js';
 import { QUESTION_TYPE_ORDER } from './question-types.js';
 

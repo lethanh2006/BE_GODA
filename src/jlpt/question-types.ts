@@ -1,4 +1,4 @@
-import { QuestionType } from '../generated/prisma/enums.js';
+import { QuestionType } from '../database/enums.js';
 
 export type SkillGroup = 'vocabulary' | 'grammar' | 'reading' | 'listening';
 

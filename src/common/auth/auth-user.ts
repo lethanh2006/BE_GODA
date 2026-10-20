@@ -1,4 +1,4 @@
-import type { UserRole } from '../../generated/prisma/enums.js';
+import type { UserRole } from '../../database/enums.js';
 
 export interface AuthUser {
   id: string;

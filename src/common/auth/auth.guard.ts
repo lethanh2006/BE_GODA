@@ -7,9 +7,12 @@ import {
 } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { JwtService } from '@nestjs/jwt';
+import { InjectRepository } from '@nestjs/typeorm';
+import { isUUID } from 'class-validator';
 import type { Request } from 'express';
-import type { UserRole } from '../../generated/prisma/enums.js';
-import { PrismaService } from '../../prisma/prisma.service.js';
+import type { Repository } from 'typeorm';
+import { User } from '../../database/entities/index.js';
+import type { UserRole } from '../../database/enums.js';
 import { AUTH_COOKIE, type JwtPayload } from './auth-user.js';
 import { AUTH_REQUIRED_KEY, ROLES_KEY } from './decorators.js';
 
@@ -23,7 +26,7 @@ export class AuthGuard implements CanActivate {
   constructor(
     private readonly jwt: JwtService,
     private readonly reflector: Reflector,
-    private readonly prisma: PrismaService,
+    @InjectRepository(User) private readonly users: Repository<User>,
   ) {}
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
@@ -33,7 +36,8 @@ export class AuthGuard implements CanActivate {
     if (token) {
       try {
         const payload = await this.jwt.verifyAsync<JwtPayload>(token);
-        request.user = { id: payload.sub, role: payload.role };
+        // Token cấp trước khi đổi sang id UUID thì coi như chưa đăng nhập.
+        request.user = isUUID(payload.sub) ? { id: payload.sub, role: payload.role } : undefined;
       } catch {
         request.user = undefined;
       }
@@ -49,9 +53,9 @@ export class AuthGuard implements CanActivate {
       throw new UnauthorizedException('Vui lòng đăng nhập');
     }
     if (roles?.length) {
-      const current = await this.prisma.user.findUnique({
+      const current = await this.users.findOne({
         where: { id: request.user!.id },
-        select: { role: true },
+        select: { id: true, role: true },
       });
       if (!current || !roles.includes(current.role)) {
         throw new ForbiddenException('Không có quyền truy cập');

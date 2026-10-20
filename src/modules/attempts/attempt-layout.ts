@@ -1,4 +1,4 @@
-import type { QuestionType } from '../../generated/prisma/enums.js';
+import type { QuestionType } from '../../database/enums.js';
 
 export interface LayoutMondai {
   number: number;

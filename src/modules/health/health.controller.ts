@@ -1,17 +1,17 @@
 import { Controller, Get } from '@nestjs/common';
 import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
-import { PrismaService } from '../../prisma/prisma.service.js';
+import { DataSource } from 'typeorm';
 import { HealthResponseDto } from './dto/health-response.dto.js';
 
 @ApiTags('health')
 @Controller('health')
 export class HealthController {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(private readonly dataSource: DataSource) {}
 
   @Get()
   @ApiOkResponse({ type: HealthResponseDto })
   async check(): Promise<HealthResponseDto> {
-    const database = await this.prisma.$queryRaw`SELECT 1`.then(
+    const database = await this.dataSource.query('SELECT 1').then(
       () => 'up' as const,
       () => 'down' as const,
     );

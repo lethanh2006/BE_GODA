@@ -1,6 +1,6 @@
 import { Controller, Get, Param, ParseEnumPipe, Query } from '@nestjs/common';
 import { ApiQuery, ApiTags } from '@nestjs/swagger';
-import { JlptLevel } from '../../generated/prisma/enums.js';
+import { JlptLevel } from '../../database/enums.js';
 import type { AuthUser } from '../../common/auth/auth-user.js';
 import { CurrentUser } from '../../common/auth/decorators.js';
 import { ExamsService } from './exams.service.js';

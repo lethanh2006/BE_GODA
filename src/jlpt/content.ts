@@ -1,4 +1,4 @@
-import type { JlptLevel, QuestionType } from '../generated/prisma/enums.js';
+import type { JlptLevel, QuestionType } from '../database/enums.js';
 
 /** Định dạng file nội dung trong thư mục content/ — được seed nạp vào database. */
 export interface ContentFile {

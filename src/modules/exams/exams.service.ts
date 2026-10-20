@@ -1,25 +1,38 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { AttemptMode, AttemptStatus, type JlptLevel } from '../../generated/prisma/enums.js';
+import { InjectRepository } from '@nestjs/typeorm';
+import { In, type Repository } from 'typeorm';
 import type { AuthUser } from '../../common/auth/auth-user.js';
+import { Attempt, Exam, ExamQuestion } from '../../database/entities/index.js';
+import { AttemptMode, AttemptStatus, type JlptLevel } from '../../database/enums.js';
 import { QUESTION_TYPES } from '../../jlpt/question-types.js';
-import { PrismaService } from '../../prisma/prisma.service.js';
 
 @Injectable()
 export class ExamsService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    @InjectRepository(Exam) private readonly exams: Repository<Exam>,
+    @InjectRepository(ExamQuestion) private readonly examQuestions: Repository<ExamQuestion>,
+    @InjectRepository(Attempt) private readonly attempts: Repository<Attempt>,
+  ) {}
 
   async list(level: JlptLevel | undefined, user: AuthUser | undefined) {
-    const exams = await this.prisma.exam.findMany({
+    const exams = await this.exams.find({
       where: { published: true, ...(level && { level }) },
-      orderBy: [{ level: 'asc' }, { number: 'asc' }],
-      include: {
-        sections: {
-          orderBy: { order: 'asc' },
-          include: { _count: { select: { questions: true } } },
-        },
-      },
+      order: { level: 'ASC', number: 'ASC', sections: { order: 'ASC' } },
+      relations: { sections: true },
     });
-    const progress = await this.progress(user, exams.map((e) => e.id));
+    const sectionIds = exams.flatMap((exam) => exam.sections.map((s) => s.id));
+    const [counts, progress] = await Promise.all([
+      this.examQuestions
+        .createQueryBuilder('eq')
+        .select('eq.sectionId', 'sectionId')
+        .addSelect('COUNT(*)::int', 'count')
+        .where('eq.sectionId = ANY(:sectionIds)', { sectionIds })
+        .groupBy('eq.sectionId')
+        .getRawMany<{ sectionId: string; count: number }>(),
+      this.progress(user, exams.map((e) => e.id)),
+    ]);
+    const questionCount = new Map(counts.map((c) => [c.sectionId, c.count]));
+    const countOf = (sectionId: string) => questionCount.get(sectionId) ?? 0;
 
     return exams.map((exam) => ({
       slug: exam.slug,
@@ -28,7 +41,7 @@ export class ExamsService {
       title: exam.title,
       description: exam.description,
       source: exam.source,
-      totalQuestions: exam.sections.reduce((sum, s) => sum + s._count.questions, 0),
+      totalQuestions: exam.sections.reduce((sum, s) => sum + countOf(s.id), 0),
       totalMinutes: exam.sections.reduce((sum, s) => sum + s.durationMinutes, 0),
       sections: exam.sections.map((s) => ({
         id: s.id,
@@ -36,35 +49,26 @@ export class ExamsService {
         title: s.title,
         titleVi: s.titleVi,
         durationMinutes: s.durationMinutes,
-        questionCount: s._count.questions,
+        questionCount: countOf(s.id),
       })),
       progress: progress.get(exam.id) ?? null,
     }));
   }
 
   async detail(slug: string, user: AuthUser | undefined) {
-    const exam = await this.prisma.exam.findUnique({
+    const exam = await this.exams.findOne({
       where: { slug },
-      include: {
-        sections: {
-          orderBy: { order: 'asc' },
-          include: {
-            questions: {
-              orderBy: { order: 'asc' },
-              select: { mondai: true, question: { select: { type: true, passageId: true } } },
-            },
-          },
-        },
-      },
+      order: { sections: { order: 'ASC', questions: { order: 'ASC' } } },
+      relations: { sections: { questions: { question: true } } },
     });
     if (!exam || !exam.published) {
       throw new NotFoundException('Đề thi không tồn tại');
     }
     const progress = await this.progress(user, [exam.id]);
     const history = user
-      ? await this.prisma.attempt.findMany({
+      ? await this.attempts.find({
           where: { userId: user.id, examId: exam.id, status: AttemptStatus.SUBMITTED },
-          orderBy: { submittedAt: 'desc' },
+          order: { submittedAt: 'DESC' },
           take: 10,
           select: {
             id: true,
@@ -123,21 +127,22 @@ export class ExamsService {
     if (!user || examIds.length === 0) return result;
 
     const [submitted, open] = await Promise.all([
-      this.prisma.attempt.groupBy({
-        by: ['examId'],
-        where: {
-          userId: user.id,
-          examId: { in: examIds },
-          status: AttemptStatus.SUBMITTED,
-          mode: AttemptMode.EXAM,
-          sectionId: null,
-        },
-        _count: { _all: true },
-        _max: { scorePercent: true },
-      }),
-      this.prisma.attempt.findMany({
-        where: { userId: user.id, examId: { in: examIds }, status: AttemptStatus.IN_PROGRESS },
-        orderBy: { startedAt: 'desc' },
+      // Chỉ tính lượt làm cả đề ở chế độ thi (không tính lượt làm một phần thi).
+      this.attempts
+        .createQueryBuilder('a')
+        .select('a.examId', 'examId')
+        .addSelect('COUNT(*)::int', 'attemptCount')
+        .addSelect('MAX(a.scorePercent)', 'bestPercent')
+        .where('a.userId = :userId', { userId: user.id })
+        .andWhere('a.examId = ANY(:examIds)', { examIds })
+        .andWhere('a.status = :status', { status: AttemptStatus.SUBMITTED })
+        .andWhere('a.mode = :mode', { mode: AttemptMode.EXAM })
+        .andWhere('a.sectionId IS NULL')
+        .groupBy('a.examId')
+        .getRawMany<{ examId: string; attemptCount: number; bestPercent: number | null }>(),
+      this.attempts.find({
+        where: { userId: user.id, examId: In(examIds), status: AttemptStatus.IN_PROGRESS },
+        order: { startedAt: 'DESC' },
         select: { id: true, examId: true },
       }),
     ]);
@@ -145,8 +150,8 @@ export class ExamsService {
     for (const examId of examIds) {
       const stats = submitted.find((s) => s.examId === examId);
       result.set(examId, {
-        attemptCount: stats?._count._all ?? 0,
-        bestPercent: stats?._max.scorePercent ?? null,
+        attemptCount: stats?.attemptCount ?? 0,
+        bestPercent: stats?.bestPercent ?? null,
         inProgressAttemptId: open.find((o) => o.examId === examId)?.id ?? null,
       });
     }

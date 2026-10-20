@@ -1,30 +1,52 @@
 import { Injectable } from '@nestjs/common';
-import type { JlptLevel, QuestionType } from '../../generated/prisma/enums.js';
+import { InjectRepository } from '@nestjs/typeorm';
+import type { Repository } from 'typeorm';
+import { Exam, Passage, Question } from '../../database/entities/index.js';
+import type { JlptLevel, QuestionType } from '../../database/enums.js';
 import { BLUEPRINTS, LEVELS } from '../../jlpt/blueprints.js';
 import { QUESTION_TYPES, QUESTION_TYPE_ORDER, SKILL_GROUPS } from '../../jlpt/question-types.js';
-import { PrismaService } from '../../prisma/prisma.service.js';
+
+interface LevelCount {
+  level: JlptLevel;
+  count: number;
+}
 
 @Injectable()
 export class CatalogService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    @InjectRepository(Question) private readonly questions: Repository<Question>,
+    @InjectRepository(Exam) private readonly exams: Repository<Exam>,
+    @InjectRepository(Passage) private readonly passages: Repository<Passage>,
+  ) {}
 
   async overview() {
     const [questionCounts, examCounts, passageCounts] = await Promise.all([
-      this.prisma.question.groupBy({
-        by: ['level', 'type'],
-        where: { isActive: true },
-        _count: { _all: true },
-      }),
-      this.prisma.exam.groupBy({
-        by: ['level'],
-        where: { published: true },
-        _count: { _all: true },
-      }),
-      this.prisma.passage.groupBy({ by: ['level'], _count: { _all: true } }),
+      this.questions
+        .createQueryBuilder('q')
+        .select('q.level', 'level')
+        .addSelect('q.type', 'type')
+        .addSelect('COUNT(*)::int', 'count')
+        .where('q.isActive = true')
+        .groupBy('q.level')
+        .addGroupBy('q.type')
+        .getRawMany<LevelCount & { type: QuestionType }>(),
+      this.exams
+        .createQueryBuilder('e')
+        .select('e.level', 'level')
+        .addSelect('COUNT(*)::int', 'count')
+        .where('e.published = true')
+        .groupBy('e.level')
+        .getRawMany<LevelCount>(),
+      this.passages
+        .createQueryBuilder('p')
+        .select('p.level', 'level')
+        .addSelect('COUNT(*)::int', 'count')
+        .groupBy('p.level')
+        .getRawMany<LevelCount>(),
     ]);
 
     const count = (level: JlptLevel, type: QuestionType) =>
-      questionCounts.find((c) => c.level === level && c.type === type)?._count._all ?? 0;
+      questionCounts.find((c) => c.level === level && c.type === type)?.count ?? 0;
 
     const levels = LEVELS.map((level) => {
       const blueprint = BLUEPRINTS[level];
@@ -34,8 +56,8 @@ export class CatalogService {
       return {
         level,
         totalQuestions: types.reduce((sum, t) => sum + t.count, 0),
-        passageCount: passageCounts.find((p) => p.level === level)?._count._all ?? 0,
-        examCount: examCounts.find((e) => e.level === level)?._count._all ?? 0,
+        passageCount: passageCounts.find((p) => p.level === level)?.count ?? 0,
+        examCount: examCounts.find((e) => e.level === level)?.count ?? 0,
         questionTypes: types,
         examMinutes: blueprint.sections.reduce((sum, s) => sum + s.durationMinutes, 0),
         examQuestions: blueprint.sections.reduce(

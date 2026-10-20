@@ -1,8 +1,10 @@
 import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { APP_GUARD } from '@nestjs/core';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
-import { validateEnv } from './config/env.validation.js';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { type EnvironmentVariables, validateEnv } from './config/env.validation.js';
+import { dataSourceOptions } from './database/data-source.js';
 import { AttemptsModule } from './modules/attempts/attempts.module.js';
 import { AuthModule } from './modules/auth/auth.module.js';
 import { BookmarksModule } from './modules/bookmarks/bookmarks.module.js';
@@ -12,7 +14,6 @@ import { HealthModule } from './modules/health/health.module.js';
 import { MeModule } from './modules/me/me.module.js';
 import { ReportsModule } from './modules/reports/reports.module.js';
 import { UsersModule } from './modules/users/users.module.js';
-import { PrismaModule } from './prisma/prisma.module.js';
 
 @Module({
   imports: [
@@ -22,7 +23,11 @@ import { PrismaModule } from './prisma/prisma.module.js';
       validate: validateEnv,
     }),
     ThrottlerModule.forRoot([{ ttl: 60_000, limit: 300 }]),
-    PrismaModule,
+    TypeOrmModule.forRootAsync({
+      inject: [ConfigService],
+      useFactory: (config: ConfigService<EnvironmentVariables, true>) =>
+        dataSourceOptions(config.get('DATABASE_URL', { infer: true })),
+    }),
     AuthModule,
     UsersModule,
     CatalogModule,

@@ -17,7 +17,7 @@ import path from 'node:path';
 import { parseArgs } from 'node:util';
 import { hashString, seededRandom, shuffle } from '../../src/common/utils/random.js';
 import type { ContentFile, ContentPassage, ContentQuestion } from '../../src/jlpt/content.js';
-import type { JlptLevel, QuestionType } from '../../src/generated/prisma/enums.js';
+import type { JlptLevel, QuestionType } from '../../src/database/enums.js';
 import { isHiragana, isKanji, readingMutations } from './kana.js';
 import { alignReading, buildOnIndex, type KanjiData } from './kanji.js';
 

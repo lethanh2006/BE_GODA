@@ -4,20 +4,29 @@ import {
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
-import type { Attempt, Prisma } from '../../generated/prisma/client.js';
+import { InjectRepository } from '@nestjs/typeorm';
+import { isUUID } from 'class-validator';
+import { DataSource, In, IsNull, type Repository } from 'typeorm';
+import type { AuthUser } from '../../common/auth/auth-user.js';
+import { assertOwner } from '../../common/utils/http.js';
+import {
+  Attempt,
+  AttemptAnswer,
+  Bookmark,
+  Exam,
+  Question,
+  UserQuestionStat,
+} from '../../database/entities/index.js';
 import {
   AttemptMode,
   AttemptStatus,
   type JlptLevel,
   type QuestionType,
-} from '../../generated/prisma/enums.js';
-import type { AuthUser } from '../../common/auth/auth-user.js';
-import { assertOwner } from '../../common/utils/http.js';
+} from '../../database/enums.js';
 import { BLUEPRINTS } from '../../jlpt/blueprints.js';
 import { QUESTION_TYPES } from '../../jlpt/question-types.js';
 import { estimateJlptScore } from '../../jlpt/scoring.js';
 import { pickQuestions, sortByTypeOrder, type CandidateQuestion } from '../../jlpt/selection.js';
-import { PrismaService } from '../../prisma/prisma.service.js';
 import {
   groupIntoMondai,
   layoutQuestionIds,
@@ -45,7 +54,15 @@ interface NewAttempt {
 
 @Injectable()
 export class AttemptsService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly dataSource: DataSource,
+    @InjectRepository(Attempt) private readonly attempts: Repository<Attempt>,
+    @InjectRepository(AttemptAnswer) private readonly answers: Repository<AttemptAnswer>,
+    @InjectRepository(Question) private readonly questions: Repository<Question>,
+    @InjectRepository(Exam) private readonly exams: Repository<Exam>,
+    @InjectRepository(UserQuestionStat) private readonly stats: Repository<UserQuestionStat>,
+    @InjectRepository(Bookmark) private readonly bookmarks: Repository<Bookmark>,
+  ) {}
 
   // ---------------------------------------------------------------- create
 
@@ -56,24 +73,23 @@ export class AttemptsService {
       throw new BadRequestException('Không tìm thấy câu hỏi phù hợp với lựa chọn của bạn');
     }
 
-    const attempt = await this.prisma.attempt.create({
-      data: {
-        userId: user?.id,
+    const attempt = await this.attempts.save(
+      this.attempts.create({
+        userId: user?.id ?? null,
         mode: draft.mode,
         level: draft.level,
         title: draft.title,
-        examId: draft.examId,
-        sectionId: draft.sectionId,
-        questionType: draft.questionType,
+        examId: draft.examId ?? null,
+        sectionId: draft.sectionId ?? null,
+        questionType: draft.questionType ?? null,
         questionIds,
-        layout: draft.layout as unknown as Prisma.InputJsonValue,
+        layout: draft.layout,
         instantFeedback: draft.instantFeedback,
         timeLimitSeconds: draft.timeLimitSeconds,
         totalCount: questionIds.length,
-      },
-      select: { id: true },
-    });
-    return attempt;
+      }),
+    );
+    return { id: attempt.id };
   }
 
   private buildDraft(dto: CreateAttemptDto, user: AuthUser | undefined): Promise<NewAttempt> {
@@ -90,19 +106,10 @@ export class AttemptsService {
   }
 
   private async draftFromExam(dto: CreateAttemptDto): Promise<NewAttempt> {
-    const exam = await this.prisma.exam.findUnique({
+    const exam = await this.exams.findOne({
       where: { slug: dto.examSlug },
-      include: {
-        sections: {
-          orderBy: { order: 'asc' },
-          include: {
-            questions: {
-              orderBy: { order: 'asc' },
-              select: { questionId: true, mondai: true, question: { select: { type: true } } },
-            },
-          },
-        },
-      },
+      order: { sections: { order: 'ASC', questions: { order: 'ASC' } } },
+      relations: { sections: { questions: { question: true } } },
     });
     if (!exam || !exam.published) {
       throw new NotFoundException('Đề thi không tồn tại');
@@ -200,17 +207,17 @@ export class AttemptsService {
 
     let candidates = await this.candidates(dto.level, dto.types);
     if (focus === PracticeFocus.MISTAKES) {
-      const wrong = await this.prisma.userQuestionStat.findMany({
+      const wrong = await this.stats.find({
         where: { userId: user!.id, lastCorrect: false },
-        select: { questionId: true },
+        select: { userId: true, questionId: true },
       });
       const ids = new Set(wrong.map((w) => w.questionId));
       // Ôn câu sai: chỉ lấy đúng các câu đã sai, kể cả khi chúng thuộc bài đọc.
       candidates = candidates.filter((q) => ids.has(q.id)).map((q) => ({ ...q, passageId: null }));
     } else if (focus === PracticeFocus.BOOKMARKS) {
-      const saved = await this.prisma.bookmark.findMany({
+      const saved = await this.bookmarks.find({
         where: { userId: user!.id },
-        select: { questionId: true },
+        select: { userId: true, questionId: true },
       });
       const ids = new Set(saved.map((b) => b.questionId));
       candidates = candidates.filter((q) => ids.has(q.id)).map((q) => ({ ...q, passageId: null }));
@@ -253,9 +260,9 @@ export class AttemptsService {
   }
 
   private async draftRetry(dto: CreateAttemptDto, user: AuthUser | undefined): Promise<NewAttempt> {
-    const source = await this.prisma.attempt.findUnique({
+    const source = await this.attempts.findOne({
       where: { id: dto.fromAttemptId },
-      include: { answers: { select: { questionId: true, isCorrect: true } } },
+      relations: { answers: true },
     });
     assertOwner(source, user, 'Lượt làm bài');
     if (source.status !== AttemptStatus.SUBMITTED) {
@@ -269,8 +276,8 @@ export class AttemptsService {
       throw new BadRequestException('Bạn đã làm đúng tất cả các câu 🎉');
     }
 
-    const questions = await this.prisma.question.findMany({
-      where: { id: { in: ids } },
+    const questions = await this.questions.find({
+      where: { id: In(ids) },
       select: { id: true, type: true },
     });
     const byId = new Map(questions.map((q) => [q.id, q]));
@@ -289,11 +296,11 @@ export class AttemptsService {
   }
 
   private candidates(level?: JlptLevel, types?: QuestionType[]): Promise<CandidateQuestion[]> {
-    return this.prisma.question.findMany({
+    return this.questions.find({
       where: {
         isActive: true,
         ...(level && { level }),
-        ...(types?.length && { type: { in: types } }),
+        ...(types?.length && { type: In(types) }),
       },
       select: { id: true, type: true, passageId: true, passageOrder: true },
     });
@@ -302,43 +309,47 @@ export class AttemptsService {
   /** 0 = chưa làm, 1 = lần gần nhất làm sai, 2 = lần gần nhất làm đúng. */
   private async priorityFn(user: AuthUser | undefined, candidates: CandidateQuestion[]) {
     if (!user) return undefined;
-    const stats = await this.prisma.userQuestionStat.findMany({
-      where: { userId: user.id, questionId: { in: candidates.map((q) => q.id) } },
-      select: { questionId: true, lastCorrect: true },
-    });
+    const stats = await this.stats
+      .createQueryBuilder('s')
+      .select(['s.questionId', 's.lastCorrect'])
+      .where('s.userId = :userId', { userId: user.id })
+      .andWhere('s.questionId = ANY(:ids)', { ids: candidates.map((q) => q.id) })
+      .getMany();
     const tier = new Map(stats.map((s) => [s.questionId, s.lastCorrect ? 2 : 1]));
     return (id: string) => tier.get(id) ?? 0;
   }
 
   private async dominantLevel(picked: CandidateQuestion[]): Promise<JlptLevel> {
-    const levels = await this.prisma.question.groupBy({
-      by: ['level'],
-      where: { id: { in: picked.map((q) => q.id) } },
-      _count: { _all: true },
-      orderBy: { _count: { level: 'desc' } },
-    });
-    return levels[0]?.level ?? 'N5';
+    const top = await this.questions
+      .createQueryBuilder('q')
+      .select('q.level', 'level')
+      .where('q.id = ANY(:ids)', { ids: picked.map((q) => q.id) })
+      .groupBy('q.level')
+      .orderBy('COUNT(*)', 'DESC')
+      .limit(1)
+      .getRawOne<{ level: JlptLevel }>();
+    return top?.level ?? 'N5';
   }
 
   // ---------------------------------------------------------------- read
 
   async view(id: string, user: AuthUser | undefined) {
-    const attempt = await this.prisma.attempt.findUnique({
+    const attempt = await this.attempts.findOne({
       where: { id },
-      include: { answers: true, exam: { select: { slug: true } } },
+      relations: { answers: true, exam: true },
     });
     assertOwner(attempt, user, 'Lượt làm bài');
 
-    const questions = await this.prisma.question.findMany({
-      where: { id: { in: attempt.questionIds } },
-      include: { passage: { select: { id: true, title: true, content: true } } },
+    const questions = await this.questions.find({
+      where: { id: In(attempt.questionIds) },
+      relations: { passage: true },
     });
     const bookmarked = user
       ? new Set(
           (
-            await this.prisma.bookmark.findMany({
-              where: { userId: user.id, questionId: { in: attempt.questionIds } },
-              select: { questionId: true },
+            await this.bookmarks.find({
+              where: { userId: user.id, questionId: In(attempt.questionIds) },
+              select: { userId: true, questionId: true },
             })
           ).map((b) => b.questionId),
         )
@@ -352,7 +363,10 @@ export class AttemptsService {
     const items = attempt.questionIds.flatMap((questionId) => {
       const question = byId.get(questionId);
       if (!question) return [];
-      if (question.passage) passages[question.passage.id] = question.passage;
+      if (question.passage) {
+        const { id, title, content } = question.passage;
+        passages[id] = { id, title, content };
+      }
       const answer = answers.get(questionId);
       const showKey = submitted || answer?.revealed === true;
       return [
@@ -460,12 +474,11 @@ export class AttemptsService {
       throw new BadRequestException('Câu hỏi không thuộc lượt làm bài này');
     }
 
-    const question = await this.prisma.question.findUniqueOrThrow({
+    const question = await this.questions.findOneOrFail({
       where: { id: dto.questionId },
-      select: { answerIndex: true, explanation: true, options: true },
+      select: { id: true, answerIndex: true, explanation: true, options: true },
     });
-    const key = { attemptId_questionId: { attemptId: id, questionId: dto.questionId } };
-    const existing = await this.prisma.attemptAnswer.findUnique({ where: key });
+    const existing = await this.answers.findOneBy({ attemptId: id, questionId: dto.questionId });
 
     let selectedIndex = dto.selectedIndex;
     if (existing?.revealed && existing.selectedIndex !== null) {
@@ -475,11 +488,10 @@ export class AttemptsService {
         throw new BadRequestException('Đáp án không hợp lệ');
       }
       const isCorrect = selectedIndex === question.answerIndex;
-      await this.prisma.attemptAnswer.upsert({
-        where: key,
-        create: { attemptId: id, questionId: dto.questionId, selectedIndex, isCorrect, revealed: true },
-        update: { selectedIndex, isCorrect, revealed: true },
-      });
+      await this.answers.upsert(
+        { attemptId: id, questionId: dto.questionId, selectedIndex, isCorrect, revealed: true },
+        ['attemptId', 'questionId'],
+      );
       // Ghi thống kê ngay để câu sai được ôn lại kể cả khi người học thoát mà không nộp bài.
       if (attempt.userId) {
         await this.recordStats(attempt.userId, [{ questionId: dto.questionId, selectedIndex, isCorrect }], new Date());
@@ -496,7 +508,7 @@ export class AttemptsService {
   }
 
   async submit(id: string, user: AuthUser | undefined, dto: SubmitAttemptDto) {
-    const attempt = await this.prisma.attempt.findUnique({ where: { id } });
+    const attempt = await this.attempts.findOneBy({ id });
     assertOwner(attempt, user, 'Lượt làm bài');
     if (attempt.status === AttemptStatus.SUBMITTED) {
       return { id: attempt.id, status: attempt.status };
@@ -506,11 +518,11 @@ export class AttemptsService {
     }
 
     const [questions, answers] = await Promise.all([
-      this.prisma.question.findMany({
-        where: { id: { in: attempt.questionIds } },
+      this.questions.find({
+        where: { id: In(attempt.questionIds) },
         select: { id: true, answerIndex: true },
       }),
-      this.prisma.attemptAnswer.findMany({ where: { attemptId: id } }),
+      this.answers.findBy({ attemptId: id }),
     ]);
     const key = new Map(questions.map((q) => [q.id, q.answerIndex]));
     const graded = answers.map((answer) => ({
@@ -527,28 +539,25 @@ export class AttemptsService {
       ? Math.min(elapsed, attempt.timeLimitSeconds)
       : elapsed;
 
-    const claimed = await this.prisma.$transaction(async (tx) => {
+    const claimed = await this.dataSource.transaction(async (manager) => {
       // Chống nộp 2 lần đồng thời: chỉ chuyển trạng thái khi vẫn đang IN_PROGRESS.
-      const { count } = await tx.attempt.updateMany({
-        where: { id, status: AttemptStatus.IN_PROGRESS },
-        data: {
+      const { affected } = await manager.update(
+        Attempt,
+        { id, status: AttemptStatus.IN_PROGRESS },
+        {
           status: AttemptStatus.SUBMITTED,
           submittedAt: now,
           timeSpentSeconds,
           correctCount,
           scorePercent: attempt.totalCount ? (correctCount / attempt.totalCount) * 100 : 0,
         },
-      });
-      if (count === 0) return false;
+      );
+      if (!affected) return false;
 
       for (const isCorrect of [true, false]) {
-        await tx.attemptAnswer.updateMany({
-          where: {
-            attemptId: id,
-            questionId: { in: graded.filter((g) => g.isCorrect === isCorrect).map((g) => g.questionId) },
-          },
-          data: { isCorrect },
-        });
+        const questionIds = graded.filter((g) => g.isCorrect === isCorrect).map((g) => g.questionId);
+        if (questionIds.length === 0) continue;
+        await manager.update(AttemptAnswer, { attemptId: id, questionId: In(questionIds) }, { isCorrect });
       }
       return true;
     });
@@ -562,20 +571,20 @@ export class AttemptsService {
 
   /** Gắn các lượt làm bài lúc chưa đăng nhập vào tài khoản. */
   async claim(user: AuthUser, attemptIds: string[]) {
-    const guestAttempts = await this.prisma.attempt.findMany({
-      where: { id: { in: attemptIds }, userId: null },
-      include: {
-        answers: { select: { questionId: true, selectedIndex: true, isCorrect: true, revealed: true } },
-      },
+    // Bỏ qua id không phải UUID (vd lượt làm cũ còn lưu trong trình duyệt).
+    const ids = attemptIds.filter((id) => isUUID(id));
+    const guestAttempts = await this.attempts.find({
+      where: { id: In(ids), userId: IsNull() },
+      relations: { answers: true },
     });
     if (guestAttempts.length === 0) {
       return { claimed: 0 };
     }
 
-    await this.prisma.attempt.updateMany({
-      where: { id: { in: guestAttempts.map((a) => a.id) }, userId: null },
-      data: { userId: user.id },
-    });
+    await this.attempts.update(
+      { id: In(guestAttempts.map((a) => a.id)), userId: IsNull() },
+      { userId: user.id },
+    );
     for (const attempt of guestAttempts) {
       // Bài đã nộp: tính mọi câu. Bài đang làm: chỉ tính câu đã xem đáp án (lúc nộp sẽ bỏ qua các câu này).
       const answers =
@@ -596,31 +605,24 @@ export class AttemptsService {
     at: Date,
   ) {
     const answered = graded.filter((g) => g.selectedIndex !== null);
-    await this.prisma.$transaction(
-      answered.map((g) =>
-        this.prisma.userQuestionStat.upsert({
-          where: { userId_questionId: { userId, questionId: g.questionId } },
-          create: {
-            userId,
-            questionId: g.questionId,
-            seenCount: 1,
-            correctCount: g.isCorrect ? 1 : 0,
-            lastCorrect: g.isCorrect,
-            lastAnsweredAt: at,
-          },
-          update: {
-            seenCount: { increment: 1 },
-            correctCount: { increment: g.isCorrect ? 1 : 0 },
-            lastCorrect: g.isCorrect,
-            lastAnsweredAt: at,
-          },
-        }),
-      ),
+    if (answered.length === 0) return;
+    // Đã có thống kê thì cộng dồn số lần làm / số lần đúng (query builder không hỗ trợ cộng dồn khi upsert).
+    await this.dataSource.query(
+      `INSERT INTO user_question_stats
+         (user_id, question_id, seen_count, correct_count, last_correct, last_answered_at)
+       SELECT $1::uuid, t.question_id, 1, CASE WHEN t.is_correct THEN 1 ELSE 0 END, t.is_correct, $4::timestamptz
+       FROM unnest($2::text[], $3::boolean[]) AS t(question_id, is_correct)
+       ON CONFLICT (user_id, question_id) DO UPDATE SET
+         seen_count = user_question_stats.seen_count + 1,
+         correct_count = user_question_stats.correct_count + EXCLUDED.correct_count,
+         last_correct = EXCLUDED.last_correct,
+         last_answered_at = EXCLUDED.last_answered_at`,
+      [userId, answered.map((g) => g.questionId), answered.map((g) => g.isCorrect), at],
     );
   }
 
   private async loadOpenAttempt(id: string, user: AuthUser | undefined) {
-    const attempt = await this.prisma.attempt.findUnique({ where: { id } });
+    const attempt = await this.attempts.findOneBy({ id });
     assertOwner(attempt, user, 'Lượt làm bài');
     if (attempt.status === AttemptStatus.SUBMITTED) {
       throw new ConflictException('Bài đã được nộp');
@@ -645,26 +647,28 @@ export class AttemptsService {
     const valid = inputs.filter((input) => allowed.has(input.questionId));
     if (valid.length === 0) return;
 
-    const existing = await this.prisma.attemptAnswer.findMany({
-      where: { attemptId: attempt.id, questionId: { in: valid.map((v) => v.questionId) } },
-      select: { questionId: true, revealed: true },
+    const existing = await this.answers.find({
+      where: { attemptId: attempt.id, questionId: In(valid.map((v) => v.questionId)) },
+      select: { attemptId: true, questionId: true, revealed: true },
     });
     const locked = new Set(existing.filter((e) => e.revealed).map((e) => e.questionId));
 
-    await this.prisma.$transaction(
-      valid.map((input) => {
-        const key = { attemptId_questionId: { attemptId: attempt.id, questionId: input.questionId } };
-        // Câu đã xem đáp án thì không cho đổi lựa chọn, chỉ cho đánh dấu.
-        const selection = locked.has(input.questionId) || input.selectedIndex === undefined
-          ? {}
-          : { selectedIndex: input.selectedIndex };
-        const flag = input.flagged === undefined ? {} : { flagged: input.flagged };
-        return this.prisma.attemptAnswer.upsert({
-          where: key,
-          create: { attemptId: attempt.id, questionId: input.questionId, ...selection, ...flag },
-          update: { ...selection, ...flag },
-        });
-      }),
-    );
+    // upsert chỉ ghi đè các cột có giá trị, nên gom các dòng cùng tập cột vào một câu lệnh.
+    const groups = new Map<string, Partial<AttemptAnswer>[]>();
+    for (const input of valid) {
+      // Câu đã xem đáp án thì không cho đổi lựa chọn, chỉ cho đánh dấu.
+      const selection = locked.has(input.questionId) || input.selectedIndex === undefined
+        ? {}
+        : { selectedIndex: input.selectedIndex };
+      const flag = input.flagged === undefined ? {} : { flagged: input.flagged };
+      const row = { attemptId: attempt.id, questionId: input.questionId, ...selection, ...flag };
+      const shape = Object.keys(row).join();
+      groups.set(shape, [...(groups.get(shape) ?? []), row]);
+    }
+    await this.dataSource.transaction(async (manager) => {
+      for (const rows of groups.values()) {
+        await manager.upsert(AttemptAnswer, rows, ['attemptId', 'questionId']);
+      }
+    });
   }
 }

@@ -7,7 +7,7 @@ import {
   Query,
 } from '@nestjs/common';
 import { ApiQuery, ApiTags } from '@nestjs/swagger';
-import { AttemptMode, AttemptStatus, JlptLevel } from '../../generated/prisma/enums.js';
+import { AttemptMode, AttemptStatus, JlptLevel } from '../../database/enums.js';
 import type { AuthUser } from '../../common/auth/auth-user.js';
 import { Authenticated, CurrentUser } from '../../common/auth/decorators.js';
 import { MeService } from './me.service.js';

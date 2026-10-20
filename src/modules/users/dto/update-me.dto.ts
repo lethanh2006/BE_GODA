@@ -1,7 +1,7 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
 import { Transform } from 'class-transformer';
 import { IsEnum, IsOptional, IsString, MaxLength, MinLength } from 'class-validator';
-import { JlptLevel } from '../../../generated/prisma/enums.js';
+import { JlptLevel } from '../../../database/enums.js';
 
 export class UpdateMeDto {
   @ApiPropertyOptional()

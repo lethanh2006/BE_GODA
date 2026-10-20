@@ -10,16 +10,21 @@ import {
   Query,
 } from '@nestjs/common';
 import { ApiQuery, ApiTags } from '@nestjs/swagger';
-import { JlptLevel } from '../../generated/prisma/enums.js';
+import { InjectRepository } from '@nestjs/typeorm';
+import type { Repository } from 'typeorm';
 import type { AuthUser } from '../../common/auth/auth-user.js';
 import { Authenticated, CurrentUser } from '../../common/auth/decorators.js';
-import { PrismaService } from '../../prisma/prisma.service.js';
+import { Bookmark, Question } from '../../database/entities/index.js';
+import { JlptLevel } from '../../database/enums.js';
 
 @ApiTags('bookmarks')
 @Controller('bookmarks')
 @Authenticated()
 export class BookmarksController {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    @InjectRepository(Bookmark) private readonly bookmarks: Repository<Bookmark>,
+    @InjectRepository(Question) private readonly questions: Repository<Question>,
+  ) {}
 
   @Get()
   @ApiQuery({ name: 'level', enum: JlptLevel, required: false })
@@ -27,15 +32,11 @@ export class BookmarksController {
     @CurrentUser() user: AuthUser,
     @Query('level', new ParseEnumPipe(JlptLevel, { optional: true })) level?: JlptLevel,
   ) {
-    const bookmarks = await this.prisma.bookmark.findMany({
+    const bookmarks = await this.bookmarks.find({
       where: { userId: user.id, ...(level && { question: { level } }) },
-      orderBy: { createdAt: 'desc' },
+      order: { createdAt: 'DESC' },
       take: 500,
-      include: {
-        question: {
-          include: { passage: { select: { id: true, title: true, content: true } } },
-        },
-      },
+      relations: { question: { passage: true } },
     });
     return bookmarks.map(({ question, createdAt }) => ({
       createdAt,
@@ -48,7 +49,11 @@ export class BookmarksController {
         answerIndex: question.answerIndex,
         explanation: question.explanation,
         source: question.source,
-        passage: question.passage,
+        passage: question.passage && {
+          id: question.passage.id,
+          title: question.passage.title,
+          content: question.passage.content,
+        },
       },
     }));
   }
@@ -56,18 +61,20 @@ export class BookmarksController {
   @Put(':questionId')
   @HttpCode(204)
   async add(@CurrentUser() user: AuthUser, @Param('questionId') questionId: string) {
-    const exists = await this.prisma.question.count({ where: { id: questionId } });
-    if (!exists) throw new NotFoundException('Câu hỏi không tồn tại');
-    await this.prisma.bookmark.upsert({
-      where: { userId_questionId: { userId: user.id, questionId } },
-      create: { userId: user.id, questionId },
-      update: {},
-    });
+    if (!(await this.questions.existsBy({ id: questionId }))) {
+      throw new NotFoundException('Câu hỏi không tồn tại');
+    }
+    await this.bookmarks
+      .createQueryBuilder()
+      .insert()
+      .values({ userId: user.id, questionId })
+      .orIgnore()
+      .execute();
   }
 
   @Delete(':questionId')
   @HttpCode(204)
   async remove(@CurrentUser() user: AuthUser, @Param('questionId') questionId: string) {
-    await this.prisma.bookmark.deleteMany({ where: { userId: user.id, questionId } });
+    await this.bookmarks.delete({ userId: user.id, questionId });
   }
 }

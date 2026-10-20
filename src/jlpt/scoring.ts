@@ -1,6 +1,6 @@
-import { JlptLevel } from '../generated/prisma/enums.js';
+import { JlptLevel } from '../database/enums.js';
 import { QUESTION_TYPES, type SkillGroup } from './question-types.js';
-import type { QuestionType } from '../generated/prisma/enums.js';
+import type { QuestionType } from '../database/enums.js';
 
 /** Nhóm điểm (得点区分) của JLPT. */
 interface ScoreCategory {
