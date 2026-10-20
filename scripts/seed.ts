@@ -7,18 +7,23 @@
 import 'dotenv/config';
 import { readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
-import { PrismaPg } from '@prisma/adapter-pg';
-import { PrismaClient } from '../src/generated/prisma/client.js';
+import { DataSource, In, MoreThanOrEqual, Not } from 'typeorm';
 import { hashString, seededRandom, shuffle } from '../src/common/utils/random.js';
+import { dataSourceOptions } from '../src/database/data-source.js';
+import {
+  Exam,
+  ExamQuestion,
+  ExamSection,
+  Passage,
+  Question,
+} from '../src/database/entities/index.js';
 import { BLUEPRINTS } from '../src/jlpt/blueprints.js';
 import type { ContentFile, ContentQuestion } from '../src/jlpt/content.js';
 
 const CONTENT_DIR = path.resolve(import.meta.dirname, '../content');
 const CHUNK = 500;
 
-const prisma = new PrismaClient({
-  adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL! }),
-});
+const dataSource = new DataSource(dataSourceOptions(process.env.DATABASE_URL ?? ''));
 
 async function loadContent(): Promise<ContentFile[]> {
   const files: ContentFile[] = [];
@@ -53,18 +58,20 @@ function finalOptions(file: ContentFile, question: ContentQuestion) {
   return { options: order.map((i) => question.options[i]), answerIndex: order.indexOf(question.answer) };
 }
 
-interface QuestionRow {
-  level: string;
-  type: string;
-  prompt: string;
-  options: string[];
-  answerIndex: number;
-  explanation: string | null;
-  passageId: string | null;
-  passageOrder: number;
-  source: string;
-  isActive: boolean;
-}
+type QuestionRow = Pick<
+  Question,
+  | 'id'
+  | 'level'
+  | 'type'
+  | 'prompt'
+  | 'options'
+  | 'answerIndex'
+  | 'explanation'
+  | 'passageId'
+  | 'passageOrder'
+  | 'source'
+  | 'isActive'
+>;
 
 const fingerprint = (q: QuestionRow) =>
   JSON.stringify([
@@ -73,18 +80,28 @@ const fingerprint = (q: QuestionRow) =>
   ]);
 
 async function seedQuestions(files: ContentFile[]) {
+  const passages = dataSource.getRepository(Passage);
+  const questions = dataSource.getRepository(Question);
   const seenIds = new Set<string>();
 
   for (const file of files) {
     const passageIds = new Set(file.passages.map((p) => p.id));
     const passageOrder = new Map<string, number>();
 
-    for (const passage of file.passages) {
-      const data = { level: file.level, title: passage.title ?? null, content: passage.content, source: file.source };
-      await prisma.passage.upsert({ where: { id: passage.id }, create: { id: passage.id, ...data }, update: data });
+    if (file.passages.length) {
+      await passages.upsert(
+        file.passages.map((passage) => ({
+          id: passage.id,
+          level: file.level,
+          title: passage.title ?? null,
+          content: passage.content,
+          source: file.source,
+        })),
+        ['id'],
+      );
     }
 
-    const rows = file.questions.map((question) => {
+    const rows: QuestionRow[] = file.questions.map((question) => {
       validate(file, question, passageIds);
       if (seenIds.has(question.id)) throw new Error(`Trùng id câu hỏi: ${question.id}`);
       seenIds.add(question.id);
@@ -105,33 +122,16 @@ async function seedQuestions(files: ContentFile[]) {
     });
 
     const existing = new Map(
-      (
-        await prisma.question.findMany({
-          where: { id: { in: rows.map((r) => r.id) } },
-          select: {
-            id: true,
-            level: true,
-            type: true,
-            prompt: true,
-            options: true,
-            answerIndex: true,
-            explanation: true,
-            passageId: true,
-            passageOrder: true,
-            source: true,
-            isActive: true,
-          },
-        })
-      ).map((q) => [q.id, fingerprint(q)]),
+      (await questions.find({ where: { id: In(rows.map((r) => r.id)) } })).map((q) => [q.id, fingerprint(q)]),
     );
     const fresh = rows.filter((r) => !existing.has(r.id));
     for (let i = 0; i < fresh.length; i += CHUNK) {
-      await prisma.question.createMany({ data: fresh.slice(i, i + CHUNK) });
+      await questions.insert(fresh.slice(i, i + CHUNK));
     }
     // Chỉ cập nhật câu thực sự thay đổi.
     const changed = rows.filter((r) => existing.has(r.id) && existing.get(r.id) !== fingerprint(r));
     for (const { id, ...data } of changed) {
-      await prisma.question.update({ where: { id }, data });
+      await questions.update({ id }, data);
     }
     console.log(
       `  ${file.source}/${file.level}${file.exam ? ` (đề ${file.exam.number})` : ''}: ` +
@@ -139,14 +139,14 @@ async function seedQuestions(files: ContentFile[]) {
     );
   }
 
-  const { count } = await prisma.question.updateMany({
-    where: { id: { notIn: [...seenIds] }, isActive: true },
-    data: { isActive: false },
-  });
-  if (count) console.log(`  Ẩn ${count} câu không còn trong content/`);
+  const { affected } = await questions.update({ isActive: true, id: Not(In([...seenIds])) }, { isActive: false });
+  if (affected) console.log(`  Ẩn ${affected} câu không còn trong content/`);
 }
 
 async function seedExams(files: ContentFile[]) {
+  const exams = dataSource.getRepository(Exam);
+  const sectionsRepo = dataSource.getRepository(ExamSection);
+
   // Gom các file cùng (cấp độ, số đề): vd n5-01.json + n5-01-listening.json.
   const groups = new Map<string, ContentFile[]>();
   for (const file of files.filter((f) => f.exam)) {
@@ -201,38 +201,40 @@ async function seedExams(files: ContentFile[]) {
     }
 
     const { title, description } = head.exam!;
-    const record = await prisma.exam.upsert({
-      where: { slug },
-      create: { slug, level, number, title: title!, description, source: head.source },
-      update: { title: title!, description, number, published: true },
-    });
+    await exams.upsert(
+      { slug, level, number, title: title!, description: description ?? null, source: head.source, published: true },
+      ['slug'],
+    );
+    const record = await exams.findOneByOrFail({ slug });
 
     for (const [order, { section, items }] of sections.entries()) {
       // Giữ id phần thi ổn định để không làm mất liên kết với các lượt làm cũ.
-      const saved = await prisma.examSection.upsert({
-        where: { examId_order: { examId: record.id, order } },
-        create: {
+      await sectionsRepo.upsert(
+        {
           examId: record.id,
           order,
           title: section.title,
           titleVi: section.titleVi,
           durationMinutes: section.durationMinutes,
         },
-        update: { title: section.title, titleVi: section.titleVi, durationMinutes: section.durationMinutes },
+        ['examId', 'order'],
+      );
+      const saved = await sectionsRepo.findOneByOrFail({ examId: record.id, order });
+      await dataSource.transaction(async (manager) => {
+        await manager.delete(ExamQuestion, { sectionId: saved.id });
+        await manager.insert(
+          ExamQuestion,
+          items.map((item, index) => ({ sectionId: saved.id, order: index, ...item })),
+        );
       });
-      await prisma.$transaction([
-        prisma.examQuestion.deleteMany({ where: { sectionId: saved.id } }),
-        prisma.examQuestion.createMany({
-          data: items.map((item, index) => ({ sectionId: saved.id, order: index, ...item })),
-        }),
-      ]);
     }
-    await prisma.examSection.deleteMany({ where: { examId: record.id, order: { gte: sections.length } } });
+    await sectionsRepo.delete({ examId: record.id, order: MoreThanOrEqual(sections.length) });
     console.log(`  Đề ${slug}: ${used.size} câu, ${sections.length} phần thi`);
   }
 }
 
 async function main() {
+  await dataSource.initialize();
   const files = await loadContent();
   console.log(`Nạp ${files.length} file nội dung…`);
   await seedQuestions(files);
@@ -244,5 +246,5 @@ async function main() {
 try {
   await main();
 } finally {
-  await prisma.$disconnect();
+  if (dataSource.isInitialized) await dataSource.destroy();
 }
