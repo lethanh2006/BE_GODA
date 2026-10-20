@@ -5,7 +5,7 @@ services:
     restart: unless-stopped
     environment:
       POSTGRES_USER: goda
-      POSTGRES_PASSWORD: goda
+      POSTGRES_PASSWORD: '123456'
       POSTGRES_DB: goda_jlpt
     ports:
       - '5432:5432'

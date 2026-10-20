@@ -1,28 +1,40 @@
 # GODA JLPT — Backend
 
-API cho web luyện đề JLPT N5–N1. NestJS 12 (monolith, ESM) · Prisma 7 · PostgreSQL 17.
+API cho web luyện đề JLPT N5–N1. NestJS 12 (monolith, ESM) · TypeORM 1.1 · PostgreSQL 17.
 
 Frontend: [FE_GODA](https://github.com/lethanh2006/FE_GODA).
 
 ## Chạy local
 
-Yêu cầu: Node ≥ 22, pnpm 11, PostgreSQL (Docker hoặc `prisma dev`).
+Yêu cầu: Node ≥ 22, pnpm 11, Docker (hoặc PostgreSQL ≥ 13 có sẵn).
 
 ```bash
-pnpm install                 # tự chạy prisma generate
+pnpm install
 cp .env.example .env         # rồi đặt JWT_SECRET (≥ 32 ký tự)
 
-# Database — chọn một trong hai:
-docker compose up -d         # PostgreSQL 17, khớp DATABASE_URL trong .env.example
-pnpm exec prisma dev -d      # hoặc Postgres cục bộ không cần Docker; sửa DATABASE_URL theo URL "TCP" nó in ra
-
-pnpm exec prisma migrate deploy   # tạo bảng
-pnpm db:seed                      # nạp ~7.850 câu hỏi và 5 đề thi thử
-pnpm dev                          # http://localhost:4000/api
+docker compose up -d         # PostgreSQL 17, tài khoản goda / 123456, database goda_jlpt
+pnpm migration:run           # tạo bảng
+pnpm db:seed                 # nạp ~8.470 câu hỏi và 10 đề thi thử
+pnpm dev                     # http://localhost:4000/api
 ```
 
 - Swagger: http://localhost:4000/api/docs
 - Health check: http://localhost:4000/api/health
+
+## Xem dữ liệu bằng pgAdmin
+
+Tạo server mới (Register → Server), tab **Connection**:
+
+| Trường | Giá trị |
+| --- | --- |
+| Host name/address | `localhost` |
+| Port | `5432` |
+| Maintenance database | `goda_jlpt` |
+| Username | `goda` |
+| Password | `123456` |
+
+Bảng nằm trong `goda_jlpt → Schemas → public → Tables`, tên bảng và cột dạng snake_case
+(`users`, `questions`, `attempts`, `attempt_answers`…). Bảng `migrations` do TypeORM quản lý, không sửa tay.
 
 ## Biến môi trường
 
@@ -43,11 +55,11 @@ pnpm dev                          # http://localhost:4000/api
 | `pnpm build` / `pnpm start:prod` | Build và chạy bản production |
 | `pnpm test` / `pnpm test:e2e` | Unit test / e2e (Vitest) |
 | `pnpm lint` | oxlint (type-aware) |
-| `pnpm prisma:migrate` | `prisma migrate dev` — tạo migration khi đổi schema |
-| `pnpm prisma:deploy` | `prisma migrate deploy` — áp migration (production) |
+| `pnpm migration:run` / `pnpm migration:revert` | Áp / hoàn tác migration |
+| `pnpm migration:show` | Liệt kê migration và trạng thái |
+| `pnpm migration:generate src/database/migrations/<Tên>` | Sinh migration từ thay đổi entity (so với DB hiện tại) |
 | `pnpm db:seed` | Nạp `content/` vào DB và dựng đề thi (chạy lại an toàn) |
 | `pnpm content:openjlpt` | Tải và làm sạch lại dữ liệu OpenJLPT vào `content/openjlpt/` |
-| `pnpm prisma:studio` | Xem / sửa dữ liệu |
 
 ## API chính
 
@@ -72,7 +84,7 @@ Route không ghi chú là công khai — khách vẫn làm bài được.
 | POST | `/questions/:id/reports` | Báo lỗi câu hỏi |
 | GET/PATCH | `/admin/reports[/:id]` 🔒 admin | Xử lý báo lỗi |
 
-Muốn có tài khoản admin: đổi `role` thành `ADMIN` trong bảng `User` (vd bằng `pnpm prisma:studio`).
+Muốn có tài khoản admin: đổi cột `role` thành `ADMIN` trong bảng `users` (vd bằng pgAdmin).
 
 ## Cấu trúc
 
@@ -80,16 +92,23 @@ Muốn có tài khoản admin: đổi `role` thành `ADMIN` trong bảng `User` 
 content/                 nội dung câu hỏi (JSON) — xem content/README.md
   goda/                  đề GODA biên soạn, mỗi file một đề
   openjlpt/              ngân hàng mở rộng (sinh bằng importer, không sửa tay)
-prisma/
-  schema.prisma          data model
-  migrations/
+scripts/
   seed.ts                nạp content/ và dựng đề thi
-scripts/openjlpt/        importer + làm sạch OpenJLPT (kana, kanji đồng âm)
+  openjlpt/              importer + làm sạch OpenJLPT (kana, kanji đồng âm)
+typeorm.config.ts        DataSource cho TypeORM CLI
 src/
+  database/              entity, enum, migration, naming strategy (snake_case)
   jlpt/                  domain: dạng bài, cấu trúc đề N5–N1, ước tính điểm, chọn câu
   common/                auth guard, decorator, tiện ích
   modules/               auth, users, catalog, exams, attempts, me, bookmarks, reports, health
 ```
+
+## Đổi cấu trúc database
+
+1. Sửa entity trong `src/database/entities/` (enum ở `src/database/enums.ts`).
+2. `pnpm migration:generate src/database/migrations/<TênThayĐổi>` rồi đọc lại file sinh ra: với enum dùng chung
+   nhiều bảng (`jlpt_level`, `question_type`…), TypeORM có thể sinh lệnh `CREATE TYPE`/`ALTER TYPE` lặp — giữ một lần.
+3. `pnpm migration:run`.
 
 ## Thêm đề thi mới
 
