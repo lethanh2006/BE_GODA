@@ -12,7 +12,7 @@ Yêu cầu: Node ≥ 22, pnpm 11, Docker (hoặc PostgreSQL ≥ 13 có sẵn).
 pnpm install
 cp .env.example .env         # rồi đặt JWT_SECRET (≥ 32 ký tự)
 
-docker compose up -d         # PostgreSQL 17, tài khoản goda / 123456, database goda_jlpt
+docker compose up -d --wait  # PostgreSQL 17 (goda / 123456, database goda_jlpt); --wait chờ DB sẵn sàng
 pnpm migration:run           # tạo bảng
 pnpm db:seed                 # nạp ~8.470 câu hỏi và 10 đề thi thử
 pnpm dev                     # http://localhost:4000/api
