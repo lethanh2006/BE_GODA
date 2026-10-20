@@ -44,7 +44,8 @@ export class EnvironmentVariables {
   JWT_EXPIRES_DAYS: number = 30;
 
   /** Bật khi chạy HTTPS (production). */
-  @Transform(({ value }) => value === true || value === 'true')
+  // Đọc giá trị gốc: enableImplicitConversion đã biến chuỗi "false" thành true trước khi tới đây.
+  @Transform(({ obj }: { obj: Record<string, unknown> }) => obj.COOKIE_SECURE === true || obj.COOKIE_SECURE === 'true')
   @IsBoolean()
   COOKIE_SECURE: boolean = false;
 }
