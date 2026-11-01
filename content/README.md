@@ -14,7 +14,7 @@ từ vựng: `src/jlpt/vocab-content.ts`.
 | File | Nội dung | Sinh bằng |
 | --- | --- | --- |
 | `words-n5.json` … `words-n1.json` | 7.811 từ theo cấp, thứ tự trong file là thứ tự học (từ phổ biến trước) | `pnpm content:vocab` |
-| `words-common.json` | 15.4xx từ thông dụng ngoài danh sách JLPT, chỉ để tra cứu | `pnpm content:vocab` |
+| `words-common.json` | 15.426 từ thông dụng ngoài danh sách JLPT, chỉ để tra cứu | `pnpm content:vocab` |
 | `kanji.json` | 2.383 kanji: âm on/kun, số nét, bộ, nghĩa tiếng Anh, âm Hán Việt | `pnpm content:vocab` |
 | `vi-ovdp.json` | Nghĩa tiếng Việt lọc tự động từ OVDP, theo id từ | `pnpm content:vocab` |
 | `vi-goda-n5.txt`, `vi-goda-n4.txt` | Nghĩa tiếng Việt GODA soạn tay, dòng `từ\|cách đọc\|nghĩa; nghĩa` (cách đọc để trống nếu trùng mặt chữ). **Ưu tiên hơn OVDP.** | Sửa tay |

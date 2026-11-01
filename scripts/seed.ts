@@ -1,5 +1,5 @@
 /**
- * Nạp ngân hàng câu hỏi từ content/ vào database và dựng các đề thi.
+ * Nạp ngân hàng câu hỏi, từ vựng và kanji từ content/ vào database, rồi dựng các đề thi.
  *   pnpm db:seed
  * Chạy lại an toàn: câu hỏi upsert theo id, câu không còn trong content bị ẩn (isActive=false)
  * thay vì xoá để giữ lịch sử làm bài.
@@ -14,11 +14,14 @@ import {
   Exam,
   ExamQuestion,
   ExamSection,
+  Kanji,
   Passage,
   Question,
+  Word,
 } from '../src/database/entities/index.js';
 import { BLUEPRINTS } from '../src/jlpt/blueprints.js';
 import type { ContentFile, ContentQuestion } from '../src/jlpt/content.js';
+import { type ContentKanji, type ContentWord, LESSON_SIZE } from '../src/jlpt/vocab-content.js';
 
 const CONTENT_DIR = path.resolve(import.meta.dirname, '../content');
 const CHUNK = 500;
@@ -233,6 +236,76 @@ async function seedExams(files: ContentFile[]) {
   }
 }
 
+/** Nghĩa GODA soạn tay: mỗi dòng `từ|cách đọc|nghĩa; nghĩa`, cách đọc để trống nếu trùng mặt chữ. */
+async function loadManualMeanings(dir: string): Promise<Map<string, string[]>> {
+  const meanings = new Map<string, string[]>();
+  const names = (await readdir(dir)).filter((n) => /^vi-goda-.*\.txt$/.test(n)).sort();
+  for (const name of names) {
+    for (const line of (await readFile(path.join(dir, name), 'utf8')).split('\n')) {
+      if (!line.trim()) continue;
+      const [word, reading, text] = line.split('|');
+      if (!text) throw new Error(`${name}: dòng sai định dạng: ${line}`);
+      meanings.set(`${word}|${reading || word}`, text.split(';').map((s) => s.trim()).filter(Boolean));
+    }
+  }
+  return meanings;
+}
+
+async function seedVocabulary() {
+  const dir = path.join(CONTENT_DIR, 'vocab');
+  const readJson = async <T>(name: string) => JSON.parse(await readFile(path.join(dir, name), 'utf8')) as T;
+  const manual = await loadManualMeanings(dir);
+  const ovdp = await readJson<Record<string, string[]>>('vi-ovdp.json');
+  const words = dataSource.getRepository(Word);
+
+  const toRow = (item: ContentWord, index: number) => {
+    const handWritten = manual.get(`${item.word}|${item.reading}`);
+    const auto = ovdp[item.id];
+    return {
+      id: item.id,
+      word: item.word,
+      reading: item.reading,
+      romaji: item.romaji,
+      level: item.level,
+      pos: item.pos,
+      meaningsVi: handWritten ?? auto ?? [],
+      viSource: handWritten ? 'goda' : auto ? 'ovdp' : null,
+      meaningsEn: item.en,
+      hanviet: item.hanviet,
+      freq: item.freq,
+      examples: item.examples,
+      lessonNo: item.level ? Math.floor(index / LESSON_SIZE) + 1 : null,
+      lessonOrder: item.level ? index % LESSON_SIZE : null,
+    };
+  };
+
+  const names = (await readdir(dir)).filter((n) => /^words-.*\.json$/.test(n)).sort();
+  for (const name of names) {
+    const rows = (await readJson<ContentWord[]>(name)).map(toRow);
+    for (let i = 0; i < rows.length; i += CHUNK) {
+      await words.upsert(rows.slice(i, i + CHUNK), ['id']);
+    }
+    console.log(`  ${name}: ${rows.length} từ`);
+  }
+
+  const kanji = (await readJson<ContentKanji[]>('kanji.json')).map((item) => ({
+    char: item.char,
+    level: item.level,
+    strokes: item.strokes,
+    freq: item.freq,
+    radical: item.radical,
+    onyomi: item.on,
+    kunyomi: item.kun,
+    meaningsEn: item.en,
+    hanviet: item.hanviet,
+  }));
+  const kanjiRepo = dataSource.getRepository(Kanji);
+  for (let i = 0; i < kanji.length; i += CHUNK) {
+    await kanjiRepo.upsert(kanji.slice(i, i + CHUNK), ['char']);
+  }
+  console.log(`  kanji.json: ${kanji.length} chữ`);
+}
+
 async function main() {
   await dataSource.initialize();
   const files = await loadContent();
@@ -240,6 +313,8 @@ async function main() {
   await seedQuestions(files);
   console.log('Dựng đề thi…');
   await seedExams(files);
+  console.log('Nạp từ vựng và kanji…');
+  await seedVocabulary();
   console.log('Xong.');
 }
 
