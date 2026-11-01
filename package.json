@@ -26,7 +26,8 @@
     "migration:generate": "tsx node_modules/typeorm/cli.js migration:generate -d typeorm.config.ts",
     "migration:create": "tsx node_modules/typeorm/cli.js migration:create",
     "db:seed": "tsx scripts/seed.ts",
-    "content:openjlpt": "tsx scripts/openjlpt/import.ts"
+    "content:openjlpt": "tsx scripts/openjlpt/import.ts",
+    "content:vocab": "tsx scripts/vocab/import.ts"
   },
   "dependencies": {
     "@nestjs/common": "^12.0.1",
@@ -44,6 +45,7 @@
     "pg": "8.23.1",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
+    "ts-fsrs": "6.0.0",
     "typeorm": "1.1.2"
   },
   "devDependencies": {
