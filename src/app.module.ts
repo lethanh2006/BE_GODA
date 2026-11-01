@@ -9,11 +9,13 @@ import { AttemptsModule } from './modules/attempts/attempts.module.js';
 import { AuthModule } from './modules/auth/auth.module.js';
 import { BookmarksModule } from './modules/bookmarks/bookmarks.module.js';
 import { CatalogModule } from './modules/catalog/catalog.module.js';
+import { DictionaryModule } from './modules/dictionary/dictionary.module.js';
 import { ExamsModule } from './modules/exams/exams.module.js';
 import { HealthModule } from './modules/health/health.module.js';
 import { MeModule } from './modules/me/me.module.js';
 import { ReportsModule } from './modules/reports/reports.module.js';
 import { UsersModule } from './modules/users/users.module.js';
+import { VocabModule } from './modules/vocab/vocab.module.js';
 
 @Module({
   imports: [
@@ -36,6 +38,8 @@ import { UsersModule } from './modules/users/users.module.js';
     MeModule,
     BookmarksModule,
     ReportsModule,
+    DictionaryModule,
+    VocabModule,
     HealthModule,
   ],
   providers: [{ provide: APP_GUARD, useClass: ThrottlerGuard }],
