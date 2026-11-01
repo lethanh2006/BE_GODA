@@ -1,6 +1,6 @@
 # GODA JLPT — Backend
 
-API cho web luyện đề JLPT N5–N1. NestJS 12 (monolith, ESM) · TypeORM 1.1 · PostgreSQL 17.
+API cho web luyện thi JLPT N5–N1, học từ vựng và tra từ tiếng Nhật. NestJS 12 (monolith, ESM) · TypeORM 1.1 · PostgreSQL 17.
 
 Frontend: [FE_GODA](https://github.com/lethanh2006/FE_GODA).
 
@@ -14,7 +14,7 @@ cp .env.example .env         # rồi đặt JWT_SECRET (≥ 32 ký tự)
 
 docker compose up -d --wait  # PostgreSQL 17 (goda / 123456, database goda_jlpt); --wait chờ DB sẵn sàng
 pnpm migration:run           # tạo bảng
-pnpm db:seed                 # nạp ~8.470 câu hỏi và 10 đề thi thử
+pnpm db:seed                 # nạp ~8.470 câu hỏi, 10 đề thi thử, ~23.200 từ và 2.383 kanji
 pnpm dev                     # http://localhost:4000/api
 ```
 
@@ -60,6 +60,7 @@ Bảng nằm trong `goda_jlpt → Schemas → public → Tables`, tên bảng v�
 | `pnpm migration:generate src/database/migrations/<Tên>` | Sinh migration từ thay đổi entity (so với DB hiện tại) |
 | `pnpm db:seed` | Nạp `content/` vào DB và dựng đề thi (chạy lại an toàn) |
 | `pnpm content:openjlpt` | Tải và làm sạch lại dữ liệu OpenJLPT vào `content/openjlpt/` |
+| `pnpm content:vocab` | Dựng lại từ vựng và kanji vào `content/vocab/` (tải nguồn về `.cache/`, cần `unzip`, `tar`) |
 
 ## API chính
 
@@ -83,24 +84,36 @@ Route không ghi chú là công khai — khách vẫn làm bài được.
 | GET/PUT/DELETE | `/bookmarks[/:questionId]` 🔒 | Câu hỏi đã lưu |
 | POST | `/questions/:id/reports` | Báo lỗi câu hỏi |
 | GET/PATCH | `/admin/reports[/:id]` 🔒 admin | Xử lý báo lỗi |
+| GET | `/dictionary` | Tổng số từ, kanji theo cấp |
+| GET | `/dictionary/search?q=&level=&limit=` | Tra từ: chữ Nhật, romaji, tiếng Việt (có hoặc không dấu), âm Hán Việt, tiếng Anh |
+| GET | `/dictionary/words/:id` | Chi tiết từ: nghĩa, ví dụ, phân tích kanji, từ đồng âm, trạng thái ôn tập |
+| GET | `/dictionary/kanji?q=&level=`, `/dictionary/kanji/:char` | Danh sách / chi tiết kanji kèm từ chứa chữ đó |
+| GET | `/vocab/levels`, `/vocab/levels/:level/lessons[/:no]` | Bài học từ vựng theo cấp (mỗi bài 20 từ) |
+| GET | `/study/stats`, `/study/queue?limit=&level=` 🔒 | Thống kê và hàng từ đến hạn ôn, kèm lịch ôn dự kiến của 4 nút đánh giá |
+| POST | `/study/review` 🔒 | Chấm một thẻ (1 Quên, 2 Khó, 3 Nhớ, 4 Dễ), tính lịch ôn bằng FSRS |
+| GET/POST | `/study/words` 🔒 | Sổ từ: danh sách, thêm từ (`learned: true` khi vừa học xong bài) |
+| PUT/DELETE | `/study/words/:id/known`, `/study/words/:id` 🔒 | Đánh dấu đã biết, xoá khỏi sổ |
 
 Muốn có tài khoản admin: đổi cột `role` thành `ADMIN` trong bảng `users` (vd bằng pgAdmin).
 
 ## Cấu trúc
 
 ```
-content/                 nội dung câu hỏi (JSON) — xem content/README.md
+content/                 nội dung (JSON) — xem content/README.md
   goda/                  đề GODA biên soạn, mỗi file một đề
   openjlpt/              ngân hàng mở rộng (sinh bằng importer, không sửa tay)
+  vocab/                 từ vựng, kanji, nghĩa tiếng Việt
 scripts/
   seed.ts                nạp content/ và dựng đề thi
   openjlpt/              importer + làm sạch OpenJLPT (kana, kanji đồng âm)
+  vocab/                 importer từ vựng + bộ lọc nghĩa OVDP
 typeorm.config.ts        DataSource cho TypeORM CLI
 src/
   database/              entity, enum, migration, naming strategy (snake_case)
   jlpt/                  domain: dạng bài, cấu trúc đề N5–N1, ước tính điểm, chọn câu
   common/                auth guard, decorator, tiện ích
-  modules/               auth, users, catalog, exams, attempts, me, bookmarks, reports, health
+  modules/               auth, users, catalog, exams, attempts, me, bookmarks, reports, health,
+                         dictionary (tra từ), vocab (bài học, ôn tập FSRS)
 ```
 
 ## Đổi cấu trúc database
