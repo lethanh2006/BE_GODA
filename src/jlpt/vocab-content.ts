@@ -1,5 +1,8 @@
 import type { JlptLevel } from '../database/enums.js';
 
+/** Mỗi bài học từ vựng gồm từng này từ, theo thứ tự trong file words-n*.json. */
+export const LESSON_SIZE = 20;
+
 /** Định dạng file trong content/vocab/ (sinh bằng pnpm content:vocab, nạp bằng pnpm db:seed). */
 
 export interface ContentExample {
