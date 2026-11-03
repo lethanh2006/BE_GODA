@@ -129,3 +129,30 @@ src/
    luôn viết ở vị trí đầu, seed tự đảo vị trí (cố định theo id).
 2. Số câu mỗi dạng bài nên khớp cấu trúc trong `src/jlpt/blueprints.ts`. Seed sẽ cảnh báo nếu lệch.
 3. Chạy `pnpm db:seed`. Đề có slug `<cấp>-de-<số>`, ví dụ `n3-de-02`.
+
+## Deploy (Render + Neon, miễn phí)
+
+API chạy trên Render (gói Free, Singapore) bằng `Dockerfile`; database là Neon (gói Free, 0,5 GB, không hết hạn).
+Frontend trên Vercel gọi API qua proxy `/api/*` nên cookie đăng nhập vẫn là first-party.
+
+1. **Neon** ([neon.com](https://neon.com)): tạo project, region *AWS Asia Pacific (Singapore)*. Copy connection string,
+   đổi đuôi `sslmode=require&channel_binding=require` thành `sslmode=verify-full`.
+2. **Nạp dữ liệu từ máy local** (Render free không có shell, mà image cũng không chứa `content/`):
+
+   ```bash
+   DATABASE_URL='postgresql://…neon.tech/neondb?sslmode=verify-full' pnpm migration:run
+   DATABASE_URL='postgresql://…neon.tech/neondb?sslmode=verify-full' pnpm db:seed
+   ```
+
+   Biến truyền trên dòng lệnh được ưu tiên hơn `.env`. Khi sửa `content/`, chạy lại `db:seed` theo cách này.
+3. **Render** ([render.com](https://render.com)): New → Blueprint → chọn repo này. Render đọc `render.yaml`, hỏi
+   `DATABASE_URL` (dán chuỗi ở bước 1), tự sinh `JWT_SECRET`. API ở `https://goda-api.onrender.com/api`
+   (tên có thể khác nếu đã bị dùng), kiểm tra bằng `/api/health`.
+4. **Vercel**: đặt `API_INTERNAL_URL=https://<tên-service>.onrender.com/api` cho frontend rồi deploy lại.
+
+Mỗi lần push lên `master`, Render tự build lại; migration mới tự áp khi app khởi động (`NODE_ENV=production`).
+
+Gói Free của Render ngủ sau 15 phút không có request, lần gọi đầu tiên sau đó chờ khoảng 1 phút. Muốn giữ thức,
+tạo job trên [cron-job.org](https://cron-job.org) gọi `https://<tên-service>.onrender.com/api/health/live` mỗi 10 phút.
+Route này không chạm DB nên Neon vẫn tự ngủ (gói Free giới hạn 100 CU-giờ/tháng). 750 giờ/tháng của Render đủ cho một
+service chạy liên tục.
