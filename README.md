@@ -59,6 +59,7 @@ Bảng nằm trong `goda_jlpt → Schemas → public → Tables`, tên bảng v�
 | `pnpm migration:show` | Liệt kê migration và trạng thái |
 | `pnpm migration:generate src/database/migrations/<Tên>` | Sinh migration từ thay đổi entity (so với DB hiện tại) |
 | `pnpm db:seed` | Nạp `content/` vào DB và dựng đề thi (chạy lại an toàn) |
+| `pnpm decks:import <file> <email>` | Nạp bộ thẻ riêng cho một tài khoản (xem mục Bộ thẻ riêng) |
 | `pnpm content:openjlpt` | Tải và làm sạch lại dữ liệu OpenJLPT vào `content/openjlpt/` |
 | `pnpm content:vocab` | Dựng lại từ vựng và kanji vào `content/vocab/` (tải nguồn về `.cache/`, cần `unzip`, `tar`) |
 
@@ -164,3 +165,17 @@ Gói Free của Render ngủ sau 15 phút không có request, lần gọi đầu
 tạo job trên [cron-job.org](https://cron-job.org) gọi `https://<tên-service>.onrender.com/api/health/live` mỗi 10 phút.
 Route này không chạm DB nên Neon vẫn tự ngủ (gói Free giới hạn 100 CU-giờ/tháng). 750 giờ/tháng của Render đủ cho một
 service chạy liên tục.
+
+## Bộ thẻ riêng
+
+Bộ thẻ (`decks`, `deck_cards`) thuộc riêng một tài khoản, chỉ chủ tài khoản xem và ôn được (`/api/decks`, bắt buộc
+đăng nhập). Nạp từ file JSON, tài khoản phải đăng ký trên web trước:
+
+```bash
+DATABASE_URL='…' pnpm decks:import <file.json> <email>
+```
+
+File có dạng `{ "decks": [{ "key", "course", "level", "chapter", "title", "kind": "vocab" | "kanji", "cards": [...] }] }`,
+mỗi thẻ gồm `id`, `term`, `furigana` (`{漢字|かんじ}`), `reading`, `hanviet`, `wordType`, `meaning`,
+`examples: [{ ja, vi }]` (xem `scripts/decks/import.ts`). Nạp lại thì cập nhật nội dung theo `key`/`id`, lịch ôn giữ
+nguyên. File nguồn là nội dung riêng của người dùng: để trong `.cache/` (git bỏ qua), không commit.
