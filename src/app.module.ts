@@ -9,6 +9,7 @@ import { AttemptsModule } from './modules/attempts/attempts.module.js';
 import { AuthModule } from './modules/auth/auth.module.js';
 import { BookmarksModule } from './modules/bookmarks/bookmarks.module.js';
 import { CatalogModule } from './modules/catalog/catalog.module.js';
+import { DecksModule } from './modules/decks/decks.module.js';
 import { DictionaryModule } from './modules/dictionary/dictionary.module.js';
 import { ExamsModule } from './modules/exams/exams.module.js';
 import { HealthModule } from './modules/health/health.module.js';
@@ -43,6 +44,7 @@ import { VocabModule } from './modules/vocab/vocab.module.js';
     ReportsModule,
     DictionaryModule,
     VocabModule,
+    DecksModule,
     HealthModule,
   ],
   providers: [{ provide: APP_GUARD, useClass: ThrottlerGuard }],
