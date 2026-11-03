@@ -1,6 +1,7 @@
 import { ValidationPipe } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
+import type { NestExpressApplication } from '@nestjs/platform-express';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import cookieParser from 'cookie-parser';
 import helmet from 'helmet';
@@ -8,9 +9,12 @@ import { AppModule } from './app.module.js';
 import type { EnvironmentVariables } from './config/env.validation.js';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create<NestExpressApplication>(AppModule);
   const config = app.get(ConfigService<EnvironmentVariables, true>);
 
+  // Request đi qua proxy của Vercel và Render: lấy IP người dùng từ X-Forwarded-For,
+  // nếu không throttler sẽ gộp mọi người chung một IP của proxy.
+  app.set('trust proxy', true);
   app.setGlobalPrefix('api');
   // API chỉ trả JSON; tắt CSP để Swagger UI tải được script của nó.
   app.use(helmet({ contentSecurityPolicy: false }));
