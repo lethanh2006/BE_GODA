@@ -26,6 +26,7 @@
     "migration:generate": "tsx node_modules/typeorm/cli.js migration:generate -d typeorm.config.ts",
     "migration:create": "tsx node_modules/typeorm/cli.js migration:create",
     "db:seed": "tsx scripts/seed.ts",
+    "decks:import": "tsx scripts/decks/import.ts",
     "content:openjlpt": "tsx scripts/openjlpt/import.ts",
     "content:vocab": "tsx scripts/vocab/import.ts"
   },
