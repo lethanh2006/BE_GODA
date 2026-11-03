@@ -135,8 +135,16 @@ src/
 API chạy trên Render (gói Free, Singapore) bằng `Dockerfile`; database là Neon (gói Free, 0,5 GB, không hết hạn).
 Frontend trên Vercel gọi API qua proxy `/api/*` nên cookie đăng nhập vẫn là first-party.
 
-1. **Neon** ([neon.com](https://neon.com)): tạo project, region *AWS Asia Pacific (Singapore)*. Copy connection string,
-   đổi đuôi `sslmode=require&channel_binding=require` thành `sslmode=verify-full`.
+1. **Neon** ([neon.com](https://neon.com)): project `goda-jlpt`, region *AWS Asia Pacific (Singapore)*. Thư mục này đã
+   `neon link` (file `.neon`); lấy connection string về file riêng để không đè `.env` local:
+
+   ```bash
+   neon env pull --file .env.neon -e DATABASE_URL,DATABASE_URL_UNPOOLED
+   ```
+
+   Dùng **`DATABASE_URL_UNPOOLED`** (host không có `-pooler`) cho cả máy local lẫn Render, vì app tự chạy migration
+   khi khởi động và Neon khuyên chạy migration qua kết nối trực tiếp. Đổi đuôi
+   `channel_binding=require&sslmode=require` thành `sslmode=verify-full` để pg không in cảnh báo SSL.
 2. **Nạp dữ liệu từ máy local** (Render free không có shell, mà image cũng không chứa `content/`):
 
    ```bash
@@ -146,7 +154,7 @@ Frontend trên Vercel gọi API qua proxy `/api/*` nên cookie đăng nhập v�
 
    Biến truyền trên dòng lệnh được ưu tiên hơn `.env`. Khi sửa `content/`, chạy lại `db:seed` theo cách này.
 3. **Render** ([render.com](https://render.com)): New → Blueprint → chọn repo này. Render đọc `render.yaml`, hỏi
-   `DATABASE_URL` (dán chuỗi ở bước 1), tự sinh `JWT_SECRET`. API ở `https://goda-api.onrender.com/api`
+   `DATABASE_URL` (dán chuỗi unpooled ở bước 1), tự sinh `JWT_SECRET`. API ở `https://goda-api.onrender.com/api`
    (tên có thể khác nếu đã bị dùng), kiểm tra bằng `/api/health`.
 4. **Vercel**: đặt `API_INTERNAL_URL=https://<tên-service>.onrender.com/api` cho frontend rồi deploy lại.
 

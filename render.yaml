@@ -7,7 +7,8 @@ services:
     region: singapore
     healthCheckPath: /api/health/live
     envVars:
-      # Connection string của Neon; đổi sslmode=require&channel_binding=require thành sslmode=verify-full để pg không in cảnh báo SSL
+      # DATABASE_URL_UNPOOLED của Neon (app tự chạy migration, cần kết nối trực tiếp);
+      # đổi channel_binding=require&sslmode=require thành sslmode=verify-full để pg không in cảnh báo SSL
       - key: DATABASE_URL
         sync: false
       - key: JWT_SECRET
