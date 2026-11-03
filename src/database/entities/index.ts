@@ -1,6 +1,8 @@
 import { AttemptAnswer } from './attempt-answer.entity.js';
 import { Attempt } from './attempt.entity.js';
 import { Bookmark } from './bookmark.entity.js';
+import { DeckCard } from './deck-card.entity.js';
+import { Deck } from './deck.entity.js';
 import { ExamQuestion } from './exam-question.entity.js';
 import { ExamSection } from './exam-section.entity.js';
 import { Exam } from './exam.entity.js';
@@ -17,6 +19,8 @@ export {
   Attempt,
   AttemptAnswer,
   Bookmark,
+  Deck,
+  DeckCard,
   Exam,
   ExamQuestion,
   ExamSection,
@@ -45,4 +49,6 @@ export const ENTITIES = [
   Word,
   Kanji,
   UserWord,
+  Deck,
+  DeckCard,
 ];
