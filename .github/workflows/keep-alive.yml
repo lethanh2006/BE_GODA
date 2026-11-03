@@ -1,0 +1,15 @@
+# Gọi API định kỳ để Render Free không ngủ (ngủ sau 15 phút không có request).
+# Lịch của GitHub hay trễ vài phút nên đặt 5 phút; /api/health/live không chạm DB nên Neon vẫn ngủ được.
+name: Giữ API thức
+
+on:
+  schedule:
+    - cron: '3-58/5 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - run: curl -fsS --max-time 120 --retry 2 --retry-delay 10 https://goda-api.onrender.com/api/health/live
