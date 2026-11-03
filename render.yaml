@@ -1,0 +1,16 @@
+# Blueprint của Render: New → Blueprint → chọn repo BE_GODA. Database dùng Neon (Postgres free của Render hết hạn sau 30 ngày).
+services:
+  - type: web
+    name: goda-api
+    runtime: docker
+    plan: free
+    region: singapore
+    healthCheckPath: /api/health/live
+    envVars:
+      # Connection string của Neon; đổi sslmode=require&channel_binding=require thành sslmode=verify-full để pg không in cảnh báo SSL
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: COOKIE_SECURE
+        value: 'true'
