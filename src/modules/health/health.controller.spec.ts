@@ -34,4 +34,9 @@ describe('HealthController', () => {
       database: 'down',
     });
   });
+
+  it('answers liveness without touching the database', () => {
+    expect(controller.live()).toEqual({ status: 'ok' });
+    expect(dataSource.query).not.toHaveBeenCalled();
+  });
 });

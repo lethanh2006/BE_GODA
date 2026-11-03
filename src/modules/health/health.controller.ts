@@ -22,4 +22,11 @@ export class HealthController {
       timestamp: new Date().toISOString(),
     };
   }
+
+  /** Chỉ báo tiến trình còn chạy, không chạm DB: dùng cho health check và ping giữ máy thức mà không đánh thức Neon. */
+  @Get('live')
+  @ApiOkResponse({ schema: { example: { status: 'ok' } } })
+  live(): { status: 'ok' } {
+    return { status: 'ok' };
+  }
 }
