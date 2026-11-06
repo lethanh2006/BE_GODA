@@ -15,3 +15,6 @@ services:
         generateValue: true
       - key: COOKIE_SECURE
         value: 'true'
+      # Public OAuth client ID; verified by the backend, shared with the frontend.
+      - key: GOOGLE_CLIENT_ID
+        value: '779200897119-t0bu3ffmtodollp5iljfre7kp33igfam.apps.googleusercontent.com'

@@ -4,6 +4,7 @@ import {
   IsEnum,
   IsInt,
   IsNotEmpty,
+  IsOptional,
   IsString,
   Max,
   Min,
@@ -48,6 +49,11 @@ export class EnvironmentVariables {
   @Transform(({ obj }: { obj: Record<string, unknown> }) => obj.COOKIE_SECURE === true || obj.COOKIE_SECURE === 'true')
   @IsBoolean()
   COOKIE_SECURE: boolean = false;
+
+  @IsOptional()
+  @IsString()
+  @IsNotEmpty()
+  GOOGLE_CLIENT_ID?: string;
 }
 
 export function validateEnv(

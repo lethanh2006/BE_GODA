@@ -7,7 +7,7 @@ import type { EnvironmentVariables } from '../../config/env.validation.js';
 import { AUTH_COOKIE, type AuthUser } from '../../common/auth/auth-user.js';
 import { Authenticated, CurrentUser } from '../../common/auth/decorators.js';
 import { AuthService } from './auth.service.js';
-import { LoginDto, RegisterDto } from './dto/auth.dto.js';
+import { GoogleLoginDto, LoginDto, RegisterDto } from './dto/auth.dto.js';
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 
@@ -34,6 +34,23 @@ export class AuthController {
     const { token, user } = await this.auth.login(dto);
     this.setCookie(res, token);
     return { user };
+  }
+
+  @Post('google')
+  @HttpCode(200)
+  @Throttle({ default: { limit: 10, ttl: 60_000 } })
+  async google(@Body() dto: GoogleLoginDto, @Res({ passthrough: true }) res: Response) {
+    const { token, user } = await this.auth.loginWithGoogle(dto.idToken);
+    this.setCookie(res, token);
+    return { user };
+  }
+
+  @Post('google/link')
+  @HttpCode(200)
+  @Authenticated()
+  @Throttle({ default: { limit: 10, ttl: 60_000 } })
+  async linkGoogle(@CurrentUser() current: AuthUser, @Body() dto: GoogleLoginDto) {
+    return { user: await this.auth.linkGoogle(current.id, dto.idToken) };
   }
 
   @Post('logout')

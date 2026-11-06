@@ -46,6 +46,13 @@ Bảng nằm trong `goda_jlpt → Schemas → public → Tables`, tên bảng v�
 | `CORS_ORIGIN` | `http://localhost:3000` | Nhiều origin phân tách bằng dấu phẩy. Frontend gọi qua proxy cùng origin nên thường không cần. |
 | `JWT_EXPIRES_DAYS` | `30` | Thời hạn phiên đăng nhập |
 | `COOKIE_SECURE` | `false` | Đặt `true` khi chạy HTTPS |
+| `GOOGLE_CLIENT_ID` | — | OAuth Client ID loại Web application; cần để bật Google login |
+
+### Đăng nhập Google
+
+Tạo OAuth client loại **Web application** trong Google Cloud Console, thêm domain frontend vào **Authorized JavaScript origins** (ví dụ `http://localhost:3000`). Đặt cùng Client ID vào `backend/.env` (`GOOGLE_CLIENT_ID`) và `frontend/.env.local` (`NEXT_PUBLIC_GOOGLE_CLIENT_ID`); không cần Client Secret hay redirect URI. Chạy `pnpm migration:run` cho backend, rồi khởi động lại cả hai ứng dụng. Trên production, đặt hai biến tương ứng trong môi trường deploy và thêm origin HTTPS của frontend vào OAuth client.
+
+Nếu email đã có tài khoản mật khẩu, hãy đăng nhập bằng mật khẩu rồi liên kết Google trong **Cài đặt**. Hệ thống không tự ghép tài khoản chỉ dựa trên email.
 
 ## Scripts
 
@@ -70,7 +77,8 @@ Route không ghi chú là công khai — khách vẫn làm bài được.
 
 | Method | Route | Mô tả |
 | --- | --- | --- |
-| POST | `/auth/register`, `/auth/login`, `/auth/logout` | Đăng ký / đăng nhập / đăng xuất |
+| POST | `/auth/register`, `/auth/login`, `/auth/google`, `/auth/logout` | Đăng ký / đăng nhập email hoặc Google / đăng xuất |
+| POST | `/auth/google/link` 🔒 | Liên kết Google với tài khoản đang đăng nhập |
 | GET | `/auth/session` | Phiên hiện tại (`{ user }`, `null` nếu là khách) |
 | PATCH | `/users/me` 🔒 | Đổi tên hiển thị, cấp độ mục tiêu |
 | GET | `/catalog` | Số câu theo cấp độ / dạng bài, cấu trúc đề |

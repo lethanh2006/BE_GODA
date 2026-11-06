@@ -8,6 +8,7 @@ import type { EnvironmentVariables } from '../../config/env.validation.js';
 import { AuthGuard } from '../../common/auth/auth.guard.js';
 import { AuthController } from './auth.controller.js';
 import { AuthService } from './auth.service.js';
+import { GoogleOAuthService } from './google-oauth.service.js';
 
 @Module({
   imports: [
@@ -22,6 +23,6 @@ import { AuthService } from './auth.service.js';
     }),
   ],
   controllers: [AuthController],
-  providers: [AuthService, { provide: APP_GUARD, useClass: AuthGuard }],
+  providers: [AuthService, GoogleOAuthService, { provide: APP_GUARD, useClass: AuthGuard }],
 })
 export class AuthModule {}

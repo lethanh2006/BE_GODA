@@ -36,3 +36,10 @@ export class LoginDto {
   @MinLength(1)
   password: string;
 }
+
+export class GoogleLoginDto {
+  @ApiProperty({ description: 'Google Identity Services ID token' })
+  @IsString()
+  @MinLength(1)
+  idToken: string;
+}
