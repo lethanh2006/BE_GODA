@@ -5,6 +5,7 @@ import {
   Get,
   Param,
   ParseIntPipe,
+  ParseEnumPipe,
   ParseUUIDPipe,
   Post,
   Query,
@@ -14,26 +15,55 @@ import type { AuthUser } from '../../common/auth/auth-user.js';
 import { Authenticated, CurrentUser } from '../../common/auth/decorators.js';
 import { DecksService } from './decks.service.js';
 import { CompleteDeckPracticeDto, ReviewDeckCardDto } from './dto/deck.dto.js';
+import { DungMoriCatalog } from './dung-mori-catalog.js';
 
-/** Bộ thẻ riêng: chỉ chủ bộ thẻ xem và ôn được. */
+enum Collection {
+  Private = 'private',
+  DungMoriN4 = 'dung-mori-n4',
+}
+
+/** Mọi nội dung bộ thẻ đều yêu cầu đăng nhập, tiến độ chỉ chủ tài khoản xem và ôn được. */
 @ApiTags('decks')
 @Controller('decks')
 @Authenticated()
 export class DecksController {
-  constructor(private readonly decks: DecksService) {}
+  constructor(
+    private readonly decks: DecksService,
+    private readonly catalog: DungMoriCatalog,
+  ) {}
 
   @Get()
-  list(@CurrentUser() user: AuthUser) {
-    return this.decks.list(user.id);
+  @ApiQuery({ name: 'collection', required: false, enum: Collection })
+  async list(
+    @CurrentUser() user: AuthUser,
+    @Query(
+      'collection',
+      new DefaultValuePipe(Collection.Private),
+      new ParseEnumPipe(Collection),
+    )
+    collection: Collection,
+  ) {
+    if (collection === Collection.DungMoriN4)
+      await this.catalog.ensureForUser(user.id);
+    return this.decks.list(user.id, collection);
   }
 
   @Get('queue')
   @ApiQuery({ name: 'limit', required: false })
-  queue(
+  @ApiQuery({ name: 'collection', required: false, enum: Collection })
+  async queue(
     @CurrentUser() user: AuthUser,
     @Query('limit', new DefaultValuePipe(20), ParseIntPipe) limit: number,
+    @Query(
+      'collection',
+      new DefaultValuePipe(Collection.Private),
+      new ParseEnumPipe(Collection),
+    )
+    collection: Collection,
   ) {
-    return this.decks.queue(user.id, Math.max(limit, 1));
+    if (collection === Collection.DungMoriN4)
+      await this.catalog.ensureForUser(user.id);
+    return this.decks.queue(user.id, Math.max(limit, 1), collection);
   }
 
   @Post('review')

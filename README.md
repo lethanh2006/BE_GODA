@@ -189,6 +189,20 @@ mỗi thẻ gồm `id`, `term`, `furigana` (`{漢字|かんじ}`), `reading`, `h
 nguyên. File nguồn là nội dung riêng của người dùng: để trong `.cache/` (git bỏ qua), không commit.
 
 
+### Từ vựng N4 Dũng Mori
+
+Mục `/tu-vung-n4-dung-mori` dành cho mọi tài khoản đã đăng nhập, gồm 63 bài / 965 thẻ từ vựng và chữ Hán N4. Khách không xem được nội dung; mọi API `/decks` vẫn bắt buộc xác thực.
+
+`GET /decks?collection=dung-mori-n4` tự cấp các bài còn thiếu cho tài khoản, dùng dữ liệu backend tại `src/modules/decks/data/dung-mori-n4.json` (được đóng gói vào `dist/` khi build). Nội dung dùng chung, UUID thẻ và lịch FSRS riêng theo tài khoản. Bộ đã nhập trước đây được nhận diện theo `source_key`, giữ UUID và tiến độ. Cấp dữ liệu trong transaction, dùng advisory lock và unique constraint để tránh tạo trùng khi mở nhiều tab. Không cần migration hay nhập thủ công cho từng tài khoản.
+
+`GET /decks/queue?collection=dung-mori-n4` chỉ trả hàng ôn của mục này. Bỏ `collection` hoặc dùng `private` để lấy bộ riêng, không lẫn Dũng Mori. `GET /decks/:id` trả thêm `collection`; bài trước/sau chỉ đi trong cùng mục. Các API học và ôn vẫn kiểm tra quyền sở hữu tài khoản.
+
+Kiểm thử Postgres bằng database riêng có tên `goda_decks_test*`:
+
+```bash
+TEST_DATABASE_URL='postgresql://…/goda_decks_test' pnpm exec vitest run src/modules/decks/dung-mori-catalog.integration.spec.ts
+```
+
 ### Hoạt động trong bộ thẻ
 
 `GET /decks/:id` và `GET /decks/queue` trả thêm `speechText` ở mỗi thẻ và mỗi câu ví dụ. Từ dùng cách đọc và bỏ dấu ngoặc trong phần tùy chọn như `（する）`; câu ví dụ giữ nguyên chữ Hán, chỉ bỏ ký hiệu furigana để duy trì ngữ cảnh cho bộ đọc `ja-JP`; API không lưu file âm thanh.

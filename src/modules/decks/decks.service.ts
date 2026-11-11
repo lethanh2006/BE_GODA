@@ -4,12 +4,17 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import type { Repository } from 'typeorm';
+import { In, Not, type Repository } from 'typeorm';
 import { Rating } from 'ts-fsrs';
 import { Deck, DeckCard, ReviewLog } from '../../database/entities/index.js';
 import type { JlptLevel } from '../../database/enums.js';
 import type { CompleteDeckPracticeDto } from './dto/deck.dto.js';
 import { saveReviewLogs } from '../vocab/review-log.js';
+import {
+  DUNG_MORI_KEYS,
+  isDungMoriDeck,
+  type DeckCollection,
+} from './dung-mori-catalog.js';
 import {
   type CardFields,
   newCard,
@@ -63,7 +68,7 @@ export class DecksService {
     private readonly reviewLogs: Repository<ReviewLog>,
   ) {}
 
-  async list(userId: string) {
+  async list(userId: string, collection: DeckCollection = 'private') {
     const rows = await this.decks.query<
       {
         id: string;
@@ -82,10 +87,10 @@ export class DecksService {
               COUNT(c.due)::int AS learned,
               COUNT(*) FILTER (WHERE c.due <= now())::int AS due
          FROM decks d LEFT JOIN deck_cards c ON c.deck_id = d.id
-        WHERE d.user_id = $1
+        WHERE d.user_id = $1 AND (d.source_key = ANY($2::text[])) = $3
         GROUP BY d.id
         ORDER BY d.position`,
-      [userId],
+      [userId, DUNG_MORI_KEYS, collection === 'dung-mori-n4'],
     );
     return { due: rows.reduce((sum, row) => sum + row.due, 0), decks: rows };
   }
@@ -97,14 +102,24 @@ export class DecksService {
       order: { cards: { position: 'ASC' } },
     });
     if (!deck) throw new NotFoundException('Không tìm thấy bộ thẻ');
+    const collection = isDungMoriDeck(deck.sourceKey)
+      ? 'dung-mori-n4'
+      : 'private';
     const siblings = await this.decks.find({
-      where: { userId },
+      where: {
+        userId,
+        sourceKey:
+          collection === 'dung-mori-n4'
+            ? In(DUNG_MORI_KEYS)
+            : Not(In(DUNG_MORI_KEYS)),
+      },
       select: { id: true },
       order: { position: 'ASC' },
     });
     const index = siblings.findIndex((d) => d.id === id);
     return {
       id: deck.id,
+      collection,
       course: deck.course,
       level: deck.level,
       chapter: deck.chapter,
@@ -178,12 +193,20 @@ export class DecksService {
     return { learned: result.affected ?? learned.length };
   }
 
-  async queue(userId: string, limit: number) {
+  async queue(
+    userId: string,
+    limit: number,
+    collection: DeckCollection = 'private',
+  ) {
     const now = new Date();
     const [rows, total] = await this.cards
       .createQueryBuilder('c')
       .innerJoinAndSelect('c.deck', 'd')
       .where('d.userId = :userId AND c.due <= :now', { userId, now })
+      .andWhere('(d.sourceKey IN (:...keys)) = :shared', {
+        keys: DUNG_MORI_KEYS,
+        shared: collection === 'dung-mori-n4',
+      })
       .orderBy('c.due', 'ASC')
       .take(Math.min(limit, QUEUE_LIMIT))
       .getManyAndCount();
