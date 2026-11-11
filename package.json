@@ -29,7 +29,8 @@
     "decks:import": "tsx scripts/decks/import.ts",
     "content:openjlpt": "tsx scripts/openjlpt/import.ts",
     "content:vocab": "tsx scripts/vocab/import.ts",
-    "ai:export-words": "tsx scripts/ai/export-words.ts"
+    "ai:export-words": "tsx scripts/ai/export-words.ts",
+    "ai:rank-rule": "tsx scripts/ai/rank-rule.ts"
   },
   "dependencies": {
     "@nestjs/common": "^12.0.1",

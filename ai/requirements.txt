@@ -1,0 +1,9 @@
+# Thư viện cho phần AI, đã chạy thử ngày 2026-11-11 (Python 3.12, chỉ dùng CPU).
+# Cài PyTorch bản CPU trước, nếu không pip sẽ tải bản GPU nặng hơn nhiều:
+#   python3 -m venv .venv
+#   .venv/bin/pip install torch==2.15.0 --index-url https://download.pytorch.org/whl/cpu
+#   .venv/bin/pip install -r requirements.txt
+torch==2.15.0
+sentence-transformers==6.2.0
+transformers==5.22.2
+numpy==2.5.4
