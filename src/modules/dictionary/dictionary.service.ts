@@ -68,9 +68,34 @@ export class DictionaryService {
     return this.kanjiIndex;
   }
 
+  private byIdIndex?: Promise<Map<string, IndexedEntry>>;
+
+  private byId(): Promise<Map<string, IndexedEntry>> {
+    this.byIdIndex ??= this.entries()
+      .then((list) => new Map(list.map((entry) => [entry.id, entry])))
+      .catch((error: unknown) => {
+        this.byIdIndex = undefined;
+        throw error;
+      });
+    return this.byIdIndex;
+  }
+
   async search(q: string, limit: number, level?: JlptLevel) {
     const hits = searchEntries(await this.entries(), q, limit, level);
     return hits.map(toSummary);
+  }
+
+  async has(id: string): Promise<boolean> {
+    return (await this.byId()).has(id);
+  }
+
+  /** Tóm tắt các từ theo đúng thứ tự id truyền vào; id không có trong từ điển bị bỏ qua. */
+  async summaries(ids: string[]) {
+    const byId = await this.byId();
+    return ids.flatMap((id) => {
+      const entry = byId.get(id);
+      return entry ? [toSummary(entry)] : [];
+    });
   }
 
   /** Tổng số mục, hiển thị ở trang từ điển. */

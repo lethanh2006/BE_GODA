@@ -4,11 +4,15 @@ import type { AuthUser } from '../../common/auth/auth-user.js';
 import { CurrentUser } from '../../common/auth/decorators.js';
 import { JlptLevel } from '../../database/enums.js';
 import { DictionaryService } from './dictionary.service.js';
+import { RelatedWordsService } from './related-words.service.js';
 
 @ApiTags('dictionary')
 @Controller('dictionary')
 export class DictionaryController {
-  constructor(private readonly dictionary: DictionaryService) {}
+  constructor(
+    private readonly dictionary: DictionaryService,
+    private readonly relatedWords: RelatedWordsService,
+  ) {}
 
   @Get()
   overview() {
@@ -31,6 +35,13 @@ export class DictionaryController {
   @Get('words/:id')
   word(@Param('id') id: string, @CurrentUser() user?: AuthUser) {
     return this.dictionary.word(id, user?.id);
+  }
+
+  /** Từ liên quan để học tiếp: tính sẵn bằng model embedding (GĐ1 kế hoạch AI), công khai như từ điển. */
+  @Get('words/:id/related')
+  @ApiQuery({ name: 'limit', required: false })
+  related(@Param('id') id: string, @Query('limit', new DefaultValuePipe(6), ParseIntPipe) limit: number) {
+    return this.relatedWords.related(id, Math.min(Math.max(limit, 1), 12));
   }
 
   @Get('kanji')

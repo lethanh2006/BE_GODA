@@ -54,6 +54,11 @@ export class EnvironmentVariables {
   @IsString()
   @IsNotEmpty()
   GOOGLE_CLIENT_ID?: string;
+
+  /** Bật mục "Từ liên quan để học tiếp" (đọc file assets/ai/related-words.v1.json). Mặc định tắt. */
+  @Transform(({ obj }: { obj: Record<string, unknown> }) => obj.RELATED_WORDS_ENABLED === true || obj.RELATED_WORDS_ENABLED === 'true')
+  @IsBoolean()
+  RELATED_WORDS_ENABLED: boolean = false;
 }
 
 export function validateEnv(
