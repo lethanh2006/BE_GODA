@@ -1,11 +1,21 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import type { Repository } from 'typeorm';
 import { Rating } from 'ts-fsrs';
 import { Deck, DeckCard, ReviewLog } from '../../database/entities/index.js';
 import type { JlptLevel } from '../../database/enums.js';
+import type { CompleteDeckPracticeDto } from './dto/deck.dto.js';
 import { saveReviewLogs } from '../vocab/review-log.js';
-import { type CardFields, newCard, preview, reviewWithLog } from '../vocab/scheduler.js';
+import {
+  type CardFields,
+  newCard,
+  preview,
+  reviewWithLog,
+} from '../vocab/scheduler.js';
 
 const QUEUE_LIMIT = 50;
 
@@ -22,6 +32,9 @@ const scheduleOf = (card: DeckCard, now: Date): CardFields => ({
   lastReview: card.lastReview,
 });
 
+const speechText = (text: string) =>
+  text.replace(/\{([^|{}]+)\|([^|{}]+)\}/g, '$2').trim();
+
 const toCardView = (card: DeckCard) => ({
   id: card.id,
   term: card.term,
@@ -30,7 +43,11 @@ const toCardView = (card: DeckCard) => ({
   hanviet: card.hanviet,
   wordType: card.wordType,
   meaning: card.meaning,
-  examples: card.examples,
+  speechText: speechText(card.reading || card.furigana || card.term),
+  examples: card.examples.map((example) => ({
+    ...example,
+    speechText: speechText(example.ja),
+  })),
   learned: card.due !== null,
 });
 
@@ -39,7 +56,8 @@ export class DecksService {
   constructor(
     @InjectRepository(Deck) private readonly decks: Repository<Deck>,
     @InjectRepository(DeckCard) private readonly cards: Repository<DeckCard>,
-    @InjectRepository(ReviewLog) private readonly reviewLogs: Repository<ReviewLog>,
+    @InjectRepository(ReviewLog)
+    private readonly reviewLogs: Repository<ReviewLog>,
   ) {}
 
   async list(userId: string) {
@@ -76,7 +94,11 @@ export class DecksService {
       order: { cards: { position: 'ASC' } },
     });
     if (!deck) throw new NotFoundException('Không tìm thấy bộ thẻ');
-    const siblings = await this.decks.find({ where: { userId }, select: { id: true }, order: { position: 'ASC' } });
+    const siblings = await this.decks.find({
+      where: { userId },
+      select: { id: true },
+      order: { position: 'ASC' },
+    });
     const index = siblings.findIndex((d) => d.id === id);
     return {
       id: deck.id,
@@ -91,9 +113,46 @@ export class DecksService {
     };
   }
 
+  /** Kiểm tra toàn bộ thẻ bằng dữ liệu của chủ bộ thẻ trước khi đưa vào lịch ôn. */
+  async completePractice(
+    userId: string,
+    id: string,
+    dto: CompleteDeckPracticeDto,
+  ) {
+    const deck = await this.decks.findOne({
+      where: { id, userId },
+      relations: { cards: true },
+    });
+    if (!deck) throw new NotFoundException('Không tìm thấy bộ thẻ');
+    const byId = new Map(deck.cards.map((card) => [card.id, card]));
+    const submitted = new Set(dto.answers.map((answer) => answer.cardId));
+    if (
+      !deck.cards.length ||
+      dto.answers.length !== deck.cards.length ||
+      submitted.size !== deck.cards.length
+    ) {
+      throw new BadRequestException('Cần hoàn thành mỗi thẻ đúng một lần');
+    }
+    let correct = 0;
+    for (const answer of dto.answers) {
+      const card = byId.get(answer.cardId);
+      const choice = byId.get(answer.answerId);
+      if (!card || !choice)
+        throw new BadRequestException('Thẻ không thuộc bài học này');
+      // Hai thẻ có cùng nghĩa đều là lựa chọn hợp lệ.
+      if (card.meaning.trim() === choice.meaning.trim()) correct++;
+    }
+    const completed = correct === deck.cards.length;
+    const { learned } = completed
+      ? await this.markLearned(userId, id)
+      : { learned: 0 };
+    return { correct, total: deck.cards.length, completed, learned };
+  }
+
   /** Học xong bài: thẻ chưa học vào lịch ôn như đã chấm "Nhớ" lần đầu; thẻ đã có lịch giữ nguyên. */
   async markLearned(userId: string, id: string) {
-    if (!(await this.decks.existsBy({ id, userId }))) throw new NotFoundException('Không tìm thấy bộ thẻ');
+    if (!(await this.decks.existsBy({ id, userId })))
+      throw new NotFoundException('Không tìm thấy bộ thẻ');
     const now = new Date();
     const { next, log } = reviewWithLog(newCard(now), Rating.Good, now);
     const result = await this.cards
@@ -103,8 +162,16 @@ export class DecksService {
       .where('"deck_id" = :id AND "due" IS NULL', { id })
       .returning(['id'])
       .execute();
-    const learned = ((result.raw ?? []) as { id: string }[]).map((row) => row.id);
-    await saveReviewLogs(this.reviewLogs, userId, 'deck_card', 'learn', learned.map((itemId) => ({ itemId, log })));
+    const learned = ((result.raw ?? []) as { id: string }[]).map(
+      (row) => row.id,
+    );
+    await saveReviewLogs(
+      this.reviewLogs,
+      userId,
+      'deck_card',
+      'learn',
+      learned.map((itemId) => ({ itemId, log })),
+    );
     return { learned: result.affected ?? learned.length };
   }
 
@@ -129,12 +196,17 @@ export class DecksService {
   }
 
   async review(userId: string, cardId: string, rating: 1 | 2 | 3 | 4) {
-    const card = await this.cards.findOne({ where: { id: cardId, deck: { userId } } });
-    if (!card?.due) throw new NotFoundException('Thẻ này chưa có trong lịch ôn');
+    const card = await this.cards.findOne({
+      where: { id: cardId, deck: { userId } },
+    });
+    if (!card?.due)
+      throw new NotFoundException('Thẻ này chưa có trong lịch ôn');
     const now = new Date();
     const { next, log } = reviewWithLog(scheduleOf(card, now), rating, now);
     await this.cards.update({ id: cardId }, next);
-    await saveReviewLogs(this.reviewLogs, userId, 'deck_card', 'review', [{ itemId: cardId, log }]);
+    await saveReviewLogs(this.reviewLogs, userId, 'deck_card', 'review', [
+      { itemId: cardId, log },
+    ]);
     return { due: next.due, state: next.state };
   }
 }

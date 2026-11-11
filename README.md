@@ -187,3 +187,19 @@ File có dạng `{ "decks": [{ "key", "course", "level", "chapter", "title", "ki
 mỗi thẻ gồm `id`, `term`, `furigana` (`{漢字|かんじ}`), `reading`, `hanviet`, `wordType`, `meaning`,
 `examples: [{ ja, vi }]` (xem `scripts/decks/import.ts`). Nạp lại thì cập nhật nội dung theo `key`/`id`, lịch ôn giữ
 nguyên. File nguồn là nội dung riêng của người dùng: để trong `.cache/` (git bỏ qua), không commit.
+
+
+### Hoạt động trong bộ thẻ
+
+`GET /decks/:id` và `GET /decks/queue` trả thêm `speechText` ở mỗi thẻ và mỗi câu ví dụ. Đây là chuỗi tiếng Nhật đã thay ký hiệu furigana bằng cách đọc, dùng cho giọng `ja-JP` của thiết bị; API không lưu file âm thanh.
+
+`POST /decks/:id/practice` (yêu cầu đăng nhập):
+
+```json
+{
+  "mode": "matching",
+  "answers": [{ "cardId": "<UUID thẻ được hỏi>", "answerId": "<UUID thẻ có nghĩa được chọn>" }]
+}
+```
+
+`mode` nhận `matching` hoặc `listening`. Nộp đúng một đáp án cho mỗi thẻ của bài (tối đa 2.000 thẻ); hai UUID đều phải thuộc bộ thẻ của người dùng. Các thẻ có cùng nghĩa được coi là tương đương. Kết quả `{ correct, total, completed, learned }` chỉ có `completed: true` khi tất cả đúng; khi đó những thẻ chưa học được đưa vào lịch FSRS và ghi nhật ký học như `POST /decks/:id/learned`. Chơi lại giữ lịch ôn hiện tại. Đây là xác nhận hoàn thành bài luyện, không phải điểm thi hay bảng xếp hạng.
