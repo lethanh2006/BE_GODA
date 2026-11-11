@@ -69,16 +69,19 @@ def main() -> None:
         runs[name] = dict(zip((q["id"] for q in queries), rank(query_vectors, word_vectors, ids)))
         write_jsonl(RUNS_DIR / f"{name}.jsonl", ({"id": qid, "ranked": r} for qid, r in runs[name].items()))
 
-    best = runs["e5-small"]
-    for name, always in (("hybrid", False), ("hybrid-always", True)):
-        write_jsonl(
-            RUNS_DIR / f"{name}.jsonl",
-            ({"id": q["id"], "ranked": hybrid(q["q"], rule.get(q["id"], []), best[q["id"]], always)} for q in queries),
-        )
+    # Ghép với bộ luật cho từng biến thể, theo cách ghép của kế hoạch và biến thể "luôn hiện".
+    for variant, semantic in runs.items():
+        suffix = variant.removeprefix("e5-small")
+        for policy, always in (("hybrid", False), ("hybrid-always", True)):
+            write_jsonl(
+                RUNS_DIR / f"{policy}{suffix}.jsonl",
+                ({"id": q["id"], "ranked": hybrid(q["q"], rule.get(q["id"], []), semantic[q["id"]], always)} for q in queries),
+            )
+    best = runs["e5-small-no-ovdp"]
 
     # Phân tích lỗi: những câu model không đưa được đáp án vào 5 kết quả đầu.
     lines = [
-        "# GĐ2: các câu model e5-small trượt (đáp án không nằm trong 5 kết quả đầu)",
+        "# GĐ2: các câu model trượt (biến thể bỏ nghĩa OVDP, đáp án không nằm trong 5 kết quả đầu)",
         "",
         f"Model {encoder.model_id}@{encoder.revision}. Kho tìm {len(words)} từ JLPT.",
         "",

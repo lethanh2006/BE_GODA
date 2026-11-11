@@ -67,7 +67,7 @@ def make(anchors: int) -> None:
 
     SHEET.parent.mkdir(parents=True, exist_ok=True)
     with open(SHEET, "w", encoding="utf8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=["stt", "tu_goc", "goi_y", "huu_ich"])
+        writer = csv.DictWriter(f, fieldnames=["stt", "tu_goc", "goi_y", "huu_ich"], lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
     KEY.parent.mkdir(parents=True, exist_ok=True)
