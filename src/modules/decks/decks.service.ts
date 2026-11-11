@@ -33,7 +33,10 @@ const scheduleOf = (card: DeckCard, now: Date): CardFields => ({
 });
 
 const speechText = (text: string) =>
-  text.replace(/\{([^|{}]+)\|([^|{}]+)\}/g, '$2').trim();
+  text
+    .replace(/\{([^|{}]+)\|([^|{}]+)\}/g, '$2')
+    .replace(/[（()）]/g, '')
+    .trim();
 
 const toCardView = (card: DeckCard) => ({
   id: card.id,
@@ -46,7 +49,7 @@ const toCardView = (card: DeckCard) => ({
   speechText: speechText(card.reading || card.furigana || card.term),
   examples: card.examples.map((example) => ({
     ...example,
-    speechText: speechText(example.ja),
+    speechText: example.ja.replace(/\{([^|{}]+)\|([^|{}]+)\}/g, '$1').trim(),
   })),
   learned: card.due !== null,
 });

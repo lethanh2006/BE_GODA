@@ -191,7 +191,7 @@ nguyên. File nguồn là nội dung riêng của người dùng: để trong `.
 
 ### Hoạt động trong bộ thẻ
 
-`GET /decks/:id` và `GET /decks/queue` trả thêm `speechText` ở mỗi thẻ và mỗi câu ví dụ. Đây là chuỗi tiếng Nhật đã thay ký hiệu furigana bằng cách đọc, dùng cho giọng `ja-JP` của thiết bị; API không lưu file âm thanh.
+`GET /decks/:id` và `GET /decks/queue` trả thêm `speechText` ở mỗi thẻ và mỗi câu ví dụ. Từ dùng cách đọc và bỏ dấu ngoặc trong phần tùy chọn như `（する）`; câu ví dụ giữ nguyên chữ Hán, chỉ bỏ ký hiệu furigana để duy trì ngữ cảnh cho bộ đọc `ja-JP`; API không lưu file âm thanh.
 
 `POST /decks/:id/practice` (yêu cầu đăng nhập):
 

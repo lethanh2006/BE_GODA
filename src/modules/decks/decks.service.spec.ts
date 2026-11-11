@@ -134,7 +134,7 @@ describe('DecksService practice', () => {
     const { service } = practiceSetup();
     const detail = await service.detail(USER, 'deck-1');
     expect(detail.cards[0].speechText).toBe('しっぱい');
-    expect(detail.cards[0].examples[0].speechText).toBe('きっとしっぱいする。');
+    expect(detail.cards[0].examples[0].speechText).toBe('きっと失敗する。');
     expect(detail.cards[2].speechText).toBe('ミス');
   });
 
