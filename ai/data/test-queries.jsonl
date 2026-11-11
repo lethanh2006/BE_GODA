@@ -1,0 +1,100 @@
+{"id": "q001", "q": "xe đạp", "kind": "chinh-xac", "group": "N5", "answers": ["ebf194a316"], "answerWords": ["自転車"], "author": "claude-draft"}
+{"id": "q002", "q": "bút chì", "kind": "chinh-xac", "group": "N5", "answers": ["381da4d060"], "answerWords": ["鉛筆"], "author": "claude-draft"}
+{"id": "q003", "q": "cửa sổ", "kind": "chinh-xac", "group": "N5", "answers": ["7734194821"], "answerWords": ["窓"], "author": "claude-draft"}
+{"id": "q004", "q": "máy bay", "kind": "chinh-xac", "group": "N5", "answers": ["a81612169c"], "answerWords": ["飛行機"], "author": "claude-draft"}
+{"id": "q005", "q": "trứng", "kind": "chinh-xac", "group": "N5", "answers": ["4d66739694"], "answerWords": ["卵"], "author": "claude-draft"}
+{"id": "q006", "q": "gia đình", "kind": "chinh-xac", "group": "N5", "answers": ["1c9db63bdc"], "answerWords": ["家族"], "author": "claude-draft"}
+{"id": "q007", "q": "bài tập về nhà", "kind": "chinh-xac", "group": "N5", "answers": ["4daa103d7d"], "answerWords": ["宿題"], "author": "claude-draft"}
+{"id": "q008", "q": "thời tiết", "kind": "chinh-xac", "group": "N5", "answers": ["679e34031e"], "answerWords": ["天気"], "author": "claude-draft"}
+{"id": "q009", "q": "đi bộ", "kind": "chinh-xac", "group": "N5", "answers": ["55f3080ce4"], "answerWords": ["歩く"], "author": "claude-draft"}
+{"id": "q010", "q": "tiện lợi", "kind": "chinh-xac", "group": "N5", "answers": ["84887dde48"], "answerWords": ["便利"], "author": "claude-draft"}
+{"id": "q011", "q": "bàn viết", "kind": "dong-nghia", "group": "N5", "answers": ["672321bac9"], "answerWords": ["机"], "author": "claude-draft"}
+{"id": "q012", "q": "trái cây", "kind": "chinh-xac", "group": "N5", "answers": ["6b454b895e"], "answerWords": ["果物"], "author": "claude-draft"}
+{"id": "q013", "q": "thầy giáo", "kind": "dong-nghia", "group": "N5", "answers": ["814bdc2cec", "d6f9223c83"], "answerWords": ["先生", "教師"], "author": "claude-draft"}
+{"id": "q014", "q": "kiếng đeo mắt", "kind": "dong-nghia", "group": "N5", "answers": ["72eb77e07a"], "answerWords": ["眼鏡"], "author": "claude-draft"}
+{"id": "q015", "q": "quán nước", "kind": "dong-nghia", "group": "N5", "answers": ["5620a00afc"], "answerWords": ["喫茶店"], "author": "claude-draft"}
+{"id": "q016", "q": "tem thư", "kind": "chinh-xac", "group": "N5", "answers": ["e101e41f54"], "answerWords": ["切手"], "author": "claude-draft"}
+{"id": "q017", "q": "tuần tới", "kind": "dong-nghia", "group": "N5", "answers": ["7a4ef637be"], "answerWords": ["来週"], "author": "claude-draft"}
+{"id": "q018", "q": "dơ", "kind": "dong-nghia", "group": "N5", "answers": ["7d1cf1538b"], "answerWords": ["汚い"], "author": "claude-draft"}
+{"id": "q019", "q": "rảnh rang", "kind": "dong-nghia", "group": "N5", "answers": ["7a9ce8e2df"], "answerWords": ["暇"], "author": "claude-draft"}
+{"id": "q020", "q": "nước trà", "kind": "dong-nghia", "group": "N5", "answers": ["edca336b1f"], "answerWords": ["お茶"], "author": "claude-draft"}
+{"id": "q021", "q": "đồ che mưa", "kind": "mo-ta", "group": "N5", "answers": ["6f54881e59"], "answerWords": ["傘"], "author": "claude-draft"}
+{"id": "q022", "q": "người dạy học", "kind": "mo-ta", "group": "N5", "answers": ["814bdc2cec", "d6f9223c83"], "answerWords": ["先生", "教師"], "author": "claude-draft"}
+{"id": "q023", "q": "tủ để giữ đồ ăn lạnh", "kind": "mo-ta", "group": "N5", "answers": ["f7a15687a1"], "answerWords": ["冷蔵庫"], "author": "claude-draft"}
+{"id": "q024", "q": "nơi mượn sách để đọc", "kind": "mo-ta", "group": "N5", "answers": ["de5a452667"], "answerWords": ["図書館"], "author": "claude-draft"}
+{"id": "q025", "q": "chỗ gửi thư và bưu phẩm", "kind": "mo-ta", "group": "N5", "answers": ["8b86921749"], "answerWords": ["郵便局"], "author": "claude-draft"}
+{"id": "q026", "q": "nơi lên xuống tàu điện", "kind": "mo-ta", "group": "N5", "answers": ["d5f359c20b"], "answerWords": ["駅"], "author": "claude-draft"}
+{"id": "q027", "q": "đồ đeo trên mắt để nhìn rõ hơn", "kind": "mo-ta", "group": "N5", "answers": ["72eb77e07a"], "answerWords": ["眼鏡"], "author": "claude-draft"}
+{"id": "q028", "q": "đồ dùng để xem giờ", "kind": "mo-ta", "group": "N5", "answers": ["e3ad76810f"], "answerWords": ["時計"], "author": "claude-draft"}
+{"id": "q029", "q": "sách tra nghĩa của từ", "kind": "mo-ta", "group": "N5", "answers": ["8ec35978bd"], "answerWords": ["辞書"], "author": "claude-draft"}
+{"id": "q030", "q": "chỗ nấu ăn trong nhà", "kind": "mo-ta", "group": "N5", "answers": ["1c0b0f77b6"], "answerWords": ["台所"], "author": "claude-draft"}
+{"id": "q031", "q": "người chữa bệnh cho mọi người", "kind": "mo-ta", "group": "N5", "answers": ["ca76162587"], "answerWords": ["医者"], "author": "claude-draft"}
+{"id": "q032", "q": "chỗ gửi tiền và rút tiền", "kind": "mo-ta", "group": "N5", "answers": ["a59efa3057"], "answerWords": ["銀行"], "author": "claude-draft"}
+{"id": "q033", "q": "tàu chạy dưới lòng đất", "kind": "mo-ta", "group": "N5", "answers": ["3134199c25"], "answerWords": ["地下鉄"], "author": "claude-draft"}
+{"id": "q034", "q": "đồ đựng tiền mang theo người", "kind": "mo-ta", "group": "N5", "answers": ["a96e3a2b33"], "answerWords": ["財布"], "author": "claude-draft"}
+{"id": "q035", "q": "không có ánh sáng", "kind": "mo-ta", "group": "N5", "answers": ["01a0587b49"], "answerWords": ["暗い"], "author": "claude-draft"}
+{"id": "q036", "q": "có vị như đường", "kind": "mo-ta", "group": "N5", "answers": ["4afffe5811"], "answerWords": ["甘い"], "author": "claude-draft"}
+{"id": "q037", "q": "làm sạch bằng nước", "kind": "mo-ta", "group": "N5", "answers": ["f8fa96946f"], "answerWords": ["洗う"], "author": "claude-draft"}
+{"id": "q038", "q": "không nhớ ra được", "kind": "mo-ta", "group": "N5", "answers": ["0ca0de9dea"], "answerWords": ["忘れる"], "author": "claude-draft"}
+{"id": "q039", "q": "chỗ khám bệnh", "kind": "tinh-huong", "group": "N5", "answers": ["734d275fd9"], "answerWords": ["病院"], "author": "claude-draft"}
+{"id": "q040", "q": "trời hôm nay lạnh quá", "kind": "tinh-huong", "group": "N5", "answers": ["688bc67044"], "answerWords": ["寒い"], "author": "claude-draft"}
+{"id": "q041", "q": "chỗ đi vệ sinh", "kind": "tinh-huong", "group": "N5", "answers": ["75a36b034c", "e1e7c2d290"], "answerWords": ["お手洗い", "トイレ"], "author": "claude-draft"}
+{"id": "q042", "q": "thức dậy buổi sáng", "kind": "tinh-huong", "group": "N5", "answers": ["248a353e09"], "answerWords": ["起きる"], "author": "claude-draft"}
+{"id": "q043", "q": "nhiều việc quá không có thời gian", "kind": "tinh-huong", "group": "N5", "answers": ["cd1bcc2b1b"], "answerWords": ["忙しい"], "author": "claude-draft"}
+{"id": "q044", "q": "căn phòng nhỏ chật chội", "kind": "tinh-huong", "group": "N5", "answers": ["d12ee2e932"], "answerWords": ["狭い"], "author": "claude-draft"}
+{"id": "q045", "q": "món này cay quá", "kind": "tinh-huong", "group": "N5", "answers": ["d2546ac97b"], "answerWords": ["辛い"], "author": "claude-draft"}
+{"id": "q046", "q": "an sang", "kind": "khong-dau", "group": "N5", "answers": ["98bc6f72ae"], "answerWords": ["朝ごはん"], "author": "claude-draft"}
+{"id": "q047", "q": "nguoi nuoc ngoai", "kind": "khong-dau", "group": "N5", "answers": ["70f1678111"], "answerWords": ["外国人"], "author": "claude-draft"}
+{"id": "q048", "q": "ngay sinh nhat", "kind": "khong-dau", "group": "N5", "answers": ["2e610178ae"], "answerWords": ["誕生日"], "author": "claude-draft"}
+{"id": "q049", "q": "nghi he", "kind": "khong-dau", "group": "N5", "answers": ["e09167a3d4"], "answerWords": ["夏休み"], "author": "claude-draft"}
+{"id": "q050", "q": "thang may", "kind": "khong-dau", "group": "N5", "answers": ["eb1695baf6"], "answerWords": ["エレベーター"], "author": "claude-draft"}
+{"id": "q051", "q": "động đất", "kind": "chinh-xac", "group": "N4", "answers": ["ba8831572d"], "answerWords": ["地震"], "author": "claude-draft"}
+{"id": "q052", "q": "phong cảnh", "kind": "chinh-xac", "group": "N4", "answers": ["a200494cec"], "answerWords": ["景色"], "author": "claude-draft"}
+{"id": "q053", "q": "chuyển nhà", "kind": "chinh-xac", "group": "N4", "answers": ["d801b8b37a"], "answerWords": ["引っ越す"], "author": "claude-draft"}
+{"id": "q054", "q": "thói quen", "kind": "chinh-xac", "group": "N4", "answers": ["eacd8a5221"], "answerWords": ["習慣"], "author": "claude-draft"}
+{"id": "q055", "q": "sân bay", "kind": "chinh-xac", "group": "N4", "answers": ["0f74a8f3a4", "546e786cde"], "answerWords": ["空港", "飛行場"], "author": "claude-draft"}
+{"id": "q056", "q": "cuộc họp", "kind": "chinh-xac", "group": "N4", "answers": ["83af91b7eb"], "answerWords": ["会議"], "author": "claude-draft"}
+{"id": "q057", "q": "nổi giận", "kind": "dong-nghia", "group": "N4", "answers": ["2e0f32c097"], "answerWords": ["怒る"], "author": "claude-draft"}
+{"id": "q058", "q": "nghiêm khắc", "kind": "chinh-xac", "group": "N4", "answers": ["d90ee2957c"], "answerWords": ["厳しい"], "author": "claude-draft"}
+{"id": "q059", "q": "kịp giờ", "kind": "chinh-xac", "group": "N4", "answers": ["675232ef05"], "answerWords": ["間に合う"], "author": "claude-draft"}
+{"id": "q060", "q": "chuẩn bị", "kind": "chinh-xac", "group": "N4", "answers": ["6ce523bcb6", "cbb67e1b4d"], "answerWords": ["準備", "用意"], "author": "claude-draft"}
+{"id": "q061", "q": "công an", "kind": "dong-nghia", "group": "N4", "answers": ["25550955b0", "e1634cb3e9"], "answerWords": ["警察", "警官"], "author": "claude-draft"}
+{"id": "q062", "q": "mắc cỡ", "kind": "dong-nghia", "group": "N4", "answers": ["847b1b7535"], "answerWords": ["恥ずかしい"], "author": "claude-draft"}
+{"id": "q063", "q": "bãi đậu xe", "kind": "dong-nghia", "group": "N4", "answers": ["36f583c207"], "answerWords": ["駐車場"], "author": "claude-draft"}
+{"id": "q064", "q": "điều hòa", "kind": "dong-nghia", "group": "N4", "answers": ["8ff4f12975"], "answerWords": ["冷房"], "author": "claude-draft"}
+{"id": "q065", "q": "tên trộm", "kind": "dong-nghia", "group": "N4", "answers": ["76d7890e5d"], "answerWords": ["泥棒"], "author": "claude-draft"}
+{"id": "q066", "q": "trải nghiệm", "kind": "chinh-xac", "group": "N4", "answers": ["9746b57413"], "answerWords": ["経験"], "author": "claude-draft"}
+{"id": "q067", "q": "hộc tủ", "kind": "dong-nghia", "group": "N4", "answers": ["916e92f3da"], "answerWords": ["引き出し"], "author": "claude-draft"}
+{"id": "q068", "q": "giật mình", "kind": "dong-nghia", "group": "N4", "answers": ["6d69734463"], "answerWords": ["驚く"], "author": "claude-draft"}
+{"id": "q069", "q": "hiền hậu", "kind": "dong-nghia", "group": "N4", "answers": ["427a618271", "c904982ded"], "answerWords": ["優しい", "親切"], "author": "claude-draft"}
+{"id": "q070", "q": "thăm người bệnh", "kind": "dong-nghia", "group": "N4", "answers": ["eb615955c8"], "answerWords": ["お見舞い"], "author": "claude-draft"}
+{"id": "q071", "q": "đồ để soi mặt", "kind": "mo-ta", "group": "N4", "answers": ["2c7db27d62"], "answerWords": ["鏡"], "author": "claude-draft"}
+{"id": "q072", "q": "bác sĩ chữa răng", "kind": "mo-ta", "group": "N4", "answers": ["9bb337edc6"], "answerWords": ["歯医者"], "author": "claude-draft"}
+{"id": "q073", "q": "chỗ xem tranh và tượng nghệ thuật", "kind": "mo-ta", "group": "N4", "answers": ["eced3a159f"], "answerWords": ["美術館"], "author": "claude-draft"}
+{"id": "q074", "q": "ôn lại bài cũ", "kind": "mo-ta", "group": "N4", "answers": ["c00788993b"], "answerWords": ["復習"], "author": "claude-draft"}
+{"id": "q075", "q": "người lái xe chở khách", "kind": "mo-ta", "group": "N4", "answers": ["9f6e25d5e2"], "answerWords": ["運転手"], "author": "claude-draft"}
+{"id": "q076", "q": "nhặt đồ dưới đất lên", "kind": "mo-ta", "group": "N4", "answers": ["a441432c8a"], "answerWords": ["拾う"], "author": "claude-draft"}
+{"id": "q077", "q": "nói lời xin lỗi", "kind": "mo-ta", "group": "N4", "answers": ["1056f23586"], "answerWords": ["謝る"], "author": "claude-draft"}
+{"id": "q078", "q": "hiếm khi gặp", "kind": "mo-ta", "group": "N4", "answers": ["6307098126"], "answerWords": ["珍しい"], "author": "claude-draft"}
+{"id": "q079", "q": "luật lệ mọi người phải theo", "kind": "mo-ta", "group": "N4", "answers": ["fcca18b129"], "answerWords": ["規則"], "author": "claude-draft"}
+{"id": "q080", "q": "mùa trong năm", "kind": "mo-ta", "group": "N4", "answers": ["a1afb31e7b"], "answerWords": ["季節"], "author": "claude-draft"}
+{"id": "q081", "q": "gió mưa rất mạnh kéo đến", "kind": "mo-ta", "group": "N4", "answers": ["14d52a91d3"], "answerWords": ["台風"], "author": "claude-draft"}
+{"id": "q082", "q": "chăn nệm trải trên sàn để ngủ", "kind": "mo-ta", "group": "N4", "answers": ["f1ef6228cb"], "answerWords": ["布団"], "author": "claude-draft"}
+{"id": "q083", "q": "phải ở lại bệnh viện để điều trị", "kind": "mo-ta", "group": "N4", "answers": ["178daf8296"], "answerWords": ["入院"], "author": "claude-draft"}
+{"id": "q084", "q": "người bán hàng trong cửa hàng", "kind": "mo-ta", "group": "N4", "answers": ["29b43fab16"], "answerWords": ["店員"], "author": "claude-draft"}
+{"id": "q085", "q": "khiêng đồ sang chỗ khác", "kind": "mo-ta", "group": "N4", "answers": ["2404bdfdb3"], "answerWords": ["運ぶ"], "author": "claude-draft"}
+{"id": "q086", "q": "hỏi ý kiến người khác", "kind": "mo-ta", "group": "N4", "answers": ["aa663833e4"], "answerWords": ["相談"], "author": "claude-draft"}
+{"id": "q087", "q": "học trước bài sắp học", "kind": "mo-ta", "group": "N4", "answers": ["de815ae4e6"], "answerWords": ["予習"], "author": "claude-draft"}
+{"id": "q088", "q": "cảm thấy muốn ngủ", "kind": "tinh-huong", "group": "N4", "answers": ["ac5fa7fe3b"], "answerWords": ["眠い"], "author": "claude-draft"}
+{"id": "q089", "q": "đặt bàn trước ở nhà hàng", "kind": "tinh-huong", "group": "N4", "answers": ["ed37fe04b5"], "answerWords": ["予約"], "author": "claude-draft"}
+{"id": "q090", "q": "cái cốc bị vỡ", "kind": "tinh-huong", "group": "N4", "answers": ["27046b71e1"], "answerWords": ["割れる"], "author": "claude-draft"}
+{"id": "q091", "q": "điện thoại bị hỏng rồi", "kind": "tinh-huong", "group": "N4", "answers": ["63290aef69"], "answerWords": ["壊れる"], "author": "claude-draft"}
+{"id": "q092", "q": "vứt rác đi", "kind": "tinh-huong", "group": "N4", "answers": ["49ac3c55c7"], "answerWords": ["捨てる"], "author": "claude-draft"}
+{"id": "q093", "q": "dọn dẹp phòng cho gọn", "kind": "tinh-huong", "group": "N4", "answers": ["119fdf575e"], "answerWords": ["片付ける"], "author": "claude-draft"}
+{"id": "q094", "q": "ở nhà một mình thấy cô đơn", "kind": "tinh-huong", "group": "N4", "answers": ["6dc70626da"], "answerWords": ["寂しい"], "author": "claude-draft"}
+{"id": "q095", "q": "đến trễ giờ hẹn", "kind": "tinh-huong", "group": "N4", "answers": ["ae8ce3986c"], "answerWords": ["遅れる"], "author": "claude-draft"}
+{"id": "q096", "q": "tot nghiep", "kind": "khong-dau", "group": "N4", "answers": ["6a89d1feee"], "answerWords": ["卒業"], "author": "claude-draft"}
+{"id": "q097", "q": "so thich", "kind": "khong-dau", "group": "N4", "answers": ["7c6d792073"], "answerWords": ["趣味"], "author": "claude-draft"}
+{"id": "q098", "q": "lo lang", "kind": "khong-dau", "group": "N4", "answers": ["ff60f2830f"], "answerWords": ["心配"], "author": "claude-draft"}
+{"id": "q099", "q": "may suoi", "kind": "khong-dau", "group": "N4", "answers": ["aaac8221c9"], "answerWords": ["暖房"], "author": "claude-draft"}
+{"id": "q100", "q": "ngam hoa anh dao", "kind": "khong-dau", "group": "N4", "answers": ["8825d6d645"], "answerWords": ["花見"], "author": "claude-draft"}
