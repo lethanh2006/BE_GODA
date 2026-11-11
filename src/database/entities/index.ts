@@ -9,6 +9,7 @@ import { Exam } from './exam.entity.js';
 import { Kanji } from './kanji.entity.js';
 import { Passage } from './passage.entity.js';
 import { QuestionReport } from './question-report.entity.js';
+import { ReviewLog } from './review-log.entity.js';
 import { Question } from './question.entity.js';
 import { UserQuestionStat } from './user-question-stat.entity.js';
 import { UserWord } from './user-word.entity.js';
@@ -28,6 +29,7 @@ export {
   Passage,
   Question,
   QuestionReport,
+  ReviewLog,
   User,
   UserQuestionStat,
   UserWord,
@@ -51,4 +53,5 @@ export const ENTITIES = [
   UserWord,
   Deck,
   DeckCard,
+  ReviewLog,
 ];
