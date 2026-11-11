@@ -1,10 +1,11 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { IsNull, type Repository } from 'typeorm';
+import type { Repository } from 'typeorm';
 import { Rating } from 'ts-fsrs';
-import { Deck, DeckCard } from '../../database/entities/index.js';
+import { Deck, DeckCard, ReviewLog } from '../../database/entities/index.js';
 import type { JlptLevel } from '../../database/enums.js';
-import { type CardFields, newCard, preview, review } from '../vocab/scheduler.js';
+import { saveReviewLogs } from '../vocab/review-log.js';
+import { type CardFields, newCard, preview, reviewWithLog } from '../vocab/scheduler.js';
 
 const QUEUE_LIMIT = 50;
 
@@ -38,6 +39,7 @@ export class DecksService {
   constructor(
     @InjectRepository(Deck) private readonly decks: Repository<Deck>,
     @InjectRepository(DeckCard) private readonly cards: Repository<DeckCard>,
+    @InjectRepository(ReviewLog) private readonly reviewLogs: Repository<ReviewLog>,
   ) {}
 
   async list(userId: string) {
@@ -93,8 +95,17 @@ export class DecksService {
   async markLearned(userId: string, id: string) {
     if (!(await this.decks.existsBy({ id, userId }))) throw new NotFoundException('Không tìm thấy bộ thẻ');
     const now = new Date();
-    const result = await this.cards.update({ deckId: id, due: IsNull() }, review(newCard(now), Rating.Good, now));
-    return { learned: result.affected ?? 0 };
+    const { next, log } = reviewWithLog(newCard(now), Rating.Good, now);
+    const result = await this.cards
+      .createQueryBuilder()
+      .update()
+      .set(next)
+      .where('"deck_id" = :id AND "due" IS NULL', { id })
+      .returning(['id'])
+      .execute();
+    const learned = ((result.raw ?? []) as { id: string }[]).map((row) => row.id);
+    await saveReviewLogs(this.reviewLogs, userId, 'deck_card', 'learn', learned.map((itemId) => ({ itemId, log })));
+    return { learned: result.affected ?? learned.length };
   }
 
   async queue(userId: string, limit: number) {
@@ -121,8 +132,9 @@ export class DecksService {
     const card = await this.cards.findOne({ where: { id: cardId, deck: { userId } } });
     if (!card?.due) throw new NotFoundException('Thẻ này chưa có trong lịch ôn');
     const now = new Date();
-    const next = review(scheduleOf(card, now), rating, now);
+    const { next, log } = reviewWithLog(scheduleOf(card, now), rating, now);
     await this.cards.update({ id: cardId }, next);
+    await saveReviewLogs(this.reviewLogs, userId, 'deck_card', 'review', [{ itemId: cardId, log }]);
     return { due: next.due, state: next.state };
   }
 }

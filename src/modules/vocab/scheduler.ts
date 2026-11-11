@@ -41,8 +41,38 @@ const fromCard = (card: Card): CardFields => ({
 /** Thẻ mới tinh, đến hạn ngay. */
 export const newCard = (now: Date): CardFields => fromCard(createEmptyCard(now));
 
-export const review = (row: CardFields, rating: Grade, now: Date): CardFields =>
-  fromCard(scheduler.next(toCard(row), now, rating).card);
+/** Một dòng nhật ký ôn (bảng `review_logs`): trạng thái thẻ TRƯỚC lần ôn và điểm chấm. */
+export interface ReviewLogFields {
+  rating: number;
+  state: number;
+  stability: number;
+  difficulty: number;
+  scheduledDays: number;
+  lastReview: Date | null;
+  reviewedAt: Date;
+}
+
+/**
+ * Chấm một lần ôn: trả lịch ôn mới (`next`) và bản ghi lần ôn (`log`) mà ts-fsrs tạo sẵn.
+ * `log` của ts-fsrs chụp thẻ trước khi ôn; riêng `lastReview` lấy từ dòng đang lưu cho rõ nghĩa.
+ */
+export function reviewWithLog(row: CardFields, rating: Grade, now: Date): { next: CardFields; log: ReviewLogFields } {
+  const { card, log } = scheduler.next(toCard(row), now, rating);
+  return {
+    next: fromCard(card),
+    log: {
+      rating: log.rating,
+      state: log.state,
+      stability: log.stability,
+      difficulty: log.difficulty,
+      scheduledDays: log.scheduled_days,
+      lastReview: row.lastReview,
+      reviewedAt: log.review,
+    },
+  };
+}
+
+export const review = (row: CardFields, rating: Grade, now: Date): CardFields => reviewWithLog(row, rating, now).next;
 
 /** Lịch ôn tiếp theo cho cả 4 lựa chọn, hiển thị trên nút đánh giá. */
 export function preview(row: CardFields, now: Date) {

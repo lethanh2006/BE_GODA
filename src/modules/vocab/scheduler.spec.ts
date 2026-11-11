@@ -1,5 +1,5 @@
 import { Rating } from 'ts-fsrs';
-import { newCard, preview, review } from './scheduler.js';
+import { newCard, preview, review, reviewWithLog } from './scheduler.js';
 
 const DAY = 86_400_000;
 const NOW = new Date('2026-11-01T00:00:00Z');
@@ -39,5 +39,27 @@ describe('lịch ôn FSRS', () => {
       key === 'due' || key === 'lastReview' ? new Date(value as string) : value,
     ) as typeof card;
     expect(review(roundTrip, Rating.Good, card.due)).toEqual(review(card, Rating.Good, card.due));
+  });
+
+  it('nhật ký ôn chụp thẻ TRƯỚC lần ôn, lịch mới nằm ở next', () => {
+    const first = review(newCard(NOW), Rating.Good, NOW);
+    const later = new Date(first.due.getTime() + DAY);
+    const { next, log } = reviewWithLog(first, Rating.Hard, later);
+    expect(log).toEqual({
+      rating: Rating.Hard,
+      state: first.state,
+      stability: first.stability,
+      difficulty: first.difficulty,
+      scheduledDays: first.scheduledDays,
+      lastReview: first.lastReview,
+      reviewedAt: later,
+    });
+    expect(next).toEqual(review(first, Rating.Hard, later));
+    expect(next.stability).not.toBe(log.stability);
+  });
+
+  it('thẻ mới: nhật ký ghi trạng thái 0 và chưa có lần ôn trước', () => {
+    const { log } = reviewWithLog(newCard(NOW), Rating.Good, NOW);
+    expect(log).toMatchObject({ rating: Rating.Good, state: 0, stability: 0, difficulty: 0, lastReview: null });
   });
 });

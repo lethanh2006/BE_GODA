@@ -2,9 +2,10 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { In, type Repository } from 'typeorm';
 import { Rating } from 'ts-fsrs';
-import { UserWord, Word } from '../../database/entities/index.js';
+import { ReviewLog, UserWord, Word } from '../../database/entities/index.js';
 import type { JlptLevel } from '../../database/enums.js';
-import { MATURE_DAYS, newCard, preview, review } from './scheduler.js';
+import { saveReviewLogs } from './review-log.js';
+import { MATURE_DAYS, newCard, preview, reviewWithLog } from './scheduler.js';
 import { toWordCard } from './vocab.service.js';
 
 const QUEUE_LIMIT = 50;
@@ -19,22 +20,32 @@ export class StudyService {
   constructor(
     @InjectRepository(UserWord) private readonly userWords: Repository<UserWord>,
     @InjectRepository(Word) private readonly words: Repository<Word>,
+    @InjectRepository(ReviewLog) private readonly reviewLogs: Repository<ReviewLog>,
   ) {}
 
-  /** Thêm từ vào sổ ôn. Từ đã có giữ nguyên lịch ôn, không bị đặt lại. */
+  /**
+   * Thêm từ vào sổ ôn. Từ đã có giữ nguyên lịch ôn, không bị đặt lại.
+   * `learned`: vừa học xong bài, coi như đã chấm "Nhớ" lần đầu và ghi nhật ký `learn` cho các từ mới thêm.
+   */
   async addWords(userId: string, wordIds: string[], learned = false) {
     const ids = [...new Set(wordIds)];
     const known = await this.words.find({ where: { id: In(ids) }, select: { id: true } });
     if (known.length === 0) throw new NotFoundException('Không tìm thấy từ này');
     const now = new Date();
-    const fields = learned ? review(newCard(now), Rating.Good, now) : newCard(now);
+    const first = learned ? reviewWithLog(newCard(now), Rating.Good, now) : null;
     const result = await this.userWords
       .createQueryBuilder()
       .insert()
-      .values(known.map(({ id }) => ({ userId, wordId: id, ...fields })))
+      .values(known.map(({ id }) => ({ userId, wordId: id, ...(first?.next ?? newCard(now)) })))
       .orIgnore()
+      .returning(['wordId'])
       .execute();
-    return { added: result.raw ? (result.raw as unknown[]).length : known.length };
+    // ON CONFLICT DO NOTHING: chỉ những từ thật sự được thêm mới có trong `raw`.
+    const added = ((result.raw ?? []) as { word_id: string }[]).map((row) => row.word_id);
+    if (first) {
+      await saveReviewLogs(this.reviewLogs, userId, 'word', 'learn', added.map((itemId) => ({ itemId, log: first.log })));
+    }
+    return { added: added.length };
   }
 
   async removeWord(userId: string, wordId: string) {
@@ -71,8 +82,9 @@ export class StudyService {
   async review(userId: string, wordId: string, rating: 1 | 2 | 3 | 4) {
     const row = await this.userWords.findOneBy({ userId, wordId });
     if (!row) throw new NotFoundException('Từ này chưa có trong sổ ôn');
-    const next = review(row, rating, new Date());
+    const { next, log } = reviewWithLog(row, rating, new Date());
     await this.userWords.update({ userId, wordId }, next);
+    await saveReviewLogs(this.reviewLogs, userId, 'word', 'review', [{ itemId: wordId, log }]);
     return { due: next.due, state: next.state };
   }
 
