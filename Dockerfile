@@ -19,6 +19,8 @@ WORKDIR /app
 COPY package.json ./
 COPY --from=prod-deps /app/node_modules ./node_modules
 COPY --from=build /app/dist ./dist
+# File kết quả AI tính sẵn (ví dụ từ liên quan), backend chỉ đọc: xem ai/README.md.
+COPY assets ./assets
 USER node
 EXPOSE 4000
 CMD ["node", "dist/main.js"]
