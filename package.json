@@ -28,7 +28,8 @@
     "db:seed": "tsx scripts/seed.ts",
     "decks:import": "tsx scripts/decks/import.ts",
     "content:openjlpt": "tsx scripts/openjlpt/import.ts",
-    "content:vocab": "tsx scripts/vocab/import.ts"
+    "content:vocab": "tsx scripts/vocab/import.ts",
+    "ai:export-words": "tsx scripts/ai/export-words.ts"
   },
   "dependencies": {
     "@nestjs/common": "^12.0.1",

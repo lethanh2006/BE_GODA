@@ -23,3 +23,10 @@ pnpm-debug.log*
 
 *.tsbuildinfo
 .neon
+
+# AI (xem ai/README.md): môi trường Python, model tải về, dữ liệu sinh lại được
+/ai/.venv
+/ai/.cache
+/ai/data/words*.jsonl
+/ai/runs
+__pycache__/
