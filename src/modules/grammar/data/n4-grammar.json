@@ -42,12 +42,12 @@
             "options": [
               "{降|ふ}って",
               "{降|ふ}る",
-              "{降|お}ります"
+              "{降|ふ}ります"
             ],
             "answer": [
               1
             ],
-            "explanation": "Trước でしょう dùng thể thường: {降|お}ります đổi thành {降|ふ}る."
+            "explanation": "Trước でしょう dùng thể thường: {降|ふ}ります đổi thành {降|ふ}る."
           },
           {
             "id": "n4-15-guess-order",
@@ -264,7 +264,7 @@
         "title": "そうです・らしいです: nghe nói…",
         "usage": "Truyền lại thông tin từ người khác, bản tin hay bài viết; hãy để ý bạn đã nghe từ đâu.",
         "formula": "そうです truyền tin: thể thường + そうです, giữ だ của danh từ/tính từ な. らしいです: danh từ/tính từ な nối trực tiếp.",
-        "pitfall": "Nghe nói mưa: {降|ふ}るそうです. Nhìn trời sắp mưa ở chương 18: {降|お}りそうです. Hai cách chia khác nhau.",
+        "pitfall": "Nghe nói mưa: {降|ふ}るそうです. Nhìn trời sắp mưa ở chương 18: {降|ふ}りそうです. Hai cách chia khác nhau.",
         "examples": [
           {
             "ja": "ニュースによると、{明日|あした}は{雨|あめ}だそうです。",
@@ -771,8 +771,8 @@
         "id": "n4-18-about-to",
         "title": "Động từ + そうです: có vẻ sắp…",
         "usage": "Dựa vào dấu hiệu ngay trước mắt để dự báo việc sắp xảy ra.",
-        "formula": "Bỏ ます của động từ rồi thêm そうです: {降|お}ります → {降|お}りそうです.",
-        "pitfall": "{降|お}りそう: trời có vẻ sắp mưa. {降|ふ}るそう: nghe nói trời mưa. Muốn nói chưa có vẻ sắp, có thể dùng {降|お}りそうにありません.",
+        "formula": "Bỏ ます của động từ rồi thêm そうです: {降|ふ}ります → {降|ふ}りそうです.",
+        "pitfall": "{降|ふ}りそう: trời có vẻ sắp mưa. {降|ふ}るそう: nghe nói trời mưa. Muốn nói chưa có vẻ sắp, có thể dùng {降|ふ}りそうにありません.",
         "examples": [
           {
             "ja": "{空|そら}が{暗|くら}いです。{雨|あめ}が{降|ふ}りそうです。",
@@ -2557,7 +2557,7 @@
             "answer": [
               1
             ],
-            "explanation": "Mẫu lời khuyên trong bài dùng thể た: {行|おこな}ったほうがいい."
+            "explanation": "Mẫu lời khuyên trong bài dùng thể た: {行|い}ったほうがいい."
           },
           {
             "id": "n4-26-advice-order",
@@ -4416,7 +4416,7 @@
         "pitfall": "{先生|せんせい}が{話|はな}されます có thể là thầy cô nói (tôn kính). {私|わたし}は{先生|せんせい}に{注意|ちゅうい}されました là tôi bị nhắc (bị động).",
         "examples": [
           {
-            "ja": "{先生|せんせい}は{明日|あした}{来|きた}られます。",
+            "ja": "{先生|せんせい}は{明日|あした}{来|こ}られます。",
             "vi": "Ngày mai thầy cô sẽ đến ạ."
           },
           {

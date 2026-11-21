@@ -89,6 +89,15 @@ describe('N4 practical grammar catalog', () => {
     expect(published).not.toHaveProperty('acceptedAnswers');
   });
 
+  it('uses the contextual readings for rain, going and honorific coming', () => {
+    const text = JSON.stringify(GRAMMAR_LESSONS);
+    expect(text.includes('{降|お}')).toBe(false);
+    expect(text.includes('{行|おこな}ったほう')).toBe(false);
+    expect(text.includes('{来|きた}られます')).toBe(false);
+    expect(text.includes('{降|ふ}ります')).toBe(true);
+    expect(text.includes('{来|こ}られます')).toBe(true);
+  });
+
   it('rejects empty, out-of-range, fractional and duplicate answer indexes', () => {
     const [choice, order] = questionsOf(GRAMMAR_LESSONS[0]);
     for (const invalid of [[], [-1], [choice.options.length], [0.5], [0, 1]])
