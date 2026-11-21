@@ -12,6 +12,7 @@ import { CatalogModule } from './modules/catalog/catalog.module.js';
 import { DecksModule } from './modules/decks/decks.module.js';
 import { DictionaryModule } from './modules/dictionary/dictionary.module.js';
 import { ExamsModule } from './modules/exams/exams.module.js';
+import { GrammarModule } from './modules/grammar/grammar.module.js';
 import { HealthModule } from './modules/health/health.module.js';
 import { MeModule } from './modules/me/me.module.js';
 import { ReportsModule } from './modules/reports/reports.module.js';
@@ -45,6 +46,7 @@ import { VocabModule } from './modules/vocab/vocab.module.js';
     DictionaryModule,
     VocabModule,
     DecksModule,
+    GrammarModule,
     HealthModule,
   ],
   providers: [{ provide: APP_GUARD, useClass: ThrottlerGuard }],

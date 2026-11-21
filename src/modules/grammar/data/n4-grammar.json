@@ -1,0 +1,4596 @@
+[
+  {
+    "id": "n4-15",
+    "chapter": 15,
+    "title": "Dự đoán có căn cứ hay chỉ phỏng đoán?",
+    "description": "Học từng ý nhỏ, ghép câu rồi luyện lại những câu chưa chắc.",
+    "sources": [
+      {
+        "title": "Ngữ pháp 15A",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1541"
+      },
+      {
+        "title": "Ngữ pháp 15B",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1545"
+      }
+    ],
+    "patterns": [
+      {
+        "id": "n4-15-guess",
+        "title": "でしょう・だろう: chắc là…",
+        "usage": "Dùng khi bạn dự đoán, không khẳng định đã biết chắc. Khi lên giọng, でしょう còn hỏi người nghe xác nhận.",
+        "formula": "Động từ thể thường / tính từ い + でしょう. Tính từ な và danh từ bỏ だ rồi thêm でしょう. だろう là dạng thân mật.",
+        "pitfall": "Không thêm ます trước でしょう. Câu lên giọng là “đúng không?”, câu xuống giọng thường là dự đoán.",
+        "examples": [
+          {
+            "ja": "{明日|あした}は{寒|さむ}いでしょう。",
+            "vi": "Ngày mai chắc sẽ lạnh."
+          },
+          {
+            "ja": "この{道|みち}でいいでしょう？",
+            "vi": "Đi đường này là đúng nhỉ?"
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-15-guess-choose",
+            "kind": "choice",
+            "prompt": "Điền dạng đúng: {明日|あした}は{雨|あめ}が ____ でしょう。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{降|ふ}って",
+              "{降|ふ}る",
+              "{降|お}ります"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "Trước でしょう dùng thể thường: {降|お}ります đổi thành {降|ふ}る."
+          },
+          {
+            "id": "n4-15-guess-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Cửa hàng này ngày mai chắc cũng nghỉ.",
+            "prefix": "この{店|みせ}は",
+            "suffix": "。",
+            "options": [
+              "{休|やす}み",
+              "でしょう",
+              "{明日|あした}も"
+            ],
+            "answer": [
+              2,
+              0,
+              1
+            ],
+            "explanation": "Một cách ghép đúng: この{店|みせ}は{明日|あした}も{休|やす}みでしょう。 {休|やす}み là danh từ; bỏ だ rồi thêm でしょう để dự đoán. {明日|あした}も nghĩa là ngày mai cũng vậy."
+          }
+        ]
+      },
+      {
+        "id": "n4-15-maybe",
+        "title": "かもしれません: có thể…",
+        "usage": "Nêu một khả năng bạn chưa chắc. Không cần gán một phần trăm cố định cho câu này.",
+        "formula": "Động từ thể thường / tính từ い + かもしれません. Danh từ và tính từ な bỏ だ.",
+        "pitfall": "{学生|がくせい}かもしれません là đúng; không ghép {学生|がくせい}だかもしれません.",
+        "examples": [
+          {
+            "ja": "{電車|でんしゃ}が{遅|おく}れるかもしれません。",
+            "vi": "Tàu có thể đến muộn."
+          },
+          {
+            "ja": "あの{人|ひと}は{学生|がくせい}かもしれません。",
+            "vi": "Người kia có thể là sinh viên."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-15-maybe-choose",
+            "kind": "choice",
+            "prompt": "Điền đúng: この{答|こた}えは ____ かもしれません。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{間違|まちが}いです",
+              "{間違|まちが}いだ",
+              "{間違|まちが}い"
+            ],
+            "answer": [
+              2
+            ],
+            "explanation": "Danh từ {間違|まちが}い nối thẳng với かもしれません, không có だ hay です."
+          },
+          {
+            "id": "n4-15-maybe-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Ngày mai có thể trời sẽ mưa.",
+            "prefix": "{明日|あした}は",
+            "suffix": "。",
+            "options": [
+              "{降|ふ}る",
+              "しれません",
+              "{雨|あめ}が",
+              "かも"
+            ],
+            "answer": [
+              2,
+              0,
+              3,
+              1
+            ],
+            "explanation": "Một cách ghép đúng: {明日|あした}は{雨|あめ}が{降|ふ}るかもしれません。 {降|ふ}る ở thể thường đứng trước かもしれません: nêu khả năng mưa chưa chắc chắn."
+          }
+        ]
+      },
+      {
+        "id": "n4-15-looks",
+        "title": "ようです・みたいです: hình như…",
+        "usage": "Bạn dựa vào dấu hiệu mình nhận ra để suy luận. みたいです thường dùng trong hội thoại.",
+        "formula": "ようです: thể thường + ようです; danh từ + のようです; tính từ な + なようです. みたいです nối trực tiếp với danh từ hoặc tính từ な.",
+        "pitfall": "{雨|あめ}のようです và {雨|あめ}みたいです đúng; không dùng {雨|あめ}なようです. Đây là suy luận, chưa phải sự thật đã xác nhận.",
+        "examples": [
+          {
+            "ja": "{電気|でんき}が{消|き}えています。{誰|だれ}もいないようです。",
+            "vi": "Đèn đang tắt. Hình như không có ai."
+          },
+          {
+            "ja": "{熱|ねつ}があります。{風邪|かぜ}みたいです。",
+            "vi": "Tôi bị sốt. Hình như cảm rồi."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-15-looks-choose",
+            "kind": "choice",
+            "prompt": "Có dấu hiệu người trong phòng đang vắng: {誰|だれ}もいない ____ です。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "そうだ",
+              "でしょう",
+              "よう"
+            ],
+            "answer": [
+              2
+            ],
+            "explanation": "いないようです là suy luận từ dấu hiệu. Không ghép そうだです hay でしょうです."
+          },
+          {
+            "id": "n4-15-looks-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Hình như hôm nay cửa hàng kia nghỉ.",
+            "prefix": "あの{店|みせ}は",
+            "suffix": "。",
+            "options": [
+              "{休|やす}みの",
+              "{今日|きょう}は",
+              "よう",
+              "です"
+            ],
+            "answer": [
+              1,
+              0,
+              2,
+              3
+            ],
+            "explanation": "Một cách ghép đúng: あの{店|みせ}は{今日|きょう}は{休|やす}みのようです。 Danh từ {休|やす}み cần の trước ようです để diễn tả suy luận từ dấu hiệu."
+          }
+        ]
+      },
+      {
+        "id": "n4-15-expected",
+        "title": "はずです: theo lý thì phải…",
+        "usage": "Bạn có thông tin cụ thể làm căn cứ nên cho rằng kết quả này hợp lý.",
+        "formula": "Động từ thể thường / tính từ い + はずです. Danh từ + のはずです; tính từ な + なはずです.",
+        "pitfall": "はず diễn tả điều được suy ra, không phải mệnh lệnh hay nghĩa vụ. Đừng dùng nó để nói “phải làm bài tập”.",
+        "examples": [
+          {
+            "ja": "{田中|たなか}さんはもう{着|つ}いたはずです。",
+            "vi": "Theo lịch thì anh Tanaka chắc đã đến rồi."
+          },
+          {
+            "ja": "{日曜日|にちようび}なので、{銀行|ぎんこう}は{休|やす}みのはずです。",
+            "vi": "Vì là Chủ nhật nên theo lệ ngân hàng phải nghỉ."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-15-expected-choose",
+            "kind": "choice",
+            "prompt": "Điền đúng: {今日|きょう}は{日曜日|にちようび}です。{銀行|ぎんこう}は ____ はずです。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{休|やす}みの",
+              "{休|やす}みだ",
+              "{休|やす}みな"
+            ],
+            "answer": [
+              0
+            ],
+            "explanation": "Trước はず, danh từ {休|やす}み dùng の: {休|やす}みのはずです."
+          },
+          {
+            "id": "n4-15-expected-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Vì hôm qua đã học nên theo lý tôi phải làm được câu này.",
+            "prefix": "この{問題|もんだい}は",
+            "suffix": "。",
+            "options": [
+              "できるはずです",
+              "{勉強|べんきょう}した",
+              "ので",
+              "{昨日|きのう}"
+            ],
+            "answer": [
+              3,
+              1,
+              2,
+              0
+            ],
+            "explanation": "Một cách ghép đúng: この{問題|もんだい}は{昨日|きのう}{勉強|べんきょう}したのでできるはずです。 {勉強|べんきょう}したので đưa căn cứ đã học; できるはずです là kết quả được suy ra từ căn cứ đó."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "n4-16",
+    "chapter": 16,
+    "title": "Kể lại điều nghe được và nói ý kiến",
+    "description": "Học từng ý nhỏ, ghép câu rồi luyện lại những câu chưa chắc.",
+    "sources": [
+      {
+        "title": "Ngữ pháp 16A",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1552"
+      },
+      {
+        "title": "Ngữ pháp 16B",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1716"
+      }
+    ],
+    "patterns": [
+      {
+        "id": "n4-16-hearsay",
+        "title": "そうです・らしいです: nghe nói…",
+        "usage": "Truyền lại thông tin từ người khác, bản tin hay bài viết; hãy để ý bạn đã nghe từ đâu.",
+        "formula": "そうです truyền tin: thể thường + そうです, giữ だ của danh từ/tính từ な. らしいです: danh từ/tính từ な nối trực tiếp.",
+        "pitfall": "Nghe nói mưa: {降|ふ}るそうです. Nhìn trời sắp mưa ở chương 18: {降|お}りそうです. Hai cách chia khác nhau.",
+        "examples": [
+          {
+            "ja": "ニュースによると、{明日|あした}は{雨|あめ}だそうです。",
+            "vi": "Theo tin tức, nghe nói ngày mai có mưa."
+          },
+          {
+            "ja": "あの{店|みせ}は{安|やす}いらしいです。",
+            "vi": "Nghe nói cửa hàng kia rẻ."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-16-hearsay-choose",
+            "kind": "choice",
+            "prompt": "Đổi {安|やす}いです sang dạng “nghe nói rẻ”.",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{安|やす}くそうです",
+              "{安|やす}そうです",
+              "{安|やす}いそうです"
+            ],
+            "answer": [
+              2
+            ],
+            "explanation": "Nghe nói giữ tính từ い: {安|やす}いそうです. {安|やす}そうです là nhìn có vẻ rẻ."
+          },
+          {
+            "id": "n4-16-hearsay-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Theo dự báo thời tiết, nghe nói ngày mai có mưa.",
+            "prefix": "{天気|てんき}{予報|よほう}によると、",
+            "suffix": "。",
+            "options": [
+              "{雨|あめ}だ",
+              "そう",
+              "{明日|あした}は",
+              "です"
+            ],
+            "answer": [
+              2,
+              0,
+              1,
+              3
+            ],
+            "explanation": "Một cách ghép đúng: {天気|てんき}{予報|よほう}によると、{明日|あした}は{雨|あめ}だそうです。 Mệnh đề danh từ {雨|あめ}だ giữ だ trước そうです để truyền lại bản dự báo, không phải nhìn trời thấy sắp mưa."
+          }
+        ]
+      },
+      {
+        "id": "n4-16-quote",
+        "title": "と言っていました: đã nói rằng…",
+        "usage": "Dùng để kể lại lời một người cụ thể. Đặt nội dung được nói trước と.",
+        "formula": "Nội dung ở thể thường + と{言|い}っていました. Danh từ/tính từ な khẳng định hiện tại giữ だ.",
+        "pitfall": "{明日|あした}{行|い}くと{言|い}っていました kể lại lời “ngày mai sẽ đi”; không giữ ます ở giữa câu trong mẫu đang luyện.",
+        "examples": [
+          {
+            "ja": "{友達|ともだち}は{明日|あした}{来|く}ると{言|い}っていました。",
+            "vi": "Bạn tôi đã nói ngày mai sẽ đến."
+          },
+          {
+            "ja": "{先生|せんせい}はこの{本|ほん}が{便利|べんり}だと{言|い}っていました。",
+            "vi": "Thầy cô đã nói cuốn này hữu ích."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-16-quote-choose",
+            "kind": "choice",
+            "prompt": "Kể gián tiếp bằng thể thường từ lời “{明日|あした}{行|い}きます”: {明日|あした} ____ と{言|い}っていました。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{行|い}って",
+              "{行|い}きます",
+              "{行|い}く"
+            ],
+            "answer": [
+              2
+            ],
+            "explanation": "Nội dung trích gián tiếp chuyển về thể thường: {行|い}く."
+          },
+          {
+            "id": "n4-16-quote-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Anh Tanaka đã nói hôm nay bận.",
+            "prefix": "{田中|たなか}さんは",
+            "suffix": "。",
+            "options": [
+              "{忙|いそが}しい",
+              "と",
+              "{言|い}っていました",
+              "{今日|きょう}は"
+            ],
+            "answer": [
+              3,
+              0,
+              1,
+              2
+            ],
+            "explanation": "Một cách ghép đúng: {田中|たなか}さんは{今日|きょう}は{忙|いそが}しいと{言|い}っていました。 {忙|いそが}しい là thể thường của tính từ い; と đưa nội dung đó vào lời kể {言|い}っていました."
+          }
+        ]
+      },
+      {
+        "id": "n4-16-reasons",
+        "title": "し、し: kể nhiều lý do",
+        "usage": "Dùng để nêu hơn một lý do. Thường đi cùng も để nhấn mạnh “vừa… vừa…”.",
+        "formula": "Thể thường + し; danh từ/tính từ な dùng だし. Có thể kết thúc bằng kết luận hoặc để người nghe hiểu còn lý do khác.",
+        "pitfall": "{静|しず}かだし đúng; {静|しず}かし thiếu だ. Không nhầm し với て chỉ nối hành động theo thứ tự.",
+        "examples": [
+          {
+            "ja": "この{店|みせ}は{安|やす}いし、おいしいです。",
+            "vi": "Quán này vừa rẻ vừa ngon."
+          },
+          {
+            "ja": "{駅|えき}も{近|ちか}いし、{部屋|へや}も{広|ひろ}いです。",
+            "vi": "Ga lại gần, phòng cũng rộng."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-16-reasons-choose",
+            "kind": "choice",
+            "prompt": "Điền đúng: この{町|まち}は ____ 、{便利|べんり}です。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{静|しず}かだし",
+              "{静|しず}かなし",
+              "{静|しず}かし"
+            ],
+            "answer": [
+              0
+            ],
+            "explanation": "Tính từ な {静|しず}か cần だ trước し: {静|しず}かだし."
+          },
+          {
+            "id": "n4-16-reasons-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Phòng này sáng, rộng, nên dễ sống.",
+            "prefix": "この{部屋|へや}は",
+            "suffix": "。",
+            "options": [
+              "{明|あか}るいし、",
+              "です",
+              "{広|ひろ}いし、",
+              "{住|す}みやすい"
+            ],
+            "answer": [
+              0,
+              2,
+              3,
+              1
+            ],
+            "explanation": "Một cách ghép đúng: この{部屋|へや}は{明|あか}るいし、{広|ひろ}いし、{住|す}みやすいです。 {明|あか}るいし và {広|ひろ}いし nêu hai lý do cho kết luận {住|す}みやすいです. Có thể đổi thứ tự hai lý do.",
+            "acceptedAnswers": [
+              [
+                2,
+                0,
+                3,
+                1
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "n4-16-opinion",
+        "title": "と思います: tôi nghĩ…",
+        "usage": "Đánh dấu đây là suy nghĩ hay nhận định của bạn, thay vì trình bày như một sự thật.",
+        "formula": "Thể thường + と{思|おも}います. Danh từ/tính từ な khẳng định dùng だと{思|おも}います.",
+        "pitfall": "{学生|がくせい}だと{思|おも}います đúng; đừng bỏ だ với danh từ. Muốn nói “tôi nghĩ là không đến”, dùng {来|こ}ないと{思|おも}います.",
+        "examples": [
+          {
+            "ja": "{明日|あした}は{晴|は}れると{思|おも}います。",
+            "vi": "Tôi nghĩ ngày mai trời sẽ nắng."
+          },
+          {
+            "ja": "この{方法|ほうほう}は{便利|べんり}だと{思|おも}います。",
+            "vi": "Tôi nghĩ cách này tiện."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-16-opinion-choose",
+            "kind": "choice",
+            "prompt": "Điền đúng: あの{人|ひと}は ____ と{思|おも}います。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{先生|せんせい}な",
+              "{先生|せんせい}だ",
+              "{先生|せんせい}です"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "Danh từ {先生|せんせい} ở thể thường khẳng định cần だ trước と."
+          },
+          {
+            "id": "n4-16-opinion-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Tôi nghĩ cuốn sách này có ích.",
+            "prefix": "{私|わたし}は",
+            "suffix": "。",
+            "options": [
+              "と",
+              "この{本|ほん}は",
+              "{思|おも}います",
+              "{役|やく}に{立|た}つ"
+            ],
+            "answer": [
+              1,
+              3,
+              0,
+              2
+            ],
+            "explanation": "Một cách ghép đúng: {私|わたし}はこの{本|ほん}は{役|やく}に{立|た}つと{思|おも}います。 Đặt nhận định この{本|ほん}は{役|やく}に{立|た}つ trước と rồi thêm {思|おも}います để nói đây là ý kiến của mình."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "n4-17",
+    "chapter": 17,
+    "title": "Giải thích hoàn cảnh bằng んです",
+    "description": "Học từng ý nhỏ, ghép câu rồi luyện lại những câu chưa chắc.",
+    "sources": [
+      {
+        "title": "Ngữ pháp 17A",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1556"
+      },
+      {
+        "title": "Ngữ pháp 17B",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1558"
+      }
+    ],
+    "patterns": [
+      {
+        "id": "n4-17-reason",
+        "title": "んです: nói rõ lý do, hoàn cảnh",
+        "usage": "Dùng khi người nghe cần hiểu chuyện đằng sau lời nói: vì sao đến muộn, vì sao cần giúp.",
+        "formula": "Động từ thể thường / tính từ い + んです. Danh từ/tính từ な + なんです.",
+        "pitfall": "{忙|いそが}しいです chỉ thông báo “bận”; {忙|いそが}しいんです giải thích hoàn cảnh. Đừng thêm んです vào mọi câu chào hỏi.",
+        "examples": [
+          {
+            "ja": "すみません。{電車|でんしゃ}が{遅|おく}れたんです。",
+            "vi": "Xin lỗi. Vì tàu đã bị trễ."
+          },
+          {
+            "ja": "{今日|きょう}は{休|やす}みなんです。",
+            "vi": "Hôm nay tôi nghỉ nên mới như vậy."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-17-reason-choose",
+            "kind": "choice",
+            "prompt": "Điền đúng khi giải thích lịch nghỉ: {今日|きょう}は ____ んです。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{休|やす}みだ",
+              "{休|やす}みな",
+              "{休|やす}み"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "Danh từ {休|やす}み cần な trước んです: {休|やす}みなんです."
+          },
+          {
+            "id": "n4-17-reason-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Xin lỗi vì đến muộn. Vì xe buýt đã không đến.",
+            "prefix": "{遅|おく}れてすみません。",
+            "suffix": "。",
+            "options": [
+              "バスが",
+              "です",
+              "ん",
+              "{来|こ}なかった"
+            ],
+            "answer": [
+              0,
+              3,
+              2,
+              1
+            ],
+            "explanation": "Một cách ghép đúng: {遅|おく}れてすみません。バスが{来|こ}なかったんです。 {来|こ}なかった là thể thường quá khứ phủ định, nối với んです để giải thích vì sao đến muộn."
+          }
+        ]
+      },
+      {
+        "id": "n4-17-ask",
+        "title": "んですが・んですか: mở lời và hỏi hoàn cảnh",
+        "usage": "Nêu tình huống bằng んですが trước khi nhờ giúp. Hỏi んですか khi bạn muốn biết lý do từ một dấu hiệu.",
+        "formula": "Thể thường + んですが、… / んですか. Danh từ/tính từ な + なんですが / なんですか.",
+        "pitfall": "どうしたんですか là hỏi người kia có chuyện gì. んですか có thể nghe như chất vấn nếu dùng không đúng giọng và tình huống.",
+        "examples": [
+          {
+            "ja": "{道|みち}が{分|わ}からないんですが、{教|おし}えてください。",
+            "vi": "Tôi không biết đường, bạn chỉ giúp nhé."
+          },
+          {
+            "ja": "{元気|げんき}がないですね。どうしたんですか。",
+            "vi": "Trông bạn không khỏe. Có chuyện gì vậy?"
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-17-ask-choose",
+            "kind": "choice",
+            "prompt": "Muốn hỏi lý do bạn đang khóc: どうして ____ んですか。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{泣|な}いています",
+              "{泣|な}いている",
+              "{泣|な}いて"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "Trước んですか dùng thể thường đầy đủ: {泣|な}いている."
+          },
+          {
+            "id": "n4-17-ask-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Tôi muốn photocopy, anh/chị có thể chỉ cách dùng giúp không?",
+            "prefix": "コピーしたいんですが、",
+            "suffix": "。",
+            "options": [
+              "いただけません",
+              "か",
+              "{使|つか}い{方|かた}を",
+              "{教|おし}えて"
+            ],
+            "answer": [
+              2,
+              3,
+              0,
+              1
+            ],
+            "explanation": "Một cách ghép đúng: コピーしたいんですが、{使|つか}い{方|かた}を{教|おし}えていただけませんか。 {教|おし}えていただけませんか là lời nhờ chỉ giúp lịch sự sau hoàn cảnh đã nêu bằng んですが."
+          }
+        ]
+      },
+      {
+        "id": "n4-17-quantity",
+        "title": "Số lượng + も: nhiều đến vậy",
+        "usage": "Dùng も sau con số khi số đó nhiều hơn điều bạn mong đợi.",
+        "formula": "Số + đơn vị đếm + も + vị ngữ khẳng định.",
+        "pitfall": "{一|いち}{時間|じかん}も ở đây là “đến tận một tiếng”, không phải “cũng một tiếng”. Đừng nhầm với {一|ひと}つも〜ない: không một cái nào.",
+        "examples": [
+          {
+            "ja": "{一|いち}{時間|じかん}も{待|ま}ちました。",
+            "vi": "Tôi đã chờ đến tận một tiếng."
+          },
+          {
+            "ja": "{宿題|しゅくだい}が{十|じゅう}ページもあります。",
+            "vi": "Bài tập có đến mười trang."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-17-quantity-choose",
+            "kind": "choice",
+            "prompt": "Nhấn mạnh đã chờ đến tận hai tiếng: {二|に}{時間|じかん} ____ {待|ま}ちました。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "も",
+              "しか",
+              "だけ"
+            ],
+            "answer": [
+              0
+            ],
+            "explanation": "も nhấn mạnh số lượng nhiều ngoài dự tính. しか phải đi với phủ định."
+          },
+          {
+            "id": "n4-17-quantity-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Hôm qua tôi đã học tiếng Nhật đến tận ba tiếng.",
+            "prefix": "{昨日|きのう}は",
+            "suffix": "。",
+            "options": [
+              "{勉強|べんきょう}",
+              "しました",
+              "{三|さん}{時間|じかん}も",
+              "{日本語|にほんご}を"
+            ],
+            "answer": [
+              2,
+              3,
+              0,
+              1
+            ],
+            "explanation": "Một cách ghép đúng: {昨日|きのう}は{三|さん}{時間|じかん}も{日本語|にほんご}を{勉強|べんきょう}しました。 {三|さん}{時間|じかん}も nhấn mạnh học nhiều tới ba tiếng. {日本語|にほんご}を là đối tượng được học; có thể đổi vị trí hai cụm này.",
+            "acceptedAnswers": [
+              [
+                3,
+                2,
+                0,
+                1
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "n4-18",
+    "chapter": 18,
+    "title": "Nhìn có vẻ và diễn tả sự thay đổi",
+    "description": "Học từng ý nhỏ, ghép câu rồi luyện lại những câu chưa chắc.",
+    "sources": [
+      {
+        "title": "Ngữ pháp 18A",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1727"
+      },
+      {
+        "title": "Ngữ pháp 18B",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1731"
+      }
+    ],
+    "patterns": [
+      {
+        "id": "n4-18-appearance",
+        "title": "Tính từ + そうです: trông có vẻ…",
+        "usage": "Nói ấn tượng từ những gì bạn nhìn thấy, chưa cần tự trải nghiệm.",
+        "formula": "Tính từ い bỏ い + そうです; tính từ な bỏ な + そうです. いい → よさそう; ない → なさそう.",
+        "pitfall": "おいしそう là nhìn có vẻ ngon; おいしいそう là nghe nói ngon (chương 16). Không dùng そう để kể lại kết quả mình đã nếm.",
+        "examples": [
+          {
+            "ja": "このケーキはおいしそうです。",
+            "vi": "Chiếc bánh này trông có vẻ ngon."
+          },
+          {
+            "ja": "{田中|たなか}さんは{元気|げんき}そうです。",
+            "vi": "Anh Tanaka trông có vẻ khỏe."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-18-appearance-choose",
+            "kind": "choice",
+            "prompt": "Nhìn món ăn thấy hấp dẫn: この{料理|りょうり}は ____ です。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "おいしそう",
+              "おいしいそう",
+              "おいしくそう"
+            ],
+            "answer": [
+              0
+            ],
+            "explanation": "Ấn tượng nhìn thấy: bỏ い của おいしい rồi thêm そう."
+          },
+          {
+            "id": "n4-18-appearance-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Túi này nhẹ và có vẻ dễ dùng.",
+            "prefix": "このかばんは",
+            "suffix": "。",
+            "options": [
+              "やすそう",
+              "{使|つか}い",
+              "{軽|かる}くて、",
+              "です"
+            ],
+            "answer": [
+              2,
+              1,
+              0,
+              3
+            ],
+            "explanation": "Một cách ghép đúng: このかばんは{軽|かる}くて、{使|つか}いやすそうです。 {使|つか}いやすい bỏ い thành {使|つか}いやす rồi thêm そう: nhìn có vẻ dễ dùng. {軽|かる}くて nối thêm lý do nhẹ."
+          }
+        ]
+      },
+      {
+        "id": "n4-18-about-to",
+        "title": "Động từ + そうです: có vẻ sắp…",
+        "usage": "Dựa vào dấu hiệu ngay trước mắt để dự báo việc sắp xảy ra.",
+        "formula": "Bỏ ます của động từ rồi thêm そうです: {降|お}ります → {降|お}りそうです.",
+        "pitfall": "{降|お}りそう: trời có vẻ sắp mưa. {降|ふ}るそう: nghe nói trời mưa. Muốn nói chưa có vẻ sắp, có thể dùng {降|お}りそうにありません.",
+        "examples": [
+          {
+            "ja": "{空|そら}が{暗|くら}いです。{雨|あめ}が{降|ふ}りそうです。",
+            "vi": "Trời tối lại. Có vẻ sắp mưa."
+          },
+          {
+            "ja": "{重|おも}くて、{箱|はこ}が{落|お}ちそうです。",
+            "vi": "Nặng quá, hộp có vẻ sắp rơi."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-18-about-to-choose",
+            "kind": "choice",
+            "prompt": "Điền dạng “có vẻ sắp khóc”: {子|こ}どもが ____ です。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{泣|な}くそう",
+              "{泣|な}いてそうだ",
+              "{泣|な}きそう"
+            ],
+            "answer": [
+              2
+            ],
+            "explanation": "Bỏ ます của {泣|な}きます thành {泣|な}き rồi thêm そうです."
+          },
+          {
+            "id": "n4-18-about-to-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Gió mạnh nên cây có vẻ sắp đổ.",
+            "prefix": "{風|かぜ}が{強|つよ}くて、",
+            "suffix": "。",
+            "options": [
+              "そう",
+              "です",
+              "{倒|たお}れ",
+              "{木|き}が"
+            ],
+            "answer": [
+              3,
+              2,
+              0,
+              1
+            ],
+            "explanation": "Một cách ghép đúng: {風|かぜ}が{強|つよ}くて、{木|き}が{倒|たお}れそうです。 {倒|たお}れます bỏ ます thành {倒|たお}れ rồi thêm そうです: dấu hiệu cây sắp đổ vì gió."
+          }
+        ]
+      },
+      {
+        "id": "n4-18-change",
+        "title": "く・に + する／なる: làm cho hay trở nên",
+        "usage": "する nhấn mạnh tác động làm thay đổi. なる kể trạng thái thay đổi, không cần nêu người tác động.",
+        "formula": "Tính từ い bỏ い + く; tính từ な/danh từ + に. Sau đó thêm する hoặc なる. Dạng này cũng dùng để bổ nghĩa cách làm: {静|しず}かに{話|はな}す.",
+        "pitfall": "{部屋|へや}をきれいにする là dọn cho sạch; {部屋|へや}がきれいになる là phòng trở nên sạch. Chú ý を và が.",
+        "examples": [
+          {
+            "ja": "{音|おと}を{小|ちい}さくしてください。",
+            "vi": "Hãy vặn âm thanh nhỏ lại."
+          },
+          {
+            "ja": "だんだん{寒|さむ}くなりました。",
+            "vi": "Trời đã dần trở lạnh."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-18-change-choose",
+            "kind": "choice",
+            "prompt": "Điền đúng: {部屋|へや}を ____ します。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "きれいく",
+              "きれいに",
+              "きれいな"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "Tính từ な きれい đổi thành きれいに trước する."
+          },
+          {
+            "id": "n4-18-change-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Sang xuân, thời tiết đã trở nên ấm hơn.",
+            "prefix": "{春|はる}になって、",
+            "suffix": "。",
+            "options": [
+              "なり",
+              "{天気|てんき}が",
+              "{暖|あたた}かく",
+              "ました"
+            ],
+            "answer": [
+              1,
+              2,
+              0,
+              3
+            ],
+            "explanation": "Một cách ghép đúng: {春|はる}になって、{天気|てんき}が{暖|あたた}かくなりました。 {暖|あたた}かい bỏ い thành {暖|あたた}かく rồi nối なりました để nói thời tiết đã trở nên ấm."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "n4-19",
+    "chapter": 19,
+    "title": "Ai làm hay vật tự thay đổi?",
+    "description": "Học từng ý nhỏ, ghép câu rồi luyện lại những câu chưa chắc.",
+    "sources": [
+      {
+        "title": "Ngữ pháp 19A",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1736"
+      },
+      {
+        "title": "Ngữ pháp 19B",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1739"
+      }
+    ],
+    "patterns": [
+      {
+        "id": "n4-19-transitivity",
+        "title": "Tự động từ・tha động từ: nhìn vào が và を",
+        "usage": "Khi kể vật thay đổi, dùng tự động từ. Khi kể ai tác động vào vật, dùng tha động từ.",
+        "formula": "Vật + が + tự động từ: ドアが{開|ひら}く. Người + は + vật + を + tha động từ: ドアを{開|あ}ける.",
+        "pitfall": "Không đoán cặp động từ chỉ bằng âm cuối. Học thành cặp: {開|ひら}く／{開|あ}ける, {閉|し}まる／{閉|し}める, つく／つける.",
+        "examples": [
+          {
+            "ja": "ドアが{開|ひら}きました。",
+            "vi": "Cửa đã mở ra."
+          },
+          {
+            "ja": "{私|わたし}がドアを{開|あ}けました。",
+            "vi": "Tôi đã mở cửa."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-19-transitivity-choose",
+            "kind": "choice",
+            "prompt": "Chọn câu nói “Tôi đóng cửa”.",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{私|わたし}がドアを{閉|し}めました。",
+              "{私|わたし}がドアを{閉|し}まりました。",
+              "{私|わたし}がドアが{閉|し}めました。"
+            ],
+            "answer": [
+              0
+            ],
+            "explanation": "{閉|し}める là tha động từ: người thực hiện dùng が/は, cửa dùng を."
+          },
+          {
+            "id": "n4-19-transitivity-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Tôi đã đóng cửa.",
+            "prefix": "{私|わたし}は",
+            "suffix": "。",
+            "options": [
+              "ドアを",
+              "ました",
+              "{閉|し}め"
+            ],
+            "answer": [
+              0,
+              2,
+              1
+            ],
+            "explanation": "Một cách ghép đúng: {私|わたし}はドアを{閉|し}めました。 Người nói làm hành động {閉|し}める lên ドア, nên cửa đi với を; dùng tha động từ {閉|し}めました."
+          }
+        ]
+      },
+      {
+        "id": "n4-19-result",
+        "title": "が + てあります: trạng thái do ai đó làm sẵn",
+        "usage": "Nói vật đang ở trạng thái có người đã chủ động tạo ra. Thường không cần nói người đó là ai.",
+        "formula": "Vật + が + tha động từ thể て + あります.",
+        "pitfall": "{窓|まど}が{開|ひら}いています chỉ trạng thái cửa mở. {窓|まど}が{開|あ}けてあります nhấn mạnh có người mở sẵn. Không ghép tự động từ {開|ひら}く với てある trong mẫu này.",
+        "examples": [
+          {
+            "ja": "{机|つくえ}にメモが{置|お}いてあります。",
+            "vi": "Trên bàn có giấy ghi chú được đặt sẵn."
+          },
+          {
+            "ja": "{壁|かべ}に{地図|ちず}が{貼|は}ってあります。",
+            "vi": "Trên tường có bản đồ được dán sẵn."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-19-result-choose",
+            "kind": "choice",
+            "prompt": "Điền đúng dạng “cửa đã được mở sẵn”: {窓|まど}が ____ あります。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{開|あ}ける",
+              "{開|あ}けて",
+              "{開|ひら}いて"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "Dùng tha động từ {開|あ}ける ở thể て: {開|あ}けてあります."
+          },
+          {
+            "id": "n4-19-result-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Trong phòng, ghế đã được xếp sẵn.",
+            "prefix": "{部屋|へや}には",
+            "suffix": "。",
+            "options": [
+              "{並|なら}べて",
+              "いすが",
+              "あり",
+              "ます"
+            ],
+            "answer": [
+              1,
+              0,
+              2,
+              3
+            ],
+            "explanation": "Một cách ghép đúng: {部屋|へや}にはいすが{並|なら}べてあります。 {並|なら}べる là tha động từ xếp ghế. いすが{並|なら}べてあります nhấn mạnh trạng thái ghế đã được ai đó xếp sẵn."
+          }
+        ]
+      },
+      {
+        "id": "n4-19-prepared",
+        "title": "を + てあります: tôi đã chuẩn bị rồi",
+        "usage": "Nhấn mạnh việc cần thiết đã được làm xong để sẵn sàng cho bước tiếp theo.",
+        "formula": "Vật + を + tha động từ thể て + あります. Chủ thể chuẩn bị thường được hiểu từ ngữ cảnh.",
+        "pitfall": "をてある nhấn mạnh việc chuẩn bị đã xong; がてある thường tập trung vào trạng thái của vật. Không phải cứ thấy “đã” là dùng てある.",
+        "examples": [
+          {
+            "ja": "{切符|きっぷ}はもう{買|か}ってあります。",
+            "vi": "Vé thì tôi đã mua sẵn rồi."
+          },
+          {
+            "ja": "{会議|かいぎ}の{資料|しりょう}をコピーしてあります。",
+            "vi": "Tài liệu cuộc họp đã được photocopy sẵn."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-19-prepared-choose",
+            "kind": "choice",
+            "prompt": "Đã đặt khách sạn để chuẩn bị chuyến đi: ホテルはもう ____ あります。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{予約|よやく}して",
+              "{予約|よやく}する",
+              "{予約|よやく}した"
+            ],
+            "answer": [
+              0
+            ],
+            "explanation": "{予約|よやく}してあります diễn tả đã đặt trước và hiện sẵn sàng; {予約|よやく}する/した không nối trực tiếp với あります."
+          },
+          {
+            "id": "n4-19-prepared-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Để chuẩn bị chuyến đi, tôi đã tra bản đồ sẵn rồi.",
+            "prefix": "{旅行|りょこう}のために、",
+            "suffix": "。",
+            "options": [
+              "ます",
+              "{地図|ちず}を",
+              "あり",
+              "{調|しら}べて"
+            ],
+            "answer": [
+              1,
+              3,
+              2,
+              0
+            ],
+            "explanation": "Một cách ghép đúng: {旅行|りょこう}のために、{地図|ちず}を{調|しら}べてあります。 {地図|ちず}を{調|しら}べてあります nhấn mạnh việc tra bản đồ để chuẩn bị đã được làm xong."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "n4-20",
+    "chapter": 20,
+    "title": "Ghép thông tin để nói rõ về một người, một vật",
+    "description": "Học từng ý nhỏ, ghép câu rồi luyện lại những câu chưa chắc.",
+    "sources": [
+      {
+        "title": "Ngữ pháp 20A",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1744"
+      },
+      {
+        "title": "Ngữ pháp 20B",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1747"
+      },
+      {
+        "title": "Ngữ pháp 20C",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1750"
+      }
+    ],
+    "patterns": [
+      {
+        "id": "n4-20-noun-clause",
+        "title": "Đặt cả một mệnh đề trước danh từ",
+        "usage": "Đặt thông tin mô tả ngay trước người hoặc vật bạn muốn nói đến; tiếng Nhật không cần thêm từ “mà”.",
+        "formula": "Động từ thể thường + danh từ: {昨日|きのう}{買|か}った{本|ほん}. Người thực hiện bên trong mệnh đề thường dùng が.",
+        "pitfall": "Không dùng ます ngay trước danh từ trong mẫu này. {私|わたし}が{買|か}った{本|ほん}: cuốn sách tôi đã mua.",
+        "examples": [
+          {
+            "ja": "これは{昨日|きのう}{買|か}った{本|ほん}です。",
+            "vi": "Đây là cuốn sách tôi đã mua hôm qua."
+          },
+          {
+            "ja": "{母|はは}が{作|つく}った{料理|りょうり}はおいしいです。",
+            "vi": "Món mẹ nấu thì ngon."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-20-noun-clause-choose",
+            "kind": "choice",
+            "prompt": "Điền đúng: これは{友達|ともだち}が ____ {写真|しゃしん}です。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{撮|と}って",
+              "{撮|と}った",
+              "{撮|と}りました"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "Động từ bổ nghĩa cho {写真|しゃしん} ở thể thường: {撮|と}った{写真|しゃしん}."
+          },
+          {
+            "id": "n4-20-noun-clause-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Đây là chiếc túi đã mua ở Nhật.",
+            "prefix": "これは",
+            "suffix": "。",
+            "options": [
+              "です",
+              "{買|か}った",
+              "{日本|にほん}で",
+              "かばん"
+            ],
+            "answer": [
+              2,
+              1,
+              3,
+              0
+            ],
+            "explanation": "Một cách ghép đúng: これは{日本|にほん}で{買|か}ったかばんです。 {日本|にほん}で{買|か}った bổ nghĩa trực tiếp cho かばん; động từ ở thể thường quá khứ {買|か}った."
+          }
+        ]
+      },
+      {
+        "id": "n4-20-noun-forms",
+        "title": "Mô tả danh từ bằng tính từ, danh từ",
+        "usage": "Không phải phần nào đứng trước danh từ cũng dùng cùng một cách nối. Nhìn loại từ ngay trước danh từ chính.",
+        "formula": "Tính từ い giữ い; tính từ な + な; danh từ + の. Quá khứ: tính từ い bỏ い + かった + danh từ ({安|やす}かった{本|ほん}); tính từ な/danh từ + だった + danh từ ({静|しず}かだった{町|まち}).",
+        "pitfall": "{静|しず}かな{町|まち}, {日本語|にほんご}の{先生|せんせい}, {安|やす}い{本|ほん} có cách nối khác nhau. Không gắn の sau mọi từ.",
+        "examples": [
+          {
+            "ja": "{静|しず}かな{町|まち}に{住|す}みたいです。",
+            "vi": "Tôi muốn sống ở một thị trấn yên tĩnh."
+          },
+          {
+            "ja": "これは{私|わたし}が{子|こ}どもだった{時|とき}の{写真|しゃしん}です。",
+            "vi": "Đây là ảnh lúc tôi còn là trẻ con."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-20-noun-forms-choose",
+            "kind": "choice",
+            "prompt": "Điền đúng: ここは ____ {町|まち}です。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{静|しず}かな",
+              "{静|しず}かの",
+              "{静|しず}かだ"
+            ],
+            "answer": [
+              0
+            ],
+            "explanation": "Tính từ な cần な trước danh từ: {静|しず}かな{町|まち}."
+          },
+          {
+            "id": "n4-20-noun-forms-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Tôi đang tìm phòng gần ga.",
+            "prefix": "{私|わたし}は",
+            "suffix": "。",
+            "options": [
+              "{部屋|へや}を",
+              "{駅|えき}に",
+              "{近|ちか}い",
+              "{探|さが}しています"
+            ],
+            "answer": [
+              1,
+              2,
+              0,
+              3
+            ],
+            "explanation": "Một cách ghép đúng: {私|わたし}は{駅|えき}に{近|ちか}い{部屋|へや}を{探|さが}しています。 {駅|えき}に{近|ちか}い mô tả {部屋|へや}. Tính từ い {近|ちか}い giữ nguyên trước danh từ, không thêm な hay の."
+          }
+        ]
+      },
+      {
+        "id": "n4-20-senses",
+        "title": "音・におい・味 + がします",
+        "usage": "Dùng がする để nói bạn cảm nhận được tiếng động, mùi, vị hay cảm giác.",
+        "formula": "{声|こえ}／{音|おと}／におい／{味|あじ}／{感|かん}じ + がします. Có thể thêm phần mô tả trước danh từ đó.",
+        "pitfall": "コーヒーのにおいがします là ngửi thấy mùi cà phê; không phải đang pha cà phê. Không đổi が thành を.",
+        "examples": [
+          {
+            "ja": "{外|そと}で{大|おお}きな{音|おと}がします。",
+            "vi": "Bên ngoài có tiếng động lớn."
+          },
+          {
+            "ja": "このお{茶|ちゃ}は{少|すこ}し{苦|にが}い{味|あじ}がします。",
+            "vi": "Trà này có vị hơi đắng."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-20-senses-choose",
+            "kind": "choice",
+            "prompt": "Điền trợ từ: いいにおい ____ します。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "に",
+              "が",
+              "を"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "Cấu trúc cảm nhận mùi là においがします."
+          },
+          {
+            "id": "n4-20-senses-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Từ bếp có mùi cà ri.",
+            "prefix": "{台所|だいどころ}から",
+            "suffix": "。",
+            "options": [
+              "します",
+              "においが",
+              "カレーの"
+            ],
+            "answer": [
+              2,
+              1,
+              0
+            ],
+            "explanation": "Một cách ghép đúng: {台所|だいどころ}からカレーのにおいがします。 カレーのにおい là mùi cà ri; がします dùng để diễn tả mùi cảm nhận được."
+          }
+        ]
+      },
+      {
+        "id": "n4-20-perception",
+        "title": "見える・聞こえる・分かる: thấy, nghe, hiểu",
+        "usage": "見える và 聞こえる diễn tả tự nhìn/nghe thấy trong điều kiện đang có, không nhất thiết là bạn cố làm.",
+        "formula": "Đối tượng + が + {見|み}える／{聞|き}こえる／{分|わ}かる. Người cảm nhận có thể đi với は hoặc に.",
+        "pitfall": "{見|み}える khác {見|み}る: tự nhìn thấy khác chủ động nhìn. Cũng phân biệt {聞|き}こえる với khả năng {聞|き}ける.",
+        "examples": [
+          {
+            "ja": "ここから{海|うみ}が{見|み}えます。",
+            "vi": "Từ đây có thể nhìn thấy biển."
+          },
+          {
+            "ja": "{隣|となり}の{部屋|へや}から{声|こえ}が{聞|き}こえます。",
+            "vi": "Có tiếng nói vọng từ phòng bên."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-20-perception-choose",
+            "kind": "choice",
+            "prompt": "Ở đây tự nghe được tiếng chim: {鳥|とり}の{声|こえ}が ____ 。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{聞|き}こえます",
+              "{聞|き}きます",
+              "{聞|き}いています"
+            ],
+            "answer": [
+              0
+            ],
+            "explanation": "{聞|き}こえます nói âm thanh lọt vào tai. {聞|き}きます là chủ động nghe."
+          },
+          {
+            "id": "n4-20-perception-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Tôi chưa hiểu rõ nghĩa của từ này.",
+            "prefix": "{私|わたし}には",
+            "suffix": "。",
+            "options": [
+              "{意味|いみ}が",
+              "{分|わ}かりません",
+              "この{言葉|ことば}の",
+              "よく"
+            ],
+            "answer": [
+              2,
+              0,
+              3,
+              1
+            ],
+            "explanation": "Một cách ghép đúng: {私|わたし}にはこの{言葉|ことば}の{意味|いみ}がよく{分|わ}かりません。 この{言葉|ことば}の{意味|いみ} là điều chưa hiểu, đi với が. よく{分|わ}かりません nghĩa là chưa hiểu rõ.",
+            "acceptedAnswers": [
+              [
+                3,
+                2,
+                0,
+                1
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "n4-21",
+    "chapter": 21,
+    "title": "Biến cả hành động thành một ý để nói tiếp",
+    "description": "Học từng ý nhỏ, ghép câu rồi luyện lại những câu chưa chắc.",
+    "sources": [
+      {
+        "title": "Ngữ pháp 21A",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1566"
+      },
+      {
+        "title": "Ngữ pháp 21B",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1570"
+      }
+    ],
+    "patterns": [
+      {
+        "id": "n4-21-nominalize",
+        "title": "のが・のは: nói về cả một hành động",
+        "usage": "Thêm の để biến phần “làm gì” thành đối tượng bạn có thể thích, giỏi hoặc nhận xét.",
+        "formula": "Động từ thể thường + の + が／は + nhận xét. {走|はし}るのが{好|す}き: thích việc chạy.",
+        "pitfall": "{日本語|にほんご}を{話|はな}すのが{得意|とくい}です: の đứng sau cả cụm động từ, không đặt ngay sau を.",
+        "examples": [
+          {
+            "ja": "{私|わたし}は{料理|りょうり}を{作|つく}るのが{好|す}きです。",
+            "vi": "Tôi thích nấu ăn."
+          },
+          {
+            "ja": "{毎日|まいにち}{続|つづ}けるのは{大切|たいせつ}です。",
+            "vi": "Duy trì mỗi ngày là điều quan trọng."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-21-nominalize-choose",
+            "kind": "choice",
+            "prompt": "Điền đúng: {私|わたし}は{歌|うた}を{歌|うた}う ____ {得意|とくい}です。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "ことを",
+              "がの",
+              "のが"
+            ],
+            "answer": [
+              2
+            ],
+            "explanation": "{歌|うた}を{歌|うた}うの tạo thành “việc hát”; {得意|とくい} dùng が cho điều mình giỏi."
+          },
+          {
+            "id": "n4-21-nominalize-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Tôi không giỏi viết chữ Hán lắm.",
+            "prefix": "{私|わたし}は",
+            "suffix": "。",
+            "options": [
+              "{書|か}くのが",
+              "{漢字|かんじ}を",
+              "あまり",
+              "{得意|とくい}ではありません"
+            ],
+            "answer": [
+              1,
+              0,
+              2,
+              3
+            ],
+            "explanation": "Một cách ghép đúng: {私|わたし}は{漢字|かんじ}を{書|か}くのがあまり{得意|とくい}ではありません。 {漢字|かんじ}を{書|か}くの biến cả việc viết chữ Hán thành một ý; {得意|とくい} dùng が cho điều mình giỏi. あまり đi với phủ định.",
+            "acceptedAnswers": [
+              [
+                2,
+                1,
+                0,
+                3
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "n4-21-object",
+        "title": "のを: biết, thấy hoặc quên một việc",
+        "usage": "Cả mệnh đề trước の trở thành một việc bạn biết, nhìn thấy, quên làm hoặc từ bỏ.",
+        "formula": "Thể thường + のを + {知|し}っている／{見|み}る／{聞|き}く／{忘|わす}れる／やめる.",
+        "pitfall": "{忘|わす}れた là quên làm; không nhầm với のが sau {好|す}き/{得意|とくい}. Trợ từ phụ thuộc động từ ở sau.",
+        "examples": [
+          {
+            "ja": "{友達|ともだち}が{来|く}るのを{知|し}っています。",
+            "vi": "Tôi biết việc bạn tôi sẽ đến."
+          },
+          {
+            "ja": "{薬|くすり}を{飲|の}むのを{忘|わす}れました。",
+            "vi": "Tôi đã quên uống thuốc."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-21-object-choose",
+            "kind": "choice",
+            "prompt": "Điền đúng: {電気|でんき}を{消|け}す ____ {忘|わす}れました。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "のが",
+              "のを",
+              "には"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "{消|け}すの là việc tắt điện, làm đối tượng của {忘|わす}れる nên dùng を."
+          },
+          {
+            "id": "n4-21-object-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Tôi đã nhìn thấy đứa trẻ đang chạy.",
+            "prefix": "{私|わたし}は",
+            "suffix": "。",
+            "options": [
+              "{子|こ}どもが",
+              "{走|はし}っているのを",
+              "ました",
+              "{見|み}"
+            ],
+            "answer": [
+              0,
+              1,
+              3,
+              2
+            ],
+            "explanation": "Một cách ghép đúng: {私|わたし}は{子|こ}どもが{走|はし}っているのを{見|み}ました。 {子|こ}どもが{走|はし}っているの là sự việc được nhìn thấy; dùng を trước {見|み}ました."
+          }
+        ]
+      },
+      {
+        "id": "n4-21-focus",
+        "title": "のは…からです: điều muốn nói là lý do này",
+        "usage": "Đưa việc cần giải thích lên trước, rồi nhấn mạnh nguyên nhân ở cuối câu.",
+        "formula": "Thể thường + のは、lý do ở thể thường + からです. Cũng dùng のは…です để nhấn mạnh người, thời điểm hay địa điểm.",
+        "pitfall": "{遅|おく}れたのは…からです là cấu trúc giải thích. Đừng ghép hai lần です trong phần lý do.",
+        "examples": [
+          {
+            "ja": "{遅|おく}れたのは、{電車|でんしゃ}が{止|と}まったからです。",
+            "vi": "Tôi đến muộn là vì tàu đã dừng."
+          },
+          {
+            "ja": "{初|はじ}めて{日本|にほん}へ{行|い}ったのは、{去年|きょねん}です。",
+            "vi": "Lần đầu tôi đến Nhật là năm ngoái."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-21-focus-choose",
+            "kind": "choice",
+            "prompt": "Điền đúng: {日本語|にほんご}を{勉強|べんきょう}するのは、{仕事|しごと}で{使|つか}う ____ です。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "のに",
+              "から",
+              "ので"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "Khung nhấn mạnh lý do trong bài là のは…からです."
+          },
+          {
+            "id": "n4-21-focus-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Việc tôi nghỉ là vì đã bị sốt.",
+            "prefix": "{休|やす}んだのは、",
+            "suffix": "。",
+            "options": [
+              "です",
+              "から",
+              "{熱|ねつ}が",
+              "あった"
+            ],
+            "answer": [
+              2,
+              3,
+              1,
+              0
+            ],
+            "explanation": "Một cách ghép đúng: {休|やす}んだのは、{熱|ねつ}があったからです。 {休|やす}んだのは đưa việc nghỉ làm chủ đề; {熱|ねつ}があったからです nêu nguyên nhân bị sốt."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "n4-22",
+    "chapter": 22,
+    "title": "Hiểu lời nhắc, biển báo và câu trích dẫn",
+    "description": "Học từng ý nhỏ, ghép câu rồi luyện lại những câu chưa chắc.",
+    "sources": [
+      {
+        "title": "Ngữ pháp 22A",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1576"
+      },
+      {
+        "title": "Ngữ pháp 22B",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1580"
+      }
+    ],
+    "patterns": [
+      {
+        "id": "n4-22-command",
+        "title": "Mệnh lệnh và Vる + な",
+        "usage": "Nhận biết lời chỉ dẫn mạnh trên biển báo, trong tình huống khẩn cấp hoặc lời nói giữa người rất thân.",
+        "formula": "Mệnh lệnh: nhóm 1 đuôi hàng う → hàng え; nhóm 2 bỏ る + ろ; する→しろ; {来|く}る→こい. Cấm: động từ nguyên thể + な.",
+        "pitfall": "{止|と}まれ mạnh hơn {止|と}まってください. Không dùng kiểu ra lệnh này để nhờ người lạ làm việc bình thường.",
+        "examples": [
+          {
+            "ja": "ここに{入|はい}るな。",
+            "vi": "Không được vào đây."
+          },
+          {
+            "ja": "{危|あぶ}ない！{止|と}まれ！",
+            "vi": "Nguy hiểm! Dừng lại!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-22-command-choose",
+            "kind": "choice",
+            "prompt": "Biển cấm chạy ghi mẫu nào?",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{走|はし}ってな",
+              "{走|はし}らないな",
+              "{走|はし}るな"
+            ],
+            "answer": [
+              2
+            ],
+            "explanation": "Cấm bằng động từ nguyên thể + な: {走|はし}るな."
+          },
+          {
+            "id": "n4-22-command-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Ở đây không được chụp ảnh.",
+            "prefix": "ここでは",
+            "suffix": "。",
+            "options": [
+              "{撮|と}る",
+              "な",
+              "{写真|しゃしん}を"
+            ],
+            "answer": [
+              2,
+              0,
+              1
+            ],
+            "explanation": "Một cách ghép đúng: ここでは{写真|しゃしん}を{撮|と}るな。 {撮|と}る là động từ nguyên thể, thêm な để cấm chụp. Ở đây không dùng thể ない."
+          }
+        ]
+      },
+      {
+        "id": "n4-22-sign",
+        "title": "と書いてあります・という意味です",
+        "usage": "Trích đúng chữ trên biển hoặc giải thích nó có nghĩa gì. Nội dung trích đặt trước と.",
+        "formula": "“Nội dung” + と{書|か}いてあります. “Từ/cụm từ” + は + “ý nghĩa” + という{意味|いみ}です.",
+        "pitfall": "と trích nội dung; に thường chỉ nơi được viết. “{入口|いりぐち}に…と{書|か}いてあります” có thể dùng cả hai.",
+        "examples": [
+          {
+            "ja": "ここに「{休|やす}み」と{書|か}いてあります。",
+            "vi": "Ở đây có viết “nghỉ”."
+          },
+          {
+            "ja": "「{禁煙|きんえん}」は、たばこを{吸|す}ってはいけないという{意味|いみ}です。",
+            "vi": "“Cấm hút thuốc” nghĩa là không được hút thuốc."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-22-sign-choose",
+            "kind": "choice",
+            "prompt": "Điền đúng: ドアに「{押|お}す」 ____ {書|か}いてあります。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "を",
+              "と",
+              "が"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "Nội dung được viết nối bằng と: 「{押|お}す」と{書|か}いてあります."
+          },
+          {
+            "id": "n4-22-sign-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "“Miễn phí” nghĩa là không cần trả tiền.",
+            "prefix": "「{無料|むりょう}」は、",
+            "suffix": "。",
+            "options": [
+              "いらない",
+              "という",
+              "{意味|いみ}です",
+              "お{金|かね}が"
+            ],
+            "answer": [
+              3,
+              0,
+              1,
+              2
+            ],
+            "explanation": "Một cách ghép đúng: 「{無料|むりょう}」は、お{金|かね}がいらないという{意味|いみ}です。 お{金|かね}がいらない là phần giải nghĩa, nối với という{意味|いみ}です để giải thích {無料|むりょう}."
+          }
+        ]
+      },
+      {
+        "id": "n4-22-tte",
+        "title": "って: cách nói thân mật khi trích hoặc hỏi",
+        "usage": "Trong hội thoại, って có thể thay と để trích nội dung, hoặc nêu một từ bạn muốn hỏi nghĩa.",
+        "formula": "Nội dung + って{言|い}っていた／って{書|か}いてある. Từ cần hỏi + って{何|なん}ですか.",
+        "pitfall": "Đây là cách nói hội thoại. Trong văn bản trang trọng, dùng と hoặc という thay vì lạm dụng って.",
+        "examples": [
+          {
+            "ja": "{田中|たなか}さんは{来|こ}ないって{言|い}っていました。",
+            "vi": "Anh Tanaka đã nói là không đến."
+          },
+          {
+            "ja": "「{自動|じどう}」って{何|なん}ですか。",
+            "vi": "“Tự động” nghĩa là gì vậy?"
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-22-tte-choose",
+            "kind": "choice",
+            "prompt": "Hỏi nghĩa từ trong hội thoại: 「{協力|きょうりょく}」 ____ {何|なん}ですか。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "まで",
+              "へ",
+              "って"
+            ],
+            "answer": [
+              2
+            ],
+            "explanation": "って đưa từ {協力|きょうりょく} ra làm chủ đề cần giải thích."
+          },
+          {
+            "id": "n4-22-tte-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Ở đây có viết hôm nay nghỉ.",
+            "prefix": "ここに、",
+            "suffix": "。",
+            "options": [
+              "{休|やす}みだ",
+              "{今日|きょう}は",
+              "って",
+              "{書|か}いてあります"
+            ],
+            "answer": [
+              1,
+              0,
+              2,
+              3
+            ],
+            "explanation": "Một cách ghép đúng: ここに、{今日|きょう}は{休|やす}みだって{書|か}いてあります。 {休|やす}みだ là nội dung được trích; って là cách nói hội thoại thay と trước {書|か}いてあります."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "n4-23",
+    "chapter": 23,
+    "title": "Nhờ giúp, cho mượn và kể chuyện bị tác động",
+    "description": "Học từng ý nhỏ, ghép câu rồi luyện lại những câu chưa chắc.",
+    "sources": [
+      {
+        "title": "Ngữ pháp 23A",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1586"
+      },
+      {
+        "title": "Ngữ pháp 23B",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1590"
+      },
+      {
+        "title": "Ngữ pháp 23C",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1594"
+      }
+    ],
+    "patterns": [
+      {
+        "id": "n4-23-receive",
+        "title": "もらう・てもらう: nhận đồ hay nhận sự giúp đỡ",
+        "usage": "Người nhận là chủ thể của câu. Dùng てもらう khi bạn được ai đó làm việc gì giúp mình.",
+        "formula": "Người nhận + は + người cho/giúp + に／から + đồ + をもらう. Nhận sự giúp: người giúp + に + thể て + もらう.",
+        "pitfall": "いただく là cách nói khiêm nhường của もらう. Với hành động, に là lựa chọn cơ bản để chỉ người giúp; không gắn から với mọi động từ.",
+        "examples": [
+          {
+            "ja": "{友達|ともだち}に{本|ほん}をもらいました。",
+            "vi": "Tôi được bạn cho một cuốn sách."
+          },
+          {
+            "ja": "{先生|せんせい}に{作文|さくぶん}を{見|み}ていただきました。",
+            "vi": "Tôi đã được thầy cô xem bài văn giúp."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-23-receive-choose",
+            "kind": "choice",
+            "prompt": "Được bạn sửa máy tính: {友達|ともだち}にパソコンを ____ もらいました。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{直|なお}す",
+              "{直|なお}して",
+              "{直|なお}した"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "Trước もらう dùng thể て để nêu việc người kia làm giúp."
+          },
+          {
+            "id": "n4-23-receive-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Tôi đã được bạn chỉ đường giúp.",
+            "prefix": "{私|わたし}は",
+            "suffix": "。",
+            "options": [
+              "{友達|ともだち}に",
+              "{教|おし}えて",
+              "{道|みち}を",
+              "もらいました"
+            ],
+            "answer": [
+              0,
+              2,
+              1,
+              3
+            ],
+            "explanation": "Một cách ghép đúng: {私|わたし}は{友達|ともだち}に{道|みち}を{教|おし}えてもらいました。 {友達|ともだち}に chỉ người giúp; {道|みち}を{教|おし}えてもらいました là mình được chỉ đường. Hai cụm người giúp và đối tượng có thể đổi chỗ.",
+            "acceptedAnswers": [
+              [
+                2,
+                0,
+                1,
+                3
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "n4-23-request",
+        "title": "てもらえませんか・てほしい: nhờ hay mong",
+        "usage": "Nhờ ai giúp lịch sự dùng てもらえませんか. Nói mình muốn ai làm gì dùng てほしい.",
+        "formula": "Thể て + もらえませんか／いただけませんか. Người mình mong làm + に + thể て + ほしい.",
+        "pitfall": "てほしい nói mong muốn của bạn và có thể nghe trực tiếp. Khi nhờ người lạ, いただけませんか thường mềm hơn.",
+        "examples": [
+          {
+            "ja": "もう{一度|いちど}{説明|せつめい}してもらえませんか。",
+            "vi": "Bạn có thể giải thích lại một lần giúp tôi không?"
+          },
+          {
+            "ja": "{家族|かぞく}に{来|き}てほしいです。",
+            "vi": "Tôi muốn gia đình đến."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-23-request-choose",
+            "kind": "choice",
+            "prompt": "Muốn nhờ thầy cô giải thích lịch sự: {説明|せつめい}して ____ か。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "いただけません",
+              "ほしいません",
+              "いただきる"
+            ],
+            "answer": [
+              0
+            ],
+            "explanation": "いただけませんか là cách nhờ giúp lịch sự; hai dạng kia không đúng cách chia."
+          },
+          {
+            "id": "n4-23-request-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Xin lỗi, anh/chị có thể chờ một chút giúp tôi không?",
+            "prefix": "すみませんが、",
+            "suffix": "。",
+            "options": [
+              "{少|すこ}し",
+              "いただけません",
+              "{待|ま}って",
+              "か"
+            ],
+            "answer": [
+              0,
+              2,
+              1,
+              3
+            ],
+            "explanation": "Một cách ghép đúng: すみませんが、{少|すこ}し{待|ま}っていただけませんか。 {待|ま}って là thể て; いただけませんか biến việc chờ thành lời nhờ lịch sự."
+          }
+        ]
+      },
+      {
+        "id": "n4-23-lend",
+        "title": "貸す・借りる: đổi góc nhìn người cho và người mượn",
+        "usage": "Cùng một việc nhưng 貸す nhìn từ người cho mượn, 借りる nhìn từ người đi mượn.",
+        "formula": "AはBに{物|もの}を{貸|か}す. BはAに／から{物|もの}を{借|か}りる.",
+        "pitfall": "Tôi mượn bạn: {友達|ともだち}に{借|か}りる. Tôi cho bạn mượn: {友達|ともだち}に{貸|か}す. Nhìn trợ từ に một mình chưa đủ; phải nhìn cả động từ.",
+        "examples": [
+          {
+            "ja": "{私|わたし}は{妹|いもうと}に{本|ほん}を{貸|か}しました。",
+            "vi": "Tôi cho em gái mượn sách."
+          },
+          {
+            "ja": "{妹|いもうと}は{私|わたし}に{本|ほん}を{借|か}りました。",
+            "vi": "Em gái mượn sách của tôi."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-23-lend-choose",
+            "kind": "choice",
+            "prompt": "Bạn lấy sách từ thư viện để dùng tạm: {図書館|としょかん}で{本|ほん}を ____ 。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{借|か}りました",
+              "{貸|か}しました",
+              "もらってしまいました"
+            ],
+            "answer": [
+              0
+            ],
+            "explanation": "Bạn là người đi mượn nên dùng {借|か}りました, không phải {貸|か}しました."
+          },
+          {
+            "id": "n4-23-lend-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Tôi đã mượn xe đạp của bạn.",
+            "prefix": "{私|わたし}は",
+            "suffix": "。",
+            "options": [
+              "{自転車|じてんしゃ}を",
+              "{友達|ともだち}から",
+              "{借|か}りました"
+            ],
+            "answer": [
+              1,
+              0,
+              2
+            ],
+            "explanation": "Một cách ghép đúng: {私|わたし}は{友達|ともだち}から{自転車|じてんしゃ}を{借|か}りました。 {私|わたし}は là người đi mượn, {友達|ともだち}から là nguồn cho mượn, {自転車|じてんしゃ}を là đồ được mượn; động từ phải là {借|か}りました.",
+            "acceptedAnswers": [
+              [
+                0,
+                1,
+                2
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "n4-23-passive",
+        "title": "Bị động: kể từ phía người/vật chịu tác động",
+        "usage": "Đưa người hoặc vật bị tác động lên làm chủ đề; người làm thường đi với に.",
+        "formula": "Nhóm 1: hàng う→あ + れる (う→われる). Nhóm 2: bỏ る + られる. する→される; {来|く}る→こられる.",
+        "pitfall": "{先生|せんせい}にほめられた là được khen, không nhất thiết mang nghĩa xấu. {私|わたし}は{財布|さいふ}を{盗|ぬす}まれた giữ を cho vật của người bị ảnh hưởng.",
+        "examples": [
+          {
+            "ja": "{私|わたし}は{先生|せんせい}にほめられました。",
+            "vi": "Tôi đã được thầy cô khen."
+          },
+          {
+            "ja": "{私|わたし}は{財布|さいふ}を{盗|ぬす}まれました。",
+            "vi": "Tôi đã bị lấy cắp ví."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-23-passive-choose",
+            "kind": "choice",
+            "prompt": "Chọn dạng bị động của {書|か}く.",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{書|か}ける",
+              "{書|か}かせる",
+              "{書|か}かれる"
+            ],
+            "answer": [
+              2
+            ],
+            "explanation": "{書|か}く là nhóm 1: く đổi thành か rồi thêm れる. {書|か}ける là khả năng; {書|か}かせる là sai khiến."
+          },
+          {
+            "id": "n4-23-passive-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Cuốn sách này được nhiều người đọc.",
+            "prefix": "この{本|ほん}は",
+            "suffix": "。",
+            "options": [
+              "い",
+              "{読|よ}まれて",
+              "{多|おお}くの{人|ひと}に",
+              "ます"
+            ],
+            "answer": [
+              2,
+              1,
+              0,
+              3
+            ],
+            "explanation": "Một cách ghép đúng: この{本|ほん}は{多|おお}くの{人|ひと}に{読|よ}まれています。 {本|ほん} là đối tượng được đọc; {多|おお}くの{人|ひと}に chỉ những người đọc nó. {読|よ}まれています là dạng bị động."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "n4-24",
+    "chapter": 24,
+    "title": "Làm cùng lúc, dễ hay khó, quá mức",
+    "description": "Học từng ý nhỏ, ghép câu rồi luyện lại những câu chưa chắc.",
+    "sources": [
+      {
+        "title": "Ngữ pháp 24A",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1600"
+      },
+      {
+        "title": "Ngữ pháp 24B",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1604"
+      }
+    ],
+    "patterns": [
+      {
+        "id": "n4-24-without",
+        "title": "て／で・ないで: nối hoàn cảnh và hành động",
+        "usage": "Thể て/で có thể nối lý do hoặc trạng thái. ないで diễn tả làm việc sau mà không làm việc trước.",
+        "formula": "Động từ thể て; tính từ い→くて; tính từ な/danh từ + で. Không làm A mà làm B: A ở thể ない + で、B.",
+        "pitfall": "{朝|あさ}ご{飯|はん}を{食|た}べないで{出|で}かけた là đi ra ngoài mà chưa ăn sáng; ないで khác なくて chỉ nguyên nhân trong nhiều ngữ cảnh.",
+        "examples": [
+          {
+            "ja": "{雨|あめ}で、{道|みち}が{混|こ}んでいます。",
+            "vi": "Vì mưa nên đường đang đông."
+          },
+          {
+            "ja": "{朝|あさ}ご{飯|はん}を{食|た}べないで{学校|がっこう}へ{行|い}きました。",
+            "vi": "Tôi đã đến trường mà không ăn sáng."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-24-without-choose",
+            "kind": "choice",
+            "prompt": "Không mang ô mà ra ngoài: {傘|かさ}を ____ {出|で}かけました。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{持|も}たなく",
+              "{持|も}たないで",
+              "{持|も}たないに"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "{持|も}たないで nối “không mang” với hành động {出|で}かけました."
+          },
+          {
+            "id": "n4-24-without-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Tôi đã đọc câu này mà không dùng từ điển.",
+            "prefix": "{私|わたし}は",
+            "suffix": "。",
+            "options": [
+              "{読|よ}みました",
+              "{辞書|じしょ}を",
+              "{使|つか}わないで",
+              "この{文|ぶん}を"
+            ],
+            "answer": [
+              1,
+              2,
+              3,
+              0
+            ],
+            "explanation": "Một cách ghép đúng: {私|わたし}は{辞書|じしょ}を{使|つか}わないでこの{文|ぶん}を{読|よ}みました。 {使|つか}わないで là không dùng từ điển, đi kèm hành động chính この{文|ぶん}を{読|よ}みました.",
+            "acceptedAnswers": [
+              [
+                3,
+                1,
+                2,
+                0
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "n4-24-while",
+        "title": "ながら: vừa làm việc này vừa làm việc kia",
+        "usage": "Hai hành động diễn ra đồng thời và thường cùng một người làm. Hành động chính đặt ở vế cuối.",
+        "formula": "Bỏ ます + ながら、hành động chính. {聞|き}きます→{聞|き}きながら.",
+        "pitfall": "Không dùng ながら khi hai người khác nhau làm hai việc riêng. Cũng không dùng nó chỉ vì hai việc xảy ra nối tiếp.",
+        "examples": [
+          {
+            "ja": "{音楽|おんがく}を{聞|き}きながら{料理|りょうり}します。",
+            "vi": "Tôi vừa nghe nhạc vừa nấu ăn."
+          },
+          {
+            "ja": "{歩|ある}きながら{電話|でんわ}しないでください。",
+            "vi": "Đừng vừa đi bộ vừa gọi điện."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-24-while-choose",
+            "kind": "choice",
+            "prompt": "Điền đúng: コーヒーを ____ ながら、{本|ほん}を{読|よ}みます。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{飲|の}んで",
+              "{飲|の}む",
+              "{飲|の}み"
+            ],
+            "answer": [
+              2
+            ],
+            "explanation": "Bỏ ます của {飲|の}みます thành {飲|の}み rồi nối ながら."
+          },
+          {
+            "id": "n4-24-while-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Tôi vừa nghe nhạc vừa dọn phòng.",
+            "prefix": "{私|わたし}は",
+            "suffix": "。",
+            "options": [
+              "{部屋|へや}を",
+              "{聞|き}きながら",
+              "{音楽|おんがく}を",
+              "{掃除|そうじ}します"
+            ],
+            "answer": [
+              2,
+              1,
+              0,
+              3
+            ],
+            "explanation": "Một cách ghép đúng: {私|わたし}は{音楽|おんがく}を{聞|き}きながら{部屋|へや}を{掃除|そうじ}します。 {聞|き}きます bỏ ます rồi thêm ながら: nghe nhạc đồng thời với việc chính là dọn phòng. Chủ thể hai việc đều là {私|わたし}.",
+            "acceptedAnswers": [
+              [
+                0,
+                2,
+                1,
+                3
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "n4-24-easy",
+        "title": "やすい・にくい: dễ hoặc khó làm",
+        "usage": "Nhận xét một việc dễ hay khó thực hiện; có thể là do tính chất của vật chứ không chỉ khả năng của bạn.",
+        "formula": "Bỏ ます + やすい／にくい. Sau đó chia như tính từ い.",
+        "pitfall": "{読|よ}みやすい nói dễ đọc; {読|よ}みたい nói muốn đọc. Không giữ ます trước やすい.",
+        "examples": [
+          {
+            "ja": "この{本|ほん}は{読|よ}みやすいです。",
+            "vi": "Cuốn sách này dễ đọc."
+          },
+          {
+            "ja": "この{漢字|かんじ}は{覚|おぼ}えにくいです。",
+            "vi": "Chữ Hán này khó nhớ."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-24-easy-choose",
+            "kind": "choice",
+            "prompt": "Bút dễ viết: このペンは ____ です。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{書|か}いてやすい",
+              "{書|か}くやすい",
+              "{書|か}きやすい"
+            ],
+            "answer": [
+              2
+            ],
+            "explanation": "{書|か}きます bỏ ます thành {書|か}き, rồi thêm やすい."
+          },
+          {
+            "id": "n4-24-easy-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Lời giải thích này ngắn và dễ hiểu.",
+            "prefix": "この{説明|せつめい}は",
+            "suffix": "。",
+            "options": [
+              "{分|わ}かり",
+              "やすい",
+              "です",
+              "{短|みじか}くて、"
+            ],
+            "answer": [
+              3,
+              0,
+              1,
+              2
+            ],
+            "explanation": "Một cách ghép đúng: この{説明|せつめい}は{短|みじか}くて、{分|わ}かりやすいです。 {分|わ}かります bỏ ます rồi thêm やすい: lời giải thích dễ hiểu. {短|みじか}くて nối nhận xét ngắn."
+          }
+        ]
+      },
+      {
+        "id": "n4-24-too",
+        "title": "すぎる: quá mức cần thiết",
+        "usage": "Diễn tả việc hoặc đặc tính vượt mức phù hợp; thường mang cảm giác không tốt.",
+        "formula": "Bỏ ます + すぎる. Tính từ い bỏ い + すぎる; tính từ な bỏ な + すぎる. いい→よすぎる.",
+        "pitfall": "{暑|あつ}すぎる là quá nóng; とても{暑|あつ}い chỉ rất nóng. すぎる tự chia như động từ nhóm 2.",
+        "examples": [
+          {
+            "ja": "{昨日|きのう}は{食|た}べすぎました。",
+            "vi": "Hôm qua tôi đã ăn quá nhiều."
+          },
+          {
+            "ja": "このかばんは{重|おも}すぎます。",
+            "vi": "Chiếc túi này quá nặng."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-24-too-choose",
+            "kind": "choice",
+            "prompt": "Điền đúng: この{部屋|へや}は ____ ます。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{狭|せま}くすぎ",
+              "{狭|せま}いすぎ",
+              "{狭|せま}すぎ"
+            ],
+            "answer": [
+              2
+            ],
+            "explanation": "{狭|せま}い bỏ い thành {狭|せま}, thêm すぎます."
+          },
+          {
+            "id": "n4-24-too-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Hôm nay tôi đã uống quá nhiều cà phê.",
+            "prefix": "{今日|きょう}は",
+            "suffix": "。",
+            "options": [
+              "コーヒーを",
+              "すぎ",
+              "{飲|の}み",
+              "ました"
+            ],
+            "answer": [
+              0,
+              2,
+              1,
+              3
+            ],
+            "explanation": "Một cách ghép đúng: {今日|きょう}はコーヒーを{飲|の}みすぎました。 {飲|の}みます bỏ ます rồi thêm すぎました để nói đã uống quá nhiều cà phê."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "n4-25",
+    "chapter": 25,
+    "title": "Quyết định, cố gắng và dự định",
+    "description": "Học từng ý nhỏ, ghép câu rồi luyện lại những câu chưa chắc.",
+    "sources": [
+      {
+        "title": "Ngữ pháp 25A",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1610"
+      },
+      {
+        "title": "Ngữ pháp 25B",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1614"
+      },
+      {
+        "title": "Ngữ pháp 25C",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1618"
+      }
+    ],
+    "patterns": [
+      {
+        "id": "n4-25-decision",
+        "title": "にする・ことにする・ことになる",
+        "usage": "Phân biệt mình chọn một món, mình quyết định một việc và một việc được quyết định bởi hoàn cảnh hoặc tập thể.",
+        "formula": "Chọn đồ: danh từ + にする. Tự quyết: nguyên thể / thể ない + ことにする. Được quyết định: nguyên thể / thể ない + ことになる.",
+        "pitfall": "{来月|らいげつ}{引|ひ}っ{越|こ}すことにしました là tôi quyết định chuyển; ことになりました không nhấn mạnh ý chí riêng của tôi.",
+        "examples": [
+          {
+            "ja": "{昼|ひる}ご{飯|はん}はうどんにします。",
+            "vi": "Bữa trưa tôi chọn mì udon."
+          },
+          {
+            "ja": "{毎日|まいにち}{漢字|かんじ}を{五|いつ}つ{覚|おぼ}えることにしました。",
+            "vi": "Tôi đã quyết định mỗi ngày nhớ năm chữ Hán."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-25-decision-choose",
+            "kind": "choice",
+            "prompt": "Tôi tự quyết định bỏ thuốc: たばこをやめる ____ しました。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "ことに",
+              "ようが",
+              "ことを"
+            ],
+            "answer": [
+              0
+            ],
+            "explanation": "ことにしました diễn tả một quyết định do mình đưa ra."
+          },
+          {
+            "id": "n4-25-decision-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Theo kế hoạch công ty, việc đi công tác Osaka tháng sau đã được quyết định.",
+            "prefix": "{会社|かいしゃ}の{予定|よてい}で、",
+            "suffix": "。",
+            "options": [
+              "{来月|らいげつ}",
+              "なりました",
+              "{大阪|おおさか}へ",
+              "{出張|しゅっちょう}することに"
+            ],
+            "answer": [
+              0,
+              2,
+              3,
+              1
+            ],
+            "explanation": "Một cách ghép đúng: {会社|かいしゃ}の{予定|よてい}で、{来月|らいげつ}{大阪|おおさか}へ{出張|しゅっちょう}することになりました。 {出張|しゅっちょう}することになりました nói việc đi công tác được quyết định theo kế hoạch công ty; không nhấn mạnh quyết định cá nhân.",
+            "acceptedAnswers": [
+              [
+                2,
+                0,
+                3,
+                1
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "n4-25-effort",
+        "title": "ようにする・ようにしている: chủ động cố gắng",
+        "usage": "Nói bạn sẽ để ý làm một việc, hoặc đang cố duy trì nó thành thói quen.",
+        "formula": "Nguyên thể / thể ない + ようにする. Duy trì thường xuyên: ようにしている. Nhắc người khác: ようにしてください.",
+        "pitfall": "ようにする nói nỗ lực; không có nghĩa bạn đã chắc chắn làm được. ことにする nhấn mạnh quyết định.",
+        "examples": [
+          {
+            "ja": "{毎日|まいにち}{日本語|にほんご}を{聞|き}くようにしています。",
+            "vi": "Tôi cố duy trì nghe tiếng Nhật mỗi ngày."
+          },
+          {
+            "ja": "{約束|やくそく}を{忘|わす}れないようにしてください。",
+            "vi": "Hãy chú ý đừng quên lời hẹn."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-25-effort-choose",
+            "kind": "choice",
+            "prompt": "Cố gắng không thức khuya: {夜|よる}{遅|おそ}く{寝|ね}ない ____ しています。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "ことを",
+              "ためが",
+              "ように"
+            ],
+            "answer": [
+              2
+            ],
+            "explanation": "Thể ない + ようにしています diễn tả nỗ lực giữ thói quen không làm."
+          },
+          {
+            "id": "n4-25-effort-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Từ giờ tôi sẽ chú ý để không đến muộn.",
+            "prefix": "これからは、",
+            "suffix": "。",
+            "options": [
+              "ます",
+              "{気|き}をつけ",
+              "ように",
+              "{遅|おく}れない"
+            ],
+            "answer": [
+              3,
+              2,
+              1,
+              0
+            ],
+            "explanation": "Một cách ghép đúng: これからは、{遅|おく}れないように{気|き}をつけます。 {遅|おく}れないように là mục tiêu tránh đến muộn; {気|き}をつけます là hành động chú ý để đạt mục tiêu ấy."
+          }
+        ]
+      },
+      {
+        "id": "n4-25-become-able",
+        "title": "ようになる・なくなる: khả năng hay thói quen thay đổi",
+        "usage": "Nhìn sự thay đổi giữa trước đây và bây giờ: trước chưa làm được, nay đã làm được; hoặc trước làm, nay không còn.",
+        "formula": "Động từ nguyên thể/khả năng + ようになる. Không còn làm: thể ない bỏ い + くなる.",
+        "pitfall": "{話|はな}せるようになる là trở nên có thể nói; {話|はな}すようになる thường là bắt đầu có thói quen nói. Không phải mọi ようになる đều là khả năng.",
+        "examples": [
+          {
+            "ja": "{日本語|にほんご}が{少|すこ}し{話|はな}せるようになりました。",
+            "vi": "Tôi đã có thể nói được một ít tiếng Nhật."
+          },
+          {
+            "ja": "{最近|さいきん}、たばこを{吸|す}わなくなりました。",
+            "vi": "Gần đây tôi không còn hút thuốc nữa."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-25-become-able-choose",
+            "kind": "choice",
+            "prompt": "Trước chưa đọc được, nay đã đọc được: {漢字|かんじ}が ____ ようになりました。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{読|よ}める",
+              "{読|よ}んで",
+              "{読|よ}むこと"
+            ],
+            "answer": [
+              0
+            ],
+            "explanation": "Để nói khả năng thay đổi, dùng thể khả năng {読|よ}める trước ようになる."
+          },
+          {
+            "id": "n4-25-become-able-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Gần đây tôi không còn xem tivi nhiều nữa.",
+            "prefix": "{最近|さいきん}は、",
+            "suffix": "。",
+            "options": [
+              "テレビを",
+              "なりました",
+              "{見|み}なく",
+              "あまり"
+            ],
+            "answer": [
+              3,
+              0,
+              2,
+              1
+            ],
+            "explanation": "Một cách ghép đúng: {最近|さいきん}は、あまりテレビを{見|み}なくなりました。 {見|み}ない bỏ い rồi thêm くなりました: thay đổi sang trạng thái không còn xem. あまり cho biết không xem nhiều.",
+            "acceptedAnswers": [
+              [
+                0,
+                3,
+                2,
+                1
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "n4-25-plan",
+        "title": "予定・つもり・意向形: lịch và ý định",
+        "usage": "予定 thường là việc đã lên lịch. つもり nhấn mạnh ý định của người nói. 意向形 + と思っている nói ý định đang có.",
+        "formula": "Danh từ + の{予定|よてい} / nguyên thể + {予定|よてい}. Nguyên thể / thể ない + つもり. {意向|いこう}{形|がた}: nhóm 1 hàng う→おう; nhóm 2 bỏ る+よう; する→しよう; {来|く}る→こよう.",
+        "pitfall": "{会議|かいぎ}の{予定|よてい} và {行|い}く{予定|よてい} có cách nối khác nhau. つもり không tự bảo đảm kế hoạch sẽ xảy ra.",
+        "examples": [
+          {
+            "ja": "{来週|らいしゅう}{旅行|りょこう}する{予定|よてい}です。",
+            "vi": "Tôi có lịch đi du lịch tuần sau."
+          },
+          {
+            "ja": "{明日|あした}は{家|いえ}で{勉強|べんきょう}しようと{思|おも}っています。",
+            "vi": "Tôi đang định học ở nhà vào ngày mai."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-25-plan-choose",
+            "kind": "choice",
+            "prompt": "Điền đúng: {来週|らいしゅう}は{試験|しけん} ____ {予定|よてい}です。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "だ",
+              "の",
+              "な"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "Danh từ {試験|しけん} cần の trước {予定|よてい}. Với động từ thì dùng nguyên thể, không có の."
+          },
+          {
+            "id": "n4-25-plan-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Tôi định sang Nhật vào năm tới.",
+            "prefix": "{私|わたし}は",
+            "suffix": "。",
+            "options": [
+              "{日本|にほん}へ",
+              "{行|い}く",
+              "つもりです",
+              "{来年|らいねん}"
+            ],
+            "answer": [
+              3,
+              0,
+              1,
+              2
+            ],
+            "explanation": "Một cách ghép đúng: {私|わたし}は{来年|らいねん}{日本|にほん}へ{行|い}くつもりです。 {行|い}く là động từ nguyên thể, nối thẳng với つもりです để nói ý định; {来年|らいねん} và {日本|にほん}へ nêu thời điểm và nơi đến.",
+            "acceptedAnswers": [
+              [
+                0,
+                3,
+                1,
+                2
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "n4-26",
+    "chapter": 26,
+    "title": "Khuyên nhủ và nói việc đang ở giai đoạn nào",
+    "description": "Học từng ý nhỏ, ghép câu rồi luyện lại những câu chưa chắc.",
+    "sources": [
+      {
+        "title": "Ngữ pháp 26A",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1624"
+      },
+      {
+        "title": "Ngữ pháp 26B",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1628"
+      }
+    ],
+    "patterns": [
+      {
+        "id": "n4-26-advice",
+        "title": "ほうがいい: nên hoặc không nên",
+        "usage": "Đưa lời khuyên về một lựa chọn cụ thể. Chú ý đừng biến lời khuyên thành cách áp đặt người khác.",
+        "formula": "Nên: động từ thể た + ほうがいい. Không nên: động từ thể ない + ほうがいい.",
+        "pitfall": "{休|やす}んだほうがいい là lời khuyên cho việc hiện tại/tương lai; た ở đây không có nghĩa việc nghỉ đã xảy ra.",
+        "examples": [
+          {
+            "ja": "{疲|つか}れたら、{早|はや}く{寝|ね}たほうがいいです。",
+            "vi": "Nếu mệt thì bạn nên ngủ sớm."
+          },
+          {
+            "ja": "{無理|むり}をしないほうがいいです。",
+            "vi": "Bạn không nên cố quá sức."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-26-advice-choose",
+            "kind": "choice",
+            "prompt": "Khuyên nên đi bệnh viện: {病院|びょういん}へ ____ ほうがいいです。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{行|い}って",
+              "{行|い}った",
+              "{行|い}きます"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "Mẫu lời khuyên trong bài dùng thể た: {行|おこな}ったほうがいい."
+          },
+          {
+            "id": "n4-26-advice-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Vì bị sốt nên hôm nay bạn nên nghỉ học.",
+            "prefix": "{熱|ねつ}があるので、",
+            "suffix": "。",
+            "options": [
+              "{学校|がっこう}を",
+              "{休|やす}んだ",
+              "ほうがいいです",
+              "{今日|きょう}は"
+            ],
+            "answer": [
+              3,
+              0,
+              1,
+              2
+            ],
+            "explanation": "Một cách ghép đúng: {熱|ねつ}があるので、{今日|きょう}は{学校|がっこう}を{休|やす}んだほうがいいです。 {休|やす}んだほうがいいです dùng thể た để khuyên nên nghỉ. Đây là lời khuyên hiện tại, không kể đã nghỉ rồi.",
+            "acceptedAnswers": [
+              [
+                0,
+                3,
+                1,
+                2
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "n4-26-examples",
+        "title": "たり、たりする: kể vài việc tiêu biểu",
+        "usage": "Liệt kê một vài hoạt động trong số nhiều hoạt động; không khẳng định đó là toàn bộ hay đúng thứ tự thời gian.",
+        "formula": "Động từ thể た + り、động từ thể た + りする. Thời của cả câu nằm ở する／しました.",
+        "pitfall": "たり liệt kê ví dụ. て thường nối chuỗi hành động. たら ở mục sau nói phát hiện sau khi làm một việc, khác với たり liệt kê.",
+        "examples": [
+          {
+            "ja": "{休|やす}みの{日|ひ}は、{本|ほん}を{読|よ}んだり{散歩|さんぽ}したりします。",
+            "vi": "Ngày nghỉ tôi thường đọc sách, đi dạo và những việc tương tự."
+          },
+          {
+            "ja": "{日曜日|にちようび}は{掃除|そうじ}したり、{洗濯|せんたく}したりしました。",
+            "vi": "Chủ nhật tôi đã làm những việc như dọn nhà, giặt đồ."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-26-examples-choose",
+            "kind": "choice",
+            "prompt": "Điền đúng: {日曜日|にちようび}は{掃除|そうじ}をしたり、{洗濯|せんたく}を ____ します。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "してたり",
+              "したり",
+              "するたり"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "Mỗi động từ ở dạng た + り: したり."
+          },
+          {
+            "id": "n4-26-examples-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Ngày nghỉ tôi làm những việc như nấu ăn, đọc sách.",
+            "prefix": "{休|やす}みの{日|ひ}は、",
+            "suffix": "。",
+            "options": [
+              "{料理|りょうり}を",
+              "{本|ほん}を",
+              "{作|つく}ったり、",
+              "{読|よ}んだりします"
+            ],
+            "answer": [
+              0,
+              2,
+              1,
+              3
+            ],
+            "explanation": "Một cách ghép đúng: {休|やす}みの{日|ひ}は、{料理|りょうり}を{作|つく}ったり、{本|ほん}を{読|よ}んだりします。 {作|つく}ったり và {読|よ}んだり liệt kê vài việc tiêu biểu; します quyết định thời của cả câu."
+          }
+        ]
+      },
+      {
+        "id": "n4-26-discovery",
+        "title": "たら…た: làm rồi mới phát hiện",
+        "usage": "Kể rằng sau khi làm việc trước, bạn nhận ra một tình huống mà mình chưa biết. Đây là cách dùng kể chuyện đã xảy ra.",
+        "formula": "Động từ thể た + ら、mệnh đề ở quá khứ diễn tả điều phát hiện.",
+        "pitfall": "たり liệt kê các việc tiêu biểu; たら trong mục này dẫn đến một phát hiện. Đừng thêm する vào sau mệnh đề phát hiện.",
+        "examples": [
+          {
+            "ja": "{家|いえ}に{帰|かえ}ったら、だれもいませんでした。",
+            "vi": "Khi về nhà, tôi phát hiện không có ai."
+          },
+          {
+            "ja": "{窓|まど}を{開|あ}けたら、{猫|ねこ}がいました。",
+            "vi": "Mở cửa sổ ra, tôi thấy có một con mèo."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-26-discovery-choose",
+            "kind": "choice",
+            "prompt": "Diễn đạt “Mở cửa sổ ra thì thấy có mèo”: {窓|まど}を ____ 、{猫|ねこ}がいました。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{開|あ}けたり",
+              "{開|あ}けながら",
+              "{開|あ}けたら"
+            ],
+            "answer": [
+              2
+            ],
+            "explanation": "{開|あ}けたら mở mốc sau khi mở cửa sổ; {猫|ねこ}がいました là điều được phát hiện sau đó."
+          },
+          {
+            "id": "n4-26-discovery-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Về nhà thì tôi phát hiện không có ai.",
+            "prefix": "{家|いえ}に",
+            "suffix": "。",
+            "options": [
+              "だれも",
+              "{帰|かえ}ったら、",
+              "いませんでした"
+            ],
+            "answer": [
+              1,
+              0,
+              2
+            ],
+            "explanation": "Một cách ghép đúng: {家|いえ}に{帰|かえ}ったら、だれもいませんでした。 {帰|かえ}ったら là mốc sau khi về nhà; だれもいませんでした là tình huống được phát hiện lúc đó."
+          }
+        ]
+      },
+      {
+        "id": "n4-26-not-yet",
+        "title": "まだ〜ていません: vẫn chưa làm xong",
+        "usage": "Nói việc được chờ đợi nhưng đến thời điểm hiện tại vẫn chưa hoàn thành.",
+        "formula": "まだ + động từ thể て + いません. Cách thân mật: まだ〜ていない.",
+        "pitfall": "まだ{食|た}べていません là vẫn chưa ăn. {食|た}べません có thể là không ăn hoặc sẽ không ăn, không diễn đạt rõ “chưa”.",
+        "examples": [
+          {
+            "ja": "{宿題|しゅくだい}はまだ{終|お}わっていません。",
+            "vi": "Bài tập thì tôi vẫn chưa làm xong."
+          },
+          {
+            "ja": "{昼|ひる}ご{飯|はん}はまだ{食|た}べていません。",
+            "vi": "Tôi vẫn chưa ăn trưa."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-26-not-yet-choose",
+            "kind": "choice",
+            "prompt": "Nói “vẫn chưa đọc cuốn này”: この{本|ほん}はまだ ____ 。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{読|よ}んではいけません",
+              "{読|よ}みません",
+              "{読|よ}んでいません"
+            ],
+            "answer": [
+              2
+            ],
+            "explanation": "{読|よ}んでいません cho biết việc đọc chưa hoàn thành tới hiện tại."
+          },
+          {
+            "id": "n4-26-not-yet-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Tôi vẫn chưa đi Nhật.",
+            "prefix": "{私|わたし}は",
+            "suffix": "。",
+            "options": [
+              "いません",
+              "{行|い}って",
+              "まだ",
+              "{日本|にほん}へ"
+            ],
+            "answer": [
+              2,
+              3,
+              1,
+              0
+            ],
+            "explanation": "Một cách ghép đúng: {私|わたし}はまだ{日本|にほん}へ{行|い}っていません。 まだ{行|い}っていません nói đến hiện tại vẫn chưa đi; khác với {行|い}きません chỉ không đi hoặc sẽ không đi.",
+            "acceptedAnswers": [
+              [
+                3,
+                2,
+                1,
+                0
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "n4-26-stage",
+        "title": "ところです: sắp, đang hay vừa xong",
+        "usage": "Giữ ところです và đổi dạng động từ để xác định giai đoạn của một việc.",
+        "formula": "Nguyên thể + ところ: sắp bắt đầu. ている + ところ: đang làm. た + ところ: vừa mới xong.",
+        "pitfall": "{食|た}べるところ / {食|た}べているところ / {食|た}べたところ khác nhau ở đúng dạng động từ đứng trước.",
+        "examples": [
+          {
+            "ja": "{今|いま}から{出|で}かけるところです。",
+            "vi": "Tôi đang chuẩn bị đi ra ngoài."
+          },
+          {
+            "ja": "{今|いま}、{仕事|しごと}が{終|お}わったところです。",
+            "vi": "Tôi vừa làm xong công việc."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-26-stage-choose",
+            "kind": "choice",
+            "prompt": "Vừa mới ăn xong: {今|いま}、ご{飯|はん}を ____ ところです。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{食|た}べる",
+              "{食|た}べた",
+              "{食|た}べている"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "Đã vừa hoàn thành thì dùng thể た + ところです."
+          },
+          {
+            "id": "n4-26-stage-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Bây giờ tôi đang đọc tài liệu.",
+            "prefix": "{今|いま}、",
+            "suffix": "。",
+            "options": [
+              "ところ",
+              "{資料|しりょう}を",
+              "{読|よ}んでいる",
+              "です"
+            ],
+            "answer": [
+              1,
+              2,
+              0,
+              3
+            ],
+            "explanation": "Một cách ghép đúng: {今|いま}、{資料|しりょう}を{読|よ}んでいるところです。 {読|よ}んでいるところです dùng ている để nói đang giữa việc đọc; không phải vừa đọc xong."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "n4-27",
+    "chapter": 27,
+    "title": "Điều phải làm, việc lỡ làm và chuẩn bị trước",
+    "description": "Học từng ý nhỏ, ghép câu rồi luyện lại những câu chưa chắc.",
+    "sources": [
+      {
+        "title": "Ngữ pháp 27A",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1634"
+      },
+      {
+        "title": "Ngữ pháp 27B",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1638"
+      },
+      {
+        "title": "Ngữ pháp 27C",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1642"
+      }
+    ],
+    "patterns": [
+      {
+        "id": "n4-27-must",
+        "title": "てはいけない・なくてはいけない",
+        "usage": "Một mẫu cấm làm; mẫu kia nói không làm thì không được, tức là cần phải làm.",
+        "formula": "Cấm: thể て + はいけない. Phải: thể ない bỏ い + くてはいけない. Hội thoại: ちゃだめ / なくちゃ.",
+        "pitfall": "{行|い}ってはいけない = không được đi. {行|い}かなくてはいけない = phải đi. Đọc kỹ phần phủ định để không hiểu ngược.",
+        "examples": [
+          {
+            "ja": "ここで{写真|しゃしん}を{撮|と}ってはいけません。",
+            "vi": "Không được chụp ảnh ở đây."
+          },
+          {
+            "ja": "{明日|あした}は{早|はや}く{起|お}きなくてはいけません。",
+            "vi": "Ngày mai tôi phải dậy sớm."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-27-must-choose",
+            "kind": "choice",
+            "prompt": "Muốn nói “phải nộp bài”: {宿題|しゅくだい}を ____ 。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{出|だ}さないほうがいいです",
+              "{出|だ}してはいけません",
+              "{出|だ}さなくてはいけません"
+            ],
+            "answer": [
+              2
+            ],
+            "explanation": "{出|だ}さなくてはいけません nghĩa là không nộp thì không được, tức phải nộp."
+          },
+          {
+            "id": "n4-27-must-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Ở đây không được nói lớn tiếng.",
+            "prefix": "ここでは",
+            "suffix": "。",
+            "options": [
+              "ません",
+              "{大|おお}きな{声|こえ}で",
+              "{話|はな}しては",
+              "いけ"
+            ],
+            "answer": [
+              1,
+              2,
+              3,
+              0
+            ],
+            "explanation": "Một cách ghép đúng: ここでは{大|おお}きな{声|こえ}で{話|はな}してはいけません。 {話|はな}してはいけません cấm nói lớn. てはいけません khác với なくてはいけません là phải làm."
+          }
+        ]
+      },
+      {
+        "id": "n4-27-finish",
+        "title": "てしまう: lỡ làm hoặc làm hết",
+        "usage": "Ngữ cảnh quyết định người nói tiếc nuối hay chỉ nhấn mạnh đã làm xong toàn bộ.",
+        "formula": "Động từ thể て + しまう; thể で + しまう. Hội thoại: てしまう→ちゃう, でしまう→じゃう.",
+        "pitfall": "{忘|わす}れてしまった thường gợi tiếc nuối. {全部|ぜんぶ}{読|よ}んでしまった có thể chỉ đã đọc hết; không phải lúc nào cũng dịch “lỡ”.",
+        "examples": [
+          {
+            "ja": "{財布|さいふ}を{忘|わす}れてしまいました。",
+            "vi": "Tôi lỡ quên ví mất rồi."
+          },
+          {
+            "ja": "{宿題|しゅくだい}は{全部|ぜんぶ}やってしまいました。",
+            "vi": "Tôi đã làm xong hết bài tập rồi."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-27-finish-choose",
+            "kind": "choice",
+            "prompt": "Dạng đầy đủ của {飲|の}んじゃった là gì?",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{飲|の}んでしまった",
+              "{飲|の}むところだった",
+              "{飲|の}まないでいた"
+            ],
+            "answer": [
+              0
+            ],
+            "explanation": "Đuôi でしまった được rút thành じゃった trong hội thoại."
+          },
+          {
+            "id": "n4-27-finish-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Tôi lỡ xóa mất bức ảnh quan trọng.",
+            "prefix": "{私|わたし}は",
+            "suffix": "。",
+            "options": [
+              "しまいました",
+              "{消|け}して",
+              "{大切|たいせつ}な",
+              "{写真|しゃしん}を"
+            ],
+            "answer": [
+              2,
+              3,
+              1,
+              0
+            ],
+            "explanation": "Một cách ghép đúng: {私|わたし}は{大切|たいせつ}な{写真|しゃしん}を{消|け}してしまいました。 {消|け}してしまいました kể việc lỡ xóa ảnh, với cảm giác tiếc nuối vì đó là bức ảnh quan trọng."
+          }
+        ]
+      },
+      {
+        "id": "n4-27-prepare",
+        "title": "ておく: làm trước cho việc sau",
+        "usage": "Chủ động làm một việc để chuẩn bị, hoặc giữ nguyên trạng thái cần dùng sau đó.",
+        "formula": "Động từ thể て + おく. Hội thoại: ておく→とく; でおく→どく.",
+        "pitfall": "{買|か}っておく tập trung vào hành động chuẩn bị. {買|か}ってある tập trung vào việc đã mua sẵn và hiện đã sẵn sàng.",
+        "examples": [
+          {
+            "ja": "{旅行|りょこう}の{前|まえ}に{切符|きっぷ}を{買|か}っておきます。",
+            "vi": "Trước chuyến đi, tôi sẽ mua vé sẵn."
+          },
+          {
+            "ja": "{窓|まど}は{開|あ}けておいてください。",
+            "vi": "Hãy cứ để cửa sổ mở như vậy nhé."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-27-prepare-choose",
+            "kind": "choice",
+            "prompt": "Chuẩn bị cho cuộc họp: {資料|しりょう}を{読|よ}んで ____ ます。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "おく",
+              "おいた",
+              "おき"
+            ],
+            "answer": [
+              2
+            ],
+            "explanation": "{読|よ}んでおきます là đọc trước để chuẩn bị cho việc sau."
+          },
+          {
+            "id": "n4-27-prepare-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Để chuẩn bị cho ngày mai, hôm nay tôi sẽ đi mua đồ trước.",
+            "prefix": "{明日|あした}のために、",
+            "suffix": "。",
+            "options": [
+              "おきます",
+              "して",
+              "{買|か}い{物|もの}を",
+              "{今日|きょう}"
+            ],
+            "answer": [
+              3,
+              2,
+              1,
+              0
+            ],
+            "explanation": "Một cách ghép đúng: {明日|あした}のために、{今日|きょう}{買|か}い{物|もの}をしておきます。 しておきます là làm việc mua sắm trước để chuẩn bị cho ngày mai; không phải chỉ kể một hành động đã làm.",
+            "acceptedAnswers": [
+              [
+                2,
+                3,
+                1,
+                0
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "n4-27-direction",
+        "title": "てくる・ていく: đi/đến và hướng thay đổi",
+        "usage": "Nhìn vị trí hoặc thời điểm của người nói làm mốc. くる hướng về mốc đó; いく đi xa hoặc tiếp tục từ mốc đó.",
+        "formula": "Thể て + くる／いく. てくる cũng có thể là đi làm rồi quay lại; ていく có thể là làm gì rồi đi tiếp.",
+        "pitfall": "{寒|さむ}くなってきた: sự thay đổi kéo đến hiện tại. これから{寒|さむ}くなっていく: sự thay đổi từ giờ về sau.",
+        "examples": [
+          {
+            "ja": "ちょっと{飲|の}み{物|もの}を{買|か}ってきます。",
+            "vi": "Tôi đi mua chút đồ uống rồi quay lại."
+          },
+          {
+            "ja": "これからも{日本語|にほんご}を{勉強|べんきょう}していきます。",
+            "vi": "Từ giờ tôi vẫn sẽ tiếp tục học tiếng Nhật."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-27-direction-choose",
+            "kind": "choice",
+            "prompt": "Dần trở lạnh cho tới hiện tại: {寒|さむ}くなって ____ 。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "きました",
+              "みました",
+              "いきました"
+            ],
+            "answer": [
+              0
+            ],
+            "explanation": "きました kéo sự thay đổi đến thời điểm hiện tại của người nói."
+          },
+          {
+            "id": "n4-27-direction-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Tôi sẽ đi bộ đến ga.",
+            "prefix": "{私|わたし}は",
+            "suffix": "。",
+            "options": [
+              "いき",
+              "ます",
+              "{歩|ある}いて",
+              "{駅|えき}まで"
+            ],
+            "answer": [
+              3,
+              2,
+              0,
+              1
+            ],
+            "explanation": "Một cách ghép đúng: {私|わたし}は{駅|えき}まで{歩|ある}いていきます。 {歩|ある}いていきます là đi bằng cách đi bộ tới ga; いく ở đây chỉ hướng đi, không phải sự thay đổi kéo đến hiện tại.",
+            "acceptedAnswers": [
+              [
+                2,
+                3,
+                0,
+                1
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "n4-28",
+    "chapter": 28,
+    "title": "Cho làm, bắt làm và bị buộc phải làm",
+    "description": "Học từng ý nhỏ, ghép câu rồi luyện lại những câu chưa chắc.",
+    "sources": [
+      {
+        "title": "Ngữ pháp 28A",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1648"
+      },
+      {
+        "title": "Ngữ pháp 28B",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1652"
+      }
+    ],
+    "patterns": [
+      {
+        "id": "n4-28-causative",
+        "title": "させる: cho hoặc bắt ai làm",
+        "usage": "Người chủ động cho phép hay yêu cầu đứng làm chủ thể. Người thực hiện hành động là một người khác.",
+        "formula": "Nhóm 1: hàng う→あ + せる (う→わせる). Nhóm 2: bỏ る + させる. する→させる; {来|く}る→こさせる.",
+        "pitfall": "Với tha động từ có を cho đồ vật, người bị yêu cầu thường dùng に: {子|こ}どもに{野菜|やさい}を{食|た}べさせる. Không dùng hai を liên tiếp theo mẫu đó.",
+        "examples": [
+          {
+            "ja": "{母|はは}は{子|こ}どもに{野菜|やさい}を{食|た}べさせました。",
+            "vi": "Mẹ cho/bắt con ăn rau."
+          },
+          {
+            "ja": "{先生|せんせい}は{学生|がくせい}を{立|た}たせました。",
+            "vi": "Thầy cô bảo học sinh đứng dậy."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-28-causative-choose",
+            "kind": "choice",
+            "prompt": "Chọn thể sai khiến của {読|よ}む.",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{読|よ}まれる",
+              "{読|よ}める",
+              "{読|よ}ませる"
+            ],
+            "answer": [
+              2
+            ],
+            "explanation": "{読|よ}む nhóm 1 đổi む thành ま rồi thêm せる: {読|よ}ませる."
+          },
+          {
+            "id": "n4-28-causative-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Mẹ đã cho con uống thuốc.",
+            "prefix": "{母|はは}は",
+            "suffix": "。",
+            "options": [
+              "{飲|の}ませ",
+              "{薬|くすり}を",
+              "ました",
+              "{子|こ}どもに"
+            ],
+            "answer": [
+              3,
+              1,
+              0,
+              2
+            ],
+            "explanation": "Một cách ghép đúng: {母|はは}は{子|こ}どもに{薬|くすり}を{飲|の}ませました。 {母|はは} yêu cầu hoặc cho phép {子|こ}ども uống thuốc. Vì {薬|くすり} đi với を, người thực hiện {子|こ}ども dùng に.",
+            "acceptedAnswers": [
+              [
+                1,
+                3,
+                0,
+                2
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "n4-28-forced",
+        "title": "させられる: bị buộc phải làm",
+        "usage": "Kể từ phía người bị ép làm điều gì, thường kèm cảm giác không muốn hoặc khó chịu.",
+        "formula": "Người bị buộc + は + người ép + に + động từ bị động sai khiến. Nhóm 2: {食|た}べる→{食|た}べさせられる; nhóm 1: {書|か}く→{書|か}かせられる.",
+        "pitfall": "{食|た}べられる có thể là bị động hoặc khả năng, còn {食|た}べさせられる thêm ý bị bắt ăn. Nhóm 1 có dạng rút như {書|か}かされる.",
+        "examples": [
+          {
+            "ja": "{私|わたし}は{兄|あに}に{部屋|へや}を{掃除|そうじ}させられました。",
+            "vi": "Tôi bị anh trai bắt dọn phòng."
+          },
+          {
+            "ja": "{昨日|きのう}は{長|なが}く{待|ま}たされました。",
+            "vi": "Hôm qua tôi bị bắt chờ lâu."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-28-forced-choose",
+            "kind": "choice",
+            "prompt": "Dạng đầy đủ “bị bắt ăn” là gì?",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{食|た}べさせられる",
+              "{食|た}べさせる",
+              "{食|た}べられる"
+            ],
+            "answer": [
+              0
+            ],
+            "explanation": "{食|た}べさせられる kết hợp sai khiến và bị động: bị buộc làm việc ăn."
+          },
+          {
+            "id": "n4-28-forced-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Tôi đã bị thầy cô bắt viết bài văn.",
+            "prefix": "{私|わたし}は",
+            "suffix": "。",
+            "options": [
+              "{書|か}かせられ",
+              "ました",
+              "{作文|さくぶん}を",
+              "{先生|せんせい}に"
+            ],
+            "answer": [
+              3,
+              2,
+              0,
+              1
+            ],
+            "explanation": "Một cách ghép đúng: {私|わたし}は{先生|せんせい}に{作文|さくぶん}を{書|か}かせられました。 {私|わたし}は là người bị buộc viết; {先生|せんせい}に chỉ người yêu cầu. {書|か}かせられました là dạng bị động sai khiến.",
+            "acceptedAnswers": [
+              [
+                2,
+                3,
+                0,
+                1
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "n4-28-allowed",
+        "title": "させてもらう: được cho phép làm",
+        "usage": "Bạn là người làm việc và biết ơn người đã cho phép hay tạo điều kiện cho mình làm.",
+        "formula": "Thể sai khiến + て + もらう: {使|つか}う→{使|つか}わせてもらう. Người cho phép thường đi với に.",
+        "pitfall": "{説明|せつめい}してもらう: người khác giải thích cho bạn. {説明|せつめい}させてもらう: bạn được phép giải thích. Chủ thể thực hiện khác nhau.",
+        "examples": [
+          {
+            "ja": "{友達|ともだち}にパソコンを{使|つか}わせてもらいました。",
+            "vi": "Tôi được bạn cho dùng máy tính."
+          },
+          {
+            "ja": "{今日|きょう}は{先|さき}に{帰|かえ}らせてもらいます。",
+            "vi": "Hôm nay xin cho tôi về trước."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-28-allowed-choose",
+            "kind": "choice",
+            "prompt": "Bạn muốn nói chính mình được cho nghỉ: {休|やす}ませて ____ ました。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "い",
+              "もらい",
+              "あげ"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "{休|やす}ませてもらいました nói mình đã nhận được sự cho phép nghỉ."
+          },
+          {
+            "id": "n4-28-allowed-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Tôi đã được thầy cô cho phép dùng cuốn sách này.",
+            "prefix": "{私|わたし}は",
+            "suffix": "。",
+            "options": [
+              "{使|つか}わせて",
+              "もらいました",
+              "{先生|せんせい}に",
+              "この{本|ほん}を"
+            ],
+            "answer": [
+              2,
+              3,
+              0,
+              1
+            ],
+            "explanation": "Một cách ghép đúng: {私|わたし}は{先生|せんせい}にこの{本|ほん}を{使|つか}わせてもらいました。 {使|つか}わせてもらいました là mình được nhận sự cho phép dùng sách từ thầy cô; chính mình là người dùng.",
+            "acceptedAnswers": [
+              [
+                3,
+                2,
+                0,
+                1
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "n4-29",
+    "chapter": 29,
+    "title": "Xin phép và nói lịch sự đúng người",
+    "description": "Học từng ý nhỏ, ghép câu rồi luyện lại những câu chưa chắc.",
+    "sources": [
+      {
+        "title": "Ngữ pháp 29A",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1658"
+      },
+      {
+        "title": "Ngữ pháp 29B",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1662"
+      }
+    ],
+    "patterns": [
+      {
+        "id": "n4-29-permission",
+        "title": "させてください: xin cho tôi làm",
+        "usage": "Người nói xin phép để chính mình thực hiện hành động. Có thể dùng dạng dài hơn để mềm và lịch sự hơn.",
+        "formula": "Thể sai khiến + てください / ていただけませんか: {説明|せつめい}する→{説明|せつめい}させてください.",
+        "pitfall": "{説明|せつめい}してください nhờ người khác giải thích. {説明|せつめい}させてください xin để mình giải thích. Đừng đảo vai người làm.",
+        "examples": [
+          {
+            "ja": "{少|すこ}し{考|かんが}えさせてください。",
+            "vi": "Xin cho tôi suy nghĩ một chút."
+          },
+          {
+            "ja": "{今日|きょう}は{早|はや}く{帰|かえ}らせていただけませんか。",
+            "vi": "Hôm nay xin cho phép tôi về sớm được không ạ?"
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-29-permission-choose",
+            "kind": "choice",
+            "prompt": "Muốn chính mình giải thích: {少|すこ}し ____ ください。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{説明|せつめい}させて",
+              "{説明|せつめい}して",
+              "{説明|せつめい}されて"
+            ],
+            "answer": [
+              0
+            ],
+            "explanation": "{説明|せつめい}させてください xin phép để chính người nói giải thích; {説明|せつめい}してください là nhờ người kia."
+          },
+          {
+            "id": "n4-29-permission-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Xin lỗi, cho phép tôi dùng bức ảnh này được không ạ?",
+            "prefix": "すみませんが、",
+            "suffix": "。",
+            "options": [
+              "{使|つか}わせて",
+              "この{写真|しゃしん}を",
+              "いただけません",
+              "か"
+            ],
+            "answer": [
+              1,
+              0,
+              2,
+              3
+            ],
+            "explanation": "Một cách ghép đúng: すみませんが、この{写真|しゃしん}を{使|つか}わせていただけませんか。 {使|つか}わせていただけませんか xin phép để chính người nói dùng ảnh, không nhờ người kia dùng hộ."
+          }
+        ]
+      },
+      {
+        "id": "n4-29-polite-actions",
+        "title": "お〜します・お〜になります: hạ mình hay nâng người",
+        "usage": "Chọn theo người thực hiện hành động: mình làm cho người khác thì khiêm nhường; người cần kính trọng làm thì tôn kính.",
+        "formula": "Khiêm nhường: お + bỏ ます + します; ご + danh từ Hán + します. Tôn kính: お + bỏ ます + になります.",
+        "pitfall": "お{待|ま}ちします thường nói hành động của mình. お{待|ま}ちになります nâng hành động người khác. Không gắn お/ご một cách máy móc với mọi từ.",
+        "examples": [
+          {
+            "ja": "{私|わたし}が{荷物|にもつ}をお{持|も}ちします。",
+            "vi": "Để tôi mang hành lý giúp ạ."
+          },
+          {
+            "ja": "{先生|せんせい}はもうお{帰|かえ}りになりました。",
+            "vi": "Thầy cô đã về rồi ạ."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-29-polite-actions-choose",
+            "kind": "choice",
+            "prompt": "Nói kính trọng việc thầy cô về: {先生|せんせい}はお{帰|かえ}りに ____ 。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "しました",
+              "なりました",
+              "いたしました"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "Người được kính trọng thực hiện hành động: お{帰|かえ}りになりました. しました/いたしました thuộc phía mình."
+          },
+          {
+            "id": "n4-29-polite-actions-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Để tôi hướng dẫn tham quan địa điểm ạ.",
+            "prefix": "{私|わたし}が",
+            "suffix": "。",
+            "options": [
+              "ます",
+              "ご{案内|あんない}",
+              "{会場|かいじょう}を",
+              "し"
+            ],
+            "answer": [
+              2,
+              1,
+              3,
+              0
+            ],
+            "explanation": "Một cách ghép đúng: {私|わたし}が{会場|かいじょう}をご{案内|あんない}します。 {私|わたし}が là người hướng dẫn; ご{案内|あんない}します là cách nói khiêm nhường về hành động của mình."
+          }
+        ]
+      },
+      {
+        "id": "n4-29-instructions",
+        "title": "お〜ください・なさい: mức độ chỉ dẫn",
+        "usage": "お〜ください là lời yêu cầu lịch sự. なさい thường là chỉ dẫn từ người trên với người dưới, như phụ huynh với con.",
+        "formula": "お + bỏ ます + ください. Bỏ ます + なさい.",
+        "pitfall": "お{待|ま}ちください phù hợp với khách. {待|ま}ちなさい không phải cách lịch sự hơn với khách; nó mang sắc thái ra lệnh.",
+        "examples": [
+          {
+            "ja": "こちらでお{待|ま}ちください。",
+            "vi": "Xin vui lòng chờ ở đây."
+          },
+          {
+            "ja": "{早|はや}く{寝|ね}なさい。",
+            "vi": "Con mau đi ngủ đi."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-29-instructions-choose",
+            "kind": "choice",
+            "prompt": "Nhân viên nói với khách: こちらに ____ ください。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{座|すわ}る",
+              "{座|すわ}りなさい",
+              "お{座|すわ}り"
+            ],
+            "answer": [
+              2
+            ],
+            "explanation": "お{座|すわ}りください là cách yêu cầu lịch sự; なさい không dùng trong tình huống này."
+          },
+          {
+            "id": "n4-29-instructions-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Quý khách vui lòng đợi tại đây.",
+            "prefix": "お{客様|きゃくさま}は、こちらで",
+            "suffix": "。",
+            "options": [
+              "{待|ま}ち",
+              "ください",
+              "お"
+            ],
+            "answer": [
+              2,
+              0,
+              1
+            ],
+            "explanation": "Một cách ghép đúng: お{客様|きゃくさま}は、こちらでお{待|ま}ちください。 お + {待|ま}ち (bỏ ます) + ください tạo lời yêu cầu khách chờ một cách lịch sự."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "n4-30",
+    "chapter": 30,
+    "title": "Mốc thời gian, hạn chót và câu hỏi lồng",
+    "description": "Học từng ý nhỏ, ghép câu rồi luyện lại những câu chưa chắc.",
+    "sources": [
+      {
+        "title": "Ngữ pháp 30A",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1668"
+      },
+      {
+        "title": "Ngữ pháp 30B",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1672"
+      },
+      {
+        "title": "Ngữ pháp 30C",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1676"
+      }
+    ],
+    "patterns": [
+      {
+        "id": "n4-30-when",
+        "title": "とき: trước, đang hay sau hành động?",
+        "usage": "Dạng động từ trước とき giúp xác định hành động đó đã hoàn thành hay chưa tại mốc vế sau.",
+        "formula": "Nguyên thể + とき: hành động chưa hoàn thành tại mốc đó. Thể た + とき: đã hoàn thành. Danh từ + のとき; tính từ な + なとき.",
+        "pitfall": "{日本|にほん}へ{行|い}くとき mua vé trước khi đi; {日本|にほん}へ{行|い}ったとき kể khi đã đi Nhật. Mốc của vế sau rất quan trọng.",
+        "examples": [
+          {
+            "ja": "{日本|にほん}へ{行|い}くとき、かばんを{買|か}いました。",
+            "vi": "Lúc chuẩn bị sang Nhật, tôi đã mua túi."
+          },
+          {
+            "ja": "{日本|にほん}へ{行|い}ったとき、この{写真|しゃしん}を{撮|と}りました。",
+            "vi": "Khi đã đến Nhật, tôi đã chụp ảnh này."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-30-when-choose",
+            "kind": "choice",
+            "prompt": "Mua vé trước khi lên tàu: {電車|でんしゃ}に ____ とき、{切符|きっぷ}を{買|か}います。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{乗|の}りました",
+              "{乗|の}った",
+              "{乗|の}る"
+            ],
+            "answer": [
+              2
+            ],
+            "explanation": "Ở mốc mua vé bạn chưa lên tàu, nên dùng {乗|の}るとき."
+          },
+          {
+            "id": "n4-30-when-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Khi còn nhỏ, tôi thường bơi.",
+            "prefix": "{私|わたし}は",
+            "suffix": "。",
+            "options": [
+              "とき、",
+              "よく",
+              "{泳|およ}ぎました",
+              "{子|こ}どもの"
+            ],
+            "answer": [
+              3,
+              0,
+              1,
+              2
+            ],
+            "explanation": "Một cách ghép đúng: {私|わたし}は{子|こ}どものとき、よく{泳|およ}ぎました。 {子|こ}どものとき dùng danh từ + のとき; よく{泳|およ}ぎました nói thói quen hay bơi thời nhỏ.",
+            "acceptedAnswers": [
+              [
+                1,
+                3,
+                0,
+                2
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "n4-30-interval",
+        "title": "間・間に: suốt khoảng hay trong khoảng?",
+        "usage": "間 thường gắn với việc kéo dài suốt khoảng. 間に đặt một việc xảy ra trong khoảng đó.",
+        "formula": "Danh từ + の{間|ま}(に); thể thường + {間|ま}(に), thường gặp ている{間|ま}.",
+        "pitfall": "{日本|にほん}にいる{間|ま}ずっと{働|はたら}いた là làm suốt thời gian. {日本|にほん}にいる{間|ま}に{京都|きょうと}へ{行|い}った là đi Kyoto trong khoảng ở Nhật.",
+        "examples": [
+          {
+            "ja": "{母|はは}が{料理|りょうり}している{間|ま}、{私|わたし}は{掃除|そうじ}しました。",
+            "vi": "Trong suốt lúc mẹ nấu ăn, tôi dọn nhà."
+          },
+          {
+            "ja": "{夏休|なつやす}みの{間|ま}に{本|ほん}を{三|さん}冊{読|よ}みました。",
+            "vi": "Trong kỳ nghỉ hè, tôi đã đọc ba cuốn sách."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-30-interval-choose",
+            "kind": "choice",
+            "prompt": "Một lần người đưa thư đến khi tôi vắng: {留守|るす}の ____ 、{荷物|にもつ}が{届|とど}きました。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{間|ま}に",
+              "{間|ま}で",
+              "{間|ま}を"
+            ],
+            "answer": [
+              0
+            ],
+            "explanation": "{荷物|にもつ}が{届|とど}く là một sự kiện xảy ra trong khoảng vắng nhà, nên dùng {間|ま}に."
+          },
+          {
+            "id": "n4-30-interval-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Trong thời gian ở Nhật, tôi muốn đến Kyoto một lần.",
+            "prefix": "{日本|にほん}にいる",
+            "suffix": "。",
+            "options": [
+              "{京都|きょうと}へ",
+              "{間|ま}に、",
+              "{行|い}きたいです",
+              "{一|いち}{度|ど}"
+            ],
+            "answer": [
+              1,
+              0,
+              3,
+              2
+            ],
+            "explanation": "Một cách ghép đúng: {日本|にほん}にいる{間|ま}に、{京都|きょうと}へ{一度|いちど}{行|い}きたいです。 {日本|にほん}にいる{間|ま}に đặt việc đi Kyoto một lần vào trong thời gian ở Nhật, không nói đi suốt thời gian đó.",
+            "acceptedAnswers": [
+              [
+                1,
+                3,
+                0,
+                2
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "n4-30-deadline",
+        "title": "まで・までに: kéo dài hay hạn chót?",
+        "usage": "まで nói việc tiếp tục đến một mốc. までに nói hoàn thành một việc không muộn hơn mốc đó.",
+        "formula": "Thời điểm + まで + hành động kéo dài. Thời điểm + までに + hoàn tất/nộp/về.",
+        "pitfall": "{五|ご}{時|じ}まで{待|ま}つ: chờ cho tới năm giờ. {五|ご}{時|じ}までに{出|だ}す: nộp chậm nhất lúc năm giờ; có thể nộp sớm hơn.",
+        "examples": [
+          {
+            "ja": "{図書館|としょかん}で{五|ご}{時|じ}まで{勉強|べんきょう}します。",
+            "vi": "Tôi học ở thư viện đến năm giờ."
+          },
+          {
+            "ja": "{金曜日|きんようび}までに{宿題|しゅくだい}を{出|だ}してください。",
+            "vi": "Hãy nộp bài tập chậm nhất vào thứ Sáu."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-30-deadline-choose",
+            "kind": "choice",
+            "prompt": "Hạn chót là ba giờ: {三時|さんじ} ____ レポートを{出|だ}してください。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "までを",
+              "までに",
+              "からまで"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "{出|だ}す là việc cần hoàn thành trước hoặc đúng hạn, nên dùng までに."
+          },
+          {
+            "id": "n4-30-deadline-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Tôi sẽ chờ ở đây đến sáu giờ.",
+            "prefix": "{私|わたし}は",
+            "suffix": "。",
+            "options": [
+              "ここで",
+              "まで",
+              "{待|ま}ちます",
+              "{六|ろく}{時|じ}"
+            ],
+            "answer": [
+              3,
+              1,
+              0,
+              2
+            ],
+            "explanation": "Một cách ghép đúng: {私|わたし}は{六|ろく}{時|じ}までここで{待|ま}ちます。 {六|ろく}{時|じ}まで nói việc chờ kéo dài đến sáu giờ. Không dùng までに vì đây không phải hạn hoàn thành một lần chờ.",
+            "acceptedAnswers": [
+              [
+                0,
+                3,
+                1,
+                2
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "n4-30-embedded",
+        "title": "かどうか・từ để hỏi + か",
+        "usage": "Đưa một câu hỏi vào bên trong câu lớn: biết hay không biết, kiểm tra hay hỏi lại một điều.",
+        "formula": "Có/không: thể thường + かどうか. Có từ hỏi như いつ/どこ: thể thường + か. Danh từ/tính từ な bỏ だ trước か.",
+        "pitfall": "いつ{来|く}るか đã có từ hỏi いつ, không thêm どうか. {来|く}るかどうか là có đến hay không.",
+        "examples": [
+          {
+            "ja": "{明日|あした}{行|い}くかどうか、まだ{分|わ}かりません。",
+            "vi": "Tôi vẫn chưa biết mai có đi hay không."
+          },
+          {
+            "ja": "{会議|かいぎ}が{何|なん}{時|じ}に{始|はじ}まるか、{教|おし}えてください。",
+            "vi": "Hãy cho tôi biết cuộc họp bắt đầu mấy giờ."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-30-embedded-choose",
+            "kind": "choice",
+            "prompt": "Hỏi “khi nào đến”: いつ{来|く}る ____ {教|おし}えてください。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "どうか",
+              "かどうか",
+              "か"
+            ],
+            "answer": [
+              2
+            ],
+            "explanation": "Đã có いつ nên dùng か: いつ{来|く}るか."
+          },
+          {
+            "id": "n4-30-embedded-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Tôi không biết cửa hàng này có đang mở hay không.",
+            "prefix": "{私|わたし}は",
+            "suffix": "。",
+            "options": [
+              "どうか、",
+              "{開|ひら}いているか",
+              "{知|し}りません",
+              "この{店|みせ}が"
+            ],
+            "answer": [
+              3,
+              1,
+              0,
+              2
+            ],
+            "explanation": "Một cách ghép đúng: {私|わたし}はこの{店|みせ}が{開|ひら}いているかどうか、{知|し}りません。 {開|ひら}いているかどうか là câu hỏi có đang mở hay không, làm nội dung của {知|し}りません."
+          }
+        ]
+      },
+      {
+        "id": "n4-30-try",
+        "title": "てみる: thử làm để biết",
+        "usage": "Thực sự làm một việc để kiểm tra kết quả hay trải nghiệm, không chỉ nghĩ đến việc thử.",
+        "formula": "Động từ thể て + みる. Thường viết みる bằng kana trong mẫu này.",
+        "pitfall": "{着|き}てみる là mặc thử. {見|み}ている là đang xem. Đừng hiểu みる ở đây chỉ là nhìn bằng mắt.",
+        "examples": [
+          {
+            "ja": "この{服|ふく}を{着|き}てみてもいいですか。",
+            "vi": "Tôi mặc thử bộ đồ này được không?"
+          },
+          {
+            "ja": "{分|わ}からなかったら、{先生|せんせい}に{聞|き}いてみます。",
+            "vi": "Nếu chưa hiểu, tôi sẽ thử hỏi thầy cô."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-30-try-choose",
+            "kind": "choice",
+            "prompt": "Muốn ăn thử: {一度|いちど} ____ みたいです。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{食|た}べて",
+              "{食|た}べた",
+              "{食|た}べる"
+            ],
+            "answer": [
+              0
+            ],
+            "explanation": "Thể て + みる: {食|た}べてみる là ăn thử."
+          },
+          {
+            "id": "n4-30-try-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Tôi sẽ thử làm một lần theo cách này.",
+            "prefix": "{私|わたし}は",
+            "suffix": "。",
+            "options": [
+              "やって",
+              "{一|いち}{度|ど}",
+              "この{方法|ほうほう}で",
+              "みます"
+            ],
+            "answer": [
+              2,
+              1,
+              0,
+              3
+            ],
+            "explanation": "Một cách ghép đúng: {私|わたし}はこの{方法|ほうほう}で{一|いち}{度|ど}やってみます。 やってみます dùng thể て + みる để thử làm nhằm biết kết quả. {一度|いちど} là thử một lần.",
+            "acceptedAnswers": [
+              [
+                1,
+                2,
+                0,
+                3
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "n4-31",
+    "chapter": 31,
+    "title": "Nêu lý do và nói điều trái dự kiến",
+    "description": "Học từng ý nhỏ, ghép câu rồi luyện lại những câu chưa chắc.",
+    "sources": [
+      {
+        "title": "Ngữ pháp 31A",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1682"
+      },
+      {
+        "title": "Ngữ pháp 31B",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1686"
+      }
+    ],
+    "patterns": [
+      {
+        "id": "n4-31-node",
+        "title": "ので: giải thích nguyên nhân nhẹ nhàng",
+        "usage": "Trình bày lý do làm nền cho lời nói sau, thường phù hợp với lời giải thích hoặc nhờ vả lịch sự.",
+        "formula": "Thể thường + ので. Danh từ/tính từ な + なので. Thể lịch sự + ので cũng dùng được trong ngữ cảnh lịch sự.",
+        "pitfall": "{雨|あめ}なので đúng; {雨|あめ}だので sai. ので thường nhẹ hơn から nhưng không tự làm mọi câu trở nên lịch sự.",
+        "examples": [
+          {
+            "ja": "{雨|あめ}なので、{家|いえ}にいます。",
+            "vi": "Vì trời mưa nên tôi ở nhà."
+          },
+          {
+            "ja": "{道|みち}が{混|こ}んでいたので、{遅|おく}れました。",
+            "vi": "Vì đường đã đông nên tôi đến muộn."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-31-node-choose",
+            "kind": "choice",
+            "prompt": "Điền đúng: {今日|きょう}は ____ 、{出|で}かけません。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{雨|あめ}だので",
+              "{雨|あめ}なので",
+              "{雨|あめ}のので"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "Danh từ {雨|あめ} nối với ので bằng な: {雨|あめ}なので."
+          },
+          {
+            "id": "n4-31-node-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Vì hơi mệt nên tôi sẽ ngủ sớm.",
+            "prefix": "{少|すこ}し",
+            "suffix": "。",
+            "options": [
+              "{寝|ね}ます",
+              "{早|はや}く",
+              "{疲|つか}れた",
+              "ので、"
+            ],
+            "answer": [
+              2,
+              3,
+              1,
+              0
+            ],
+            "explanation": "Một cách ghép đúng: {少|すこ}し{疲|つか}れたので、{早|はや}く{寝|ね}ます。 {疲|つか}れたので nêu lý do đã mệt; {早|はや}く{寝|ね}ます là quyết định ngủ sớm dựa trên lý do ấy."
+          }
+        ]
+      },
+      {
+        "id": "n4-31-noni",
+        "title": "のに: thế mà, dù đã…",
+        "usage": "Kết quả trái với điều bạn nghĩ sẽ xảy ra; thường có cảm giác bất ngờ hoặc tiếc.",
+        "formula": "Thể thường + のに. Danh từ/tính từ な + なのに.",
+        "pitfall": "たくさん{勉強|べんきょう}したのに、できなかった có hai việc thực tế trái dự kiến. Không dùng のに để nhờ vả theo mẫu cơ bản này.",
+        "examples": [
+          {
+            "ja": "たくさん{寝|ね}たのに、まだ{眠|ねむ}いです。",
+            "vi": "Đã ngủ nhiều thế mà vẫn buồn ngủ."
+          },
+          {
+            "ja": "{日曜日|にちようび}なのに、{店|みせ}が{開|ひら}いています。",
+            "vi": "Dù là Chủ nhật mà cửa hàng vẫn mở."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-31-noni-choose",
+            "kind": "choice",
+            "prompt": "Diễn đạt “Quán này đắt thế mà vẫn đông khách”: この{店|みせ}は ____ 、{人|ひと}が{多|おお}いです。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{高|たか}いので",
+              "{高|たか}いのに",
+              "{高|たか}いながら"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "Giá cao mà vẫn đông người là kết quả trái dự kiến, nên dùng のに."
+          },
+          {
+            "id": "n4-31-noni-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Tôi đã luyện mỗi ngày thế mà vẫn sai.",
+            "prefix": "{私|わたし}は",
+            "suffix": "。",
+            "options": [
+              "{練習|れんしゅう}した",
+              "{毎日|まいにち}",
+              "のに、",
+              "{間違|まちが}えました"
+            ],
+            "answer": [
+              1,
+              0,
+              2,
+              3
+            ],
+            "explanation": "Một cách ghép đúng: {私|わたし}は{毎日|まいにち}{練習|れんしゅう}したのに、{間違|まちが}えました。 {練習|れんしゅう}したのに nói đã luyện mà kết quả vẫn sai, trái điều người nói mong đợi."
+          }
+        ]
+      },
+      {
+        "id": "n4-31-even-if",
+        "title": "ても・でも: dù… vẫn…",
+        "usage": "Nói kết quả vẫn giữ nguyên kể cả khi điều kiện trước đó xảy ra. Có thể dùng cho giả định hoặc thực tế.",
+        "formula": "Động từ thể て + も; tính từ い bỏ い + くても; tính từ な/danh từ + でも.",
+        "pitfall": "{雨|あめ}でも{行|い}きます nói dù mưa vẫn đi. Không nhầm でも này với でも đứng đầu câu mang nghĩa “nhưng”.",
+        "examples": [
+          {
+            "ja": "{雨|あめ}でも、{試合|しあい}を{見|み}に{行|い}きます。",
+            "vi": "Dù mưa, tôi vẫn đi xem trận đấu."
+          },
+          {
+            "ja": "{忙|いそが}しくても、{毎日|まいにち}{少|すこ}し{読|よ}みます。",
+            "vi": "Dù bận, tôi vẫn đọc một chút mỗi ngày."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-31-even-if-choose",
+            "kind": "choice",
+            "prompt": "Điền đúng: ____ 、あきらめません。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{難|むずか}しいて",
+              "{難|むずか}しくても",
+              "{難|むずか}しいでも"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "Tính từ い {難|むずか}しい đổi thành {難|むずか}しくても."
+          },
+          {
+            "id": "n4-31-even-if-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Ngày mai dù trời mưa tôi vẫn đi ra ngoài.",
+            "prefix": "{明日|あした}は",
+            "suffix": "。",
+            "options": [
+              "{降|ふ}っても、",
+              "{雨|あめ}が",
+              "{出|で}かけ",
+              "ます"
+            ],
+            "answer": [
+              1,
+              0,
+              2,
+              3
+            ],
+            "explanation": "Một cách ghép đúng: {明日|あした}は{雨|あめ}が{降|ふ}っても、{出|で}かけます。 {降|ふ}っても nối thể て với も: dù có mưa, quyết định đi ra ngoài vẫn không đổi."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "n4-32",
+    "chapter": 32,
+    "title": "Điều kiện, cách làm và mục đích",
+    "description": "Học từng ý nhỏ, ghép câu rồi luyện lại những câu chưa chắc.",
+    "sources": [
+      {
+        "title": "Ngữ pháp 32A",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1692"
+      },
+      {
+        "title": "Ngữ pháp 32B",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1696"
+      },
+      {
+        "title": "Ngữ pháp 32C",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1700"
+      }
+    ],
+    "patterns": [
+      {
+        "id": "n4-32-condition",
+        "title": "たら・と: nếu và kết quả tự nhiên",
+        "usage": "たら dùng rộng cho điều kiện hoặc một việc xong rồi việc sau xảy ra. と thường tả quy luật, máy móc hay kết quả lặp lại.",
+        "formula": "Thể た + ら. Với danh từ/tính từ な: だったら. Với と: nguyên thể / thể ない + と.",
+        "pitfall": "Ở cách dùng quy luật của と, vế sau thường không phải lời rủ hay yêu cầu có ý chí. Muốn rủ “nếu rảnh thì đi cùng nhé”, dùng たら.",
+        "examples": [
+          {
+            "ja": "このボタンを{押|お}すと、ドアが{開|ひら}きます。",
+            "vi": "Bấm nút này thì cửa mở."
+          },
+          {
+            "ja": "{時間|じかん}があったら、{一緒|いっしょ}に{行|い}きませんか。",
+            "vi": "Nếu có thời gian thì đi cùng tôi nhé?"
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-32-condition-choose",
+            "kind": "choice",
+            "prompt": "Lời rủ sau điều kiện: {暇|ひま} ____ 、{遊|あそ}びに{来|き}てください。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "だと",
+              "でたら",
+              "だったら"
+            ],
+            "answer": [
+              2
+            ],
+            "explanation": "Danh từ/tính từ な chuyển thành だったら; mẫu này đi được với lời mời ở sau."
+          },
+          {
+            "id": "n4-32-condition-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Đi thẳng đường này thì sẽ thấy ga.",
+            "prefix": "この{道|みち}を",
+            "suffix": "。",
+            "options": [
+              "{行|い}くと、",
+              "{駅|えき}が",
+              "あります",
+              "まっすぐ"
+            ],
+            "answer": [
+              3,
+              0,
+              1,
+              2
+            ],
+            "explanation": "Một cách ghép đúng: この{道|みち}をまっすぐ{行|い}くと、{駅|えき}があります。 {行|い}くと nêu kết quả sẽ gặp khi đi thẳng con đường này; vế sau mô tả vị trí có ga."
+          }
+        ]
+      },
+      {
+        "id": "n4-32-advice-hope",
+        "title": "たらどうですか・といい: góp ý hay mong ước",
+        "usage": "たらどうですか gợi ý một cách làm. といいですね thường bày tỏ hy vọng điều tốt xảy ra.",
+        "formula": "Thể た + らどうですか. Nguyên thể / thể ない + といい. Danh từ/tính từ な với ý hy vọng thường dùng だといい.",
+        "pitfall": "{病院|びょういん}へ{行|い}ったらどうですか là góp ý. {晴|は}れるといいですね là mong trời nắng, không phải khẳng định sẽ nắng.",
+        "examples": [
+          {
+            "ja": "{先生|せんせい}に{聞|き}いてみたらどうですか。",
+            "vi": "Bạn thử hỏi thầy cô xem sao?"
+          },
+          {
+            "ja": "{明日|あした}は{晴|は}れるといいですね。",
+            "vi": "Mong ngày mai trời nắng nhỉ."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-32-advice-hope-choose",
+            "kind": "choice",
+            "prompt": "Góp ý nên nghỉ một chút: {少|すこ}し ____ どうですか。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{休|やす}みで",
+              "{休|やす}んだら",
+              "{休|やす}むと"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "{休|やす}んだらどうですか là lời gợi ý một hành động cụ thể."
+          },
+          {
+            "id": "n4-32-advice-hope-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Mong là bạn sẽ thi đỗ.",
+            "prefix": "{試験|しけん}に",
+            "suffix": "。",
+            "options": [
+              "できる",
+              "いいですね",
+              "{合格|ごうかく}",
+              "と"
+            ],
+            "answer": [
+              2,
+              0,
+              3,
+              1
+            ],
+            "explanation": "Một cách ghép đúng: {試験|しけん}に{合格|ごうかく}できるといいですね。 できるといいですね bày tỏ hy vọng thi đỗ; không khẳng định người nghe chắc chắn sẽ đỗ."
+          }
+        ]
+      },
+      {
+        "id": "n4-32-case-method",
+        "title": "場合・とおりに: tình huống và đúng theo hướng dẫn",
+        "usage": "場合 nói trường hợp cần xử lý; とおりに nói làm theo mẫu, lời chỉ dẫn hoặc thứ tự đã có.",
+        "formula": "Thể thường + {場合|ばあい}; danh từ + の{場合|ばあい}; tính từ な + な{場合|ばあい}. Thể thường + とおりに; danh từ + のとおりに.",
+        "pitfall": "{説明|せつめい}のとおりに và {説明|せつめい}したとおりに có cách nối khác nhau. {場合|ばあい} là “trường hợp”, không tự mang nghĩa mọi lần hay suốt thời gian.",
+        "examples": [
+          {
+            "ja": "{火事|かじ}の{場合|ばあい}は、{階段|かいだん}を{使|つか}ってください。",
+            "vi": "Nếu xảy ra hỏa hoạn, hãy dùng cầu thang."
+          },
+          {
+            "ja": "{説明|せつめい}{書|しょ}のとおりに{作|つく}ってください。",
+            "vi": "Hãy làm theo đúng hướng dẫn sử dụng."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-32-case-method-choose",
+            "kind": "choice",
+            "prompt": "Điền đúng: {地図|ちず} ____ とおりに{歩|ある}いてください。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "を",
+              "の",
+              "な"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "Danh từ {地図|ちず} cần の trước とおりに."
+          },
+          {
+            "id": "n4-32-case-method-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Nếu không hiểu, hãy hỏi thầy cô.",
+            "prefix": "{分|わ}からない",
+            "suffix": "。",
+            "options": [
+              "{先生|せんせい}に",
+              "{聞|き}いて",
+              "{場合|ばあい}は、",
+              "ください"
+            ],
+            "answer": [
+              2,
+              0,
+              1,
+              3
+            ],
+            "explanation": "Một cách ghép đúng: {分|わ}からない{場合|ばあい}は、{先生|せんせい}に{聞|き}いてください。 {分|わ}からない{場合|ばあい}は đặt tình huống không hiểu làm điều kiện; {聞|き}いてください là hướng dẫn cần làm."
+          }
+        ]
+      },
+      {
+        "id": "n4-32-purpose",
+        "title": "ために・ように: mục đích và trạng thái muốn đạt",
+        "usage": "ために thường nối mục tiêu bạn chủ động thực hiện. ように thường nối khả năng hoặc trạng thái muốn đạt/điều muốn tránh.",
+        "formula": "Nguyên thể có ý chí / danh từ + の + ために. Nguyên thể/khả năng hoặc thể ない + ように.",
+        "pitfall": "{日本|にほん}へ{行|い}くために{貯金|ちょきん}する: để sang Nhật. {日本語|にほんご}が{話|はな}せるように{練習|れんしゅう}する: để có thể nói. Để ý động từ có ý chí hay khả năng.",
+        "examples": [
+          {
+            "ja": "{日本|にほん}へ{行|い}くために、お{金|かね}をためています。",
+            "vi": "Tôi đang tiết kiệm tiền để sang Nhật."
+          },
+          {
+            "ja": "{忘|わす}れないように、メモします。",
+            "vi": "Tôi ghi lại để không quên."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-32-purpose-choose",
+            "kind": "choice",
+            "prompt": "Mục tiêu là khả năng nghe hiểu: {日本語|にほんご}が{分|わ}かる ____ 、{毎日|まいにち}{聞|き}きます。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "ためが",
+              "ように",
+              "ことを"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "{分|わ}かる là trạng thái/khả năng muốn đạt, nên chọn ように trong câu này."
+          },
+          {
+            "id": "n4-32-purpose-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Tôi đang học để trở thành bác sĩ.",
+            "prefix": "{私|わたし}は",
+            "suffix": "。",
+            "options": [
+              "{勉強|べんきょう}しています",
+              "ために、",
+              "{医者|いしゃ}に",
+              "なる"
+            ],
+            "answer": [
+              2,
+              3,
+              1,
+              0
+            ],
+            "explanation": "Một cách ghép đúng: {私|わたし}は{医者|いしゃ}になるために、{勉強|べんきょう}しています。 なる là hành động mục tiêu có chủ ý, nên dùng {医者|いしゃ}になるために để nói học nhằm trở thành bác sĩ."
+          }
+        ]
+      },
+      {
+        "id": "n4-32-cause-use",
+        "title": "ため・のに: nguyên nhân và công dụng",
+        "usage": "ため còn có nghĩa nguyên nhân; のに ở công dụng diễn tả “để làm việc gì”, khác với のに trái dự kiến ở chương 31.",
+        "formula": "Nguyên nhân: thể thường + ため(に); danh từ + のため. Công dụng/chi phí: nguyên thể + のに / danh từ + に.",
+        "pitfall": "{雨|あめ}のため{中止|ちゅうし}: hủy do mưa. {本|ほん}を{読|よ}むのに{便利|べんり}: tiện để đọc sách. Nhìn vế sau để phân biệt hai nghĩa のに.",
+        "examples": [
+          {
+            "ja": "{雪|ゆき}のため、{電車|でんしゃ}が{止|と}まりました。",
+            "vi": "Tàu đã dừng do tuyết."
+          },
+          {
+            "ja": "この{机|つくえ}は{勉強|べんきょう}するのに{便利|べんり}です。",
+            "vi": "Bàn này tiện cho việc học."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-32-cause-use-choose",
+            "kind": "choice",
+            "prompt": "Nói công dụng của kéo: これは{紙|かみ}を{切|き}る ____ {使|つか}います。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "のは",
+              "のに",
+              "なのに"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "{切|き}るのに{使|つか}う nói dùng để cắt. Đây là のに chỉ công dụng, không phải “thế mà”."
+          },
+          {
+            "id": "n4-32-cause-use-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Tôi đã mất hai tiếng để hoàn thành việc này.",
+            "prefix": "この{仕事|しごと}を",
+            "suffix": "。",
+            "options": [
+              "のに、",
+              "かかりました",
+              "{二|に}{時間|じかん}",
+              "{終|お}える"
+            ],
+            "answer": [
+              3,
+              0,
+              2,
+              1
+            ],
+            "explanation": "Một cách ghép đúng: この{仕事|しごと}を{終|お}えるのに、{二|に}{時間|じかん}かかりました。 {終|お}えるのに ở đây nói thời gian cần cho việc hoàn thành; {二|に}{時間|じかん}かかりました là mất hai tiếng, không phải ý trái dự kiến."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "n4-33",
+    "chapter": 33,
+    "title": "Tôn trọng người nghe bằng kính ngữ",
+    "description": "Học từng ý nhỏ, ghép câu rồi luyện lại những câu chưa chắc.",
+    "sources": [
+      {
+        "title": "Ngữ pháp 33A",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1873"
+      },
+      {
+        "title": "Ngữ pháp 33B",
+        "url": "https://dungmori.com/khoa-hoc/so-cap-n4/group/1877"
+      }
+    ],
+    "patterns": [
+      {
+        "id": "n4-33-respect",
+        "title": "Tôn kính ngữ đặc biệt: nâng hành động người khác",
+        "usage": "Dùng động từ đặc biệt khi nói hành động của người mình kính trọng, như khách, cấp trên hay thầy cô.",
+        "formula": "{行|い}く・{来|く}る・いる→いらっしゃる. {食|た}べる・{飲|の}む→{召|め}し{上|あ}がる. {言|い}う→おっしゃる. {見|み}る→ご{覧|らん}になる.",
+        "pitfall": "Không dùng いらっしゃいます để tự nâng hành động của mình. Cần nhìn ai là người thực hiện trước khi chọn kính ngữ.",
+        "examples": [
+          {
+            "ja": "{先生|せんせい}は{教室|きょうしつ}にいらっしゃいます。",
+            "vi": "Thầy cô đang ở trong lớp ạ."
+          },
+          {
+            "ja": "どうぞ{召|め}し{上|あ}がってください。",
+            "vi": "Xin mời dùng món ạ."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-33-respect-choose",
+            "kind": "choice",
+            "prompt": "Nói kính trọng rằng thầy cô đang ở đây: {先生|せんせい}はこちらに ____ 。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{参|まい}ります",
+              "いらっしゃいます",
+              "おります"
+            ],
+            "answer": [
+              1
+            ],
+            "explanation": "いらっしゃいます nâng hành động いる của thầy cô. おります/{参|まい}ります thuộc phía mình."
+          },
+          {
+            "id": "n4-33-respect-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Quý khách đã dùng bữa rồi ạ.",
+            "prefix": "お{客様|きゃくさま}は",
+            "suffix": "。",
+            "options": [
+              "{召|め}し{上|あ}がり",
+              "ました",
+              "もう",
+              "ご{飯|はん}を"
+            ],
+            "answer": [
+              2,
+              3,
+              0,
+              1
+            ],
+            "explanation": "Một cách ghép đúng: お{客様|きゃくさま}はもうご{飯|はん}を{召|め}し{上|あ}がりました。 {召|め}し{上|あ}がりました là cách tôn kính của {食|た}べました, dùng vì người ăn là khách.",
+            "acceptedAnswers": [
+              [
+                3,
+                2,
+                0,
+                1
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "n4-33-respect-passive",
+        "title": "れる・られる: thêm sắc thái kính trọng",
+        "usage": "Dạng giống bị động cũng có thể diễn tả tôn kính. Phân biệt bằng chủ thể và toàn bộ ngữ cảnh.",
+        "formula": "Động từ ở dạng れる／られる dùng cho hành động của người được kính trọng. Không ghép thêm một lớp kính ngữ máy móc.",
+        "pitfall": "{先生|せんせい}が{話|はな}されます có thể là thầy cô nói (tôn kính). {私|わたし}は{先生|せんせい}に{注意|ちゅうい}されました là tôi bị nhắc (bị động).",
+        "examples": [
+          {
+            "ja": "{先生|せんせい}は{明日|あした}{来|きた}られます。",
+            "vi": "Ngày mai thầy cô sẽ đến ạ."
+          },
+          {
+            "ja": "{社長|しゃちょう}はもう{帰|かえ}られました。",
+            "vi": "Giám đốc đã về rồi ạ."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-33-respect-passive-choose",
+            "kind": "choice",
+            "prompt": "Nói tôn kính hành động “đọc” của thầy: {先生|せんせい}はこの{本|ほん}を ____ 。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{読|よ}まれました",
+              "{読|よ}めませんでした",
+              "{読|よ}ませました"
+            ],
+            "answer": [
+              0
+            ],
+            "explanation": "Ở ngữ cảnh tôn kính, {読|よ}まれました là dạng kính trọng của {読|よ}みました."
+          },
+          {
+            "id": "n4-33-respect-passive-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Khi nào thầy cô đi Nhật ạ?",
+            "prefix": "{先生|せんせい}は",
+            "suffix": "。",
+            "options": [
+              "ますか",
+              "いつ",
+              "{日本|にほん}へ",
+              "{行|い}かれ"
+            ],
+            "answer": [
+              1,
+              2,
+              3,
+              0
+            ],
+            "explanation": "Một cách ghép đúng: {先生|せんせい}はいつ{日本|にほん}へ{行|い}かれますか。 {行|い}かれます dùng dạng れる với sắc thái tôn kính cho hành động của thầy cô; いつ hỏi thời điểm.",
+            "acceptedAnswers": [
+              [
+                2,
+                1,
+                3,
+                0
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "n4-33-humble",
+        "title": "Khiêm nhường ngữ đặc biệt: nói việc của mình",
+        "usage": "Hạ cách nói về hành động phía mình để tỏ sự tôn trọng với người liên quan. Không có nghĩa tự coi việc của mình là kém giá trị.",
+        "formula": "{行|い}く・{来|く}る→{参|まい}る (lịch sự) / {伺|うかが}う (đến chỗ người khác để tỏ kính trọng). いる→おる. {言|い}う→{申|もう}す. もらう→いただく. {会|あ}う→お{目|め}にかかる.",
+        "pitfall": "{先生|せんせい}が{参|まい}ります không phù hợp nếu bạn muốn nâng thầy cô. {私|わたし}が{参|まい}ります nói lịch sự về việc chính mình đi/đến.",
+        "examples": [
+          {
+            "ja": "{私|わたし}はベトナムから{参|まい}りました。",
+            "vi": "Tôi đến từ Việt Nam ạ."
+          },
+          {
+            "ja": "{明日|あした}、{先生|せんせい}のお{宅|たく}に{伺|うかが}います。",
+            "vi": "Ngày mai tôi xin đến nhà thầy cô ạ."
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-33-humble-choose",
+            "kind": "choice",
+            "prompt": "Tự giới thiệu tên mình lịch sự: リンと ____ 。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "{申|もう}します",
+              "{召|め}し{上|あ}がります",
+              "おっしゃいます"
+            ],
+            "answer": [
+              0
+            ],
+            "explanation": "{申|もう}します dùng cho lời mình nói; おっしゃいます nâng lời của người khác."
+          },
+          {
+            "id": "n4-33-humble-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Ngày mai tôi xin đến chỗ anh/chị ạ.",
+            "prefix": "{明日|あした}、",
+            "suffix": "。",
+            "options": [
+              "{伺|うかが}い",
+              "{私|わたし}が",
+              "そちらへ",
+              "ます"
+            ],
+            "answer": [
+              1,
+              2,
+              0,
+              3
+            ],
+            "explanation": "Một cách ghép đúng: {明日|あした}、{私|わたし}がそちらへ{伺|うかが}います。 {私|わたし}が thực hiện việc đến chỗ người nghe, nên dùng {伺|うかが}います để nói khiêm nhường.",
+            "acceptedAnswers": [
+              [
+                2,
+                1,
+                0,
+                3
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "n4-33-gozaimasu",
+        "title": "ございます・でございます: cách nói trang trọng",
+        "usage": "ございます là dạng lịch sự của あります. でございます là cách nói trang trọng tương ứng với です.",
+        "formula": "Danh từ + でございます. Vật/sự việc + がございます. Dùng trong tiếp khách, thông báo hoặc dịch vụ.",
+        "pitfall": "こちらが{受付|うけつけ}でございます là “đây là quầy lễ tân”. {時間|じかん}がございます là “có thời gian”. Không thay います bằng ございます để nói người đang ở đâu.",
+        "examples": [
+          {
+            "ja": "こちらが{会議|かいぎ}{室|しつ}でございます。",
+            "vi": "Đây là phòng họp ạ."
+          },
+          {
+            "ja": "{何|なに}かご{質問|しつもん}はございますか。",
+            "vi": "Quý vị có câu hỏi nào không ạ?"
+          }
+        ],
+        "questions": [
+          {
+            "id": "n4-33-gozaimasu-choose",
+            "kind": "choice",
+            "prompt": "Chọn cách nói trang trọng của こちらは{受付|うけつけ}です。",
+            "translation": "",
+            "prefix": "",
+            "suffix": "",
+            "options": [
+              "こちらは{受付|うけつけ}でございます。",
+              "こちらは{受付|うけつけ}がございます。",
+              "こちらは{受付|うけつけ}にございます。"
+            ],
+            "answer": [
+              0
+            ],
+            "explanation": "でございます tương ứng với です sau danh từ để giới thiệu “là quầy lễ tân”."
+          },
+          {
+            "id": "n4-33-gozaimasu-order",
+            "kind": "order",
+            "prompt": "Ghép các mảnh vào phần trống để diễn đạt đúng ý bên dưới.",
+            "translation": "Ở đây có tờ giới thiệu ạ.",
+            "prefix": "ここに",
+            "suffix": "。",
+            "options": [
+              "ございます",
+              "パンフレットが"
+            ],
+            "answer": [
+              1,
+              0
+            ],
+            "explanation": "Một cách ghép đúng: ここにパンフレットがございます。 パンフレットがございます là cách lịch sự của パンフレットがあります, nói có tờ giới thiệu ở đây."
+          }
+        ]
+      }
+    ]
+  }
+]

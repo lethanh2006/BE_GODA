@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
+import { hanVietOf } from './hanviet.js';
 import type { DeckCardExample } from '../../database/entities/deck-card.entity.js';
 import type { JlptLevel } from '../../database/enums.js';
 
@@ -77,7 +78,7 @@ export function expandKanjiDeck(deck: CatalogDeck): CatalogDeck {
         term,
         furigana: example.ja === term ? null : example.ja,
         reading,
-        hanviet: term === parent.term ? parent.hanviet : null,
+        hanviet: hanVietOf(term),
         wordType: null,
         meaning: example.vi,
         examples: [],

@@ -221,3 +221,17 @@ TEST_DATABASE_URL='postgresql://…/goda_decks_test' pnpm exec vitest run src/mo
 ```
 
 `mode` nhận `matching` hoặc `listening`. Nộp đúng một đáp án cho mỗi thẻ của bài (tối đa 2.000 thẻ); hai UUID đều phải thuộc bộ thẻ của người dùng. Các thẻ có cùng nghĩa được coi là tương đương. Kết quả `{ correct, total, completed, learned }` chỉ có `completed: true` khi tất cả đúng; khi đó những thẻ chưa học được đưa vào lịch FSRS và ghi nhật ký học như `POST /decks/:id/learned`. Chơi lại giữ lịch ôn hiện tại. Đây là xác nhận hoàn thành bài luyện, không phải điểm thi hay bảng xếp hạng.
+
+### Ngữ pháp N4 bổ trợ
+
+`/ngu-phap-n4` học bổ trợ theo chương 15–33 của khóa N4 đang học: 71 mục nhỏ, 142 câu chọn dạng và ghép câu, ví dụ có furigana và bản dịch, cách ghép rõ ràng, lỗi thường nhầm và lời giải sau mỗi lần kiểm tra. Đây là nội dung Goda tự biên soạn theo mục lục nguồn; chỉ lưu liên kết bài gốc, không đưa video hay thông tin tài khoản Dũng Mori vào dữ liệu ứng dụng.
+
+Các API `/api/grammar/n4`, `/api/grammar/n4/:chapter`, `POST /api/grammar/n4/:chapter/answers` đều yêu cầu đăng nhập. Gửi `{ questionId, answer: [optionIndex, ...] }`; backend kiểm tra và chấm theo dữ liệu chuẩn, chấp nhận những trật tự câu khác đã được rà soát. Bản tải bài ban đầu không có đáp án/lời giải. Bảng `grammar_progress` lưu lần trả lời gần nhất và số lượt thử theo tài khoản + bài + câu; phép cộng số lượt thử là nguyên tử. Migration `AddGrammarProgress1795276800000` tự chạy khi Render khởi động ở production.
+
+Thẻ chữ Hán mới có âm Hán Việt từ `hanviet-readings.json`, dựa trên dữ liệu kanji/Unihan đang có cùng các âm thông dụng được hiệu chỉnh. API điền âm thiếu khi trả thẻ, vì vậy UUID và lịch FSRS cũ giữ nguyên và không cần nhập lại thẻ.
+
+Kiểm thử riêng trên Postgres:
+
+```bash
+GRAMMAR_TEST_DATABASE_URL='postgresql://…/goda_grammar_test' pnpm exec vitest run src/modules/grammar/grammar.integration.spec.ts
+```

@@ -10,6 +10,7 @@ import { Deck, DeckCard, ReviewLog } from '../../database/entities/index.js';
 import type { JlptLevel } from '../../database/enums.js';
 import type { CompleteDeckPracticeDto } from './dto/deck.dto.js';
 import { saveReviewLogs } from '../vocab/review-log.js';
+import { hanVietOf } from './hanviet.js';
 import {
   DUNG_MORI_KEYS,
   isDungMoriDeck,
@@ -57,7 +58,7 @@ const toCardView = (card: DeckCard) => ({
   term: card.term,
   furigana: card.furigana,
   reading: card.reading,
-  hanviet: card.hanviet,
+  hanviet: card.hanviet || hanVietOf(card.term),
   wordType: card.wordType,
   meaning: card.meaning,
   speechText: speechText(card.reading || card.furigana || card.term),

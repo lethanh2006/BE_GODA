@@ -20,7 +20,7 @@ describe('N4 kanji vocabulary cards', () => {
       furigana: '{協|きょう}{力|りょく}',
       reading: 'きょうりょく',
       meaning: 'hợp tác, hiệp lực',
-      hanviet: null,
+      hanviet: 'HIỆP LỰC',
     });
     expect(deck.cards.find((card) => card.term === '運動します')).toMatchObject(
       { reading: 'うんどうします', meaning: 'vận động, thể dục' },

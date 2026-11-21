@@ -3,6 +3,7 @@ import { Attempt } from './attempt.entity.js';
 import { Bookmark } from './bookmark.entity.js';
 import { DeckCard } from './deck-card.entity.js';
 import { Deck } from './deck.entity.js';
+import { GrammarProgress } from './grammar-progress.entity.js';
 import { ExamQuestion } from './exam-question.entity.js';
 import { ExamSection } from './exam-section.entity.js';
 import { Exam } from './exam.entity.js';
@@ -22,6 +23,7 @@ export {
   Bookmark,
   Deck,
   DeckCard,
+  GrammarProgress,
   Exam,
   ExamQuestion,
   ExamSection,
@@ -53,5 +55,6 @@ export const ENTITIES = [
   UserWord,
   Deck,
   DeckCard,
+  GrammarProgress,
   ReviewLog,
 ];
