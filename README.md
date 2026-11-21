@@ -191,9 +191,13 @@ nguyên. File nguồn là nội dung riêng của người dùng: để trong `.
 
 ### Từ vựng N4 Dũng Mori
 
-Mục `/tu-vung-n4-dung-mori` dành cho mọi tài khoản đã đăng nhập, gồm 63 bài / 965 thẻ từ vựng và chữ Hán N4. Khách không xem được nội dung; mọi API `/decks` vẫn bắt buộc xác thực.
+Mục `/tu-vung-n4-dung-mori` dành cho mọi tài khoản đã đăng nhập, gồm 63 bài / 1.236 thẻ: 765 thẻ từ vựng và 471 thẻ từ trong 19 chương chữ Hán N4. Khách không xem được nội dung; mọi API `/decks` vẫn bắt buộc xác thực.
 
 `GET /decks?collection=dung-mori-n4` tự cấp các bài còn thiếu cho tài khoản, dùng dữ liệu backend tại `src/modules/decks/data/dung-mori-n4.json` (được đóng gói vào `dist/` khi build). Nội dung dùng chung, UUID thẻ và lịch FSRS riêng theo tài khoản. Bộ đã nhập trước đây được nhận diện theo `source_key`, giữ UUID và tiến độ. Cấp dữ liệu trong transaction, dùng advisory lock và unique constraint để tránh tạo trùng khi mở nhiều tab. Không cần migration hay nhập thủ công cho từng tài khoản.
+
+Các chương chữ Hán học từng từ ví dụ thành thẻ riêng (ví dụ `協力`, `運動します`, `自動`), có cách đọc kana và nghĩa tiếng Việt. Backend tạo thẻ từ dữ liệu nguồn bằng `dung-mori-data.ts`; cùng từ/cách đọc trong một chương chỉ có một thẻ, còn từ cùng chữ nhưng khác cách đọc vẫn tách riêng. ID theo từ + cách đọc, không phụ thuộc thứ tự nguồn. Mở trực tiếp URL chương cũ cũng tự bổ sung các thẻ mới.
+
+200 thẻ ký tự cũ được giữ nguyên UUID, lịch FSRS và nhật ký trong database, nhưng không còn nằm trong số lượng thẻ, bài học, chấm ghép cặp/luyện nghe hay hàng ôn. Thẻ từ mới có lịch riêng; 765 thẻ từ vựng cũ giữ tiến độ. Không cần migration, không dùng lại lệnh `decks:import` để xóa thẻ cũ.
 
 `GET /decks/queue?collection=dung-mori-n4` chỉ trả hàng ôn của mục này. Bỏ `collection` hoặc dùng `private` để lấy bộ riêng, không lẫn Dũng Mori. `GET /decks/:id` trả thêm `collection`; bài trước/sau chỉ đi trong cùng mục. Các API học và ôn vẫn kiểm tra quyền sở hữu tài khoản.
 

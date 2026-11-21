@@ -13,7 +13,7 @@ const T0 = new Date('2026-11-01T00:00:00Z');
 
 function queryBuilder(raw: unknown[]) {
   const qb: Record<string, ReturnType<typeof vi.fn>> = {};
-  for (const step of ['update', 'set', 'where', 'returning'])
+  for (const step of ['update', 'set', 'where', 'andWhere', 'returning'])
     qb[step] = vi.fn(() => qb);
   qb.execute = vi.fn().mockResolvedValue({ raw, affected: raw.length });
   return qb;
@@ -22,7 +22,7 @@ function queryBuilder(raw: unknown[]) {
 function setup() {
   const decks = {
     existsBy: vi.fn().mockResolvedValue(true),
-    findOne: vi.fn(),
+    findOne: vi.fn().mockResolvedValue({ sourceKey: 'private:test' }),
     find: vi.fn().mockResolvedValue([]),
   };
   const cards = {
@@ -69,7 +69,12 @@ describe('DecksService ghi nhật ký ôn', () => {
   it('ôn thẻ: lưu lịch mới rồi ghi một dòng review', async () => {
     const { service, cards, reviewLogs } = setup();
     const before = review(newCard(T0), Rating.Good, T0);
-    cards.findOne.mockResolvedValue({ id: 'c1', deckId: 'deck-1', ...before });
+    cards.findOne.mockResolvedValue({
+      id: 'c1',
+      deckId: 'deck-1',
+      deck: { sourceKey: 'private:test' },
+      ...before,
+    });
 
     await service.review(USER, 'c1', Rating.Again);
 

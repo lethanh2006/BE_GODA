@@ -72,27 +72,30 @@ export class DecksController {
   }
 
   @Get(':id')
-  detail(
+  async detail(
     @CurrentUser() user: AuthUser,
     @Param('id', ParseUUIDPipe) id: string,
   ) {
+    await this.catalog.ensureForDeck(user.id, id);
     return this.decks.detail(user.id, id);
   }
 
   @Post(':id/practice')
-  practice(
+  async practice(
     @CurrentUser() user: AuthUser,
     @Param('id', ParseUUIDPipe) id: string,
     @Body() dto: CompleteDeckPracticeDto,
   ) {
+    await this.catalog.ensureForDeck(user.id, id);
     return this.decks.completePractice(user.id, id, dto);
   }
 
   @Post(':id/learned')
-  learned(
+  async learned(
     @CurrentUser() user: AuthUser,
     @Param('id', ParseUUIDPipe) id: string,
   ) {
+    await this.catalog.ensureForDeck(user.id, id);
     return this.decks.markLearned(user.id, id);
   }
 }

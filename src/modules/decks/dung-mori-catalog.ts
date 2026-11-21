@@ -1,33 +1,11 @@
-import { readFileSync } from 'node:fs';
 import { Injectable } from '@nestjs/common';
 import { DataSource, type EntityManager, In } from 'typeorm';
 import { Deck, DeckCard } from '../../database/entities/index.js';
-import type { DeckCardExample } from '../../database/entities/deck-card.entity.js';
-import type { JlptLevel } from '../../database/enums.js';
-
-interface CatalogDeck {
-  key: string;
-  course: string;
-  level: JlptLevel;
-  chapter: number;
-  title: string;
-  kind: 'vocab' | 'kanji';
-  cards: {
-    id: string;
-    term: string;
-    furigana: string | null;
-    reading: string;
-    hanviet: string | null;
-    wordType: string | null;
-    meaning: string;
-    examples: DeckCardExample[];
-  }[];
-}
-
-// Chỉ backend đọc dữ liệu; không đặt trong public/ hay gửi xuống trước khi xác thực.
-const catalog = JSON.parse(
-  readFileSync(new URL('./data/dung-mori-n4.json', import.meta.url), 'utf8'),
-) as { decks: CatalogDeck[] };
+import {
+  DUNG_MORI_CATALOG as catalog,
+  DUNG_MORI_KANJI_KEYS,
+  DUNG_MORI_RETIRED_KANJI_IDS,
+} from './dung-mori-data.js';
 
 export const DUNG_MORI_KEYS = catalog.decks.map((deck) => deck.key);
 const DUNG_MORI_KEY_SET = new Set(DUNG_MORI_KEYS);
@@ -93,12 +71,28 @@ export class DungMoriCatalog {
     });
   }
 
+  /** Direct chapter links must upgrade before returning or grading their cards. */
+  async ensureForDeck(userId: string, deckId: string) {
+    const deck = await this.dataSource.getRepository(Deck).findOne({
+      where: { id: deckId, userId },
+      select: { sourceKey: true },
+    });
+    if (deck && isDungMoriDeck(deck.sourceKey))
+      await this.ensureForUser(userId);
+  }
+
   private async isComplete(manager: EntityManager, userId: string) {
     const [counts] = await manager.query<{ decks: number; cards: number }[]>(
       `SELECT COUNT(DISTINCT d.id)::int AS decks, COUNT(c.id)::int AS cards
          FROM decks d LEFT JOIN deck_cards c ON c.deck_id = d.id
+          AND NOT (d.source_key = ANY($3::text[]) AND c.source_id = ANY($4::text[]))
         WHERE d.user_id = $1 AND d.source_key = ANY($2::text[])`,
-      [userId, DUNG_MORI_KEYS],
+      [
+        userId,
+        DUNG_MORI_KEYS,
+        DUNG_MORI_KANJI_KEYS,
+        DUNG_MORI_RETIRED_KANJI_IDS,
+      ],
     );
     return counts.decks === catalog.decks.length && counts.cards === CARD_COUNT;
   }

@@ -16,6 +16,11 @@ import {
   type DeckCollection,
 } from './dung-mori-catalog.js';
 import {
+  DUNG_MORI_KANJI_KEYS,
+  DUNG_MORI_RETIRED_KANJI_IDS,
+  isRetiredDungMoriCard,
+} from './dung-mori-data.js';
+import {
   type CardFields,
   newCard,
   preview,
@@ -23,6 +28,10 @@ import {
 } from '../vocab/scheduler.js';
 
 const QUEUE_LIMIT = 50;
+const activeCards = (deck: Deck) =>
+  deck.cards.filter(
+    (card) => !isRetiredDungMoriCard(deck.sourceKey, card.sourceId),
+  );
 
 /** Lịch ôn của thẻ ở dạng scheduler cần; thẻ chưa học coi như đến hạn ngay. */
 const scheduleOf = (card: DeckCard, now: Date): CardFields => ({
@@ -87,10 +96,17 @@ export class DecksService {
               COUNT(c.due)::int AS learned,
               COUNT(*) FILTER (WHERE c.due <= now())::int AS due
          FROM decks d LEFT JOIN deck_cards c ON c.deck_id = d.id
+          AND NOT (d.source_key = ANY($4::text[]) AND c.source_id = ANY($5::text[]))
         WHERE d.user_id = $1 AND (d.source_key = ANY($2::text[])) = $3
         GROUP BY d.id
         ORDER BY d.position`,
-      [userId, DUNG_MORI_KEYS, collection === 'dung-mori-n4'],
+      [
+        userId,
+        DUNG_MORI_KEYS,
+        collection === 'dung-mori-n4',
+        DUNG_MORI_KANJI_KEYS,
+        DUNG_MORI_RETIRED_KANJI_IDS,
+      ],
     );
     return { due: rows.reduce((sum, row) => sum + row.due, 0), decks: rows };
   }
@@ -127,7 +143,7 @@ export class DecksService {
       kind: deck.kind,
       prevId: siblings[index - 1]?.id ?? null,
       nextId: siblings[index + 1]?.id ?? null,
-      cards: deck.cards.map(toCardView),
+      cards: activeCards(deck).map(toCardView),
     };
   }
 
@@ -142,12 +158,13 @@ export class DecksService {
       relations: { cards: true },
     });
     if (!deck) throw new NotFoundException('Không tìm thấy bộ thẻ');
-    const byId = new Map(deck.cards.map((card) => [card.id, card]));
+    const cards = activeCards(deck);
+    const byId = new Map(cards.map((card) => [card.id, card]));
     const submitted = new Set(dto.answers.map((answer) => answer.cardId));
     if (
-      !deck.cards.length ||
-      dto.answers.length !== deck.cards.length ||
-      submitted.size !== deck.cards.length
+      !cards.length ||
+      dto.answers.length !== cards.length ||
+      submitted.size !== cards.length
     ) {
       throw new BadRequestException('Cần hoàn thành mỗi thẻ đúng một lần');
     }
@@ -160,26 +177,33 @@ export class DecksService {
       // Hai thẻ có cùng nghĩa đều là lựa chọn hợp lệ.
       if (card.meaning.trim() === choice.meaning.trim()) correct++;
     }
-    const completed = correct === deck.cards.length;
+    const completed = correct === cards.length;
     const { learned } = completed
       ? await this.markLearned(userId, id)
       : { learned: 0 };
-    return { correct, total: deck.cards.length, completed, learned };
+    return { correct, total: cards.length, completed, learned };
   }
 
   /** Học xong bài: thẻ chưa học vào lịch ôn như đã chấm "Nhớ" lần đầu; thẻ đã có lịch giữ nguyên. */
   async markLearned(userId: string, id: string) {
-    if (!(await this.decks.existsBy({ id, userId })))
-      throw new NotFoundException('Không tìm thấy bộ thẻ');
+    const deck = await this.decks.findOne({
+      where: { id, userId },
+      select: { sourceKey: true },
+    });
+    if (!deck) throw new NotFoundException('Không tìm thấy bộ thẻ');
     const now = new Date();
     const { next, log } = reviewWithLog(newCard(now), Rating.Good, now);
-    const result = await this.cards
+    const update = this.cards
       .createQueryBuilder()
       .update()
       .set(next)
-      .where('"deck_id" = :id AND "due" IS NULL', { id })
-      .returning(['id'])
-      .execute();
+      .where('"deck_id" = :id AND "due" IS NULL', { id });
+    if (DUNG_MORI_KANJI_KEYS.includes(deck.sourceKey)) {
+      update.andWhere('"source_id" NOT IN (:...retiredIds)', {
+        retiredIds: DUNG_MORI_RETIRED_KANJI_IDS,
+      });
+    }
+    const result = await update.returning(['id']).execute();
     const learned = ((result.raw ?? []) as { id: string }[]).map(
       (row) => row.id,
     );
@@ -207,6 +231,13 @@ export class DecksService {
         keys: DUNG_MORI_KEYS,
         shared: collection === 'dung-mori-n4',
       })
+      .andWhere(
+        'NOT (d.sourceKey IN (:...kanjiKeys) AND c.sourceId IN (:...retiredIds))',
+        {
+          kanjiKeys: DUNG_MORI_KANJI_KEYS,
+          retiredIds: DUNG_MORI_RETIRED_KANJI_IDS,
+        },
+      )
       .orderBy('c.due', 'ASC')
       .take(Math.min(limit, QUEUE_LIMIT))
       .getManyAndCount();
@@ -224,8 +255,9 @@ export class DecksService {
   async review(userId: string, cardId: string, rating: 1 | 2 | 3 | 4) {
     const card = await this.cards.findOne({
       where: { id: cardId, deck: { userId } },
+      relations: { deck: true },
     });
-    if (!card?.due)
+    if (!card?.due || isRetiredDungMoriCard(card.deck.sourceKey, card.sourceId))
       throw new NotFoundException('Thẻ này chưa có trong lịch ôn');
     const now = new Date();
     const { next, log } = reviewWithLog(scheduleOf(card, now), rating, now);
